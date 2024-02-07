@@ -28,6 +28,15 @@ nav:
       - Running your first job: hpc/getting-started/running-your-first-job.md
     - Cluster Specification: hpc/cluster-specification.md
     - Best Practice: hpc/best-practice.md
+    - Queues:
+      - Queueing: hpc/queues/index.md
+      - Purpose of the Queuing System: hpc/queues/purpose-of-the-queue.md
+      - How it works: hpc/queues/how-it-works.md
+      - Classes of Jobs: hpc/queues/classes-of-jobs.md
+      - Express Access: hpc/queues/express-access.md
+      - Array Jobs: hpc/queues/array-jobs.md
+      - Job Dependencies: hpc/queues/job-dependencies.md
+      - Job Sizing Guidance: hpc/queues/job-sizing-guidance.md
   - RDS:
     - RDS: rds/index.md
   - Support and Training:
