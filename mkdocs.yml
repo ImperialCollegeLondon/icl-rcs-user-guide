@@ -20,14 +20,13 @@ nav:
   - Home: index.md
   - HPC:
     - HPC at Imperial: hpc/index.md
+    - Cluster Specification: hpc/cluster-specification.md
     - Getting Started:
       - Where to Start: hpc/getting-started/index.md
       - Using SSH: hpc/getting-started/using-ssh.md
       - Data Management: hpc/getting-started/data-management-on-hpc.md
       - Accessing Software: hpc/getting-started/accessing-software.md
       - Running your first job: hpc/getting-started/running-your-first-job.md
-    - Cluster Specification: hpc/cluster-specification.md
-    - Best Practice: hpc/best-practice.md
     - Queues:
       - Queueing: hpc/queues/index.md
       - Purpose of the Queuing System: hpc/queues/purpose-of-the-queue.md
@@ -37,6 +36,11 @@ nav:
       - Array Jobs: hpc/queues/array-jobs.md
       - Job Dependencies: hpc/queues/job-dependencies.md
       - Job Sizing Guidance: hpc/queues/job-sizing-guidance.md
+      - MPI Jobs: hpc/queues/mpi-jobs.md
+      - GPU Jobs: hpc/queues/gpu-jobs.md
+      - Checkpointing: hpc/queues/checkpointing.md
+    - Applications: hpc/applications/index.md
+    - Best Practice: hpc/best-practice.md
   - RDS:
     - RDS: rds/index.md
   - Support and Training:

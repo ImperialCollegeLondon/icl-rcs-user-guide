@@ -9,6 +9,6 @@ These following pages provide further information on how the queuing system/job 
 * [Array Jobs](./array-jobs.md)
 * [Job Dependencies](./job-dependencies.md)
 * [Job sizing guidance](./job-sizing-guidance.md)
-* MPI Jobs
-* GPU Jobs
-* Check-pointing
+* [MPI Jobs](./mpi-jobs.md)
+* [GPU Jobs](./gpu-jobs.md)
+* [Checkpointing](./checkpointing.md)
