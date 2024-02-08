@@ -1,7 +1,7 @@
 # GPU Jobs
 
 ## Submitting GPU Jobs
-The current GPU's we have available in the cluster are Nvidia RTX 6000's. To request a gpu, you need to use both the qsub flag `ngpus` (to request the desired number of gpus) and the qsub flag "gpu_type" (to select the type of GPU). e.g.;
+The current GPU's we have available in the cluster are Nvidia RTX 6000's. To request a gpu, you need to use both the qsub flag `ngpus` (to request the desired number of gpus) and the qsub flag `gpu_type` (to select the type of GPU). e.g.;
 
 ```bash
 #PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=RTX6000

@@ -39,7 +39,10 @@ nav:
       - MPI Jobs: hpc/queues/mpi-jobs.md
       - GPU Jobs: hpc/queues/gpu-jobs.md
       - Checkpointing: hpc/queues/checkpointing.md
-    - Applications: hpc/applications/index.md
+    - Applications:
+      - Loading Applications: hpc/applications/index.md
+      - EasyBuild: hpc/applications/easybuild.md
+      - Guides: hpc/applications/guides/index.md
     - Best Practice: hpc/best-practice.md
   - RDS:
     - RDS: rds/index.md

@@ -14,9 +14,9 @@ The default versions of applications are changed infrequently to avoid disruptio
 
 | Module Command | Description |
 | -------------- | ----------- |
-| module load <name> | Loads the module called <name>. |
-| module avail | Lists all available modules for applications, compilers and tools that can be found on the system. |
-| module list | Lists all modules that are currently loaded in your environment. |
-| module help <name> | Gives information about the module called name, similar to man <name>. |
-| module purge | Unloads any loaded modules. We strongly recommend you place this in your submission script before loading any new modules. |
-| module show <name> | Displays will list the full path of the modulefile and the environment changes the modulefile will make if loaded. |
+| `module load <name>` | Loads the module called <name\>. |
+| `module avail` | Lists all available modules for applications, compilers and tools that can be found on the system. |
+| `module list` | Lists all modules that are currently loaded in your environment. |
+| `module help <name>` | Gives information about the module called <name\>, similar to man <name\>. |
+| `module purge` | Unloads any loaded modules. We strongly recommend you place this in your submission script before loading any new modules. |
+| `module show <name>` | Displays will list the full path of the modulefile and the environment changes the modulefile will make if loaded. |
