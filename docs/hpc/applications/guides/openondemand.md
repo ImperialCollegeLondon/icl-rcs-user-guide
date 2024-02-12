@@ -10,7 +10,7 @@ We recommend you setup a [Conda](./conda.md) environment when using RStudio; the
 
 ## Creating an Conda Environment
 
-We recommend you familiarise yourself with the use of Conda and R by going to the R application page. You will then need to prepare your Conda environment by first connecting to the login node using SSH (see the [Getting started](../../getting-started/index.md) guide for advice on doing this).
+We recommend you familiarise yourself with the use of Conda and R by going to the [R application page](./R.md). You will then need to prepare your Conda environment by first connecting to the login node using SSH (see the [Getting started](../../getting-started/index.md) guide for advice on doing this).
 
 From there, load Anaconda and create a new environemnt.
 

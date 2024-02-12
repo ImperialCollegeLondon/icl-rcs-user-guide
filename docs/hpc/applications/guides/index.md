@@ -7,4 +7,6 @@ The following pages have guides for running specific applications on the HPC ser
 * [Jupyter](./jupyter.md)
 * [Lumerical](./lumerical.md)
 * [Open OnDemand](./openondemand.md)
+* [ORCA](./orca.md)
 * [Python](./python.md)
+* [R](./R.md)
