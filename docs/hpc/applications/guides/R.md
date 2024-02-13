@@ -67,3 +67,82 @@ conda install bioconductor-teqc
 ## RStudio
 
 Please note that access to RStudio is provided by the [Open OnDemand](./openondemand.md) service.
+
+## Running R in Parallel
+
+There are a few ways to run R in Parallel. Probably the simplest is to use [Array Jobs](../../queues/array-jobs.md) to split your work into separate subjobs and pull results together at the end. If this isn't possible then the next simplest is to use the [doParallel](https://cran.r-project.org/web/packages/doParallel/index.html) library within R. There are a few ways to use this library so examples have been given for each. To test these methods a mostly non-sense function is created that will take the place of your work function. Ideally this function should take some seconds or more to run, otherwise the overhead of creating/destroying parallel processes is unlikely to be worth it.
+
+```R
+fun <- function(n) {
+    size = 1000
+    start = size*n
+    end = size*(n+1)
+    startData = start:end
+    endData <- 0:size;
+    foreach (i=0:size) %do% {
+        endData[i] <- startData[i]^2
+    }
+    return (sum(endData))
+}
+```
+
+This test function manually creates a vector, takes the square of each element, and then returns the sum. Again this function isn't optimised and it just a place holder. Users should take the time to optimise their equivalent function(s) as much as possible.
+
+### Getting the right number of cores
+
+You can detect the correct number of cores available to your job using `future::availableCores()`. The function within the `parallel::detectCores()`, will report the wrong number, the total number of cores in the node, which are not available to you. Using this one when parallelising your code might have unexpected consequences. In other words, you can use the following code snippet to get the maximum number of cores available to you:
+
+```R
+library("future")
+numOfCores = future::availableCores()
+```
+
+### Foreach+dopar
+
+#### Creating a cluster
+
+It is generally better to create and destroy the cluster to ensure the number of CPUs is set correctly. `numOfCores` should match the total number of CPUs requested in the PBS script, as described above. 
+
+```R
+library(doParallel)
+numOfCores=4
+cl <- makeCluster(numOfCores, type="FORK")
+registerDoParallel(cl)
+parallelResults <- c()
+```
+
+#### Updating Loop
+
+If you already have the function being called in `foreach` loop then it can be very easy to substitute the `%do%` for `%dopar%`
+
+```R
+dataRange <- 1:100;
+parallelResults <- c();
+foreach (n=dataRange) %dopar%  {
+    parallelResults[n] <- fun(n)
+}
+```
+
+### mclapply
+This is the parallel version of lapply and often one can be replaced with the other. The advantage here is the you don't have to create/destroy the cluster, the disadvantage is everything must fit inside of lapply. Again make sure `numOfCores` matches the number of cpus you are requesting in PBS.
+
+```R
+library(doParallel)
+dataRange <- 1:100;
+numOfCores=4
+ParallelResults <- mclapply(dataRange, fun,mc.cores=numOfCores)
+```
+
+### Comparing all Methods
+
+We can see that `mclapply` is the fastest although again the flexibility of `foreach` might make that the preferred method for a lot of workflows.
+
+```R
+The estimated time using foreach: 14.834 seconds
+The estimated time using foreach+dopar: 3.988 seconds
+The estimated time using lapply() function: 14.276 seconds
+The estimated time using mclapply() function: 3.722 seconds
+```
+
+With `numOfCores=4`
+

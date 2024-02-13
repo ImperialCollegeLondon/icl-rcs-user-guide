@@ -53,11 +53,24 @@ nav:
         - Conda: hpc/applications/guides/conda.md
         - Jupyter: hpc/applications/guides/jupyter.md
         - Lumerical: hpc/applications/guides/lumerical.md
+        - MATLAB: hpc/applications/guides/matlab.md
         - Open OnDemand: hpc/applications/guides/openondemand.md
         - ORCA: hpc/applications/guides/orca.md
+        - Paraview: hpc/applications/guides/paraview.md
         - Python: hpc/applications/guides/python.md
+        - PyTorch: hpc/applications/guides/pytorch.md
         - R: hpc/applications/guides/R.md
+        - StarCCM: hpc/applications/guides/starccm.md
+        - TensorFlow: hpc/applications/guides/tensorflow.md
     - Best Practice: hpc/best-practice.md
+    - Advanced Topics:
+      - Overview: hpc/advanced/index.md
+      - Thread Pinning: hpc/advanced/thread-pinning.md
+      - Application Profiling:
+        - Overview: hpc/advanced/profiling/index.md
+        - Intel Advisor: hpc/advanced/profiling/intel-advisor.md
+        - Intel APS: hpc/advanced/profiling/intel-aps.md
+        - Intel Vtune: hpc/advanced/profiling/intel-vtune-profiler.md
     - Pilot Systems:
       - HX1: hpc/pilot/hx1.md
       - CX3 Phase 2: hpc/pilot/cx3-phase2.md

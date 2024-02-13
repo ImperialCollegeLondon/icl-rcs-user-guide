@@ -90,3 +90,55 @@ conda config --set pip_interop_enabled True
 ```
 
 Where previous versions of Conda will show a confusing ambiguity on exactly what’s present in “conda list” if you installed a pip package when it was already present in the environment. Conda 4.6 now shows only one correct entry.
+
+## Memory Profiling Python
+
+Profiling is an essential technique in software development and optimization. It involves analysing the execution time, memory usage, and other performance-related aspects of a program to identify bottlenecks and areas for improvement. In Python, a common library for memory profiling is memory_profiler. This uses psutil under the hood but gives a much similar interface and the output is given line-by-line.
+
+### memory_profiler
+memory_profiler is a library specifically designed to profile memory usage in Python scripts. It allows you to track memory consumption line-by-line, helping you identify memory-intensive sections of your code.
+
+#### Installation
+You can install memory_profiler directory from pip. We recommend installing the library within a virtualenv or [conda environment](#anaconda-python). 
+
+```console
+python3 -m pip install memory-profiler
+```
+
+#### Usage
+
+```python
+# importing the library
+from memory_profiler import profile
+ 
+# instantiating the decorator
+# code for which memory has to
+# be monitored
+ 
+@profile
+def func():
+    x = [1] * (10 ** 7)
+    y = [2] * (4 * 10 ** 8)
+    y = y[:int(len(y)/2)]
+    del x
+    return y
+ 
+if __name__ == '__main__':
+    func()
+```
+
+In this example, the @profile decorator from memory_profiler is used to profile the function func. When the script is executed, memory_profiler will display memory usage for each line within the function.
+
+```console
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+     9     17.2 MiB     17.2 MiB           1   @profile
+    10                                         def func():
+    11     93.6 MiB     76.4 MiB           1       x = [1] * (10 ** 7)
+    12   3145.4 MiB   3051.8 MiB           1       y = [2] * (4 * 10 ** 8)
+    13   1619.5 MiB  -1525.8 MiB           1       y = y[:int(len(y)/2)]
+    14   1543.2 MiB    -76.3 MiB           1       del x
+    15   1543.2 MiB      0.0 MiB           1       return y
+```
+
+We can see when extra memory was allocated and when it was cleared. This is clearly a very useful tool but it should be noted that running profiling can slow down code so it should not be left on all the time. 
