@@ -10,8 +10,7 @@ HPC clinics are a good way to discuss your issue directly with an RCS team membe
 
 Please see the links below for additional material in helping you learn how to use Linux, HPC and associated applications.
 
-* Using Linux
-* Courses
-* Imperial Software Carpentry Initiative
+* [Using Linux](./using-linux/index.md)
+* [Courses](./courses.md)
 * [Attend a clinic](./attend-a-clinic.md)
-* Citing RCS In Research Outputs
+* [Citing RCS In Research Outputs](./citing-rcs.md)

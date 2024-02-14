@@ -23,6 +23,11 @@ nav:
     - Getting Help: support/index.md
     - Attending a Clinic: support/attend-a-clinic.md
     - Citing the RCS: support/citing-rcs.md
+    - Courses: support/courses.md
+    - Using Linux:
+      - Overview: support/using-linux/index.md
+      - Linux Command Line: support/using-linux/command-line.md
+      - Shell Scripting: support/using-linux/shell-scripting.md
   - HPC:
     - HPC at Imperial: hpc/index.md
     - Cluster Specification: hpc/cluster-specification.md
@@ -63,6 +68,8 @@ nav:
         - StarCCM: hpc/applications/guides/starccm.md
         - TensorFlow: hpc/applications/guides/tensorflow.md
     - Best Practice: hpc/best-practice.md
+    - FAQ and Common Issues:
+      - Overview: hpc/faq/index.md
     - Advanced Topics:
       - Overview: hpc/advanced/index.md
       - Thread Pinning: hpc/advanced/thread-pinning.md

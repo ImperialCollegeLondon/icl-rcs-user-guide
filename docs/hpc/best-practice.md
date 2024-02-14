@@ -107,8 +107,8 @@ Note that creating a "master" logs directory for all your submitted jobs' log fi
 
 ### IMPORTANT
 
-* IF YOU ARE UNSURE HOW YOUR WORKFLOW IMPACT THE FILESYSTEM, PLEASE FOLLOW THE ADVICE ABOVE TO 'Stage via $TMPDIR' AND AIM FOR 'Nodes with GPFS'. 
-* IF YOU ARE PLANNING TO START TO RUN A NEW WORKFLOW AS AN ARRAY JOB, PLEASE DO NOT RUN THIS DURING THE HOLIDAYS WHILE THE SYSTEMS ARE UNATTENDED.
+* If you are unsure how your workflow impact the filesystem, please follow the advice above to '[Stage via $TMPDIR](#stage-via-tmpdir)' and aim for '[Nodes with GPFS](#nodes-with-gpfs)'. 
+* If you are planning to start to run a new workflow as an array job, please do not run this during the holidays while the systems are unattended.
 
 ## File Management
 
