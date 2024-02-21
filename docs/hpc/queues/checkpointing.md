@@ -7,8 +7,10 @@ Before using DMTCP, make sure to load the required software modules. Assuming yo
 
 ```console
 module load tools/prod
-module load SciPy-bundle/2022.05-foss-2022a
+module load DMTCP/3.0.0-GCCcore-11.3.0
 ```
+
+If DMTCP is not available for the toolchain you wish to use, please let us know.
 
 ## Check DMTCP Availability
 To verify if DMTCP is available in your environment, run the following command:
@@ -52,6 +54,7 @@ If you want to submit a job to PBSPro and utilize DMTCP for checkpointing, you c
 # Load required modules
 module load tools/prod
 module load SciPy-bundle/2022.05-foss-2022a
+module load DMTCP/3.0.0-GCCcore-11.3.0
  
 # Set DMTCP environment variables
 export DMTCP_COORD_PORT=7779
