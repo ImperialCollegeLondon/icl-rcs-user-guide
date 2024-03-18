@@ -70,19 +70,19 @@ module load tools/prod
 module load OpenMPI/4.1.4-GCC-12.2.0
 ```
 
-3. Next, we compile the code with debug flag as shown below.
+3) Next, we compile the code with debug flag as shown below.
 
 ```bash
 mpic++ -g -o mpi_debug mpi_debug.cpp
 ```
 
-4. Now, we run the program using `mpirun` as shown below.
+4) Now, we run the program using `mpirun` as shown below.
 
 ```bash 
 mpirun -np 2 ./mpi_debug
 ```
 
-5. On running the above, we get the following output.
+5) On running the above, we get the following output.
     
 ```bash
 Rank 0 on host cx1-100-11-2.cx1.hpc.ic.ac.uk performing multiplication with arguments: 0 and 0
@@ -92,7 +92,7 @@ Rank 1 on host cx1-100-11-2.cx1.hpc.ic.ac.uk performing multiplication with argu
 Result of multiplication: 1
 ```
 
-6. From the output, we can see that the output of rank `0` is right as multiplication of rank `0` and communicator size `2` is `0`. However, the output of rank `1` is wrong as multiplication of rank `1` and communicator size `2` is `2` and not `1`. This is the bug in the code and we need to debug it using GDB. We must emphasize that the bug is trivial to fix by seeing the code but the aim of this tutorial is to show how to use GDB on MPI programs. 
+6) From the output, we can see that the output of rank `0` is right as multiplication of rank `0` and communicator size `2` is `0`. However, the output of rank `1` is wrong as multiplication of rank `1` and communicator size `2` is `2` and not `1`. This is the bug in the code and we need to debug it using GDB. We must emphasize that the bug is trivial to fix by seeing the code but the aim of this tutorial is to show how to use GDB on MPI programs. 
 
 To use GDB on mpi program, we need to attach GDB to the running process and then step through the code manually to find issues. If you try to attach GDB directly to your running process, you will not know at which point the process is and you may not be able to debug it properly. Therefore, we will use the small code section below which will force all processes in the communicator to sleep unless we explicitly ask it to run. 
 
@@ -122,7 +122,7 @@ Based on the above output, we can easily figure out the process id of each rank 
 
 Please note that the above logic is forcing all ranks to sleep infinitely unless we attach GDB to it and ask it to run. You can also change the above logic to a specific rank only if you are sure that this is the rank causing issues.
 
-7. After adding the above code, we compile again and run our code. We will redirect the standard output and input to a file called `output.log` and run the process in the background as shown below.
+7) After adding the above code, we compile again and run our code. We will redirect the standard output and input to a file called `output.log` and run the process in the background as shown below.
 
 ```bash
 mpirun -np 2 ./mpi_debug > output.log 2>&1 &
@@ -138,7 +138,7 @@ My rank = 1 PID = 872258 running on Host = cx1-100-11-2.cx1.hpc.ic.ac.uk in slee
 
 You will see this output continuously with a gap of 5 seconds. Now we need to attach gdb to the problematic process which is the rank 1. 
 
-8. Next we attach GDB to the rank 1 process by using the following commands. Since we are on the same node, we do not need an additional ssh step here.
+8) Next we attach GDB to the rank 1 process by using the following commands. Since we are on the same node, we do not need an additional ssh step here.
 
 The syntax to attach GDB to a running process is as follows.
 ```bash
@@ -164,7 +164,7 @@ License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 
 We have not shown all the output here but you will see a lot of output on the screen. The terminal is waiting for your input. 
 
-9. Now we need to change  the value of the variable `i` to `1` (or any other value) so that the rank can come out of the infinite while loop. We do this by using the following command.
+9) Now we need to change  the value of the variable `i` to `1` (or any other value) so that the rank can come out of the infinite while loop. We do this by using the following command.
 
 We would first need to find out where we are currently in the call stack. This will help us to jump to the main function and change the value there. We  use  the command `where` to find out the details.
 
@@ -192,7 +192,7 @@ Thus we can see that we are two levels deep in the main function. We can move up
 
 Thus we are now in main function and we can change the value of i here.
 
-10. We change the value of `i` to `1` by using the following command.
+10) We change the value of `i` to `1` by using the following command.
 
 ```bash
 (gdb) set var i = 1
@@ -205,14 +205,14 @@ $2 = 1
 
 As we can see that the value has been changed.
 
-11. Next, we set a breakpoint at the multiplication function and run the program. We do this by using the following commands.
+11) Next, we set a breakpoint at the multiplication function and run the program. We do this by using the following commands.
 
 ```bash
 (gdb) break multiplication
 (gdb) continue
 ```
 
-12. The program at rank 1 now runs till the breakpoint which is the start of the function definition in our case. Inside this function, we can now print the values of both the arguments to see what was the issue.
+12) The program at rank 1 now runs till the breakpoint which is the start of the function definition in our case. Inside this function, we can now print the values of both the arguments to see what was the issue.
 
 ```bash
 (gdb) print a
