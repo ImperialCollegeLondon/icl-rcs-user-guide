@@ -57,13 +57,13 @@ int main(int argc, char** argv) {
 
 ## Steps to Debug the above MPI program using GDB
 
-1. Since we will be debugging interactively, we need to ask for interactive session as shown below.
+1) Since we will be debugging interactively, we need to ask for interactive session as shown below.
 
 ```bash
 qsub -I -l select=2:ncpus=3:mem=20gb -l walltime=03:00:00
 ```
 
-2. Once your job gets the resources allocated, we load the appropriate modules by
+2) Once your job gets the resources allocated, we load the appropriate modules by
 
 ```bash
 module load tools/prod
