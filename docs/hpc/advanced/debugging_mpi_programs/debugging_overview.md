@@ -18,4 +18,4 @@ There are many tools available in the market that can help you to debug your app
 
 2. **Linaro DDT** ([https://www.linaroforge.com/linaroDdt](https://www.linaroforge.com/linaroDdt)): Linaro DDT (fomerly Allinea DDT) is a parallel debugger for C, C++, and Fortran applications. It provides a range of debugging tools, including memory debugging, reverse debugging, and memory leak detection.
 
-Both these tools can help you to fix issues in both the serial program and parallel program. However, we do not have license to run these tools on our cluster and therfore, you will need to use open source tools like GDB to debug your applications.
+Both these tools can help you to fix issues in both the serial program and parallel program. However, we do not have license to run these tools on our cluster and therefore, you will need to use open source tools like GDB to debug your applications.
