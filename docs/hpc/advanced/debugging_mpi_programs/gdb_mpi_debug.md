@@ -221,7 +221,7 @@ $3 = 1
 $4 = 1
 ```
 
-And, finally we can see that the issue is with the value of `b` which is `1` and not `6`. This is the bug in the code and we can fix it now.
+And, finally we can see that the issue is with the value of `b` which is `1` and not `2`. This is the bug in the code and we can fix it now by going back and setting num2 = size. Again this is a toy example but helps demonstrate the how to find a bug in a code base using a debugger.
 
 Note:- If for some reason, you want to detach gdb from the process, you can do so by pressing `Ctrl + c` and then typing `quit` in the terminal.
 
