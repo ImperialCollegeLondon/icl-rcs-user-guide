@@ -22,7 +22,7 @@ Again, we do not aim to teach the basics of GDB in this page and we assume that 
 
 The process of debugging MPI programs with GDB is slightly more complex than debugging serial programs due to the parallel nature of MPI applications. When debugging an MPI program, you are dealing with multiple processes running concurrently, each with its own memory space and execution context. GDB provides features to debug MPI programs, but it requires additional steps and considerations to effectively debug parallel applications.
 
-Consider that you have an MPI program as shown below. The sample program given below is simple MPI program that performs addition and multiplication on each rank and prints the result. The first argument to the multiplication functions is the rank of the process and the second argument is the size of the communicator (this is actually the bug  which is there in the code below and our task is to use gdb on such programs to find the issue). We have create this  simple  program using functions so that you can step inside while debugging. Let us assume that the file is named `mpi_debug.cpp`.
+Consider that you have an MPI program as shown below. The sample program given below is simple MPI program that performs addition and multiplication on each rank and prints the result. The first argument to the multiplication functions is the rank of the process and the second argument is the size of the communicator (this is actually the bug  which is there in the code below and our task is to use gdb on such programs to find the issue). We will create a simple  program using functions so that you can step inside while debugging. Let us assume that the file is named `mpi_debug.cpp`.
  
 ```c++
 #include <iostream>
