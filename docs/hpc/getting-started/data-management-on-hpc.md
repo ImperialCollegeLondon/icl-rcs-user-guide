@@ -4,7 +4,7 @@ As an HPC user you will have access several different storage spaces
 
 ## Storage Spaces on the RDS
 
-Your Home and Ephemeral spaces, as well as any Research Data Store project allocations you have access to, are stored on the Research Data Store; please see the [Research Data Store user guide](../../../rds/rds-intro/) for more information on how to manage access, check how much data you are using, and how to access the data from your own computer.
+Your Home and Ephemeral spaces, as well as any Research Data Store project allocations you have access to, are stored on the Research Data Store; please see the [Research Data Store user guide](../../rds/index.md) for more information on how to manage access, check how much data you are using, and how to access the data from your own computer.
 
 ### Home Directory
 
