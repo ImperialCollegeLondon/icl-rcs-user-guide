@@ -67,9 +67,17 @@ nav:
         - R: hpc/applications/guides/R.md
         - StarCCM: hpc/applications/guides/starccm.md
         - TensorFlow: hpc/applications/guides/tensorflow.md
-    - Best Practice: hpc/best-practice.md
+    - Best Practices: hpc/best-practice.md
     - FAQ and Common Issues:
       - Overview: hpc/faq/index.md
+      - Long Queue Times: hpc/faq/long-queue-times.md
+      - Accidentally Deleted Files: hpc/faq/deleted-files.md
+      - Cannot Create Conda Environment: hpc/faq/cannot-create-conda-env.md
+      - Cannot SSH to HX1: hpc/faq/cannot-ssh-hx1.md
+      - How much resource should I ask for: hpc/faq/how-much-resource.md
+      - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
+      - No such file or directory: hpc/faq/bad-interpreter.md
+      - Same or Previous Code not working: hpc/faq/code-not-working.md
     - Advanced Topics:
       - Overview: hpc/advanced/index.md
       - Thread Pinning: hpc/advanced/thread-pinning.md
