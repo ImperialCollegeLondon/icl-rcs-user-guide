@@ -130,7 +130,7 @@ At this point you will need to generate an access token on another machine. The 
 rclone authorize "onedrive"
 ```
 
-5. rclone will open a window in your web browser and ask your to authorise the connection. Click Authorise
+5. rclone will open a window in your web browser and ask you to authorise the connection. Click Authorise.
 6. In the command prompt, rclone will generate an access token. Copy everything between "Paste the following into your remote machine -->" and "<---End paste" back into the original rclone window on the login node
 7. Choose number 1 for "OneDrive Personal or Business"
 8. It should find you Imperial College drive, which should be 0 (zero). Chose drive 0 and press enter.
