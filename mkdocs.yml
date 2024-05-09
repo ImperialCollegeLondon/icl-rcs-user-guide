@@ -15,6 +15,7 @@ markdown_extensions:
       base_path: .
   - admonition
   - tables
+  - sane_lists
 
 nav:
   - Home: index.md
@@ -104,6 +105,7 @@ nav:
     - Transferring Data:
       - Overview: rds/transferringdata/index.md
       - Globus: rds/transferringdata/globus.md
+      - Rclone: rds/transferringdata/rclone.md
       - rsync and scp: rds/transferringdata/rsync-and-scp.md
     - Managing the RDS:
       - Disk Space: rds/managing/disk-space.md
