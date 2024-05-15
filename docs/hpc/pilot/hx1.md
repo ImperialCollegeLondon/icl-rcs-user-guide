@@ -5,7 +5,7 @@ hx1 is the new High Performance Computing Cluster provided by the Research Compu
 * Multi-node parallel applications, typically using MPI to communicate between the compute nodes.
 * GPGPU accelerated applications such as those utilising CUDA.
 
-For single node parallel applications, we would please ask you to continue using the CX3 service.
+For single node parallel applications, we would please ask you to continue using the CX3 service. If you are in any doubt whether your job is suited to single node or multi-node, please contact the [RCS](../../support/index.md).
 
 **As of February 2024, hx1 is in late pre-production phase meaning that we welcome expressions of interest for access to the facility via the [ServiceDesk Ask form](https://servicemgt.service-now.com/ask?id=sc_cat_item&sys_id=cbf5a4281b9c79101533a8a4bd4bcbea&sysparm_category=52a4a8f21be62110557837b5464bcbd24). If you have been granted access to hx1 as a pre-production user, it is VERY important that you review this entire page before you try to run any jobs as there are a lot of differences compared to the existing RCS HPC infrastructure.**
 
