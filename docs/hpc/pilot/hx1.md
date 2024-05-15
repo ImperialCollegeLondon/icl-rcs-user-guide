@@ -3,7 +3,7 @@
 hx1 is the new High Performance Computing Cluster provided by the Research Computing Services at Imperial College London. hx1 is designed for the following types of applications:
 
 * Multi-node parallel applications, typically using MPI to communicate between the compute nodes.
-* GPGPU accelerated applications such as those utilising CUDA.
+* GPU accelerated applications such as those utilising CUDA.
 
 For single node parallel applications, we would please ask you to continue using the CX3 service. If you are in any doubt whether your job is suited to single node or multi-node, please contact the [RCS](../../support/index.md).
 
