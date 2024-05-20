@@ -80,7 +80,7 @@ nav:
       - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
       - No such file or directory: hpc/faq/bad-interpreter.md
       - Same or Previous Code not working: hpc/faq/code-not-working.md
-    - Advanced Topics:
+    - Debugging and Profiling:
       - Overview: hpc/advanced/index.md
       - Thread Pinning: hpc/advanced/thread-pinning.md
       - Application Profiling:

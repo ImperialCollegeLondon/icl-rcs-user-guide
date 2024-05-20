@@ -66,6 +66,8 @@ source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 python3 -m pip install tensorflow==2.12.*
 ```
 
+## Check TensorFlow Installation
+
 Once the installation has been completed a test job can be submitted to PBS.
 
 ```bash
