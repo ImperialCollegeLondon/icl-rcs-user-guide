@@ -48,7 +48,9 @@ This will display all the currently installed versions of Tensorflow.
 ## Conda
 Whether using  CPU's or GPU's, you should install TensorFlow into a clean Anaconda environment. You will need to first setup up your own [Anaconda environment](./conda.md).
 
-Please take care when installing Tensorflow with other packages. It isn't uncommon for Tensorflow to conflict with other packages so we generally recommend keeping your Tensorflow environment to a minimum.
+Please take care when installing Tensorflow with other packages. It isn't uncommon for Tensorflow to conflict with other packages so we generally recommend keeping your Tensorflow environment to a minimum. 
+
+If you want to have both Pytorch and Tensorflow in your single environment, please follow the section on [PyTorch](./pytorch.md/#tensorflow-and-pytorch)
 
 The example below installs both the CPU and GPU version of Tensorflow. If you don't need/want to use a GPU the you don't need to install Cudatoolkit or cudnn. This installation method is based on the advice at [https://www.tensorflow.org/install/pip](https://www.tensorflow.org/install/pip) You should be able to copy+paste the sets one-by-one. 
 
