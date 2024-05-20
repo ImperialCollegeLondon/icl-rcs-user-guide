@@ -57,6 +57,7 @@ nav:
         - Overview: hpc/applications/guides/index.md
         - Abaqus: hpc/applications/guides/abaqus.md
         - Conda: hpc/applications/guides/conda.md
+        - GCC: hpc/applications/guides/GCC.md
         - Jupyter: hpc/applications/guides/jupyter.md
         - Lumerical: hpc/applications/guides/lumerical.md
         - MATLAB: hpc/applications/guides/matlab.md
