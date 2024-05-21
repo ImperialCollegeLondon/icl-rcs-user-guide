@@ -84,11 +84,15 @@ nav:
     - Debugging and Profiling:
       - Overview: hpc/advanced/index.md
       - Thread Pinning: hpc/advanced/thread-pinning.md
-      - Application Profiling:
+      - Application Profiling on CPU:
         - Overview: hpc/advanced/profiling/index.md
         - Intel Advisor: hpc/advanced/profiling/intel-advisor.md
         - Intel APS: hpc/advanced/profiling/intel-aps.md
         - Intel Vtune: hpc/advanced/profiling/intel-vtune-profiler.md
+      - Application Profiling on GPU:
+        - Memory Usage: hpc/advanced/profiling/nvitop.md
+        - Profiling with Nsight Systems: hpc/advanced/profiling/nsight_systems.md
+        - Profiling with Nsight Compute: hpc/advanced/profiling/nsight_compute.md
       - Debugging Mpi programs:
         - Overview: hpc/advanced/debugging_mpi_programs/debugging_overview.md
         - Use of GDB to debug MPI program: hpc/advanced/debugging_mpi_programs/gdb_mpi_debug.md
