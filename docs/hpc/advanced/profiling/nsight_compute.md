@@ -8,7 +8,7 @@ We suggest that you login using the X11 forwarding enabled. To profile the code 
 # Login to the system with the X11 forwarding enabled.
 ssh -X username@hostname
 
-# Load the appropriate cuda module. We recommend using new versions as older versions are not supported on our systems for profiling (On CX3 phase 2, use versions greater than 12.2.0).
+# Load the appropriate CUDA module. We recommend using new versions as older versions are not supported on our systems for profiling. On CX3 phase 2, use CUDA versions >= 12.2.0
 module load tools/prod
 module load CUDA/12.2.0
 

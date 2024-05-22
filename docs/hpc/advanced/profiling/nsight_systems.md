@@ -11,7 +11,7 @@ You can profile the code interactively or via a batch job.
 ```bash
 module load tools/prod
 
-# Load the appropriate cuda module. We recommend using new versions as older versions are not supported on our systems for profiling.
+# Load the appropriate CUDA module. We recommend using new versions as older versions are not supported on our systems for profiling. On CX3 phase 2, use CUDA versions >= 12.2.0.
 module load CUDA/12.2.0
 
 # Load a Qt module. This is because Nsight Systems uses Qt for its GUI. 
@@ -31,7 +31,7 @@ where,
 
 Please note that `force-overwrite` will overwrite the output file if it already exists. If you want to keep the old data, you can remove this option.
 
-For example, to profile a simple cuda Jacobi program, you can use the following command.
+For example, to profile a simple CUDA Jacobi (C++) program, you can use the following command.
 
 ```bash
 nsys profile --trace cuda,osrt,nvtx --force-overwrite true --output jacobi_profile ./jacobi
