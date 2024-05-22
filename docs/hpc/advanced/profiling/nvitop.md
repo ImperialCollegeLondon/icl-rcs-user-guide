@@ -38,4 +38,6 @@ module load nvitop/1.3.2-GCCcore-12.3.0-CUDA-12.3.0
 nvitop
 ```
 
-<span style="color: red;">Note:- </span> We have observed some issues in graphics display when using this module. We are trying to fix it. In the meantime, you can use the tool in your own environment as described above.
+!!! note
+
+    We have observed some issues in graphics display when using this module. We are trying to fix it. In the meantime, you can use the tool in your own environment as described above.
