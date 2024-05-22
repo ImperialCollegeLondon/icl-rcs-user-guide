@@ -1,6 +1,6 @@
 # Nsight Compute
 
-[Nvidia Nsight Compute](https://developer.nvidia.com/nsight-compute) is an interactive kernel profiler for Cuda applications. Once you are satisfied with how your code is interacting with Cpu using [Nsight Systems](./nsight_systems.md), you can now turn to go deeper to see how your kernels are actually using the Gpu.
+[Nvidia Nsight Compute](https://developer.nvidia.com/nsight-compute) is an interactive kernel profiler for CUDA applications. Once you are satisfied with how your code is interacting with CPU using [Nsight Systems](./nsight_systems.md), you can now turn to go deeper to see how your kernels are actually using the GPU.
 
 We suggest that you login using the X11 forwarding enabled. To profile the code with Nsight Compute, you can use the following steps.
 
@@ -8,7 +8,7 @@ We suggest that you login using the X11 forwarding enabled. To profile the code 
 # Login to the system with the X11 forwarding enabled.
 ssh -X username@hostname
 
-# Load the appropriate cuda module. We recommend using new versions as older versions are not supported on our systems for profiling.
+# Load the appropriate cuda module. We recommend using new versions as older versions are not supported on our systems for profiling (On CX3 phase 2, use versions greater than 12.2.0).
 module load tools/prod
 module load CUDA/12.2.0
 
@@ -41,4 +41,4 @@ This will open a GUI and you should be able to use it to view the profiling data
 
 ![Nsight Profiling](./img/nsight_compute.png)
 
-Click on the page button to see details such as session, sumamry, source etc.
+Click on the page button to see details such as session, summary, source etc.
