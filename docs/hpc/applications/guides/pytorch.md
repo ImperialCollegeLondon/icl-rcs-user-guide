@@ -49,3 +49,7 @@ python -c "import torch;print(torch.cuda.is_available())"
 ```
 
 To check your  tensorflow installation in this environment, please see the section on [TensorFlow](./tensorflow.md).
+
+## Profile your AI/ML code using PyTorch
+
+To learn how to use PyTorch tp profile your code, please see the section on [Profiling PyTorch Code](../../advanced/profiling/pytorch_profile.md).
