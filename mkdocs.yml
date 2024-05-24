@@ -93,6 +93,7 @@ nav:
         - Memory Usage: hpc/advanced/profiling/nvitop.md
         - Profiling with Nsight Systems: hpc/advanced/profiling/nsight_systems.md
         - Profiling with Nsight Compute: hpc/advanced/profiling/nsight_compute.md
+        - Profiling AI workload using PyTorch: hpc/advanced/profiling/pytorch_profile.md
       - Debugging Mpi programs:
         - Overview: hpc/advanced/debugging_mpi_programs/debugging_overview.md
         - Use of GDB to debug MPI program: hpc/advanced/debugging_mpi_programs/gdb_mpi_debug.md
