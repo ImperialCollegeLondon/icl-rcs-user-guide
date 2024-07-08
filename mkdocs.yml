@@ -81,6 +81,7 @@ nav:
       - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
       - No such file or directory: hpc/faq/bad-interpreter.md
       - Same or Previous Code not working: hpc/faq/code-not-working.md
+      - Python Multiprocessing or Memory issues: hpc/faq/python-multiprocessing.md
     - Debugging and Profiling:
       - Overview: hpc/advanced/index.md
       - Thread Pinning: hpc/advanced/thread-pinning.md
