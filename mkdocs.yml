@@ -121,7 +121,7 @@ nav:
       - Overview: Workshops/Intel/overview.md
       - Presenter: Workshops/Intel/presenter.md
       - Upcoming: 
-        - Programming with One Api: Workshops/Intel/one_api_programming.md
+        - Programming with OneAPI: Workshops/Intel/one_api_programming.md
         - OpenMP offloading to Gpus: Workshops/Intel/openmp_offloading.md 
     - Nvidia DLI courses:
       - Overview: Workshops/Nvidia/overview.md
