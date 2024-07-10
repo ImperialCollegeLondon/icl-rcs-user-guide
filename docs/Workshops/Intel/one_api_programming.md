@@ -13,7 +13,7 @@ We can accommodate from 25 to 30 participants in this workshop.
 
 ## Style of the Workshop
 
-We are initially planning to conduct this workshop in in-person mode. However, depending on the number of participants, we may add online mode as well. We will update this section soon.
+We are initially planning to conduct this workshop in-person. However, depending on the number of participants, we may host it online as well. We will update this section soon.
 
 ## Venue
 
