@@ -20,4 +20,4 @@ For **CX3 phase 2** we have upgraded PBS to a newer version which does not cause
 
 Please note that the **CX3 phase 2** is connected with RDS and you can access all your data, environment and software installations as you would do it on **CX3 phase 1**. The only difference is you need to login to different login nodes as mentioned in the above link.
 
-If you are facing any issues with the multiprocessing package on **CX3 phase 1**, we would recommend you to use **CX3 phase 2**. If you are facing any issues with the multiprocessing package on **CX3 phase 2**, please let us know and we will try to help you out.
+If you are facing any issues with the multiprocessing package on **CX3 phase 1**, we would recommend you to use **CX3 phase 2**. If you are facing any issues with the multiprocessing package on **CX3 phase 2**, please [Contact RCS team](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) and we will try to help you out.
