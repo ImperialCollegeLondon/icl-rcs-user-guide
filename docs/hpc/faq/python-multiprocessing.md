@@ -16,7 +16,7 @@ In many cases, the multiprocessing package tries to utilize more memory (much hi
 
 In almost all cases, the issue is not with the user's job. It is the configuration of the old PBS on our CX3 cluster.
 
-Quite recently, we have upgraded the PBS to a newer version on **CX3 phase 2** and this version does not cause any such issues. For more details on how to use **CX3 phase 2**, please see https://icl-rcs-user-guide.readthedocs.io/en/latest/hpc/pilot/cx3-phase2/.
+For **CX3 phase 2** we have upgraded PBS to a newer version which does not cause any such issues. For more details on how to use **CX3 phase 2**, please see https://icl-rcs-user-guide.readthedocs.io/en/latest/hpc/pilot/cx3-phase2/.
 
 Please note that the **CX3 phase 2** is connected with RDS and you can access all your data, environment and software installations as you would do it on **CX3 phase 1**. The only difference is you need to login to different login nodes as mentioned in the above link.
 

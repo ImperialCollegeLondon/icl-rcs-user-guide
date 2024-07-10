@@ -6,7 +6,7 @@ Let us suppose that you want to run a MPI program on the cluster and you have re
 #PBS -l select=1:ncpus=4:mem=16gb
 ```
 
-Next suppose that you try to run your mpi job by the following command
+Next suppose that you try to run your mpi job by the following command:
 
 ```bash
 mpirun -np 4 ./your_mpi_program
@@ -46,7 +46,7 @@ number of available slots when deciding the number of processes to
 launch.
 ```
 
-Please do not use the `--oversubscribe` option as it may lead to performance degradation. This option will cause more number of mpi processes on the same physical core which causes the performance to degrade significantly.
+Please do not use the `--oversubscribe` option as it may lead to performance degradation. This option will allow mpi processes to stack on the same physical core which causes the performance to degrade significantly.
 
 The solution to this is pretty simple and involves adding one argument to your resource request in the job script. You need to add `:mpiprocs=4` to your resource request as shown below.
 
