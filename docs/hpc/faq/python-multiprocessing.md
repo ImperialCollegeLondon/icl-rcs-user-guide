@@ -1,6 +1,6 @@
 # Python multiprocessing or memory issues
 
-We have encountered a few issues where users try to utilize parallel programming in Python by making use of the multiprocessing package (https://docs.python.org/3/library/multiprocessing.html). 
+We have encountered a few issues where users try to utilize parallel programming in Python by making use of the [multiprocessing package](https://docs.python.org/3/library/multiprocessing.html).
 
 !!!note
 
