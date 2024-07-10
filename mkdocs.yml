@@ -118,4 +118,14 @@ nav:
     - Managing the RDS:
       - Disk Space: rds/managing/disk-space.md
       - Recovering Deleted Files: rds/managing/recovering-deleted-files.md
+  - Workshops and Courses:
+    - Intel One Api Workshops:
+      - Overview: Workshops/Intel/overview.md
+      - Presenter: Workshops/Intel/presenter.md
+      - Upcoming: 
+        - Programming with OneAPI: Workshops/Intel/one_api_programming.md
+        - OpenMP offloading to GPUs: Workshops/Intel/openmp_offloading.md 
+    - Nvidia DLI courses:
+      - Overview: Workshops/Nvidia/overview.md
+      - Claim your free DLI course: Workshops/Nvidia/claim_free_course.md
 
