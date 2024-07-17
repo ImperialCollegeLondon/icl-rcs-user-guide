@@ -14,11 +14,15 @@ To refer to this location in job scripts use the environment variable `$HOME`.
 
 ### Ephemeral Directory
 
-This is additional individual working space where you can store a very large amount of working research data. Any files in this space are automatically deleted after 30 days. You can refer to this location using the environment variable `$EPHEMERAL`. Home and Ephemeral are accessible on HPC interactive systems and within batch jobs. 
+This is additional individual working space where you can temporarily store a large amount of **working** research data, for example as a temporary path for running HPC jobs. Any files in this space are automatically deleted after 30 days and they are not backed up so you should not store any files in the ephemeral directories that you cannot afford to lose. You can refer to this location using the environment variable `$EPHEMERAL`. Home and Ephemeral are accessible on HPC interactive systems and within batch jobs. 
 
+!!! info
+
+    From Tuesday 30th July 2024, per user quotas on the two ephemeral storage areas (ephemeral user and ephemeral project) will be set to 10TB. Users who have a genuine (time-limited) need for more than 10TB as part of an HPC workflow should [raise a ticket](../../support/index.md) to discuss a their requirements.
+ 
 !!! warning
 
-    Please **DO NOT** use ephemeral as a backup storage area; it is meant as a temporary area for active/working research data for running jobs. Users who are observed to use ephemeral in this way are at risk of having their HPC and/or RDS account suspended.
+    Please **DO NOT** use ephemeral as a backup storage area or alternative to an RDS Project; ephemeral is meant as a temporary area while running HPC jobs. Users who are observed to use ephemeral in this way (for example in the use of copy scripts) are at risk of having their HPC and/or RDS account suspended.
 
 ## Storage Spaces on Compute Nodes
 
