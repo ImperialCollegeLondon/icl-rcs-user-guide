@@ -27,7 +27,7 @@ When you log into a login node, you will see your disk usage in your Home and Ep
  
    Home       Data:  52GB of 1.00TB (5%)
               Files: 255k of 10.00M (3%)
-   Ephemeral  Data:  1GB of 109.95TB (0%)
+   Ephemeral  Data:  1GB of 10.00TB (0%)
               Files: 0k of 20.97M (0%)
 ```
 
@@ -58,4 +58,4 @@ Go to "Your Project Allocations" on the self-service website, expand the project
 
 ### HPC users personal space ($HOME)
 
-We don't, as a rule, permit increases of quotas for user home space. For **temporary** large usage of data, we expect users to use the Ephemeral space, for longer term usage, users should apply for an RDS project space.
+We don't, as a rule, permit increases of quotas for user home space. For **temporary** large usage of data while running jobs, we expect users to use the [Ephemeral space](../../hpc/getting-started/data-management-on-hpc.md#ephemeral-directory), for longer term usage, users should apply for an RDS project space.
