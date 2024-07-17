@@ -24,11 +24,11 @@ CX2 was the HPC cluster with a fast interconnect (Infiniband) designed for large
 
 ## HX1
 
-HX1 is currently in pre-production, further details can be found on the HX1 Cluster page.
+HX1 (or Hex) is our production "capability" HPC cluster. Further details including how to request access can be found on the [HX1 Cluster page](./pilot/hx1.md).
 
 * Compute nodes: Lenovo SD630v2 servers each with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 288 nodes; 18,432 compute cores; 512 GB RAM per node
-* GPU nodes: Lenovo servers each with 4 x NVIDIA A100 80 GB RAM GPUs; 2 x Intel Xeon Platinum 8360Y (Ice Lake) 2.40GHz 36-core processors; 1 TB RAM per node; 15 nodes; 60 GPUs in total
-* Interconnect: Mellanox ConnectX-6 HDR200 (200 Gbit/s) InfiniBand
+* GPU nodes: Lenovo servers each with 4 x NVidia A100 80 GB RAM GPUs; 2 x Intel Xeon Platinum 8360Y (Ice Lake) 2.40GHz 36-core processors; 1 TB RAM per node; 15 nodes; 60 GPUs in total
+* Interconnect: NVidia ConnectX-6 HDR200 (200 Gbit/s) InfiniBand
 * Storage: 2 PB IBM Spectrum Scale (GPFS) on Lenovo DSS-G Storage system. Approximately 300TB of additional solid stage storage
 
 **Total**: 303 compute nodes, 19,512 cores, 159 TB of RAM, 60 A100 GPUs
