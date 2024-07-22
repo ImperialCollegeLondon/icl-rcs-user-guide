@@ -14,7 +14,7 @@ Access to CX3 Phase 2 is controlled in the way that it is for the original CX3 -
 ## CX3 Phase 2 Specification
 
 * Compute Nodes
-    * 55 * Intel nodes: 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 512 GB RAM per node; 4 GB RAM per core.
+    * 53 * Intel nodes: 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 512 GB RAM per node; 4 GB RAM per core.
     * 36 * AMD Rome with 2x AMD EPYC 7742 64-Core Processor (Rome); 128 cores per node; 1TB per node; 8 GB Ram per core.
 * GPU Nodes
     * 9 x Intel nodes, 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 8 x [L40S](https://www.nvidia.com/en-us/data-center/l40s/) 48GB GDDR6 GPUs per node.
