@@ -48,6 +48,80 @@ The RDS is directly connected to the CX3 Phase 2 in the same way as it is for th
 
 Software installed on the cluster is accessible on CX3 Phase 2 using the module system, as it is for the original CX3. However, the old modules are no longer accessible, only the modules built using EasyBuild are immediately available, along with some binary packages such as Matlab. If you require software from the old module system, please raise a ticket so we can check it's compatibility with the new platform.
 
+### Python and Conda Environments
+It is possible to use Conda environments created using the old anaconda3/personal module however the loading menthod is a little different. Load conda with
+
+```console
+eval "$(~/anaconda3/bin/conda shell.bash hook)"
+```
+
+From then on you can load your conda environments as before, so in a job you would have something like,
+
+```console
+eval "$(~/anaconda3/bin/conda shell.bash hook)"
+source activate tf2_env
+```
+
+where tf2_env is an example of an environment you created with the anaconda3/personal module on the old system. This system works for old environments but when creating new conda environments we recommend installing Miniconda following the instructions below.
+
+#### Miniconda
+
+[Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a minimal installer for conda and only provides those packages needed for setting up your conda environments. It is very quick to install and doesn't provide extra packages from Anaconda that you don't necessarily need. The following instructions are based on those found on the [Miniconda installation page](https://docs.conda.io/en/latest/miniconda-install.html), but have been adapted for our systems.
+
+Create a directory for miniconda and download the latest installer file:
+
+```console
+[username@login-b ~]$ mkdir -p ~/miniconda3
+[username@login-b ~]$ curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 98.4M  100 98.4M    0     0   135M      0 --:--:-- --:--:-- --:--:--  135M
+```
+
+Then run the installer, setting `~/miniconda3` as the target installation directory:
+
+```console
+[username@login-b ~]$ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+PREFIX=/gpfs/home/username/miniconda3
+Unpacking payload ...
+ 
+Installing base environment...
+ 
+ 
+Downloading and Extracting Packages
+ 
+ 
+Downloading and Extracting Packages
+ 
+Preparing transaction: done
+Executing transaction: done
+installation finished.
+```
+You can then delete the installation script:
+
+```console
+[username@login-b ~]$ rm ~/miniconda3/miniconda.sh
+```
+
+Our recommended way of using your installed conda is to run the setup script for the bash shell:
+
+```console
+[username@login-b ~]$ eval "$(~/miniconda3/bin/conda shell.bash hook)"
+(base) [username@login-b ~]$ conda env list
+# conda environments:
+#
+base                     /rds/general/user/username/home/miniconda3
+[username@login-b ~]$ conda activate base
+(base) [username@login-b ~]$
+```
+
+If you are not using the base environment, we recommending you disable automatically loading this.
+
+```console
+(base) [username@login-b ~]$ conda config --set auto_activate_base false
+```
+
+Now whenever you load conda using the eval command only the conda commands will be loaded, Python won't change until you "source activate" the environment you need for your workflow. 
 ## Job Submission
 
 CX3 Phase 2 uses a new instance of PBS Pro for the management of jobs. This new version has some notable differences in job submission which are described below, please make sure you review this information before submitting jobs to Phase 2.
