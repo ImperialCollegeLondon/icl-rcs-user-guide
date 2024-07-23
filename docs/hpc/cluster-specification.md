@@ -22,7 +22,7 @@ CX3 is currently going through a mini-refresh called [Phase 2](./pilot/cx3-phase
 * Interconnect: 100GbE
 * Storage: Direct access to the Research Data Store
 
-**Total**: 408 nodes, 48,384 cores, 717.5 TB RAM, 56 L40S, 88 RTX 6000
+**Total**: 408 nodes, 48,384 cores, 717.5 TB RAM, 56 L40S, 88 Quadro (Turing) RTX 6000
 
 ## HX1
 
