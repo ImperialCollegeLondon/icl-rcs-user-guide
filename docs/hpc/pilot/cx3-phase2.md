@@ -111,8 +111,13 @@ Our recommended way of using your installed conda is to run the setup script for
 # conda environments:
 #
 base                     /rds/general/user/username/home/miniconda3
-[username@login-b ~]$ conda activate base
-(base) [username@login-b ~]$
+```
+
+Unfortunately due to changes in the Anaconda license users need to manually disable the *defaults* channel and instead use conda-forge. This shouldn't affect most users as most package developers focus on conda-forge anyway. To make this change please run the following:
+
+```console
+[username@login-b ~]$ conda config --remove channels defaults
+[username@login-b ~]$ conda config --add channels conda-forge
 ```
 
 If you are not using the base environment, we recommending you disable automatically loading this.
