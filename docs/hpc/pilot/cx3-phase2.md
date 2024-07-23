@@ -9,7 +9,7 @@ CX3 Phase 2 is a project to migrate the CX3 HPC system to a new server managemen
 The purpose of this document is to provide information on how to use CX Phase 2, particularly those differences as compared to the original CX3. Please remember that as this service is in a pre-production phase, services including compute nodes are expected to fail from time to time.
 
 ## Access
-Access to CX3 Phase 2 is controlled in the way that it is for the original CX3 - there are no additional access steps. More information on accessing the centraly provided HPC facility can be found at [get-access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/)
+Access to CX3 Phase 2 is controlled in the same way that it is for the original CX3 - there are no additional access steps. More information on accessing the centrally provided HPC facility can be found at [get-access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/)
 
 ## CX3 Phase 2 Specification
 
