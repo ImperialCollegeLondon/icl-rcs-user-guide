@@ -162,8 +162,8 @@ There are 3 multi-node queues, **capability24**, **capability48** or **general72
 #PBS -lselect=x:ncpus=2:mem=100gb
 #PBS -lwalltime=2:0:0
 ```
+Please request whole nodes when using the capablity queue. If you need to use more than 1 node your job is likely using all of at least 1 resource on the nodes and so you should be requesting the whole node. The simplest method is to request all the CPUs. 
 
-* 32 or less CPUs and 16 or less nodes while walltime is 48 hours or less then the job will go to **general72**
-* 32 or less CPUs and 16 or less nodes while walltime is 72 hours or less then the job will go to **general72**
+* 64 or less CPUs and 2 or more nodes while walltime is 72 hours or less is not an accepted job format.
 * 64 or 128 CPUs, 8 or less nodes while walltime is 48 hours or less then the job will go to **capability48**
 * 64 or 128 CPUs, 8 or less nodes while walltime is 24 hours or less then the job will go to **capability24**
