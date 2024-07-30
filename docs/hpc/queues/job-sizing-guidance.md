@@ -16,12 +16,10 @@ The following queues of jobs are supported:
 
 | Queue | Use Cases | Nodes per job | No. of cores per job<br>(ncpus) | Mem<br>(GB) | Walltime<br>(hrs) |
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
-| interactive | Small interactive test jobs and interactive debugging |4 |1 - 48 |1 - 100 | 0 - 8 |
 | short8 | Short running jobs | 1 | 1 - 256 | 1 - 920 | 0 - 8 |
 | [pqjupyter](#pqjupyter) | Queue for JupyterHub jobs* | 1 |1, 2, 4, 8 | 8, 16, 32, 64 | 8 |
 | [pqood](#pqood) | Queue for Open OnDemand (RStudio) jobs* |1 |1, 2, 4, 8 |8, 16, 32, 64 | 8 |
 | throughput72 | Low core jobs | 1 | 1- 8 | 1 - 100 | 9 - 72 |
-| general72 | General compute queue | 1 - 16 | 9 - 32 | 1 - 124 | 0 - 72*|
 | medium72 | Single-node jobs | 1 | 9 - 127 | 1 - 920 | 9 - 72* |
 | large72 | Whole node jobs | 1 | 128 - 256 |1 - 920 | 9 - 72* |
 | largemem72 | Large memory jobs* | 1 | 1 - 256 | 921 - 4000 | 0 - 72 |
@@ -41,7 +39,7 @@ This queue is used by Open OnDemand (RStudio) jobs. There is a limit of 1 concur
 
 ### interactive
 
-The interactive queue is useful for debugging code or testing interactively. When the job runs, you will be handed an interactive shell in the compute node.
+Unfortnatly it isn't possible to run interactive jobs on CX3 Phase 1. If you need an interactive session for debugging please use Jupyterhub/Open OnDemand or you can check out [cx3-phase2](../pilot/cx3-phase2.md). Interactive sessions can be useful for debugging code or testing interactively. When the job runs, you will be handed an interactive shell in the compute node.
 
 You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need.  e.g.:
 
@@ -49,16 +47,11 @@ You can run an interactive job with the "-I" qsub flag. You would use this flag 
 qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
 ```
 
-There are two limitations to starting/running interactive jobs:
+Again these can not be run from CX3 phase 1, this is a limitation of the PBS Pro job scheduler used on that system.
 
-* Interactive jobs can only be started from login-a.hpc.ic.ac.uk.
-* Interactive jobs cannot be run on cx3 compute nodes. This additionally means you may not be able to start an interactive job in your private queue (pq) if the queue has been moved to the cx3 compute nodes.
+### medium72
 
-These limitations are unfortunately in place due to the PBS Pro job scheduler and the networking across the RCS platforms.
-
-### general72 and medium72
-
-Job extensions will be allowed for these queues and for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
+Job extensions are allowed on the medium queue and for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
 
 ### gpu72
 
@@ -84,7 +77,7 @@ If your job doesn’t need these flags then we recommend not adding them as they
 | ---- | ----- | ----------- |
 | writabletmp | True/False | Some applications need to write to /tmp, (cx3 only) |
 | filesystem_type | gpfs/nfs | Target only nodes with given filesystem type |
-| cpu_type | rome/skylake/haswell/ivy/sandy | Target only nodes with given CPU type |
+| cpu_type | rome | Target only nodes with given CPU type |
 | gpu_type | RTX6000 | Select a specific type of GPU | 
 | interconnect | infiniband/ethernet | cx1/cx3 uses Ethernet while cx2 uses IB | 
 
@@ -95,14 +88,13 @@ Below is the breakdown of what options are supported in each queue:
 | Queue | CPU types | filesystem type | Interconnect | 
 | ----- | --------- | --------------- | ------------ |
 | interactive | Haswell/Ivy/Sandy | NFS | IB/Ethernet |
-| short8 | Haswell/Ivy/Rome | GPFS/NFS | IB/Ethernet |
-| throughput72 | Haswell/Ivy/Rome | GPFS/NFS | Ethernet |
+| short8 | Rome | GPFS | IB/Ethernet |
+| throughput72 | Rome | NFS | Ethernet |
 | medium72 | Rome | GPFS | Ethernet |
 | large72 |Rome | GPFS | Ethernet |
-| general72 | Haswell/Ivy/Sandy | NFS | Ethernet |
 | capability24 | Rome | GPFS | Ethernet |
 | capability48 | Rome | GPFS | Ethernet |
-| gpu72 | Rome/Skylake/Sandy | GPFS/NFS |Ethernet |
+| gpu72 | Rome | GPFS |Ethernet |
 
 #### Flag Examples
 
@@ -170,8 +162,8 @@ There are 3 multi-node queues, **capability24**, **capability48** or **general72
 #PBS -lselect=x:ncpus=2:mem=100gb
 #PBS -lwalltime=2:0:0
 ```
+Please request whole nodes when using the capablity queue. If you need to use more than 1 node your job is likely using all of at least 1 resource on the nodes and so you should be requesting the whole node. The simplest method is to request all the CPUs. 
 
-* 32 or less CPUs and 16 or less nodes while walltime is 48 hours or less then the job will go to **general72**
-* 32 or less CPUs and 16 or less nodes while walltime is 72 hours or less then the job will go to **general72**
+* 64 or less CPUs and 2 or more nodes while walltime is 72 hours or less is not an accepted job format.
 * 64 or 128 CPUs, 8 or less nodes while walltime is 48 hours or less then the job will go to **capability48**
 * 64 or 128 CPUs, 8 or less nodes while walltime is 24 hours or less then the job will go to **capability24**
