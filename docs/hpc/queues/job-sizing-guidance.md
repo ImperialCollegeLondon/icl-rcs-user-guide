@@ -47,7 +47,7 @@ You can run an interactive job with the "-I" qsub flag. You would use this flag 
 qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
 ```
 
-Again these can not be run from CX3 phase 1, this is a limitation of to the PBS Pro job scheduler used on that system.
+Again these can not be run from CX3 phase 1, this is a limitation of the PBS Pro job scheduler used on that system.
 
 ### medium72
 
