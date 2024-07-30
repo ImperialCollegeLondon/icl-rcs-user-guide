@@ -39,7 +39,7 @@ This queue is used by Open OnDemand (RStudio) jobs. There is a limit of 1 concur
 
 ### interactive
 
-Unfortnatly it isn't possible to run interactive jobs on CX3 Phase 1. If you need an interactive session for debugging please use Jupyterhub/Open OnDemand or you can check out [cx3-phase2](/pilot/cx3-phase2). Interactive sessions can be useful for debugging code or testing interactively. When the job runs, you will be handed an interactive shell in the compute node.
+Unfortnatly it isn't possible to run interactive jobs on CX3 Phase 1. If you need an interactive session for debugging please use Jupyterhub/Open OnDemand or you can check out [cx3-phase2](../pilot/cx3-phase2). Interactive sessions can be useful for debugging code or testing interactively. When the job runs, you will be handed an interactive shell in the compute node.
 
 You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need.  e.g.:
 
