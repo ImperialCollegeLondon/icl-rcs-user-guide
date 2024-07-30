@@ -83,7 +83,7 @@ If your job doesn’t need these flags then we recommend not adding them as they
 | ---- | ----- | ----------- |
 | writabletmp | True/False | Some applications need to write to /tmp, (cx3 only) |
 | filesystem_type | gpfs/nfs | Target only nodes with given filesystem type |
-| cpu_type | rome/skylake/haswell/ivy/sandy | Target only nodes with given CPU type |
+| cpu_type | rome | Target only nodes with given CPU type |
 | gpu_type | RTX6000 | Select a specific type of GPU | 
 | interconnect | infiniband/ethernet | cx1/cx3 uses Ethernet while cx2 uses IB | 
 
@@ -94,13 +94,13 @@ Below is the breakdown of what options are supported in each queue:
 | Queue | CPU types | filesystem type | Interconnect | 
 | ----- | --------- | --------------- | ------------ |
 | interactive | Haswell/Ivy/Sandy | NFS | IB/Ethernet |
-| short8 | Haswell/Ivy/Rome | GPFS/NFS | IB/Ethernet |
-| throughput72 | Haswell/Ivy/Rome | GPFS/NFS | Ethernet |
+| short8 | Rome | GPFS | IB/Ethernet |
+| throughput72 | Rome | NFS | Ethernet |
 | medium72 | Rome | GPFS | Ethernet |
 | large72 |Rome | GPFS | Ethernet |
 | capability24 | Rome | GPFS | Ethernet |
 | capability48 | Rome | GPFS | Ethernet |
-| gpu72 | Rome/Skylake/Sandy | GPFS/NFS |Ethernet |
+| gpu72 | Rome | GPFS |Ethernet |
 
 #### Flag Examples
 
