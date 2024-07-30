@@ -21,7 +21,6 @@ The following queues of jobs are supported:
 | [pqjupyter](#pqjupyter) | Queue for JupyterHub jobs* | 1 |1, 2, 4, 8 | 8, 16, 32, 64 | 8 |
 | [pqood](#pqood) | Queue for Open OnDemand (RStudio) jobs* |1 |1, 2, 4, 8 |8, 16, 32, 64 | 8 |
 | throughput72 | Low core jobs | 1 | 1- 8 | 1 - 100 | 9 - 72 |
-| general72 | General compute queue | 1 - 16 | 9 - 32 | 1 - 124 | 0 - 72*|
 | medium72 | Single-node jobs | 1 | 9 - 127 | 1 - 920 | 9 - 72* |
 | large72 | Whole node jobs | 1 | 128 - 256 |1 - 920 | 9 - 72* |
 | largemem72 | Large memory jobs* | 1 | 1 - 256 | 921 - 4000 | 0 - 72 |
@@ -56,9 +55,9 @@ There are two limitations to starting/running interactive jobs:
 
 These limitations are unfortunately in place due to the PBS Pro job scheduler and the networking across the RCS platforms.
 
-### general72 and medium72
+### medium72
 
-Job extensions will be allowed for these queues and for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
+Job extensions are allowed on the medium queue and for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
 
 ### gpu72
 
@@ -99,7 +98,6 @@ Below is the breakdown of what options are supported in each queue:
 | throughput72 | Haswell/Ivy/Rome | GPFS/NFS | Ethernet |
 | medium72 | Rome | GPFS | Ethernet |
 | large72 |Rome | GPFS | Ethernet |
-| general72 | Haswell/Ivy/Sandy | NFS | Ethernet |
 | capability24 | Rome | GPFS | Ethernet |
 | capability48 | Rome | GPFS | Ethernet |
 | gpu72 | Rome/Skylake/Sandy | GPFS/NFS |Ethernet |
