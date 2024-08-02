@@ -29,7 +29,7 @@ The registrations are now open for attending the workshop in-person. Please regi
 
 ## Venue
 
-Room number 139, Huxley Building, 
+Room number 139, Huxley Building,
 
 Imperial College London, South Kensington Campus, London, SW7 2AZ.
 
