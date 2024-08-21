@@ -17,7 +17,7 @@ The workshop timings are from 10:00 AM to 4:00 PM. Once we have some catering in
 
 1:30 PM  - 4:00 PM:  Part 2 - Hands-on lab exercises
 
-Here is the full schedule with catering details
+ The full schedule with catering details is given below:
 
 |S.NO  | Activity  | Time |
 |---|---|---|
