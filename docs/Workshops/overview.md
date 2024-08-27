@@ -1,6 +1,6 @@
 # Overview
 
-Research Computing Service (RCS) team at Imperial is trying to collaborate with Industrial partners/vendors to provide some training and workshops for the Imperial College community.
+The Research Computing Service (RCS) team at Imperial collaborates with industrial partners/vendors to provide training and workshops for the Imperial College community.
 
 We will be adding information about our upcoming workshops here. We kindly ask the users to explore this section and register for the workshops they are interested in.
 
