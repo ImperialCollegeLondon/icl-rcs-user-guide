@@ -119,6 +119,7 @@ nav:
       - Disk Space: rds/managing/disk-space.md
       - Recovering Deleted Files: rds/managing/recovering-deleted-files.md
   - Workshops and Courses:
+    - Overview: Workshops/overview.md
     - Intel One Api Workshops:
       - Overview: Workshops/Intel/overview.md
       - Presenter: Workshops/Intel/presenter.md
