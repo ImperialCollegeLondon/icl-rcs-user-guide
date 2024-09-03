@@ -250,11 +250,18 @@ The number in ncpus and mpiprocs is per-node so here we have a total of 128 mpi 
 
 #### GPU Jobs
 ##### GPU Specification
-| GPU Type | FP32 Single Precision<br>TFLOPS | FP64 Double Precision<br>TFLOPS | Memory<br>GB | Memory Bandwidth<br>GB/s | CUDA Compute Capability | GPU Architecture |
-| -------- | -------------------------- | -------------------------- | ------------ | ------------------------ | ----------------------- | ---------------- |
-| L40S PCIe 48 GB | 91.6 | N/A | 48GB GDDR6 with ECC | 	864 | 8.9| Ada Lovelace|
-| A100 PCIe 40GB | 19.5 | 9.7 | 40 GB GDDR6 |1,555 | 8.0 | Ampere |
-| A40 | 19.2 | 0.5 | 48 GB GDDR6  | 696 | 8.6 | Ampere | 
+
+|  | [L40S PCIe 48 GB](https://resources.nvidia.com/en-us-l40s/l40s-datasheet-28413) | [A100 PCIe 40GB](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet.pdf) | [A40](https://images.nvidia.com/content/Solutions/data-center/a40/nvidia-a40-datasheet.pdf) |
+| -------- | -------- | -------- | -------- | 
+| FP64 Double Precision (Tensor) TFLOPS | N/A | 19.5  | N/A |
+| TF32 Single Precision (Tensor) TFLOPS | 183  | 156  | 74.8 |
+| FP64 Double Precision TFLOPS | N/A | 9.7  | N/A |
+| FP32 Single Precision TFLOPS | 91.6 | 19.5 | 37.4 |
+| Memory | 48 GB GDDR6 | 40 GB GDDR6 | 48 GB GDDR6 |
+| Memory Bandwidth GB/s | 864 | 1,555 | 696 |
+| CUDA Compute Capability | 8.9 | 8.0 | 8.6 |
+| GPU Architecture | Ada Lovelace | Ampere | Ampere |
+
 
 ##### 4 cores 1 GPU 64GB RAM
 
