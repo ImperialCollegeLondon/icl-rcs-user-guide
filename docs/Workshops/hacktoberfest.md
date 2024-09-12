@@ -31,7 +31,7 @@ The agenda for both events is similar, but will be adapted depending on the atte
 
 ## Resources
 
-Here you have a couple of resources, depending on whether you are a open source software maintainer or a contributor:
+Here you have a couple of resources, depending on whether you are an open source software maintainer or a contributor:
 
 - [Maintainers](https://hacktoberfest.com/participation/#maintainers): How to prepare your project for contributions?
 - [Contributors](https://hacktoberfest.com/participation/#contributors): What you need to know to participate in Hacktoberfest?
