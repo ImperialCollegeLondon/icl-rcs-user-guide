@@ -16,6 +16,8 @@ Location: CHEM C660 - Active Learning Suite Teaching Room (6th Floor, Chemistry 
 - **Wednesday 23rd October 2024 09:30-16:30 - Book your place by the 15th of October!**
 Location: SALC 10 - Seminar and Learning Center (5th Floor, Sherfield Building, SK campus)
 
+You cannot join in person? Not a problem! **You can also join the event online** on both days. Just select the appropriate option in the registration form. 
+
 ## Agenda
 
 The agenda for both events is similar, but will be adapted depending on the attendees:
