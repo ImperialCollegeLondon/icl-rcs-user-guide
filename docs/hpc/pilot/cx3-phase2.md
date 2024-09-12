@@ -218,6 +218,9 @@ This will set `OMP_NUM_THREADS=2` in your job.
 ```
 
 #### MPI Jobs
+Multi-node MPI jobs running that use our `intel` modules follow a similar behaviour to that on HX1.
+You will need to specify the `mpirun -v6` flag in order to avoid bootstrap errors. 
+This is **not** necessary for single-node MPI jobs.
 ##### 1 compute node 64 mpi tasks per node 200GB RAM per node
 
 Note: You must specify both ncpus and mpiprocs. 
