@@ -129,4 +129,5 @@ nav:
     - Nvidia DLI courses:
       - Overview: Workshops/Nvidia/overview.md
       - Claim your free DLI course: Workshops/Nvidia/claim_free_course.md
+    - Hacktoberfest 2024: Workshops/hacktoberfest.md
 

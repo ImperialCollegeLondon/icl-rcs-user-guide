@@ -10,6 +10,8 @@ Click below for the relevant workshops:
 
 * [NVIDIA Workshops](./Nvidia/overview.md)
 
+* [Bring your own code - Hacktoberfest 2024!](hacktoberfest.md)
+
 We will also send out information about these workshops via our Newsletter. If you are not subscribed to our newsletter, please [subscribe to the RCS newsletter](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/newsletter-subscription/).
 
 Some of the workshops will be exclusive to **Imperial College members only**, and some will be open to the *public*. Please check the workshop details for more information.
