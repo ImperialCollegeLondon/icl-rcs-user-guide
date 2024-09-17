@@ -176,6 +176,15 @@ The following queues of jobs are supported:
 | capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 256 | 1 - 2048 | 0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 256 | 1 - 2048 | 24 - 48 |
 
+####jupyter
+This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
+
+####jupytergpu
+This queue has NVIDIA A40 (46GB) GPU's. Jupyterhub running off of CX3 Phase 2 can be accessed via [JupyterHub11](https://jupyterhub-11.rcs.ic.ac.uk/).
+There is a limit of 1 concurrent job per user across both jupyter queues.
+
+####gpu72
+There is an additional limit of 20 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs.
 
 ### Example Resource Requests for Jobs
 #### Basic Jobs
