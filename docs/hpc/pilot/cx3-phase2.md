@@ -185,15 +185,23 @@ The following queues of jobs are supported:
 | capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 256 | 1 - 2048 | 0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 256 | 1 - 2048 | 24 - 48 |
 
+\* Please see details for specific queues below as there may be additional restrictions or limitations.
+
 ####jupyter
 This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 ####jupytergpu
-This queue has NVIDIA A40 (46GB) GPU's. Jupyterhub running off of CX3 Phase 2 can be accessed via [JupyterHub11](https://jupyterhub-11.rcs.ic.ac.uk/).
-There is a limit of 1 concurrent job per user across both jupyter queues.
+This queue has NVIDIA A40 (46GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 ####gpu72
 There is an additional limit of 20 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs.
+
+####interactive
+You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
+```console
+qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
+```
+You should not request an interactive job longer than 8 hours, and should make sure to end your session once you are done as to not leave it idle.
 
 ### Example Resource Requests for Jobs
 #### Basic Jobs
