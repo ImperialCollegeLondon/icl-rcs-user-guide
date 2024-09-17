@@ -164,7 +164,9 @@ The following queues of jobs are supported:
 | Queue | Use Cases | Nodes per job | No. of cores per job<br>(ncpus) | Mem<br>(GB) | Walltime<br>(hrs) |
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
 | small24 | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
-| [pqjupyter](#pqjupyter) | Queue for JupyterHub jobs* | 1 |1, 2, 4, 8 | 8, 16, 32, 64 | 8 |
+| small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
+| [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
+| [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
 | medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
 | medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 400 | 24 - 72 |
 | large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
