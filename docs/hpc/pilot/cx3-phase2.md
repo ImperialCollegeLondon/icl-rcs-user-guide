@@ -169,9 +169,10 @@ The following queues of jobs are supported:
 | [pqjupyter](#pqjupyter) | Queue for JupyterHub jobs* | 1 |1, 2, 4, 8 | 8, 16, 32, 64 | 8 |
 | [pqood](#pqood) | Queue for Open OnDemand (RStudio) jobs* |1 |1, 2, 4, 8 |8, 16, 32, 64 | 8 |
 | throughput72 | Low core jobs | 1 | 1- 8 | 1 - 100 | 9 - 72 |
-| medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 1 - 24 |
-| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 400 | 1 - 72 |
-| large72 | Whole node jobs | 1 | 128 - 256 |1 - 920 | 9 - 72* |
+| medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
+| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 400 | 0 - 72 |
+| large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
+| large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
 | largemem72 | Large memory jobs* | 1 | 1 - 256 | 921 - 4000 | 0 - 72 |
 | gpu72 | Main queue for gpu job* | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
 | capability24 | Multi-node jobs 24h | 2 - 8 | 64 - 128  | 1 - 920 |     0 - 24 |
