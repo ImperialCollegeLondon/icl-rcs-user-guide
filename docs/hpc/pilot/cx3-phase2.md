@@ -164,6 +164,7 @@ The following queues of jobs are supported:
 | Queue | Use Cases | Nodes per job | No. of cores per job<br>(ncpus) | Mem<br>(GB) | Walltime<br>(hrs) |
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
 | short8 | Short running jobs | 1 | 1 - 256 | 1 - 920 | 0 - 8 |
+| small24 | Low core jobs | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
 | [pqjupyter](#pqjupyter) | Queue for JupyterHub jobs* | 1 |1, 2, 4, 8 | 8, 16, 32, 64 | 8 |
 | [pqood](#pqood) | Queue for Open OnDemand (RStudio) jobs* |1 |1, 2, 4, 8 |8, 16, 32, 64 | 8 |
 | throughput72 | Low core jobs | 1 | 1- 8 | 1 - 100 | 9 - 72 |
