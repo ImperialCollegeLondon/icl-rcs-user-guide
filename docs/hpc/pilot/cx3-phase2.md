@@ -127,6 +127,15 @@ If you are not using the base environment, we recommending you disable automatic
 ```
 
 Now whenever you load conda using the eval command only the conda commands will be loaded, Python won't change until you "source activate" the environment you need for your workflow. 
+
+## Applications
+### JupyterHub
+CX3 Phase 2 runs an updated and improved Jupyter service that better manages resource usage. Now, both memory and CPU limits are controlled and restricted to the amount of resource that you request when you start your job. Should you go over these limits, you will see a message that your kernel has been killed and that it will restart.
+
+The new service can be accessed here:<br>
+https://jupyterhub-11.rcs.ic.ac.uk/
+
+
 ## Job Submission
 
 CX3 Phase 2 uses a new instance of PBS Pro for the management of jobs. This new version has some notable differences in job submission which are described below, please make sure you review this information before submitting jobs to Phase 2.
