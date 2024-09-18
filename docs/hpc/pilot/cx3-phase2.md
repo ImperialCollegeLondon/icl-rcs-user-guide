@@ -127,6 +127,15 @@ If you are not using the base environment, we recommending you disable automatic
 ```
 
 Now whenever you load conda using the eval command only the conda commands will be loaded, Python won't change until you "source activate" the environment you need for your workflow. 
+
+## Applications
+### JupyterHub
+CX3 Phase 2 runs an updated and improved Jupyter service that better manages resource usage. Both memory and CPU limits are controlled and restricted to the amount of resource that you request when you start your job. Should you go over these limits, you will see a message that your kernel has been killed and that it will restart.
+
+The new service can be accessed here:<br>
+[https://jupyterhub-11.rcs.ic.ac.uk/](https://jupyterhub-11.rcs.ic.ac.uk/)
+
+
 ## Job Submission
 
 CX3 Phase 2 uses a new instance of PBS Pro for the management of jobs. This new version has some notable differences in job submission which are described below, please make sure you review this information before submitting jobs to Phase 2.
@@ -156,6 +165,43 @@ The following table provides an explanation of what each directive means in the 
 | `gpu_type` | This is the type of GPU to allocate to your job. For example gpu_type=a100 or gpu_type=a40. | Not set|
 
 The general advice it to set the resources to what is needed for a job but to not over specify. For example, don't set CPU type if your job can run fine or Rome or Icelake. This ensures your job starts as early as possible.
+
+### Job Sizing Guidance
+
+The following queues of jobs are supported:
+
+| Queue | Use Cases | Nodes per job | No. of cores per job<br>(ncpus) | Mem<br>(GB) | Walltime<br>(hrs) |
+| ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
+| small24 | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
+| small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
+| [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
+| [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
+| medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
+| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
+| large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
+| large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
+| largemem72 | Large memory jobs | 1 | 1 - 128 | 921 - 4000 | 0 - 72 |
+| gpu72 | Main queue for gpu jobs* | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
+| capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 256 | 1 - 2048 | 0 - 24 |
+| capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 256 | 1 - 2048 | 24 - 48 |
+
+\* Please see details for specific queues below as there may be additional restrictions or limitations.
+
+#### jupyter
+This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
+
+#### jupytergpu
+This queue has NVIDIA A40 (48GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
+
+#### gpu72
+There is an additional limit of 20 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs.
+
+#### interactive
+You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
+```console
+qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
+```
+You should not request an interactive job longer than 8 hours, and should make sure to end your session once you are done as to not leave it idle.
 
 ### Example Resource Requests for Jobs
 #### Basic Jobs
