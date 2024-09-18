@@ -133,7 +133,7 @@ Now whenever you load conda using the eval command only the conda commands will 
 CX3 Phase 2 runs an updated and improved Jupyter service that better manages resource usage. Both memory and CPU limits are controlled and restricted to the amount of resource that you request when you start your job. Should you go over these limits, you will see a message that your kernel has been killed and that it will restart.
 
 The new service can be accessed here:<br>
-https://jupyterhub-11.rcs.ic.ac.uk/
+[https://jupyterhub-11.rcs.ic.ac.uk/](https://jupyterhub-11.rcs.ic.ac.uk/)
 
 
 ## Job Submission
