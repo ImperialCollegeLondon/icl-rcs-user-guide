@@ -191,7 +191,7 @@ The following queues of jobs are supported:
 This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### jupytergpu
-This queue has NVIDIA A40 (46GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
+This queue has NVIDIA A40 (48GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### gpu72
 There is an additional limit of 20 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs.
