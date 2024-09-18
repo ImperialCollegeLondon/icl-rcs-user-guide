@@ -166,7 +166,7 @@ The following table provides an explanation of what each directive means in the 
 
 The general advice it to set the resources to what is needed for a job but to not over specify. For example, don't set CPU type if your job can run fine or Rome or Icelake. This ensures your job starts as early as possible.
 
-###Job Sizing Guidance
+### Job Sizing Guidance
 
 The following queues of jobs are supported:
 
@@ -187,16 +187,16 @@ The following queues of jobs are supported:
 
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
 
-####jupyter
+#### jupyter
 This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
 
-####jupytergpu
+#### jupytergpu
 This queue has NVIDIA A40 (46GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
-####gpu72
+#### gpu72
 There is an additional limit of 20 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs.
 
-####interactive
+#### interactive
 You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
 ```console
 qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
