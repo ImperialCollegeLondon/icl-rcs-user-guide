@@ -177,7 +177,7 @@ The following queues of jobs are supported:
 | [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
 | [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
 | medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
-| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 400 | 24 - 72 |
+| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
 | large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
 | large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
 | largemem72 | Large memory jobs | 1 | 1 - 128 | 921 - 4000 | 0 - 72 |
