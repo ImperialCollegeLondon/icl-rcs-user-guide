@@ -181,7 +181,7 @@ The following queues of jobs are supported:
 | large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
 | large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
 | largemem72 | Large memory jobs | 1 | 1 - 128 | 921 - 4000 | 0 - 72 |
-| gpu72 | Main queue for gpu job* | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
+| gpu72 | Main queue for gpu jobs* | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
 | capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 256 | 1 - 2048 | 0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 256 | 1 - 2048 | 24 - 48 |
 
