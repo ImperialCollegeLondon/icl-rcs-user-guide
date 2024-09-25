@@ -65,12 +65,12 @@ cd $PBS_O_WORKDIR
 python3 some_python_script.py
 ```
 
-## Anaconda Python
+## Conda and Python
 
-If you are already familiar with Anaconda Python, this may be your best option in terms of getting your environment (set of python modules) working on the HPC facility. To begin, following the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called py39 containing python 3.9, and would install numpy in that environment.
+If you are already familiar with package managers like Anaconda, this may be your best option in terms of getting your environment (set of python modules) working on the HPC facility. To begin, following the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called py39 containing python 3.9, and would install numpy in that environment.
 
 ```console
-module load anaconda3/personal
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
 conda create -n py39 python=3.9
 source activate py39
 (py39) conda search numpy
