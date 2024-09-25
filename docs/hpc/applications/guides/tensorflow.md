@@ -46,7 +46,7 @@ module av Tensor
 This will display all the currently installed versions of Tensorflow.
 
 ## Conda
-Whether using  CPU's or GPU's, you should install TensorFlow into a clean Anaconda environment. You will need to first setup up your own [Anaconda environment](./conda.md).
+Whether using  CPU's or GPU's, you should install TensorFlow into a clean conda environment. You will need to first setup up your own [conda environment](./conda.md).
 
 Please take care when installing Tensorflow with other packages. It isn't uncommon for Tensorflow to conflict with other packages so we generally recommend keeping your Tensorflow environment to a minimum. 
 
@@ -56,7 +56,6 @@ The example below installs both the CPU and GPU version of Tensorflow. If you do
 
 
 ```console
-module load anaconda3/personal
 conda create -n tf2_env -c conda-forge cudatoolkit=11.8 python=3.11
 source activate tf2_env
 conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
@@ -79,7 +78,7 @@ Once the installation has been completed a test job can be submitted to PBS.
  
 cd $PBS_O_WORKDIR
  
-module load anaconda3/personal
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
 source activate tf2_env
  
 ## Verify install:

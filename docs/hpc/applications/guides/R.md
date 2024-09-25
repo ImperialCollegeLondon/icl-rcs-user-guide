@@ -28,11 +28,11 @@ In order to use R on the login node, say for a quick testing, you can replace th
 
 Remember, that the login nodes are only there for pre- and post-processing of jobs, not for running extensive calculations, specially if they are heavy on the file system. If you need to run jobs interactively, please refer to the interactive job-requests to the queue.
 
-## Anaconda R
+## conda and R
 To begin, following the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called r413 containing R version 4.1.3.
 
 ```console
-module load anaconda3/personal
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
 conda create -n r413 r-base=4.1.3 -c conda-forge
 source activate r413
 ```
