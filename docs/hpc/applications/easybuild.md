@@ -2,15 +2,175 @@
 
 We are now using the software installation system called [EasyBuild](https://easybuild.io) to manage the installation of user software requests. Key advantages of using this software management tool are that we can now provide a method to manage production vs development versions of software applications, provide versions optimised for the different types of hardware available within RCS systems, and provide users themselves with the ability to manage re-deployable versions of their own software.
 
-Use of EasyBuild has many advantages including making it quicker and easier to install applications that are already part of the EasyBuild system. At present over 2900 applications are already supported through Easybuild and as part of the broader community using EasyBuild application installs have already been peer-reviewed and tested across machines at numerous other HPC sites.
+Use of EasyBuild has many advantages including making it quicker and easier to install applications that are already part of the EasyBuild system. At present over 3670 applications are already supported through Easybuild and as part of the broader community using EasyBuild application installs have already been peer-reviewed and tested across machines at numerous other HPC sites.
 
 ## EasyBuild Software Stacks
 Software is now presented via two stacks:
 
-* [Development](#using-the-development-software-stack)
 * [Production](#using-the-production-software-stack)
+* [Development](#using-the-development-software-stack)
 
 The development stack is for software which is currently not available directly from EasyBuild and is a generic build. It should work on the entire cluster, but no guarantee can be given here. This software stack might change on short notice due to required rebuilds. The production stack is for software which is already available as an EasyBuild package and which has been built to support specific CPU architectures thereby providing better performance than the generic builds. The following two sections provide examples of how to use the two software stacks.
+
+## Using the Production Software Stack
+
+### On the Login Nodes
+
+The production software stack is loaded per default on the login nodes and compute nodes. The following examples demonstrates how to use the production software stack on the login nodes (please remember when loading modules on the login node, it is forbidden to run computational workloads):
+
+Loading the production software stack on the login nodes and viewing available modules.
+
+```console
+[username@login ~]$ module avail
+------------------------------ /sw-eb/modules/all -------------------------------
+ANTLR/2.7.7-GCCcore-11.3.0-Java-11                       SciPy-bundle/2020.11-foss-2020b
+archspec/0.1.2-GCCcore-10.2.0                            SciPy-bundle/2021.05-foss-2021a
+archspec/0.1.2-GCCcore-10.3.0                            SciPy-bundle/2021.10-foss-2021b
+archspec/0.1.3-GCCcore-11.2.0                            SciPy-bundle/2022.05-foss-2022a
+archspec/0.1.4-GCCcore-11.3.0                            SCOTCH/6.0.9-gompi-2020a
+arpack-ng/3.8.0-foss-2021b                               SCOTCH/6.1.0-gompi-2020b
+astropy/5.1.1-foss-2022a                                 SCOTCH/6.1.0-gompi-2021a
+ATK/2.38.0-GCCcore-11.3.0                                SCOTCH/7.0.1-gompi-2022a
+Autoconf/2.69-GCCcore-8.3.0                              SCOTCH/7.0.1-iimpi-2022a
+Autoconf/2.69-GCCcore-9.3.0                              snappy/1.1.8-GCCcore-9.3.0 
+...
+```
+
+As evident, this is a rather long detailed list. It is often better just to have an **overview** of the modules which are available.
+
+```console
+[username@login ~]$ ml ov
+------------------------------ /sw-eb/modules/all -------------------------------
+AFNI                  (1)    GTK2            (1)
+ANTs                  (1)    GTK3            (4)
+ATK                   (4)    GTS             (1)
+Abseil                (2)    Gaussian        (1)
+Armadillo             (2)    Gdk-Pixbuf      (4)
+Arrow                 (4)    Ghostscript     (4)
+Autoconf              (8)    Graphviz        (1)
+...
+```
+
+Note the change from using `module` to using the Lmod specific `ml` command. Lmod makes searching for particular software easier as well:
+
+```console
+[username@login ~]$ ml spider groma
+----------------------
+  GROMACS:
+----------------------
+    Description:
+      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
+      equations of motion for systems with hundreds to millions of particles. This is a CPU
+      only build, containing both MPI and threadMPI binaries for both single and double
+      precision. It also contains the gmxapi extension for the single precision MPI build. 
+
+     Versions:
+        GROMACS/2021.3-foss-2021a-PLUMED-2.7.2
+        GROMACS/2021.3-foss-2021a
+        GROMACS/2021.5-foss-2021b-PLUMED-2.8.0
+        GROMACS/2021.5-foss-2021b
+        GROMACS/2023.1-foss-2022a
+        GROMACS/2023.3-foss-2023a
+        GROMACS/2024.1-foss-2023b
+```
+
+This conveniently shows all the installed modules starting with `groma` . Note it is case *insensitive* and even shorter stings can be searched. 
+
+More information about a specific module can be obtained too.
+
+```console
+ [username@login ~]$ ml spider GROMACS/2024.1-foss-2023b
+----------------------
+  GROMACS: GROMACS/2024.1-foss-2023b
+----------------------
+    Description:
+      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
+      equations of motion for systems with hundreds to millions of particles. This is a CPU
+      only build, containing both MPI and threadMPI binaries for both single and double
+      precision. It also contains the gmxapi extension for the single precision MPI build. 
+
+
+    You will need to load all module(s) on any one of the lines below before the 
+    "GROMACS/2024.1-foss-2023b" module is available to load.
+
+      tools/prod
+ 
+    Help:
+      
+      Description
+      ===========
+      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
+      Newtonian equations of motion for systems with hundreds to millions of
+      particles.
+      
+      This is a CPU only build, containing both MPI and threadMPI binaries
+      for both single and double precision.
+      
+      It also contains the gmxapi extension for the single precision MPI build.
+          
+      More information
+      ================
+       - Homepage: https://www.gromacs.org
+          
+      Included extensions
+      ===================
+      gmxapi-0.4.2
+
+```
+
+Again, note it is also listing the *extensions* which are included in the build. That is particularly interesting if and when you looking for say **Python**, **R** or other software packages which are using extensions. 
+
+Loading the production software stack on the login nodes and loading the GROMACS/2024.1-foss-2023b module.
+
+```console
+[username@login ~]$ ml GROMACS/2024.1-foss-2023b
+```
+
+Note that it does not print out which modules are loaded, per default `ml` *silently* loads the required modules. Also, only the module of the software you want to use is required, all dependencies are automagically resolved. Furthermore, the `-foss-2023b` is what is called a *toolchain*. You only can load software within the same toolchain hierarchy, you cannot mix-and-match. See [here](https://docs.easybuild.io/common-toolchains/#toolchains_diagram) for more information.
+
+To view a full list of currently loaded modules, you would do:
+
+```console
+[username@login ~]$ ml
+Currently Loaded Modules:
+  1) tools/prod                        12) libevent/2.1.12-GCCcore-13.2.0   23) ScaLAPACK/2.2.0-gompi-2023b-fb  34) cryptography/41.0.5-GCCcore-13.2.0
+  2) GCCcore/13.2.0                    13) UCX/1.15.0-GCCcore-13.2.0        24) foss/2023b                      35) virtualenv/20.24.6-GCCcore-13.2.0
+  3) zlib/1.2.13-GCCcore-13.2.0        14) libfabric/1.19.0-GCCcore-13.2.0  25) bzip2/1.0.8-GCCcore-13.2.0      36) Python-bundle-PyPI/2023.10-GCCcore-13.2.0
+  4) binutils/2.40-GCCcore-13.2.0      15) PMIx/4.2.6-GCCcore-13.2.0        26) ncurses/6.4-GCCcore-13.2.0      37) pybind11/2.11.1-GCCcore-13.2.0
+  5) GCC/13.2.0                        16) UCC/1.2.0-GCCcore-13.2.0         27) libreadline/8.2-GCCcore-13.2.0  38) SciPy-bundle/2023.11-gfbf-2023b
+  6) numactl/2.0.16-GCCcore-13.2.0     17) OpenMPI/4.1.6-GCC-13.2.0         28) Tcl/8.6.13-GCCcore-13.2.0       39) networkx/3.2.1-gfbf-2023b
+  7) XZ/5.4.4-GCCcore-13.2.0           18) OpenBLAS/0.3.24-GCC-13.2.0       29) SQLite/3.43.1-GCCcore-13.2.0    40) mpi4py/3.1.5-gompi-2023b
+  8) libxml2/2.11.5-GCCcore-13.2.0     19) FlexiBLAS/3.3.1-GCC-13.2.0       30) libffi/3.4.4-GCCcore-13.2.0     41) GROMACS/2024.1-foss-2023b
+  9) libpciaccess/0.17-GCCcore-13.2.0  20) FFTW/3.3.10-GCC-13.2.0           31) Python/3.11.5-GCCcore-13.2.0
+ 10) hwloc/2.9.2-GCCcore-13.2.0        21) gompi/2023b                      32) gfbf/2023b
+ 11) OpenSSL/1.1                       22) FFTW.MPI/3.3.10-gompi-2023b      33) cffi/1.15.1-GCCcore-13.2.0
+
+```
+
+
+
+### Within a Batch Job
+
+To use the production software stack within a batch job, you need to load the tools/prod module. We advice to purge all modules first and start with a clean slate. 
+
+For example to load GROMACS-2024.1 from the production software stack and use within a batch you, you could do the following:
+
+Using GROMACS-2024.1 from the production software stack in a batch job.
+
+```bash
+#PBS -lwalltime=01:00:00
+#PBS -lselect=1:ncpus=16:mem=16gb
+
+ml purge
+ml tools/prod
+ml GROMACS/2024.1-foss-2023b
+# optional
+ml
+
+mpirun gmx_mpi <your options>
+```
+
+This would purge any loaded modules, loads the production software stack, loads the requested program, in this case GROMACS-2024.1 and optional lists all loaded modules. The last `ml` is only to document which other modules are loaded which might be of interest if other software is used at the same time!
 
 ## Using the Development Software Stack
 
@@ -21,7 +181,7 @@ The EasyBuild development software stack may be accessed on the login nodes by f
 Loading the development software stack on the login nodes and viewing available modules.
 
 ```console
-[username@login ~]$ module load tools/dev
+[username@login ~]$ ml tools/dev
 [username@login ~]$ module avail
 -------------------------------------- /apps/sw-eb/modules/all ---------------------------------------
 ADIOS/1.13.1-foss-2020a-Python-3.8.2                     SciPy-bundle/2020.11-foss-2020b
@@ -38,26 +198,29 @@ archspec/0.1.4-GCCcore-11.3.0                            SCOTCH/7.0.1-iimpi-2022
 ...
 ```
 
-Loading the development software stack on the login nodes and loading the GROMACS/2021.5-foss-2021b module.
+Note: the `tools/prod` and `tools/dev` software stack are mutually exclusive, so you can only load one at the time!
+
+Loading the development software stack on the login nodes and loading the GROMACS/2024.1-foss-2023b module.
 
 ```console
-[username@login ~]$ module load tools/dev
-[username@login ~]$ module load GROMACS/2021.5-foss-2021b
-Loading GROMACS/2021.5-foss-2021b
-  Loading requirement: GCCcore/11.2.0 zlib/1.2.11-GCCcore-11.2.0 binutils/2.37-GCCcore-11.2.0
-    GCC/11.2.0 numactl/2.0.14-GCCcore-11.2.0 XZ/5.2.5-GCCcore-11.2.0 libxml2/2.9.10-GCCcore-11.2.0
-    libpciaccess/0.16-GCCcore-11.2.0 hwloc/2.5.0-GCCcore-11.2.0 OpenSSL/1.1
-    libevent/2.1.12-GCCcore-11.2.0 UCX/1.11.2-GCCcore-11.2.0 libfabric/1.13.2-GCCcore-11.2.0
-    PMIx/4.1.0-GCCcore-11.2.0 OpenMPI/4.1.1-GCC-11.2.0 OpenBLAS/0.3.18-GCC-11.2.0
-    FlexiBLAS/3.0.4-GCC-11.2.0 gompi/2021b FFTW/3.3.10-gompi-2021b ScaLAPACK/2.1.0-gompi-2021b-fb
-    foss/2021b bzip2/1.0.8-GCCcore-11.2.0 ncurses/6.2-GCCcore-11.2.0 libreadline/8.1-GCCcore-11.2.0
-    Tcl/8.6.11-GCCcore-11.2.0 SQLite/3.36-GCCcore-11.2.0 GMP/6.2.1-GCCcore-11.2.0
-    libffi/3.4.2-GCCcore-11.2.0 Python/3.9.6-GCCcore-11.2.0 pybind11/2.7.1-GCCcore-11.2.0
-    SciPy-bundle/2021.10-foss-2021b networkx/2.6.3-foss-2021b Loading GROMACS/2021.5-foss-2021b
+[username@login ~]$ ml tools/dev
+[username@login ~]$ ml GROMACS/2024.1-foss-2023b
+[username@login ~]$ ml 
+Currently Loaded Modules:
+  1) tools/dev                        12) libevent/2.1.12-GCCcore-13.2.0   23) ScaLAPACK/2.2.0-gompi-2023b-fb  34) cryptography/41.0.5-GCCcore-13.2.0
+  2) GCCcore/13.2.0                    13) UCX/1.15.0-GCCcore-13.2.0        24) foss/2023b                      35) virtualenv/20.24.6-GCCcore-13.2.0
+  3) zlib/1.2.13-GCCcore-13.2.0        14) libfabric/1.19.0-GCCcore-13.2.0  25) bzip2/1.0.8-GCCcore-13.2.0      36) Python-bundle-PyPI/2023.10-GCCcore-13.2.0
+  4) binutils/2.40-GCCcore-13.2.0      15) PMIx/4.2.6-GCCcore-13.2.0        26) ncurses/6.4-GCCcore-13.2.0      37) pybind11/2.11.1-GCCcore-13.2.0
+  5) GCC/13.2.0                        16) UCC/1.2.0-GCCcore-13.2.0         27) libreadline/8.2-GCCcore-13.2.0  38) SciPy-bundle/2023.11-gfbf-2023b
+  6) numactl/2.0.16-GCCcore-13.2.0     17) OpenMPI/4.1.6-GCC-13.2.0         28) Tcl/8.6.13-GCCcore-13.2.0       39) networkx/3.2.1-gfbf-2023b
+  7) XZ/5.4.4-GCCcore-13.2.0           18) OpenBLAS/0.3.24-GCC-13.2.0       29) SQLite/3.43.1-GCCcore-13.2.0    40) mpi4py/3.1.5-gompi-2023b
+  8) libxml2/2.11.5-GCCcore-13.2.0     19) FlexiBLAS/3.3.1-GCC-13.2.0       30) libffi/3.4.4-GCCcore-13.2.0     41) GROMACS/2024.1-foss-2023b
+  9) libpciaccess/0.17-GCCcore-13.2.0  20) FFTW/3.3.10-GCC-13.2.0           31) Python/3.11.5-GCCcore-13.2.0
+ 10) hwloc/2.9.2-GCCcore-13.2.0        21) gompi/2023b                      32) gfbf/2023b
+ 11) OpenSSL/1.1                       22) FFTW.MPI/3.3.10-gompi-2023b      33) cffi/1.15.1-GCCcore-13.2.0
 ```
 
-Note: As evident from the example above, apart from the "gateway" module "tools/dev" only the module for the software you want to use is required to be loaded. Any other module which is required will be loaded now automagically. This is different from the old system where you might need to load a compiler and MPI module. The new system that does not required this as the requirements for that software will be loaded automatically.
-Also, if you want to use two different programs at the same time, say A and B, you need to make sure you are using the same toolchain. In the example above, the toolchain would be foss and the version would be 2021b. Thus, you only could use B/1.2.3-foss-2021b but not B/1.2.3-foss-2022a together with GROMACS/2021.5-foss-2021b example from above!
+Note: As evident from the example above, apart from the "gateway" module`tools/dev` only the module for the software you want to use is required to be loaded. Any other module which is required will be loaded now automagically. It does not print out which modules are loaded, per default `ml` *silently* loads the required modules. Also, only the module of the software you want to use is required, all dependencies are automagically resolved. Furthermore, the `-foss-2023b` is what is called a *toolchain*. You only can load software within the same toolchain hierarchy, you cannot mix-and-match. See [here](https://docs.easybuild.io/common-toolchains/#toolchains_diagram) for more information.
 
 ### Within a Batch Job
 
@@ -65,85 +228,20 @@ Using the development software stack within a batch job is the same as for using
 
 Using GROMACS 2021.5 from the development software stack in a batch job.
 
-```console
-#PBS -lwalltime=01:00:00
-#PBS -lselect=1:ncpus=16:mem=16gb
-
-module purge
-module load tools/dev
-module load GROMACS/2021.5-foss-2021b
-
-mpirun gmx_mpi <your options>
-```
-
-## Using the Production Software Stack
-
-### On the Login Nodes
-
-The production software stack cannot be directly loaded on the login nodes. However, it IS possible to "view" which software has been installed and is therefore available on the compute nodes. To do this, you need to load the 'tools/prod-headnode' module and search for the software you require using the module commands (as described on the Applications page).  The following examples demonstrates how to use the production software stack on the login nodes (please remember when loading modules on the login node, it is forbidden to run computational workloads):
-
-Loading the production software stack on the login nodes and viewing available modules.
-
-```console
-[username@login ~]$ module load tools/prod-headnode
-[username@login ~]$ module avail
------------------------------- /rds/easybuild/haswell/apps/modules/all -------------------------------
-ANTLR/2.7.7-GCCcore-11.3.0-Java-11                       SciPy-bundle/2020.11-foss-2020b
-archspec/0.1.2-GCCcore-10.2.0                            SciPy-bundle/2021.05-foss-2021a
-archspec/0.1.2-GCCcore-10.3.0                            SciPy-bundle/2021.10-foss-2021b
-archspec/0.1.3-GCCcore-11.2.0                            SciPy-bundle/2022.05-foss-2022a
-archspec/0.1.4-GCCcore-11.3.0                            SCOTCH/6.0.9-gompi-2020a
-arpack-ng/3.8.0-foss-2021b                               SCOTCH/6.1.0-gompi-2020b
-astropy/5.1.1-foss-2022a                                 SCOTCH/6.1.0-gompi-2021a
-ATK/2.38.0-GCCcore-11.3.0                                SCOTCH/7.0.1-gompi-2022a
-Autoconf/2.69-GCCcore-8.3.0                              SCOTCH/7.0.1-iimpi-2022a
-Autoconf/2.69-GCCcore-9.3.0                              snappy/1.1.8-GCCcore-9.3.0 
-...
-```
-
-Loading the development software stack on the login nodes and loading the GROMACS/2021.5-foss-2021b module.
-
-```console
-[username@login ~]$ module load tools/prod-headnode
-[username@login ~]$ module load GROMACS/2021.5-foss-2021b
-Loading GROMACS/2021.5-foss-2021b
-  Loading requirement: GCCcore/11.2.0 zlib/1.2.11-GCCcore-11.2.0 binutils/2.37-GCCcore-11.2.0
-    GCC/11.2.0 numactl/2.0.14-GCCcore-11.2.0 XZ/5.2.5-GCCcore-11.2.0 libxml2/2.9.10-GCCcore-11.2.0
-    libpciaccess/0.16-GCCcore-11.2.0 hwloc/2.5.0-GCCcore-11.2.0 OpenSSL/1.1
-    libevent/2.1.12-GCCcore-11.2.0 UCX/1.11.2-GCCcore-11.2.0 libfabric/1.13.2-GCCcore-11.2.0
-    PMIx/4.1.0-GCCcore-11.2.0 OpenMPI/4.1.1-GCC-11.2.0 OpenBLAS/0.3.18-GCC-11.2.0
-    FlexiBLAS/3.0.4-GCC-11.2.0 gompi/2021b FFTW/3.3.10-gompi-2021b ScaLAPACK/2.1.0-gompi-2021b-fb
-    foss/2021b bzip2/1.0.8-GCCcore-11.2.0 ncurses/6.2-GCCcore-11.2.0 libreadline/8.1-GCCcore-11.2.0
-    Tcl/8.6.11-GCCcore-11.2.0 SQLite/3.36-GCCcore-11.2.0 GMP/6.2.1-GCCcore-11.2.0
-    libffi/3.4.2-GCCcore-11.2.0 Python/3.9.6-GCCcore-11.2.0 pybind11/2.7.1-GCCcore-11.2.0
-    SciPy-bundle/2021.10-foss-2021b networkx/2.6.3-foss-2021b Loading GROMACS/2021.5-foss-2021b
-```
-
-Note that while you can view the modules from the production software stack on the login node, you cannot actually run them. For example, after loading GROMACS from the production software stack, you will not be able to run the GROMACS gmx application.
-
-```console
-[username@login ~]$ gmx
--bash: gmx: command not found
-```
-
-### Within a Batch Job
-
-To use the production software stack within a batch job, you need to load the tools/prod module rather than the tools/prod-headnode module.
-
-For example to load GROMACS 2021.5 from the production software stack and use within a batch you, you could do the following:
-
-Using GROMACS 2021.5 from the production software stack in a batch job.
-
 ```bash
 #PBS -lwalltime=01:00:00
 #PBS -lselect=1:ncpus=16:mem=16gb
 
-module purge
-module load tools/prod
-module load GROMACS/2021.5-foss-2021b
+ml purge
+ml tools/dev
+ml GROMACS/2021.5-foss-2021b
+# optional
+ml
 
 mpirun gmx_mpi <your options>
 ```
+
+This would purge any loaded modules, loads the production software stack, loads the requested program, in this case GROMACS-2024.1 and optional lists all loaded modules. The last ml is only to document which other modules are loaded which might be of interest if other software is used at the same time!
 
 ## Using the GPU Software Stack
 
@@ -151,57 +249,13 @@ As part of the architecture specific installation, we are also building software
 
 ### On the login nodes
 
-The production GPU software stack cannot be directly loaded on the login nodes. However, it IS possible to "view" which software has been installed and is therefore available on the compute nodes. To do this, you need to load the tools/gpu-headnode module and search for the software you require using the module commands (as described on the [Applications](./index.md) page).  The following examples demonstrates how to use the production GPU software stack on the login nodes; please remember when loading modules on the login node, it is forbidden to run computational workloads:
+The production GPU software stack cannot be directly loaded on the login nodes. However, it IS possible to "view" which software has been installed and is therefore available on the compute nodes. This is done the same way as shown in the [Production](#using-the-production-software-stack) software stack section.
 
-Loading the production GPU software stack on the login nodes and viewing available modules.
-
-```console
-[username@login ~]$ module load tools/gpu-headnode
-[username@login ~]$ module avail
------------------------------- /rds/easybuild/skylake/apps/modules/all -------------------------------
-AlphaFold/2.0.0-fosscuda-2020b                            tqdm/4.61.2-GCCcore-10.3.0
-AlphaFold/2.1.2-foss-2021a-CUDA-11.3.1                    tqdm/4.62.3-GCCcore-11.2.0
-ant/1.10.9-Java-11                                        typing-extensions/3.7.4.3-GCCcore-10.2.0
-ant/1.10.11-Java-11                                       typing-extensions/3.10.0.0-GCCcore-10.3.0
-at-spi2-atk/2.38.0-GCCcore-10.3.0                         typing-extensions/3.10.0.2-GCCcore-11.2.0
-at-spi2-atk/2.38.0-GCCcore-11.2.0                         UCC/1.0.0-GCCcore-11.3.0
-at-spi2-core/2.40.2-GCCcore-10.3.0                        UCX-CUDA/1.10.0-GCCcore-10.3.0-CUDA-11.3.1
-at-spi2-core/2.40.3-GCCcore-11.2.0                        UCX-CUDA/1.11.2-GCCcore-11.2.0-CUDA-11.4.1
-ATK/2.36.0-GCCcore-10.3.0                                 UCX-CUDA/1.12.1-GCCcore-11.3.0-CUDA-11.7.0
-ATK/2.36.0-GCCcore-11.2.0                                 UCX/1.9.0-GCCcore-10.2.0
-Autoconf/2.69-GCCcore-7.3.0                               UCX/1.9.0-GCCcore-10.2.0-CUDA-11.1.1
-...
-```
-
-Loading the development software stack on the login nodes and loading the GROMACS/2021.5-foss-2021b module.
-
-```console
-[username@login ~]$ module load tools/gpu-headnode
-[username@login ~]$ module load GROMACS/2021.3-foss-2021a-CUDA-11.3.1
-Loading GROMACS/2021.3-foss-2021a-CUDA-11.3.1
-  Loading requirement: GCCcore/10.3.0 zlib/1.2.11-GCCcore-10.3.0 binutils/2.36.1-GCCcore-10.3.0
-    GCC/10.3.0 numactl/2.0.14-GCCcore-10.3.0 XZ/5.2.5-GCCcore-10.3.0 libxml2/2.9.10-GCCcore-10.3.0
-    libpciaccess/0.16-GCCcore-10.3.0 hwloc/2.4.1-GCCcore-10.3.0 OpenSSL/1.1
-    libevent/2.1.12-GCCcore-10.3.0 UCX/1.10.0-GCCcore-10.3.0 libfabric/1.12.1-GCCcore-10.3.0
-    PMIx/3.2.3-GCCcore-10.3.0 OpenMPI/4.1.1-GCC-10.3.0 OpenBLAS/0.3.15-GCC-10.3.0
-    FlexiBLAS/3.0.4-GCC-10.3.0 gompi/2021a FFTW/3.3.9-gompi-2021a ScaLAPACK/2.1.0-gompi-2021a-fb
-    foss/2021a bzip2/1.0.8-GCCcore-10.3.0 ncurses/6.2-GCCcore-10.3.0 libreadline/8.1-GCCcore-10.3.0
-    Tcl/8.6.11-GCCcore-10.3.0 SQLite/3.35.4-GCCcore-10.3.0 GMP/6.2.1-GCCcore-10.3.0
-    libffi/3.3-GCCcore-10.3.0 Python/3.9.5-GCCcore-10.3.0 pybind11/2.6.2-GCCcore-10.3.0
-    SciPy-bundle/2021.05-foss-2021a networkx/2.5.1-foss-2021a CUDA/11.3.1 GDRCopy/2.2-GCCcore-10.3.0
-    UCX-CUDA/1.10.0-GCCcore-10.3.0-CUDA-11.3.1
-```
-
-Note that while you can view the modules from the production software stack on the login node, you cannot actually run them. For example, after loading GROMACS from the production software stack, you will not be able to run the GROMACS gmx application.
-
-```console
-[username@login ~]$ gmx
--bash: gmx: command not found
-```
+Note: the login nodes do not have suitable GPUs to run computational work, thus any attempts to run `CUDA` software will fail.
 
 ### Within a batch job
 
-To use the production software stack within a batch job, you need to load the tools/prod module rather than the tools/gpu-headnode module.
+To use the production software stack within a batch job, the `tools/prod` module needs to be used
 
 For example to load GROMACS 2021.3 (with CUDA acceleration) from the production GPU software stack and use within a batch you, you could do the following:
 
@@ -211,11 +265,11 @@ Using production GPU modules within a batch script
 #PBS -lwalltime=01:00:00
 #PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=RTX6000
 
-module purge
-module load tools/prod
-module load GROMACS/2021.3-foss-2021a-CUDA-11.3.1
+ml purge
+ml tools/prod
+ml AlphaFold/2.3.4-foss-2022a-CUDA-11.8.0-ColabFold
 
-gmx <your options>
+<your options>
 ```
 
 More information on running GPU jobs may be found on our [GPU Jobs page](../queues/gpu-jobs.md)
