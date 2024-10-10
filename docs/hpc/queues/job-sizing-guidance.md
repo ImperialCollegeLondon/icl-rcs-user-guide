@@ -51,7 +51,7 @@ Again these can not be run from CX3 phase 1, this is a limitation of the PBS Pro
 
 ### medium72
 
-Job extensions are allowed on the medium queue and for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
+Job extensions are allowed on the medium queue only for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
 
 ### gpu72
 
