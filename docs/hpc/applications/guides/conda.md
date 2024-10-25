@@ -10,7 +10,7 @@ Using different conda environments for different projects/applications is highly
 
 
 ## Using conda
-If its the first time loading you will need to install miniforge. We have created a simple helper script which will install everything or update your installtion if you already have miniforce installed. To get started run the following on any login node:
+If its the first time loading you will need to install miniforge. We have created a simple helper script which will install everything or update your installtion if you already have miniforge installed. To get started run the following on any login node:
 
 ```
 module load miniforge/3
