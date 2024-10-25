@@ -48,7 +48,7 @@ For a full list of commands please see [conda commands](https://docs.conda.io/pr
 
 ## Anaconda3/personal
 
-Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employess buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving to using the open source product provided by the same team that manage those repos. Users can continue to use their original envirnments if they install miniforge but they will have to be activated using the full path. For example, if you installed [Tensorflow](./tensorflow.md) following the old documentation you can still activate that envornment with the following:
+Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employess buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving to using the open source product provided by the same team that manage those repos. Users can continue to use their original environments if they install miniforge but they will have to be activated using the full path. For example, if you installed [Tensorflow](./tensorflow.md) following the old documentation you can still activate that envornment with the following:
 
 ```
 eval "$(~/miniforge3/bin/conda shell.bash hook)"
