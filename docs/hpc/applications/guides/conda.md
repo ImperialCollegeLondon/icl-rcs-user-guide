@@ -25,7 +25,7 @@ eval "$(~/miniforge3/bin/conda shell.bash hook)"
 
 You should use this command any time you wish to load conda. This also loads [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) into your environment. Mamba is similar to conda but can be a lot quicker and is able to handle more complex installations. Which you use is mostly up to you and your workflow. 
 
-One last thing to note, we recommend creating a new envirnoment for each workflow and to never modify the base envirnoment as this can break the conda installation. The best way to prevent this is to disable the automatic loading of the base envirnment by running:
+One last thing to note, we recommend creating a new environment for each workflow and to never modify the base environment as this can break the conda installation. The best way to prevent this is to disable the automatic loading of the base environment by running:
 
 ```
 conda config --set auto_activate_base false
