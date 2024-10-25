@@ -2,7 +2,7 @@
 
 [TensorFlow](https://www.tensorflow.org/) is an open source software library for high-performance numerical computation that allows users to create sophisticated deep learning and machine learning applications. The flexible architecture of this library enables you to deploy computation to one or more CPUs or GPUs. TensorFlow also includes [TensorBoard](https://www.tensorflow.org/guide/summaries_and_tensorboard), a data visualization toolkit.
 
-There are a number of methods that can be used to install TensorFlow, such as using pip to install the wheels available on PyPI, or using Anaconda. 
+There are a number of methods that can be used to install TensorFlow, such as using pip to install the wheels available on PyPI, or using conda. 
 
 However, neither are installing the software optimised for the used computing hardware and such might lead to performance penalties. Furthermore, although Tensorflow also works in a CPU mode only, it is not recommended to do so at the performance is inferior compared with a GPU installation.
 
