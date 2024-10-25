@@ -55,4 +55,4 @@ eval "$(~/miniforge3/bin/conda shell.bash hook)"
 conda activate /rds/general/user/username/home/anaconda3/envs/tf2_env
 ```
 
-If you are still using the old Anaconda3/personal module can we please ask that you disable the "default" channel as this may require the University to purchace a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)
+If you are still using the old Anaconda3/personal module can we please ask that you disable the "default" channel as this may require the University to purchase a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)
