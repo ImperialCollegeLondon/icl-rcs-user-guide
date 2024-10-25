@@ -10,16 +10,17 @@ We recommend you setup a [Conda](./conda.md) environment when using RStudio; the
 
 ## Creating an Conda Environment
 
-We recommend you familiarise yourself with the use of Conda and R by going to the [R application page](./R.md). You will then need to prepare your Conda environment by first connecting to the login node using SSH (see the [Getting started](../../getting-started/index.md) guide for advice on doing this) and then install miniforge following the advice on [Conda](./conda.md). Once done you can start creating R environments for OOD.
+We recommend you familiarise yourself with the use of Conda and R by going to the [R application page](./R.md). You will then need to prepare your Conda environment by first connecting to the login node using SSH (see the [Getting started](../../getting-started/index.md) guide for advice on doing this).
 
-Here we load miniforge and then create an environment called "Renv" with R version 4.1.2:
+From there, load Anaconda and create a new environemnt.
 
 ```console
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
+module load anaconda3/personal
+anaconda-setup
 conda create -n Renv r-base=4.1.2 -c conda-forge
 ```
 
-The name after "-n" is a unique name for this environment. Once that completes, other packages can be installed via conda. This environment can then be activated with:
+The anaconda-setup command will only need to be run the first time you load anaconda3/personal. The name after "-n" is a unique name for this environment. Once that completes and other packages can be installed via Anaconda. This environment can then be activated with:
 
 ```console
 source activate Renv
@@ -71,7 +72,7 @@ At the top left of the screen select the tab called Terminal. This will drop the
 First the R environment needs to be loaded, which is done in a similar way to before.
 
 ```console
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
+module load anaconda3/personal
 source activate Renv
 ```
 
