@@ -18,7 +18,7 @@ The recommended way to work with python and R packages is via conda. This also e
 
 ### Python
 
-More information on how to use Python with conda can be found in the Python application guide.
+More information on how to use Python with conda can be found in the [Python application guide](./python.md).
 
 To use custom python modules within a Jupyter lab session:
 
