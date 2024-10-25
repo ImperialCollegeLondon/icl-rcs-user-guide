@@ -19,7 +19,7 @@ eval "$(~/miniforge3/bin/conda shell.bash hook)"
 conda create -n Renv r-base=4.1.2 -c conda-forge
 ```
 
-The name after "-n" is a unique name for this environment. Once that completes and other packages can be installed via conda. This environment can then be activated with:
+The name after "-n" is a unique name for this environment. Once that completes, other packages can be installed via conda. This environment can then be activated with:
 
 ```console
 source activate Renv
