@@ -15,7 +15,7 @@ Access to CX3 Phase 2 is controlled in the same way that it is for the original 
 
 * Compute Nodes
     * 53 * Intel nodes: 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 512 GB RAM per node; 4 GB RAM per core.
-    * 36 * AMD Rome with 2x AMD EPYC 7742 64-Core Processor (Rome); 128 cores per node; 1TB per node; 8 GB Ram per core.
+    * 92 * AMD Rome with 2x AMD EPYC 7742 64-Core Processor (Rome); 128 cores per node; 1TB per node; 8 GB Ram per core.
 * GPU Nodes
     * 7 x Intel nodes, 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 8 x [L40S](https://www.nvidia.com/en-us/data-center/l40s/) 48GB GDDR6 GPUs per node.
     * 2 x Intel nodes, 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 2 x [A100](https://www.nvidia.com/en-gb/data-center/a100/) 40GB GDDR6 GPUs per node.
@@ -49,7 +49,7 @@ The RDS is directly connected to the CX3 Phase 2 in the same way as it is for th
 Software installed on the cluster is accessible on CX3 Phase 2 using the module system, as it is for the original CX3. However, the old modules are no longer accessible, only the modules built using EasyBuild are immediately available, along with some binary packages such as Matlab. If you require software from the old module system, please raise a ticket so we can check it's compatibility with the new platform.
 
 ### Python and Conda Environments
-It is possible to use Conda environments created using the old anaconda3/personal module however the loading menthod is a little different. Load conda with
+If you are starting a new conda environment then we recommend using miniforge as we have found it to be faster and also avoids licensing issues. See [Using conda](../applications/guides/conda.md) for more details. It is possible to use Conda environments created using the old anaconda3/personal module however the loading menthod is a little different. To load conda run the following instead of the module load command,
 
 ```console
 eval "$(~/anaconda3/bin/conda shell.bash hook)"
@@ -64,69 +64,13 @@ source activate tf2_env
 
 where tf2_env is an example of an environment you created with the anaconda3/personal module on the old system. This system works for old environments but when creating new conda environments we recommend installing Miniconda following the instructions below.
 
-#### Miniconda
-
-[Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a minimal installer for conda and only provides those packages needed for setting up your conda environments. It is very quick to install and doesn't provide extra packages from Anaconda that you don't necessarily need. The following instructions are based on those found on the [Miniconda installation page](https://docs.conda.io/en/latest/miniconda-install.html), but have been adapted for our systems.
-
-Create a directory for miniconda and download the latest installer file:
-
-```console
-[username@login-b ~]$ mkdir -p ~/miniconda3
-[username@login-b ~]$ curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 98.4M  100 98.4M    0     0   135M      0 --:--:-- --:--:-- --:--:--  135M
-```
-
-Then run the installer, setting `~/miniconda3` as the target installation directory:
-
-```console
-[username@login-b ~]$ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-PREFIX=/gpfs/home/username/miniconda3
-Unpacking payload ...
- 
-Installing base environment...
- 
- 
-Downloading and Extracting Packages
- 
- 
-Downloading and Extracting Packages
- 
-Preparing transaction: done
-Executing transaction: done
-installation finished.
-```
-You can then delete the installation script:
-
-```console
-[username@login-b ~]$ rm ~/miniconda3/miniconda.sh
-```
-
-Our recommended way of using your installed conda is to run the setup script for the bash shell:
-
-```console
-[username@login-b ~]$ eval "$(~/miniconda3/bin/conda shell.bash hook)"
-(base) [username@login-b ~]$ conda env list
-# conda environments:
-#
-base                     /rds/general/user/username/home/miniconda3
-```
-
+#### Anaconda licensing 
 Unfortunately due to changes in the Anaconda license users need to manually disable the *defaults* channel and instead use conda-forge. This shouldn't affect most users as most package developers focus on conda-forge anyway. To make this change please run the following:
 
 ```console
 [username@login-b ~]$ conda config --remove channels defaults
 [username@login-b ~]$ conda config --add channels conda-forge
 ```
-
-If you are not using the base environment, we recommending you disable automatically loading this.
-
-```console
-(base) [username@login-b ~]$ conda config --set auto_activate_base false
-```
-
-Now whenever you load conda using the eval command only the conda commands will be loaded, Python won't change until you "source activate" the environment you need for your workflow. 
 
 ## Applications
 ### JupyterHub
@@ -170,7 +114,7 @@ The general advice it to set the resources to what is needed for a job but to no
 
 The following queues of jobs are supported:
 
-| Queue | Use Cases | Nodes per job | No. of cores per job<br>(ncpus) | Mem<br>(GB) | Walltime<br>(hrs) |
+| Queue | Use Cases | Nodes per job | No. of cores per node<br>(ncpus) | Mem per node<br>(GB) | Walltime<br>(hrs) |
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
 | small24 | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
 | small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
@@ -182,8 +126,8 @@ The following queues of jobs are supported:
 | large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
 | largemem72 | Large memory jobs | 1 | 1 - 128 | 921 - 4000 | 0 - 72 |
 | gpu72 | Main queue for gpu jobs* | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
-| capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 256 | 1 - 2048 | 0 - 24 |
-| capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 256 | 1 - 2048 | 24 - 48 |
+| capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
+| capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
 
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
 
@@ -232,15 +176,6 @@ You should not request an interactive job longer than 8 hours, and should make s
 This could be allocated to either an Intel Icelake or and AMD Rome compute node.
 
 #### Whole Node Jobs
-##### 64 cores 400GB RAM on Intel Icelake
-
-This would allocate a whole node of an Intel Icelake compute node.
-
-```bash
-#!/bin/bash
-#PBS -l select=1:ncpus=64:mem=400gb:cpu_type=icelake
-#PBS -l walltime=00:01:00
-```
 
 ##### 128 cores 900GB RAM on AMD Rome
 
@@ -249,6 +184,16 @@ This would allocate a whole node of an AMD Rome compute node.
 ```bash
 #!/bin/bash
 #PBS -l select=1:ncpus=128:mem=900gb:cpu_type=rome
+#PBS -l walltime=00:01:00
+```
+
+##### 64 cores 400GB RAM on Intel Icelake
+
+This would allocate a whole node of an Intel Icelake compute node.
+
+```bash
+#!/bin/bash
+#PBS -l select=1:ncpus=64:mem=400gb:cpu_type=icelake
 #PBS -l walltime=00:01:00
 ```
 

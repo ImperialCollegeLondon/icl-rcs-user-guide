@@ -3,12 +3,11 @@
 [PyTorch](https://pytorch.org/) enables fast, flexible experimentation and efficient production through a user-friendly front-end, distributed training, and ecosystem of tools and libraries.
 
 ## Conda
-Whether using  CPU's or GPU's, you should install PyTorch into a clean Anaconda environment. You will need to first setup up your own [Anaconda environment](./conda.md).
+Whether using  CPU's or GPU's, you should install PyTorch into a clean conda environment. You will need to first setup up your own [conda environment](./conda.md).
 
 Please take care when installing PyTorch with other packages. It isn't uncommon for PyTorch to conflict with other packages so we generally recommend keeping your PyTorch environment to a minimum. Also, for users who are interested in having both Pytorch and TensorFlow installed in the same environment, please replace the last line in the code block with the one provided in the TensorFlow and Pytorch section.
 
 ```console
-module load anaconda3/personal
 conda create -n pytorch_env -c conda-forge cudatoolkit=11.8 python=3.11
 conda activate pytorch_env
 conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
@@ -40,8 +39,8 @@ You should then be able to test this works in a job, for example:
 #PBS -lwalltime=1:0:0
   
 cd $PBS_O_WORKDIR
-  
-module load anaconda3/personal
+
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
 source activate  pytorch_env
   
 ## Verify install:

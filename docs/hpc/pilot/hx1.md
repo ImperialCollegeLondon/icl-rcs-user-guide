@@ -3,9 +3,9 @@
 HX1 (or Hex) is the new High Performance Computing Cluster provided by the Research Computing Services at Imperial College London. HX1 is designed for the following types of applications:
 
 * Multi-node parallel applications, typically using MPI to communicate between the compute nodes.
-* GPU accelerated applications such as those utilising CUDA.
+* GPU accelerated scientific applications that require double precision. 
 
-For single node parallel applications, we would please ask you to continue using the CX3 service. If you are in any doubt whether your job is suited to single node or multi-node, please contact the [RCS](../../support/index.md).
+For single node applications or GPU applications using single precision, we would please ask you to continue using the CX3 service. For AI work we recommend using [CX3 Phase 2](./cx3-phase2.md) as the L40s GPUs have a newer microarchitecture (Ada Lovelace) and higher FP32 so they tend to be faster fo AI/ML workloads. If you are in any doubt whether your job is suited to HX1, please contact the [RCS](../../support/index.md).
 
 ## Cluster Specification
 

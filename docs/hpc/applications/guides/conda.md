@@ -1,8 +1,6 @@
 # Conda
 
-[Conda](https://docs.conda.io/en/latest/) is a package, dependency and environment management system that is available via the Anaconda distribution. It is one of the ways for users to manage their own environments and supports a wide range of languages: Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN.
-
-Conda as a package manager helps you find and install packages. If you need a package that requires a different version of Python, you do not need to switch to a different environment manager, because conda is also an environment manager. With just a few commands, you can set up a totally separate environment to run that different version of Python, while continuing to run your usual version of Python in your normal environment.
+[Conda](https://docs.conda.io/en/latest/index.html) is a package, dependency and environment management system. There are a couple of different versions avaible but we recommend using [conda-forge](https://conda-forge.org/download/). It is one of the ways for users to manage their own environments and supports a wide range of languages: Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN.
 
 Using different conda environments for different projects/applications is highly recommended and certainly offers many advantages:
 
@@ -10,22 +8,28 @@ Using different conda environments for different projects/applications is highly
 * conda environments can track non-python dependencies; for example seamlessly managing dependencies and parallel versions of essential tools like LAPACK or OpenSSL
 * Rather than environments built on symlinks – which break the isolation of the virtualenv and can be flimsy at times for non-Python dependencies – conda-envs are true isolated environments within a single executable path.
 
-![Conda](img/conda.jpeg)
 
 ## Using conda
-On the login node run:
-
-```console
-module load anaconda3/personal
-```
-
-If its the first time loading you will need to run:
+If its the first time loading you will need to install miniforge. We have created a simple helper script which will install everything or update your installtion if you already have miniforge installed. To get started run the following on any login node:
 
 ```
-anaconda-setup
+module load miniforge/3
+miniforge-setup
 ```
 
-You only need to run `anaconda-setup` once for your user account but `module load anaconda3/personal` will need to be run everytime you want to use the Anaconda environment (including in jobs).
+You only need to run this once for your user account to install miniforge into your home directory. Once complete you can load conda,
+
+```
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
+```
+
+You should use this command any time you wish to load conda. This also loads [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) into your environment. Mamba is similar to conda but can be a lot quicker and is able to handle more complex installations. Which you use is mostly up to you and your workflow. 
+
+One last thing to note, we recommend creating a new environment for each workflow and to never modify the base environment as this can break the conda installation. The best way to prevent this is to disable the automatic loading of the base environment by running:
+
+```
+conda config --set auto_activate_base false
+```
 
 ## Conda Table of Commands
 
@@ -40,4 +44,15 @@ You only need to run `anaconda-setup` once for your user account but `module loa
 | Install a package included in Anaconda | conda install PACKAGENAME |
 | Remove unused packages and caches | conda clean |
 
-For a full list of commands please look at the [conda cheet sheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) provided by Anaconda.
+For a full list of commands please see [conda commands](https://docs.conda.io/projects/conda/en/stable/commands/index.html) provided by Anaconda.
+
+## Anaconda3/personal
+
+Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employess buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving to using the open source product provided by the same team that manage those repos. Users can continue to use their original environments if they install miniforge but they will have to be activated using the full path. For example, if you installed [Tensorflow](./tensorflow.md) following the old documentation you can still activate that envornment with the following:
+
+```
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
+conda activate /rds/general/user/username/home/anaconda3/envs/tf2_env
+```
+
+If you are still using the old Anaconda3/personal module can we please ask that you disable the "default" channel as this may require the University to purchase a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)

@@ -12,20 +12,20 @@ You must be registered with the HPC service in order to use the JupyterHub servi
 
 ## Load custom Packages/Modules in JupyterHub
 
-Whilst the default kernels available in Jupyter, whether Python or R, offer a certain number of base packages, users normally want to use their own custom packages within their programs. The good news is that Jupyter integrates perfectly with anaconda and its package and environment management systems.
+Whilst the default kernels available in Jupyter, whether Python or R, offer a certain number of base packages, users normally want to use their own custom packages within their programs. The good news is that Jupyter integrates perfectly with conda and its package and environment management systems.
 
-The recommended way to work with python and R packages is via anaconda. This also enables users to create segregated environments for different projects. More information on how to use conda environments can be found [here](./conda.md).
+The recommended way to work with python and R packages is via conda. This also enables users to create segregated environments for different projects. More information on how to use conda environments can be found [here](./conda.md).
 
 ### Python
 
-More information on how to use Python with Anaconda can be found in the Python application guide.
+More information on how to use Python with conda can be found in the [Python application guide](./python.md).
 
 To use custom python modules within a Jupyter lab session:
 
 **On login node run**
 
 * Load module
-<br>`module load anaconda3/personal`
+<br>`eval "$(~/miniforge3/bin/conda shell.bash hook)"`
 * Setup a new conda environment for this project. I named this environment "test1" as an example. * Note that I specify a couple of starting packages to be installed: ipykernel and python with a specific version.<br>
 `conda create -n test1 python=3.9 ipykernel jupyter_client`
 * Activate the environment:<br>
@@ -52,7 +52,7 @@ To use custom R libraries within a Jupyter lab session:
 **On login node run:**
 
 * Load module:<br>
-`module load anaconda3/personal`
+`eval "$(~/miniforge3/bin/conda shell.bash hook)"`
 * Setup a new conda environment for this project. I named this environment "ir413" as an example. * Note that I specify a couple of starting packages to be installed: r-irkernel and R with a specific version.<br>
 `conda create -n ir413 r-base=4.1.3 r-irkernel jupyter_client -c conda-forge`
 * Activate the environment:<br>
