@@ -275,12 +275,172 @@ ml AlphaFold/2.3.4-foss-2022a-CUDA-11.8.0-ColabFold
 More information on running GPU jobs may be found on our [GPU Jobs page](../queues/gpu-jobs.md)
 
 ## User Software Development
-In order to make it easier for those users who are either developing software, or need to quickly install some software to test, we are now offering a development module: 'tools/eb-dev'.
+### Using EasyBuild
+
+In order to make it easier for those users who are either developing software, or need to quickly install some software to test, we are now offering a development module: `tools/eb-dev`.
 
 This allows you to install software with EasyBuild in your own user space, so that you can use a locally modified version of software, or set up a reproducible build environment when working on your own software development projects. The latter will allow you to change your build environment without going through Anaconda or any other virtual environment.
-If you only want to switch compilers etc, you can make use of the already installed "buildenv" modules which will give you convenient access to various versions of both GCC and Intel compilers, next to MPI access.
+If you only want to switch compilers etc, you can make use of the already installed `buildenv` modules (see below) which will give you convenient access to various versions of both GCC and Intel compilers, next to MPI access.
 
 Note: EasyBuild is quite prescriptive, so if you are selecting a specific tool-chain you will get a specific version of the compiler, MPI etc. It is not a mix-and-match approach.
-Note: Remember we got a heterogeneous cluster regarding the various CPUs we are using (AMD, and Intel). Care needs to be taken when building software from source to make sure it will run on the cluster. Please come to one of our workshops if you are  doing software development seriously.
+Note: Remember we got a heterogeneous cluster (CX3-Phase2) regarding the various CPUs we are using (AMD, and Intel). Care needs to be taken when building software from source to make sure it will run on the cluster. Please come to one of our workshops if you are  doing software development seriously.
 
 We will be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the usual channels.
+
+#### Example:
+
+As an example, consider the installation of a particular `zlib` version. We are not interested in a particular toolchain as we are only want to use `zlib`. Here the *toolchain* would be called `SYSTEM` as that indicates the tools coming from the Operating System (OS) are being used. 
+The first step would be to load the `tools/eb-dev` module:
+
+```bash
+$ ml purge
+$ ml tools/prod
+$ ml tools/eb-dev
+```
+
+This will remove any already loaded modules, load the `tools/prod` default module again and then load the `tools/eb-dev` modules. This also will set up the environment for you which can be checked like this:
+
+```shell
+$ eb --show-config
+```
+
+The output should be something similar like this, with `USERNAME` being your username of course:
+
+```console
+#
+# Current EasyBuild configuration
+# (C: command line argument, D: default value, E: environment variable, F: configuration file)
+#
+accept-eula-for  (E) = Intel-oneAPI, NVHPC, NVIDIA-driver, CUDA
+buildpath        (E) = /dev/shm/USERNAME
+containerpath    (E) = /rds/general/user/USERNAME/home/apps/containers
+download-timeout (C) = 100.0
+installpath      (E) = /rds/general/user/USERNAME/home/apps
+optarch          (E) = {'Intel': 'axAVX2 -mavx2', 'GCC': 'march=haswell -mtune=generic'}
+packagepath      (E) = /rds/general/user/USERNAME/home/apps/packages
+parallel         (E) = 8
+prefix           (E) = /rds/general/user/USERNAME/home/apps
+repositorypath   (E) = /rds/general/user/USERNAME/home/apps/ebfiles_repo
+robot            (C) = /sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs
+robot-paths      (D) = /sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs
+sourcepath       (E) = /rds/general/user/USERNAME/home/apps/sources:/rds/easybuild/sources
+tmpdir           (E) = /dev/shm/USERNAME
+```
+
+bashWithout going into too much details, the software, the modules and any source codes which are downloaded are stored in `~/apps` and this folder will be created automatically the first time you use EasyBuild. The `optarch` is specific to `CX3-Phase2` where we have the already explained mix of AMD and Intel CPUs. If all works out well, both the `Intel` and `GCC` compiler should compile binary packages which should run on both, AMD and Intel CPUs. Usually that is working but sometimes there are hickups. 
+
+Having set up and checked our environment we want to install `zlib`. First step is to search for it using EasyBuild:
+
+```console
+$ eb -S zlib
+== found valid index for /sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs, so using it...
+CFGS1=/sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs
+[ ... ]
+ * $CFGS1/z/zlib/zlib-1.3.1-GCCcore-14.2.0.eb
+ * $CFGS1/z/zlib/zlib-1.3.1.eb
+```
+
+Your list will be much longer as all EasyConfig files which contain the string 'zlib' will be searched and displayed. We are only interested in the last two entries shown here. The `zlib-1.3.1-GCCcore-14.2.0.eb` would install `zlib` which is compiled using the `GCCcore-14.2.0` toolchain. That is not what we want. The `zlib-1.3.1.eb` does not have a toolchain version and thus automatically falls back to `SYSTEM`. 
+
+Installation is simple:
+
+```console
+$ eb --trace zlib-1.3.1.eb
+```
+
+The `--trace` will give you a bit more information. EasyBuild will first consult the installed module files to see if that particular version of `zlib` is already installed. If it is, it will not build it. If it is not, it will:
+
+- download the source package unless it can be found in the centrally managed source packages folder
+- compares the checksum of the downloaded file with the one stored in the EasyConfig file
+- unpack the source if required
+- installs the software as instructed in the EasyConfig file
+- tests the installation
+- writes the module file
+- finish off the installation by cleaning both the `buildpath` and `tmpdir` locations.
+
+In order to use the so installed software, you only need to load the `tools/eb-dev` module before loading the newly installed software package. 
+
+### Using the buildenv
+
+Sometimes software is not (yet) in EasyBuild, either because the software package is very specific, or it is something which is currently written. Compiling software is usually quite tricky, and big software projects often rely on external libraries and software. Managing this can be a nightmare as quickly you are in what is called *dependency hell*. 
+However, there is help around as well. The first thing you need to consider is, which compiler and which compiler version do I want to use. If the software is currently written, we would suggest to go for the latest installed compiler version. This way, you are writing software for a current compiler release and not for something where compilation later will be difficult or impossible as the compiler version might no longer be supported and thus cannot be downloaded. 
+
+#### Example:
+
+In order to see what is the latest installed compilers, simply search for the `buildenv` modules:
+
+```console
+$ ml spider buildenv
+```
+
+This will return the currently installed compilers, i.e.
+
+```console
+------------------------------------------------------------------------------------------
+  buildenv:
+------------------------------------------------------------------------------------------
+    Description:
+      This module sets a group of environment variables for compilers, linkers, maths
+      libraries, etc., that you can use to easily transition between toolchains when
+      building your software. To query the variables being set please use: module show
+      <this module name>
+
+     Versions:
+        buildenv/default-foss-2022a
+        buildenv/default-foss-2022b-CUDA-12.0.0
+        buildenv/default-foss-2022b
+        buildenv/default-foss-2023a-CUDA-12.1.1
+        buildenv/default-foss-2023a
+        buildenv/default-foss-2023b
+        buildenv/default-intel-2022a
+        buildenv/default-intel-2022b
+        buildenv/default-intel-2023a
+        buildenv/default-intel-2023b
+
+```
+
+Evidently, the latest version for the `foss` compiler is `buildenv/default-foss-2023b`. But what compiler is that actually? The quickest way is simply loading the module and see what else has been loaded:
+
+```console
+$ ml buildenv/default-foss-2023b
+§ ml
+```
+
+These modules are loaded per default:
+
+```console
+Currently Loaded Modules:
+  1) tools/prod                        14) libfabric/1.19.0-GCCcore-13.2.0
+  2) GCCcore/13.2.0                    15) PMIx/4.2.6-GCCcore-13.2.0
+  3) zlib/1.2.13-GCCcore-13.2.0        16) UCC/1.2.0-GCCcore-13.2.0
+  4) binutils/2.40-GCCcore-13.2.0      17) OpenMPI/4.1.6-GCC-13.2.0
+  5) GCC/13.2.0                        18) OpenBLAS/0.3.24-GCC-13.2.0
+  6) numactl/2.0.16-GCCcore-13.2.0     19) FlexiBLAS/3.3.1-GCC-13.2.0
+  7) XZ/5.4.4-GCCcore-13.2.0           20) FFTW/3.3.10-GCC-13.2.0
+  8) libxml2/2.11.5-GCCcore-13.2.0     21) gompi/2023b
+  9) libpciaccess/0.17-GCCcore-13.2.0  22) FFTW.MPI/3.3.10-gompi-2023b
+ 10) hwloc/2.9.2-GCCcore-13.2.0        23) ScaLAPACK/2.2.0-gompi-2023b-fb
+ 11) OpenSSL/1.1                       24) foss/2023b
+ 12) libevent/2.1.12-GCCcore-13.2.0    25) buildenv/default-foss-2023b
+```
+
+As evident, quite some modules are being loaded and thus the build environment has the following software packages loaded:
+
+- GCC
+- OpenSSL
+- OpenMPI
+- OpenBLAS/FlexiBLAS
+- FFTW
+- ScaLAPACK
+
+next to some auxiliary programs we don't look too much in here. This would be a very basic build environment. For the sake of this example. we require `cmake`. Thus, we are search for it and load the required module:
+
+```console
+$ ml spider cmake
+$ ml CMake/3.27.6-GCCcore-13.2.0
+```
+
+Note: The same version of `GCCcore` as the already loaded modules is required.
+
+If other libraries or software packages are required, they either can be loaded via the already installed modules, or can be build and installed in the user's home directory as explained above.
+
