@@ -74,7 +74,7 @@ Note the change from using `module` to using the Lmod specific `ml` command. Lmo
         GROMACS/2024.1-foss-2023b
 ```
 
-This conveniently shows all the installed modules starting with `groma` . Note it is case *insensitive* and even shorter stings can be searched. 
+This conveniently shows all the installed modules starting with `groma` . Note it is case *insensitive* and even shorter strings can be searched. 
 
 More information about a specific module can be obtained too.
 
