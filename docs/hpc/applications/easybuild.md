@@ -241,7 +241,7 @@ ml
 mpirun gmx_mpi <your options>
 ```
 
-This would purge any loaded modules, loads the production software stack, loads the requested program, in this case GROMACS-2024.1 and optional lists all loaded modules. The last ml is only to document which other modules are loaded which might be of interest if other software is used at the same time!
+This would purge any loaded modules, loads the development software stack, loads the requested program, in this case GROMACS-2024.1 and optional lists all loaded modules. The last ml is only to document which other modules are loaded which might be of interest if other software is used at the same time!
 
 ## Using the GPU Software Stack
 
