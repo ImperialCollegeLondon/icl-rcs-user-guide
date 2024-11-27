@@ -433,7 +433,7 @@ As evident, quite some modules are being loaded and thus the build environment h
 - FFTW
 - ScaLAPACK
 
-next to some auxiliary programs we don't look too much in here. This would be a very basic build environment. For the sake of this example. we require `cmake`. Thus, we are search for it and load the required module:
+next to some auxiliary programs we don't look too much in here. This would be a very basic build environment. For the sake of this example. we require `cmake`. Thus, we search for it and load the required module:
 
 ```console
 $ ml spider cmake
