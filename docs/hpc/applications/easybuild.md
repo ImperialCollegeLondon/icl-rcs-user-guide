@@ -327,7 +327,7 @@ sourcepath       (E) = /rds/general/user/USERNAME/home/apps/sources:/rds/easybui
 tmpdir           (E) = /dev/shm/USERNAME
 ```
 
-bashWithout going into too much details, the software, the modules and any source codes which are downloaded are stored in `~/apps` and this folder will be created automatically the first time you use EasyBuild. The `optarch` is specific to `CX3-Phase2` where we have the already explained mix of AMD and Intel CPUs. If all works out well, both the `Intel` and `GCC` compiler should compile binary packages which should run on both, AMD and Intel CPUs. Usually that is working but sometimes there are hickups. 
+Without going into too much details, the software, the modules and any source codes which are downloaded are stored in `~/apps` and this folder will be created automatically the first time you use EasyBuild. The `optarch` is specific to `CX3-Phase2` where we have the already explained mix of AMD and Intel CPUs. If all works out well, both the `Intel` and `GCC` compiler should compile binary packages which should run on both, AMD and Intel CPUs. Usually that is working but sometimes there are hickups. 
 
 Having set up and checked our environment we want to install `zlib`. First step is to search for it using EasyBuild:
 
