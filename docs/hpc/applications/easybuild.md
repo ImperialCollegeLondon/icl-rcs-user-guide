@@ -285,7 +285,7 @@ If you only want to switch compilers etc, you can make use of the already instal
 Note: EasyBuild is quite prescriptive, so if you are selecting a specific tool-chain you will get a specific version of the compiler, MPI etc. It is not a mix-and-match approach.
 Note: Remember we got a heterogeneous cluster (CX3-Phase2) regarding the various CPUs we are using (AMD, and Intel). Care needs to be taken when building software from source to make sure it will run on the cluster. Please come to one of our workshops if you are  doing software development seriously.
 
-We will be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the usual channels.
+We will be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the [usual channels](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/newsletter-subscription/).
 
 #### Example:
 
