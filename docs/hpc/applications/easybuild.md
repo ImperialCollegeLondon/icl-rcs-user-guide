@@ -358,7 +358,12 @@ The `--trace` will give you a bit more information. EasyBuild will first consult
 - writes the module file
 - finish off the installation by cleaning both the `buildpath` and `tmpdir` locations.
 
-In order to use the so installed software, you only need to load the `tools/eb-dev` module before loading the newly installed software package. 
+In order to use the so installed software, you only need to load the `tools/eb-dev` module before loading the newly installed software package:
+```console
+$ ml tools/eb-dev
+$ ml zlib/1.3.1
+```
+You can see the name of the module file from the output of the EasyBuild installation, or simply search for the software.
 
 ### Using the buildenv
 
