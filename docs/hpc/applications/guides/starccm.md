@@ -12,7 +12,8 @@ Example job script using the airfoil simulation.
 #PBS -lselect=1:ncpus=32:mem=100gb:writabletmp=true
 #PBS -N starccm_example
  
-module load star-ccm/16.04.012-R8
+module load tools/prod
+module load STAR-CCM+/19.02.009-r8
 export CDLMD_LICENSE_FILE=<Your license server?
  
 cd $PBS_O_WORKDIR
@@ -31,8 +32,9 @@ CX3 Phase 2 and HX1 are IPv6 only so a few changes need to be made to the job sc
 #PBS -lselect=1:ncpus=32:mem=100gb:writabletmp=true
 #PBS -N starccm_example
  
-module load star-ccm/16.04.012-R8
+module load module load STAR-CCM+/19.04.007-r8
 export CDLMD_LICENSE_FILE=<Your license server?
+
 export I_MPI_HYDRA_BOOTSTRAP="rsh"
 export I_MPI_HYDRA_BOOTSTRAP_EXEC="/opt/pbs/bin/pbs_tmrsh"
 export I_MPI_HYDRA_BRANCH_COUNT=0
