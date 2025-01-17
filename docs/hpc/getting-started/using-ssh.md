@@ -36,7 +36,7 @@ As of Window 10 (build 1809 and later) an OpenSSH client can be installed on Win
 
 ### Windows Subsystem for Linux
 
-Windows Subsystem for Linux or WSL, enables you to run a Linux environment (such as Ubuntu or AlmaLinux) on your computer unmodified. WSL is available on Windows 10 build 1607 and later and installing it on your computer will require administrator access.
+Windows Subsystem for Linux or WSL, enables you to run a Linux environment (such as Ubuntu or AlmaLinux) on your computer unmodified. WSL is available on Windows 10 build 1607 and later and installing it on your computer will require administrator access. Most of our clusters are IPv6 which requires a change in WSL settings before you will be able to connect. Press the start key and open "WSL Settings", then under "Networking" change the "Networking Mode" to "Mirrored" and restart your WSL instance. You should then have an IPv6 address and be able to connect to clusters like [CX3 Phase 2](../pilot/cx3-phase2.md). This can only be done on Windows 11 22H2, please ensure you have updated your OS before attempting to connect. 
 
 ### MobaXterm
 
