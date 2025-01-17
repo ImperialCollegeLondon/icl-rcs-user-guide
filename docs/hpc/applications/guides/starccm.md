@@ -32,7 +32,7 @@ CX3 Phase 2 and HX1 are IPv6 only so a few changes need to be made to the job sc
 #PBS -lselect=1:ncpus=32:mem=100gb:writabletmp=true
 #PBS -N starccm_example
  
-module load module load STAR-CCM+/19.04.007-r8
+module load STAR-CCM+/19.04.007-r8
 export CDLMD_LICENSE_FILE=<Your license server>
 
 export I_MPI_HYDRA_BOOTSTRAP="rsh"
