@@ -13,7 +13,7 @@ This tutorial gives a brief introduction to the command-line environment. Follow
 On Linux or Mac, open the Terminal application. For Windows, we recommend either Git For Windows or Windows Subsystem for Linux in order to complete this course:
 
 1. A relatively easy solution is to install Git for Windows ([https://gitforwindows.org](https://gitforwindows.org)) that does not require administrative privileges. This application comes with a command line utility.
-1. Enable Windows subsystem for Linux ([https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)); this requires an administrative privilege.
+1. Enable Windows subsystem for Linux ([https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)); this requires an administrative privilege.
 
 The shell comes in different flavours. Below is an example of the command line environment; this particular instance is a bash shell running on a MacBook Pro:
 
