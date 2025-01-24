@@ -106,7 +106,7 @@ The following table provides an explanation of what each directive means in the 
 | `cpu_type` | This is the type of cpu to allocate to your job. This is only required if you need your job to only run on the AMD Rome (cpu_type=rome) or the Intel Icelake (cpu_type=icelake) compute nodes. | Not set|
 | `place`	| Sets how the processes for be places on the nodes. The default is "free" which puts them where-ever there is space |free|
 | `ngpus`	| This is the number of GPU devices to allocate to your job. | 0|
-| `gpu_type` | This is the type of GPU to allocate to your job. For example gpu_type=a100 or gpu_type=a40. | Not set|
+| `gpu_type` | This is the type of GPU to allocate to your job. For example gpu_type=A100 or gpu_type=L40S. | Not set|
 
 The general advice it to set the resources to what is needed for a job but to not over specify. For example, don't set CPU type if your job can run fine or Rome or Icelake. This ensures your job starts as early as possible.
 
@@ -124,15 +124,15 @@ The following queues of jobs are supported:
 | medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
 | large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
 | large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
-| largemem72 | Large memory jobs | 1 | 1 - 128 | 921 - 4000 | 0 - 72 |
-| gpu72 | Main queue for gpu jobs* | 1 | 1 - 128 | 1 - 920 | 0 - 72 |
+| ~~largemem72~~ | ~~Large memory jobs~~ | ~~1~~ | ~~1 - 128~~ | ~~921 - 4000~~ | ~~0 - 72~~ |
+| gpu72 | Main queue for gpu jobs* | 1 | 1 - 64 | 1 - 920 | 0 - 72 |
 | capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
 
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
 
 #### jupyter
-This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
+This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### jupytergpu
 This queue has NVIDIA A40 (48GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
@@ -243,6 +243,8 @@ The number in ncpus and mpiprocs is per-node so here we have a total of 128 mpi 
 ```
 
 #### GPU Jobs
+
+Note that the GPU nodes have less CPUs than the standard compute nodes. Also while all GPU types are given here, the A40 cards can only be used on [Jupyterhub](https://jupyterhub-11.rcs.ic.ac.uk/).
 ##### GPU Specification
 
 |  | [L40S PCIe 48 GB](https://resources.nvidia.com/en-us-l40s/l40s-datasheet-28413) | [A100 PCIe 40GB](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet.pdf) | [A40](https://images.nvidia.com/content/Solutions/data-center/a40/nvidia-a40-datasheet.pdf) |
