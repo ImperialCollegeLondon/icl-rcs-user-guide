@@ -340,6 +340,22 @@ The following table provides an explanation of what each directive means in the 
 | `mem` | This is the amount of memory to allocate to the job per compute node. | 
 | `place` | Sets how the processes for be places on the nodes. The default is "free" which puts them where ever there is space |
 
+### Job Sizing Guidance
+
+The following queues of jobs are supported:
+
+| Queue | Use Cases | Nodes per job | No. of cores per node<br>(ncpus) | Mem per node<br>(GB) | Walltime<br>(hrs) |
+| ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
+| small24 | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
+| small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
+| medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
+| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
+| capability24 | Multi-node jobs 24h | 2 - 32 | 1 - 64 | 1 - 450 | 0 - 24 |
+| capability48 | Multi-node jobs 48h | 2 - 32 | 1 - 64 | 1 - 450 | 24 - 48 |
+| a100 | Main queue for gpu jobs* | 1 | 1 - 72 | 1 - 920 | 0 - 72 |
+
+\* Please see details for specific queues below as there may be additional restrictions or limitations.
+
 ### Example PBS Jobs
 #### MPI Jobs
 
