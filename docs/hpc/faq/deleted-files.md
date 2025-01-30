@@ -17,7 +17,7 @@ $ cd /rds/general/user/lragta/home/Usr_query
 2 Change to the .snapshots directory (where we keep the files from the last 2 weeks).
 
 ```console
-$ cd /rds/general/user/lragta/home/Usr_query
+$ cd /rds/general/user/lragta/home/Usr_query/.snapshots
 ```
 
 3 Type ls and you will see folders named with dates corresponding to last 2  weeks.
