@@ -86,7 +86,7 @@ The [cx3-phase2](../pilot/cx3-phase2.md) facility has an updated set of flags/di
 #PBS -lwalltime=20:0:0
 ```
 
-A job with more than 8 CPUs, more than 8 hours walltime and less than 920 GB of memory would be run in the **medium72** queue. To access to the newer AMD Rome CPUs that is available on the medium queue, the cpu_type flag needs to be set to Rome.
+A job with more than 8 CPUs, more than 8 hours walltime and less than 920 GB of memory would be run in the **medium72** queue. 
 
 ```bash
 #PBS -lselect=1:ncpus=12:mem=50gb:cpu_type=rome
