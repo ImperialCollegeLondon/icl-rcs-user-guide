@@ -10,7 +10,7 @@ The recommended method for users to run their applications on the college HPC sy
 
 Where N is the number of nodes, and X and Y are the number of cpus and amount of memory per node (RAM). HH is the expected runtime of the job in hours.
 
-There is no need to specify a queue, simply define the job in terms of the resources it requires and the system will run it as soon as suitable resources become available.
+There is no need to specify a queue, simply define the job in terms of the resources it requires and the system will run it as soon as suitable resources become available. When more than one queue matches a job specification, PBS will place the jobs in the first queue by alphabetical order.
 
 The following queues of jobs are supported:
 
@@ -39,15 +39,7 @@ This queue is used by Open OnDemand (RStudio) jobs. There is a limit of 1 concur
 
 ### interactive
 
-Unfortnatly it isn't possible to run interactive jobs on CX3 Phase 1. If you need an interactive session for debugging please use Jupyterhub/Open OnDemand or you can check out [cx3-phase2](../pilot/cx3-phase2.md). Interactive sessions can be useful for debugging code or testing interactively. When the job runs, you will be handed an interactive shell in the compute node.
-
-You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need.  e.g.:
-
-```console
-qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
-```
-
-Again these can not be run from CX3 phase 1, this is a limitation of the PBS Pro job scheduler used on that system.
+Unfortunatly it isn't possible to run interactive jobs on CX3 Phase 1. If you need an interactive session for debugging please use Jupyterhub/Open OnDemand or you can check out [cx3-phase2](../pilot/cx3-phase2.md).
 
 ### medium72
 
@@ -69,9 +61,13 @@ Please note there is a default limit of 50 concurrent jobs (queued or running) p
 
 ### Advanced PBS Flags
 
-There are some new flags that advanced users can use to give PBS more details about the node(s) your job needs to complete.
+PBS supports flags (also referred to as directives) in submission scripts that enable advanced users to give more details about the node(s) your job needs to run on. With the decommission of CX1 and CX2, and with CX3 Phase 1 consisting of mostly the same specification of compute node (AMD Rome, GPFS file system and ethernet interconnect) they now have limited usefulness on the current legacy HPC platform; the table below and examples are therefore provided here for reference purposes.
 
-If your job doesn’t need these flags then we recommend not adding them as they can increase queue times.
+The [cx3-phase2](../pilot/cx3-phase2.md) facility has an updated set of flags/directives which can be reviewed in the documentation.
+
+!!! warning
+
+    We generally advise PBS flags/directives not to be left in submission scripts unless they are actively being used as they can increase queue times.
 
 | Flag | Value | Description |
 | ---- | ----- | ----------- |
@@ -80,21 +76,6 @@ If your job doesn’t need these flags then we recommend not adding them as they
 | cpu_type | rome | Target only nodes with given CPU type |
 | gpu_type | RTX6000 | Select a specific type of GPU | 
 | interconnect | infiniband/ethernet | cx1/cx3 uses Ethernet while cx2 uses IB | 
-
-Some flags and options are only available on certain queues and so can be used to refine selections.
-
-Below is the breakdown of what options are supported in each queue:
-
-| Queue | CPU types | filesystem type | Interconnect | 
-| ----- | --------- | --------------- | ------------ |
-| interactive | Haswell/Ivy/Sandy | NFS | IB/Ethernet |
-| short8 | Rome | GPFS | IB/Ethernet |
-| throughput72 | Rome | NFS | Ethernet |
-| medium72 | Rome | GPFS | Ethernet |
-| large72 |Rome | GPFS | Ethernet |
-| capability24 | Rome | GPFS | Ethernet |
-| capability48 | Rome | GPFS | Ethernet |
-| gpu72 | Rome | GPFS |Ethernet |
 
 #### Flag Examples
 
@@ -105,7 +86,7 @@ Below is the breakdown of what options are supported in each queue:
 #PBS -lwalltime=20:0:0
 ```
 
-A job with more than 8 CPUs, more than 8 hours walltime and less than 100 GB of memory would be run in either **general72** or **medium72**. By default, PBS will put jobs in the first queue in alphabetical order so in this case that would be **general72**. To access to the newer AMD Rome CPUs that is available on the medium queue, the cpu_type flag needs to be set to Rome.
+A job with more than 8 CPUs, more than 8 hours walltime and less than 920 GB of memory would be run in the **medium72** queue. 
 
 ```bash
 #PBS -lselect=1:ncpus=12:mem=50gb:cpu_type=rome
@@ -121,12 +102,7 @@ Setting filesystem_type to GPFS would have the same effect as that is a distingu
 #PBS -lwalltime=20:0:0
 ```
 
-There are 3 multi-node queues, **capability24**, **capability48** or **general72**. Capability queues are currently running on AMD Rome with 100 GbE ethernet while we install our new HPC system. To target this system request either 64 or 128 CPUs and up to 8 nodes. The general queue uses older Intel CPUs and does not have access to GPFS. To target this queue request 32 CPUs or less. 
-
-```bash
-#PBS -lselect=2:ncpus=32:mem=50gb
-#PBS -lwalltime=20:0:0
-```
+There are 2 multi-node queues, **capability24** and **capability48**. Capability queues are currently running on AMD Rome with 100 GbE ethernet. To target this system, request either 64 or 128 CPUs and up to 8 nodes. If you are regularly submitting multi-node jobs, please consider applying for access to the [HX1 capability cluster](../pilot/hx1.md).
 
 ## Which queue will I end up in?
 
@@ -139,8 +115,8 @@ There are 3 multi-node queues, **capability24**, **capability48** or **general72
 
 * 8 CPUs or less and 8 hours walltime or less then the job will go to **short8**
 * 8 CPUs or less but walltime is more than 8 hours then the job will go to **throughput72**
-* more than 8 CPUs and more than 8 hours walltime then job will go to **general72** or **medium72** (see [Advanced PBS Flags](#advanced-pbs-flags) section above)
-* more than 8 CPUs but less than 128, more than 8 hours walltime and more than 32 CPUs then job will go to **medium72**
+* more than 8 CPUs and more than 8 hours walltime then job will go to **medium72** (see [Advanced PBS Flags](#advanced-pbs-flags) section above)
+* more than 8 CPUs but less than 128 and more than 8 hours walltime then job will go to **medium72**
 * more than 127, more than 8 hours walltime then job will go to **large72**
 
 ### Single node job example - Mem
