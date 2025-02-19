@@ -350,8 +350,10 @@ The following queues of jobs are supported:
 | small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
 | medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
 | medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
-| capability24 | Multi-node jobs 24h | 2 - 32 | 1 - 64 | 1 - 450 | 0 - 24 |
-| capability48 | Multi-node jobs 48h | 2 - 32 | 1 - 64 | 1 - 450 | 24 - 48 |
+| 4nodes24 | Two to four node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
+| 4nodes48 | Two to four node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
+| capability24 | Large multi-node jobs 24h | 5 - 32 | 1 - 64 | 1 - 450 | 0 - 24 |
+| capability48 | Large multi-node jobs 48h | 5 - 32 | 1 - 64 | 1 - 450 | 24 - 48 |
 | a100 | Main queue for gpu jobs* | 1 | 1 - 72 | 1 - 920 | 0 - 72 |
 
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
