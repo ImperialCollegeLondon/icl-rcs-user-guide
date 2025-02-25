@@ -56,3 +56,31 @@ conda activate /rds/general/user/username/home/anaconda3/envs/tf2_env
 ```
 
 If you are still using the old Anaconda3/personal module can we please ask that you disable the "default" channel as this may require the University to purchase a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)
+
+## How to disable the default channel
+
+Conda uses a list of channels to download and install packages. Some of the most common channels include `conda-forge`, `bioconda` etc. If you do not specify any channel, it uses the `defaults` channel by default.
+
+The list of channels is usually stored in a file called `.condarc`. `.condarc` is a configuration file used by Conda to store user-defined settings, such as:
+
+* Channels (where Conda looks for packages)
+* Proxy settings
+* Default environments
+* Custom paths
+* Other Conda behaviors
+
+You can see the list of all channels in your `.condarc` file by using the following command
+
+```bash
+conda config --show channels
+```
+
+For example, running in my home directory may give output like
+```bash
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+```
+
+As mentioned in the section [Anaconda3/personal](#anaconda3-personal)
