@@ -83,4 +83,47 @@ channels:
   - bioconda
 ```
 
-As mentioned in the section [Anaconda3/personal](#anaconda3-personal)
+As mentioned in the section [Anaconda3/personal](#anaconda3personal), anaconda recently updated its licensing terms and we cannot use the defaults channel. We need to remove this channel from all our `.condarc` files. For some users who may have installed their own version of conda, they may have the `.condarc` file in multiple locations. They can use the following command to see the location of such files.
+
+```bash
+# Input Command
+conda config --show-sources
+
+# Output of the above command
+==> /rds/general/user/lragta/home/.condarc <==
+auto_activate_base: False
+channel_priority: strict
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+
+```
+
+For most of the users, the file will be in their home directory. To remove the defaults channel, they can use the following command.
+
+```bash
+conda config --remove channels defaults
+```
+
+This will remove the `defaults` channel from your list of channels. To see if `defaults` channel was actually removed, please run this command again.
+
+```bash
+# Input command
+conda config --show channels
+
+# Output
+channels:
+  - conda-forge
+  - bioconda
+```
+
+You should not see the `defaults` channel now as shown above.
+
+If you would like to manually delete/edit the file, you can do so by using your favourite editor such as vim, nano etc. For example, you can use
+
+```bash
+vim /full_path_to_condarc_file
+```
+
+Please delete the `defaults` channel, save your file and exit. Please make sure that you do this for all your `.condarc` files.
