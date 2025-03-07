@@ -79,6 +79,12 @@ CX3 Phase 2 runs an updated and improved Jupyter service that better manages res
 The new service can be accessed here:<br>
 [https://jupyterhub-11.rcs.ic.ac.uk/](https://jupyterhub-11.rcs.ic.ac.uk/)
 
+####Kernels
+After some testing we have identified that at some point the behaviour of Jupyter kernels changed. As of now, kernels are stored in `.local` inside your `$HOME` directories meaning some environments that may have worked in the [previous jupyter](https://jupyter.rcs.imperial.ac.uk/) will not carry over to the [new one](https://jupyterhub-11.rcs.ic.ac.uk/). In order to solve this, you will need to re-run the following command **inside** of the Conda environment you wish to use on the new service:<br>
+`python -m ipykernel install --user --name python39_torch_env --display-name "Python3.9 (torch)"`
+
+You can of course change display-name to whatever you'd like, and the name should be the same as your Conda environment name.  
+
 
 ## Job Submission
 
