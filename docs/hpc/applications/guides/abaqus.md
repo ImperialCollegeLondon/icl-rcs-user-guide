@@ -37,3 +37,7 @@ abaqus jobname=newJobName oldjob=oldJobName
 ```
 
 Please see Abaqus documentation for more details
+
+## Analyse and visualise results
+
+Once you have your results we recomment using ABAQUS on your local machine instead of using X-forwarding to open a window from the cluster. You should be able to get ABAQUS 2024 (Teaching License) via SoftwareHub from which you can open the CAE.  After [mounting the RDS](../../../rds/access/) on local you can then open the .odb file as normal. 
