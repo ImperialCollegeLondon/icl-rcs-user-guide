@@ -346,17 +346,33 @@ The following queues of jobs are supported:
 
 | Queue | Use Cases | Nodes per job | No. of cores per node<br>(ncpus) | Mem per node<br>(GB) | Walltime<br>(hrs) |
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
-| small24 | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
-| small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
-| medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
-| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
+| [small24](#single-core-to-single-node-jobs) | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
+| [small72](#single-core-to-single-node-jobs) | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
+| [medium24](#single-core-to-single-node-jobs) | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
+| [medium72](#single-core-to-single-node-jobs) | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
 | 4nodes24 | Two to four node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
 | 4nodes48 | Two to four node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
-| capability24 | Large multi-node jobs 24h | 5 - 32 | 1 - 64 | 1 - 450 | 0 - 24 |
-| capability48 | Large multi-node jobs 48h | 5 - 32 | 1 - 64 | 1 - 450 | 24 - 48 |
-| a100 | Main queue for gpu jobs* | 1 | 1 - 72 | 1 - 920 | 0 - 72 |
+| [capability24](#capability24) | Large multi-node jobs 24h | 5 - 32 | 1 - 64 | 1 - 450 | 0 - 24 |
+| [capability48](#capability48) | Large multi-node jobs 48h | 5 - 32 | 1 - 64 | 1 - 450 | 24 - 48 |
+| [a100](#a100) | Main queue for gpu jobs* | 1 | 1 - 72 | 1 - 920 | 0 - 72 |
 
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
+
+#### single core to single node jobs
+
+Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 legacy](../getting-started/index.md) and [CX3 Phase 2 facilities](./cx3-phase2.md).
+
+#### capability24
+
+The maximum number of cpus allocated to a capability24 job is 2048.
+
+#### capability48
+
+The maximum number of cpus allocated to a capability48 job is 2048.
+
+#### a100
+
+There is an additional limit of 16 GPU's total per user on the a100 queue to allow for fair usage of the GPUs.
 
 ### Example PBS Jobs
 #### MPI Jobs
