@@ -372,7 +372,7 @@ The maximum number of cpus allocated to a capability48 job is 2048.
 
 #### a100
 
-There is an additional limit of 16 GPU's total per user on the a100 queue to allow for fair usage of the GPUs.
+There is an additional limit of 12 GPU's total per user on the a100 queue to allow for fair usage of the GPUs.
 
 ### Example PBS Jobs
 #### MPI Jobs
