@@ -99,7 +99,7 @@ Profiling is an essential technique in software development and optimization. It
 memory_profiler is a library specifically designed to profile memory usage in Python scripts. It allows you to track memory consumption line-by-line, helping you identify memory-intensive sections of your code.
 
 #### Installation
-You can install memory_profiler directory from pip. We recommend installing the library within a virtualenv or [conda environment](#anaconda-python). 
+You can install memory_profiler directory from pip. We recommend installing the library within a virtualenv or [conda environment](#conda-and-python). 
 
 ```console
 python3 -m pip install memory-profiler
