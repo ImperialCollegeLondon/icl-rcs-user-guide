@@ -123,7 +123,7 @@ The following table lists the specification of each node.
 * **Maximum nodes per job**: 8
 * **Maximum cores per job**: 1024
 
-We've set these limits because our own testing has showing that above 8 nodes, jobs can struggle with the internode communication due to the use of ethernet rather than infiniband. If your workflow is working but you need to use more cores per job, please consider applying for access to [HX1](../pilot/hx1.md).
+We've set these limits because our own testing has shown that above 8 nodes, jobs can struggle with the internode communication due to the use of ethernet rather than InfiniBand. If your workflow is working but you need to use more cores per job, please consider applying for access to [HX1](../pilot/hx1.md).
 
 #### Template Job Scripts
 Please make sure you read the [CX3 Best Practice section](#best-practice-with-the-cx3-capability-queue) before submitting any jobs.
