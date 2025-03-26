@@ -131,7 +131,7 @@ The following queues of jobs are supported:
 | large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
 | large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
 | <s>largemem72</s> | <s>Large memory jobs</s> | <s>1</s> | <s>1 - 128</s> | <s>921 - 4000</s> | <s>0 - 72</s> |
-| gpu72 | Main queue for gpu jobs* | 1 | 1 - 64 | 1 - 920 | 0 - 72 |
+| [gpu72](#gpu72) | Main queue for gpu jobs* | 1 | 1 - 64 | 1 - 920 | 0 - 72 |
 | capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
 
@@ -144,7 +144,7 @@ This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are ru
 This queue has NVIDIA A40 (48GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### gpu72
-There is an additional limit of 20 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs.
+There is an additional limit of 12 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs. See the section on [GPU Jobs](#gpu-jobs) for further information.
 
 #### interactive
 You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:

@@ -20,10 +20,10 @@ The following queues of jobs are supported:
 | [pqjupyter](#pqjupyter) | Queue for JupyterHub jobs* | 1 |1, 2, 4, 8 | 8, 16, 32, 64 | 8 |
 | [pqood](#pqood) | Queue for Open OnDemand (RStudio) jobs* |1 |1, 2, 4, 8 |8, 16, 32, 64 | 8 |
 | throughput72 | Low core jobs | 1 | 1- 8 | 1 - 100 | 9 - 72 |
-| medium72 | Single-node jobs | 1 | 9 - 127 | 1 - 920 | 9 - 72* |
-| large72 | Whole node jobs | 1 | 128 - 256 |1 - 920 | 9 - 72* |
-| largemem72 | Large memory jobs* | 1 | 1 - 256 | 921 - 4000 | 0 - 72 |
-| gpu72 | Main queue for gpu job* | 1 - 4 | 1 - 256 | 1 - 920 | 0 - 72 |
+| [medium72](#medium72) | Single-node jobs | 1 | 9 - 127 | 1 - 920 | 9 - 72* |
+| [large72](#large72) | Whole node jobs | 1 | 128 - 256 |1 - 920 | 9 - 72* |
+| [largemem72](#largemem72) | Large memory jobs* | 1 | 1 - 256 | 921 - 4000 | 0 - 72 |
+| [gpu72](#gpu72) | Main queue for gpu job* | 1 - 4 | 1 - 256 | 1 - 920 | 0 - 72 |
 | capability24 | Multi-node jobs 24h |2 - 8 | 64 - 128  | 1 - 920 |	0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 8 | 64 - 128 | 1 - 920 | 24 - 48 |
 
@@ -47,7 +47,7 @@ Job extensions are allowed on the medium queue only for jobs requesting the maxi
 
 ### gpu72
 
-There is an additional limit of 32 GPUs total per user on the gpu72 queue to allow for fair usage of the GPUs. Please see our GPU Jobs guide for how to run GPU jobs.
+There is an additional limit of 32 GPUs total per user on the gpu72 queue to allow for fair usage of the GPUs. Please see our [GPU Jobs guide](./gpu-jobs.md) for how to run GPU jobs.
 
 ### largemem72
 

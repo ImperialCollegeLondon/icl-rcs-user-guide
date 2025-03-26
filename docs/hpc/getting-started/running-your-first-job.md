@@ -124,8 +124,8 @@ qdel jobid
 
 Now that you know how to write and submit a job script, there are a number of sections of in the documentation which you may find useful:
 
-* Queueing System - from here you will find out more information on how the queuing system works and the different classifications of jobs. 
-* Job sizing guidance - this page will provide you advice on the resource requests you make to the job scheduler.
+* [Queueing System](../queues/index.md) - from here you will find out more information on how the queuing system works and the different classifications of jobs. 
+* [Job sizing guidance](../queues/job-sizing-guidance.md) - this page will provide you advice on the resource requests you make to the job scheduler.
 * [Best practice](../best-practice.md) - this page will provide you general best practice for running jobs on the HPC service
-* Applications - from this section you will find links to advice on how to run certain applications on the HPC facility.
-* Research Data Store - this section gives you details on using the Research Data Store.
+* [Applications](../applications/index.md) - from this section you will find links to advice on how to run certain applications on the HPC facility.
+* [Research Data Store](../../rds/index.md) - this section gives you details on using the Research Data Store.
