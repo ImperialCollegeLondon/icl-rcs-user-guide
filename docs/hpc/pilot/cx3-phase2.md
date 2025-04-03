@@ -19,7 +19,7 @@ Access to CX3 Phase 2 is controlled in the same way that it is for the original 
 * GPU Nodes
     * 7 x Intel nodes, 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 8 x [L40S](https://www.nvidia.com/en-us/data-center/l40s/) 48GB GDDR6 GPUs per node.
     * 2 x Intel nodes, 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 2 x [A100](https://www.nvidia.com/en-gb/data-center/a100/) 40GB GDDR6 GPUs per node.
-    * 1 x Intel node, with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 4 x [A40](https://www.nvidia.com/en-gb/data-center/a40/) 48GB GDDR6 GPUs per node.
+    * 2 x Intel node, with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 4 x [A40](https://www.nvidia.com/en-gb/data-center/a40/) 48GB GDDR6 GPUs per node.
 
 ## Connecting to CX3 Phase 2
 To connect to Phase 2 please use login.cx3.hpc.ic.ac.uk which will connect you to one of login nodes. We have both Intel and AMD login nodes so if you want to target a cpu type please check the table below.
