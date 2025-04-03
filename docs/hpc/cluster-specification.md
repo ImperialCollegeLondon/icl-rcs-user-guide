@@ -1,6 +1,6 @@
 # HPC Cluster Specification
 
-The RCS Platforms team currently run two HPC clusters, a general purpose cluster available for most workloads called CX3, and new cluster called HX1 which is designed for multi-node and larger GPU. In addition, we can provide access to the Jade2 national facility; please raise a ticket by following the guidance on the [Raise a ticket and contact us page](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/). The total facility size (as of August 2023) is: 661 compute nodes, 64,216 cores, 545 TB of RAM and 228 GPUs. Specific details on each cluster are provided below.
+The RCS Platforms team currently run two HPC clusters, a general purpose cluster available for most workloads called CX3, and new cluster called HX1 which is designed for multi-node and larger GPU. In addition, we can provide access to the Jade2 national facility; please raise a ticket by following the guidance on the [Raise a ticket and contact us page](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/). The total facility size (as of March 2025) is: 711 compute nodes, 67,896 cores, 876 TB of RAM and 216 GPUs. Specific details on each cluster are provided below.
 
 ## Where are the details for CX1?
 
@@ -14,11 +14,15 @@ CX2 was the HPC cluster with a fast interconnect (Infiniband) designed for large
 
 CX3 is currently going through a mini-refresh called [Phase 2](./pilot/cx3-phase2.md). The goal is for all the hardware listed below to be moved over to this newer OS and users are free to try this system out now. 
 
-* 325 compute nodes with 2x AMD EPYC 7742 (128 cores, 1TB RAM per node). Racks cx3-1 to cx3-7 and from cx3-12 to cx3-15
-* 53 computes nodes with 2x Intel Icelake Xeon Platinum 8358 (64 cores, 500GB RAM). Racks cx3-16 to cx3-19
-* 11 GPU nodes with 2x AMD EPYC 7742 (128 cores, 1TB RAM, 8 Quadro RTX 6000 per node). Rack cx3-11
-* 7 GPU nodes with 2x Intel Icelake Xeon Platinum 8358 (64 cores, 1TB RAM, 8 L40S 48 GB GPUs per node), Rack cx3-20
-* 12 large mem compute nodes with 2x AMD EPYC 7742 (128 cores, 4TB RAM per node). Rack cx3-8 and cx3-10-12
+* Compute Nodes
+    * 325 x AMD nodes, with 2x AMD EPYC 7742 (128 cores, 1TB RAM per node)
+    * 53 x Intel nodes, with 2x Intel Icelake Xeon Platinum 8358 (64 cores, 500GB RAM)
+    * 12 x AMD (Large Mem) nodes, with 2x AMD EPYC 7742 (128 cores, 4TB RAM per node)
+* GPU Nodes
+    * 11 x AMD nodes, with 2x AMD EPYC 7742 (128 cores, 1TB RAM, 8 Quadro RTX 6000 per node)
+    * 7 x Intel nodes, with 2x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1TB RAM, 8 L40S 48 GB GPUs per node
+    * 2 x Intel nodes, with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 2 x A100 40GB GDDR6 GPUs per node
+    * 2 x Intel nodes, with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 4 x A40 48GB GDDR6 GPUs per node
 * Interconnect: 100GbE
 * Storage: Direct access to the Research Data Store
 

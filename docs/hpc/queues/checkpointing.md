@@ -70,6 +70,7 @@ module load DMTCP/3.0.0-GCCcore-11.3.0
 # Set DMTCP environment variables
 export DMTCP_COORD_PORT=$(shuf -n 1 -i 20000-65535)
 export DMTCP_CHECKPOINT_INTERVAL=600
+export DMTCP_COORD_HOST="hostname"
 
 cd $PBS_O_WORKDIR
 
@@ -92,6 +93,7 @@ module load DMTCP/3.0.0-GCCcore-11.3.0
 # Set DMTCP environment variables
 export DMTCP_COORD_PORT=$(shuf -n 1 -i 20000-65535)
 export DMTCP_CHECKPOINT_INTERVAL=600
+export DMTCP_COORD_HOST="hostname"
 
 cd $PBS_O_WORKDIR
 
