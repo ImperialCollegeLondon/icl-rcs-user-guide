@@ -1,5 +1,9 @@
 # R
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 As of January 2023, we recommend you use the version of R available within the new high performant software which is build locally on the compute nodes using the [easybuild](../easybuild.md) software build and installation framework. The big advantage here is next to the ~1100 already installed R-modules, the software has been build against the used CPU architecture and thus should run with the maximum efficiency possible.
 
 ## EasyBuild R

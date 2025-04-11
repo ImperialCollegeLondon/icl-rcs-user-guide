@@ -1,5 +1,9 @@
 # Job Dependencies
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 PBS allows you to specify dependencies between two or more jobs. Dependencies are useful for a variety of tasks, such as:
 
 Specifying the order in which jobs in a set should execute

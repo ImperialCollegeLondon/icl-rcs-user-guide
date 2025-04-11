@@ -1,5 +1,9 @@
 # Paraview
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 !!! warning
 
     We believe these instructions do not work with the recommended remote access method as described [here](../../../remoteaccess.md). We are currently exploring options as to how Paraview can continue to be used remotely. 

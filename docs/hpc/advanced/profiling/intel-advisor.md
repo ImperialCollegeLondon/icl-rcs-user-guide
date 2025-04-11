@@ -1,5 +1,9 @@
 # Intel Advisor
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 Intel Advisor provides following tools to help ensure your Fortran, C, and C++ applications realize full performance potential on modern processors ([https://www.intel.com/content/www/us/en/developer/tools/oneapi/advisor.html#gs.1n6x99](https://www.intel.com/content/www/us/en/developer/tools/oneapi/advisor.html#gs.1n6x99)).
 
 * **Roofline Analysis**:- Tool to help identify whether various functions in your code are memory bound or compute bound. This can help you to identify if you are utilising the full potential of the available hardware or not. This can also be the starting point  to figure out if you have to change your algorithm to make it compute bound. For more details on roofline anlaysis, you can read a very good paper [https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RooflineVyNoYellow.pdf](https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RooflineVyNoYellow.pdf) or you can read an easier introduction [https://www.telesens.co/2018/07/26/understanding-roofline-charts/](https://www.telesens.co/2018/07/26/understanding-roofline-charts/).

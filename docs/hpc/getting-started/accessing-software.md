@@ -1,5 +1,9 @@
 # Accessing Software
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 A large number of software/applications are already installed on our systems and we use the "environment modules" system to enable users to load different applications and different versions of those applications into their environment.
 
 # Environment Modules

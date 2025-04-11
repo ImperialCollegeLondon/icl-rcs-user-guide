@@ -1,5 +1,9 @@
 # Data Management on HPC
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 As an HPC user you will have access several different storage spaces
 
 ## Storage Spaces on the RDS

@@ -1,5 +1,9 @@
 # CX3 Phase 2
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 !!! warning
 
     The content will continue to be updated inline with testing on the new platform.

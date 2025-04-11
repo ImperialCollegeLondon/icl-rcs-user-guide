@@ -1,5 +1,8 @@
-
 # Running your first job
+
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
 
 The Imperial HPC facility is a batch processing system. Rather than carrying out work directly on the command line, jobs are submitted to the queue of a work manager (or resource scheduler) where they are held until compute resource become free. A job is defined by a shell script that contains all of the commands to be run.
 

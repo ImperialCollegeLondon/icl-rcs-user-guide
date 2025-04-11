@@ -2,6 +2,10 @@
 
 !!! info
 
+    This page has not yet been rewritten for CX3 Phase 2.
+
+!!! info
+
     The following pages were written for the original CX3 (legacy) facility. If you are a new or returning user to Imperial's HPC facilities, we would strongly recommend that you use the CX3 Phase 2 facility instead - details on how to do so are available in the [CX3 Phase 2 Guide](../pilot/cx3-phase2.md). These pages will be updated in due course to reflect CX3 Phase 2 as being the primary facility.
 
 These following pages will help you get started on this HPC facility. From these pages you can learn:

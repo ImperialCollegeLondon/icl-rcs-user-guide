@@ -1,5 +1,9 @@
 # Using SSH
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 To access the HPC facility you would normally use a Secure Shell (or SSH) client on your computer to connect to the login nodes. You will need to be on the college network or connected to Unified Acecss in order to connect to the login nodes.
 
 ## Hostname for SSH

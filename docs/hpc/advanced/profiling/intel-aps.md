@@ -1,5 +1,9 @@
 # Intel Application Performance Snapshot (APS)
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 Intel VTune Profiler Application Performance Snapshot (APS) allows you to have a quick view into different aspects of compute intensive applications' performance, such as MPI and OpenMP usage, CPU utilization, memory access efficiency, vectorization, I/O, and memory footprint. Application Performance Snapshot displays key optimization areas and suggests specialized tools for tuning particular performance aspects, such as Intel VTune Profiler and Intel Advisor. The tool is designed to be used on large MPI workloads and can help analyze different scalability issues.
 
 

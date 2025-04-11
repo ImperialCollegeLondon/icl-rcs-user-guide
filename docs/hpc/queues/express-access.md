@@ -1,5 +1,9 @@
 # Express Access
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 Standard access to our systems is unmetered and free-at-the-point-of-use. If you find yourself requiring more than the standard service provides, for example to meet a specific deadline, you may pay for express access.
 
 The [Express Access self-service page](https://selfservice.rcs.imperial.ac.uk/express) page is only accessible if you are on the campus network or following the recommended Remote Access guidance.

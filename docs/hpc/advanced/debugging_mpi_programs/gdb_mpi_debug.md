@@ -1,5 +1,9 @@
 # What is GDB?
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 [GDB](https://sourceware.org/gdb/), or GNU Debugger, is a powerful command-line tool used for debugging programs written in various programming languages, primarily C and C++. It allows developers to inspect and manipulate the execution of their programs, aiding in the identification and resolution of bugs and errors. GDB provides a wide range of features for debugging, including:
 
 1. **Setting Breakpoints**: Developers can set breakpoints at specific lines of code, function calls, or memory addresses, allowing them to pause program execution at desired points and inspect the program's state.

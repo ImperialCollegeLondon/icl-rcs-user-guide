@@ -1,5 +1,9 @@
 # Debugging an Application
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 Debugging is an essential process in software development aimed at identifying and resolving errors, glitches, or unexpected behaviors in a program's code. It involves systematically investigating issues to pinpoint their root causes and rectify them, ensuring that the software operates as intended. Debugging can help you to identify various issues such as:-
 
 1. **Runtime errors**: These are errors that occur while the program is running. They are often caused by invalid input, incorrect usage of library functions, or memory corruption.

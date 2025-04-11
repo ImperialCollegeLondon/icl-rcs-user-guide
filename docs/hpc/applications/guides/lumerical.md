@@ -1,5 +1,9 @@
 # Lumerical
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 Lumerical is a suite of tools that can be used to model the optical, electrical and thermal effects of Photonic systems. Below is a general overview of getting started with Lumerical on Imperial HPC. Ansys also provide more detailed information at [https://optics.ansys.com/hc/en-us](https://optics.ansys.com/hc/en-us).
 
 ## Licensing

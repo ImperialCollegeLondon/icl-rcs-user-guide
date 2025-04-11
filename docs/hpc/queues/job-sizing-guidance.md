@@ -1,5 +1,9 @@
 # Job Sizing Guidance
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 ## Submitting a  job
 The recommended method for users to run their applications on the college HPC systems is to use the job scheduler (PBS Pro), which manages all resources. Jobs are submitted using "qsub" command. All jobs require a resource specification that indicates the size of the compute resources required and anticipated runtime. This specification should be in the top of the job script and must include the following fields:
 

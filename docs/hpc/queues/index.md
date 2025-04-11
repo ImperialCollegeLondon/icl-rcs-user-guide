@@ -1,5 +1,9 @@
 # Queues
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 These following pages provide further information on how the queuing system/job scheduler works and how you can best use it to run your jobs. Please read through the [Getting Started](../getting-started/index.md) guide first if you are unfamiliar with using the HPC systems at Imperial College. Please go to the [job sizing guidance](./job-sizing-guidance.md) if you are looking for advice on what resources you can request when you are submitting jobs to the queue.
 
 * [Purpose of the Queuing System](./purpose-of-the-queue.md)

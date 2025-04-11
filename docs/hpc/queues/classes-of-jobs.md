@@ -1,5 +1,9 @@
 # Classes of Jobs
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 With the latest [job sizing guidance](./job-sizing-guidance.md), it is no longer necessary to know which queue to send your job to as this will automatically be determined by the job scheduler. However, it can still be useful to understand the different classes of jobs that may typically be run on an HPC system such as that provided by Imperial.
 
 ## High-Throughput

@@ -1,5 +1,9 @@
 # Intel Vtune Profiler
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 Intel Vtune Profiler provides a deep insight into a node-level performance including algorithmic hotspot analysis, OpenMP threading, general exploration microarchitecture analysis, memory access efficiency, and more. It supports languages such as C/C++, Fortran, Java, Python etc.
 
 To use Vtune on HX1, you would need to load the module by

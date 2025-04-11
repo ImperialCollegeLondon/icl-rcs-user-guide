@@ -1,5 +1,9 @@
 # GCC Compiler Module
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 This page is a small guide on what type of modules to be used for compiling your programs with the GCC compiler. We are creating this page because of the way our module are built.
 
 If you use the incorrect module, you may get strange errors. Please see the example below which illustrates the same.

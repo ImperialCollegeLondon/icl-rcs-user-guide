@@ -1,5 +1,9 @@
 # Conda
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 [Conda](https://docs.conda.io/en/latest/index.html) is a package, dependency and environment management system. There are a couple of different versions avaible but we recommend using [conda-forge](https://conda-forge.org/download/). It is one of the ways for users to manage their own environments and supports a wide range of languages: Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN.
 
 Using different conda environments for different projects/applications is highly recommended and certainly offers many advantages:

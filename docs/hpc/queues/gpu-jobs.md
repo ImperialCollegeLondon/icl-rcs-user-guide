@@ -1,5 +1,9 @@
 # GPU Jobs
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 ## Submitting GPU Jobs
 The current GPU's we have available in the cluster are Nvidia RTX 6000's; if you require newer GPUs, please consider moving to [cx3-phase-2](../pilot/cx3-phase2.md). To request a GPU, you need to use both the qsub flag `ngpus` (to request the desired number of gpus) and the qsub flag `gpu_type` (to select the type of GPU). e.g.;
 

@@ -1,5 +1,9 @@
 # EasyBuild
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 We are now using the software installation system called [EasyBuild](https://easybuild.io) to manage the installation of user software requests. Key advantages of using this software management tool are that we can now provide a method to manage production vs development versions of software applications, provide versions optimised for the different types of hardware available within RCS systems, and provide users themselves with the ability to manage re-deployable versions of their own software.
 
 Use of EasyBuild has many advantages including making it quicker and easier to install applications that are already part of the EasyBuild system. At present over 3670 applications are already supported through Easybuild and as part of the broader community using EasyBuild application installs have already been peer-reviewed and tested across machines at numerous other HPC sites.

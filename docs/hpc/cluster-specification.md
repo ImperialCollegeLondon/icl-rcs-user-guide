@@ -1,5 +1,9 @@
 # HPC Cluster Specification
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 The RCS Platforms team currently run two HPC clusters, a general purpose cluster available for most workloads called CX3, and new cluster called HX1 which is designed for multi-node and larger GPU. In addition, we can provide access to the Jade2 national facility; please raise a ticket by following the guidance on the [Raise a ticket and contact us page](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/). The total facility size (as of March 2025) is: 711 compute nodes, 67,896 cores, 876 TB of RAM and 216 GPUs. Specific details on each cluster are provided below.
 
 ## Where are the details for CX1?

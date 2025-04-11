@@ -1,5 +1,9 @@
 # Jupyter
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 The [Jupyter Notebook](https://jupyter.org/) enables users to create documents that combine live code with narrative text, mathematical equations, visualizations, interactive controls, and other rich output. It also provides building blocks for interactive computing with data: a file browser, terminals, and a text editor. With the evolution of Jupyter notebook to Jupyter Lab, this expands most of the existing features which enable you to use text editors, terminals, data file viewers, and other custom components side by side with notebooks in a tabbed work area.
 
 ## JupyterHub

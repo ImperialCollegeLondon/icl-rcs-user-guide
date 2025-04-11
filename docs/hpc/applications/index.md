@@ -1,5 +1,9 @@
 # Applications
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 As the HPC systems support a large number of different compilers, applications and tools there is a potential problem of conflicting command and path names. In addition we want to be able to offer multiple versions of the same program. We use the module system to provide this in a simple and flexible way.
 
 With the module system, only the usual system commands are available to you at the start of your session or job. If you wish to use a particular compilers, applications or tools, you can make them available to your job or session by using the module command. This will temporarily update your environment to make all the elements of the chosen package available to you for the duration of the job or session, you can have multiple modules loaded concurrently.

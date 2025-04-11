@@ -1,5 +1,9 @@
 # Python
 
+!!! info
+
+    This page has not yet been rewritten for CX3 Phase 2.
+
 The default Python that you will find on our systems is fine for trivial use. For anything demanding, however, you will need to use a different version of Python. The sections below how to use different versions of python on the HPC facility. If you are unable to use one of the methods below to install the python modules you need, please view the Support and Training page for information on raising a ticket for help from us.
 
 ## Easybuild Python
