@@ -4,6 +4,7 @@
     background-color: #0000CD; /* Imperial Blue */
 }
 
+/* Adjust the with of the main content pane. Commented out due to rendering issues.
 .wy-nav-content {
-    max-width: 60%; /* Adjust the width of the main content pane. */
-}
+    max-width: 60%; 
+} */
