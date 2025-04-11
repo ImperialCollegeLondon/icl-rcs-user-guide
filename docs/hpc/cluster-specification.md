@@ -30,7 +30,7 @@ CX3 is currently going through a mini-refresh called [Phase 2](./pilot/cx3-phase
 
 ## HX1
 
-HX1 (or Hex) is our production "capability" HPC cluster. Further details including how to request access can be found on the [HX1 Cluster page](./pilot/hx1.md).
+HX1 (or Hex) is our production "capability" HPC cluster. Further details including how to request access can be found on the [HX1 Cluster page](./hx1.md).
 
 * Compute nodes: Lenovo SD630v2 servers each with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 288 nodes; 18,432 compute cores; 512 GB RAM per node
 * GPU nodes: Lenovo servers each with 4 x NVidia A100 80 GB RAM GPUs; 2 x Intel Xeon Platinum 8360Y (Ice Lake) 2.40GHz 36-core processors; 1 TB RAM per node; 15 nodes; 60 GPUs in total

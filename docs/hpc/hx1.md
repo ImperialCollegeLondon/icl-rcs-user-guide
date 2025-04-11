@@ -5,11 +5,11 @@ HX1 (or Hex) is the new High Performance Computing Cluster provided by the Resea
 * Multi-node parallel applications, typically using MPI to communicate between the compute nodes.
 * GPU accelerated scientific applications that require double precision. 
 
-For single node applications or GPU applications using single precision, we would please ask you to continue using the CX3 service. For AI work we recommend using [CX3 Phase 2](./cx3-phase2.md) as the L40s GPUs have a newer microarchitecture (Ada Lovelace) and higher FP32 so they tend to be faster fo AI/ML workloads. If you are in any doubt whether your job is suited to HX1, please contact the [RCS](../../support/index.md).
+For single node applications or GPU applications using single precision, we would please ask you to continue using the CX3 service. For AI work we recommend using [CX3 Phase 2](./getting-started/index.md) as the L40s GPUs have a newer microarchitecture (Ada Lovelace) and higher FP32 so they tend to be faster fo AI/ML workloads. If you are in any doubt whether your job is suited to HX1, please contact the [RCS](../support/index.md).
 
 ## Cluster Specification
 
-Please go to the [HX1 section of our cluster specification page](../cluster-specification.md#hx1) for details of HX1.
+Please go to the [HX1 section of our cluster specification page](./cluster-specification.md#hx1) for details of HX1.
 
 ## Access
 
@@ -29,7 +29,7 @@ There are two login nodes for hx1 which are accessible over ssh. These can be ac
 
 !!! warning
 
-    The HX1 login nodes only have ipv6 addresses meaning you must be connected to the campus in such a way that you access IPv6 addresses. Our guide on [Remote Access](../../remoteaccess.md) provides further details.
+    The HX1 login nodes only have ipv6 addresses meaning you must be connected to the campus in such a way that you access IPv6 addresses. Our guide on [Remote Access](../remoteaccess.md) provides further details.
 
 ## Storage
 ### Research Data Store
@@ -77,7 +77,7 @@ Please make sure any software you run on HX1 has been optimised for the hardware
 
 ### EasyBuild
 
-Most software that we provide centrally will have been built and installed using the [EasyBuild](../applications/easybuild.md) system and will be optimised/tested for the hardware. If you need a relatively well known unmodified application (for example GROMACS or CP2K), we ask that you contact us first to install it rather, than build it yourself.
+Most software that we provide centrally will have been built and installed using the [EasyBuild](./applications/easybuild.md) system and will be optimised/tested for the hardware. If you need a relatively well known unmodified application (for example GROMACS or CP2K), we ask that you contact us first to install it rather, than build it yourself.
 
 EasyBuild builds software using the concept of [toolchains](https://docs.easybuild.io/common-toolchains/). These toolchains will typically consist of a compiler, mpi distribution and set of maths libraries. On hx1 we tend to provide software based on two toolchains, foss (GCC, OpenMPI, FlexiBlas etc.) and intel (Intel Compiler Suite, Intel MPI and Intel MKL) and each toolchain will be designated by a release number such as intel-2022b and foss-2021a; you can see the software versions for the foss and intel releases at [Common toolchains - EasyBuild - building software with ease](https://docs.easybuild.io/common-toolchains/#common_toolchains_overview).
 
@@ -360,7 +360,7 @@ The following queues of jobs are supported:
 
 #### single core to single node jobs
 
-Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 legacy](../getting-started/index.md) and [CX3 Phase 2 facilities](./cx3-phase2.md).
+Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 Phase 2](./getting-started/index.md) facility.
 
 #### capability24
 

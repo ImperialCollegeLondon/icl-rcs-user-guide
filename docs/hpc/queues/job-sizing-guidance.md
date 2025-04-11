@@ -102,7 +102,7 @@ Setting filesystem_type to GPFS would have the same effect as that is a distingu
 #PBS -lwalltime=20:0:0
 ```
 
-There are 2 multi-node queues, **capability24** and **capability48**. Capability queues are currently running on AMD Rome with 100 GbE ethernet. To target this system, request either 64 or 128 CPUs and up to 8 nodes. If you are regularly submitting multi-node jobs, please consider applying for access to the [HX1 capability cluster](../pilot/hx1.md).
+There are 2 multi-node queues, **capability24** and **capability48**. Capability queues are currently running on AMD Rome with 100 GbE ethernet. To target this system, request either 64 or 128 CPUs and up to 8 nodes. If you are regularly submitting multi-node jobs, please consider applying for access to the [HX1 capability cluster](../hx1.md).
 
 ## Which queue will I end up in?
 

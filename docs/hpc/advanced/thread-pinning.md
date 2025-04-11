@@ -77,7 +77,7 @@ mpirun -v6 -np 16 ${lammps_path} -l log.lammps -nocite -var temp1 ${temp1} -var 
 ```
 
 ### Examples and explanation of some of the pinning options
-To make the explanation easy and realistic, we will show the usage of above options on the [HX1 cluster](../pilot/hx1.md). For understanding the content below, you only need to note that each of the node on HX1 cluster contains 2 Intel processors. Each processor has 32 cores (a total of 64 cores on each node). There are 2 sockets (hardware in which we put in the actual chip) on each node, one for each processor.
+To make the explanation easy and realistic, we will show the usage of above options on the [HX1 cluster](../hx1.md). For understanding the content below, you only need to note that each of the node on HX1 cluster contains 2 Intel processors. Each processor has 32 cores (a total of 64 cores on each node). There are 2 sockets (hardware in which we put in the actual chip) on each node, one for each processor.
 
 The core rank 0-31 are on first processor while the core numbers 32-63 are on second processor. Hyperthreading (HT) is turned Off on all nodes.
 
