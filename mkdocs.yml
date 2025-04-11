@@ -1,4 +1,4 @@
-site_name: ICL RCS User Guide
+site_name: Imperial RCS User Guide
 theme:
   name: readthedocs
   highlightjs: true
@@ -16,6 +16,8 @@ markdown_extensions:
   - admonition
   - tables
   - sane_lists
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Home: index.md

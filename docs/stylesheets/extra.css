@@ -1,0 +1,9 @@
+/* extra.css */
+
+.wy-side-nav-search {
+    background-color: #0000CD; /* Imperial Blue */
+}
+
+.wy-nav-content {
+    max-width: 60%; /* Adjust the width of the main content pane. */
+}
