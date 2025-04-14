@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
 ## Submitting a  job
 The recommended method for users to run their applications on the college HPC systems is to use the job scheduler (PBS Pro), which manages all resources. Jobs are submitted using "qsub" command. All jobs require a resource specification that indicates the size of the compute resources required and anticipated runtime. This specification should be in the top of the job script and must include the following fields:
@@ -20,20 +20,23 @@ The following queues of jobs are supported:
 
 | Queue | Use Cases | Nodes per job | No. of cores per node<br>(ncpus) | Mem per node<br>(GB) | Walltime<br>(hrs) |
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
-| small24 | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
-| small72 | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
+| [small24](#small) | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
+| [small72](#small) | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
 | [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
 | [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
-| medium24 | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
-| medium72 | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
-| large24 | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
-| large72 | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
+| [medium24](#medium) | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
+| [medium72](#medium) | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
+| [large24](#large) | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
+| [large72](#large) | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
 | <s>largemem72</s> | <s>Large memory jobs</s> | <s>1</s> | <s>1 - 128</s> | <s>921 - 4000</s> | <s>0 - 72</s> |
 | [gpu72](#gpu72) | Main queue for gpu jobs* | 1 | 1 - 64 | 1 - 920 | 0 - 72 |
-| capability24 | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
-| capability48 | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
+| [capability24](#capability) | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
+| [capability48](#capability) | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
 
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
+
+#### small
+This queue is for low-core jobs, up to 16 cores and 128gb of RAM. Jobs in this queue typically make use of OpenMP or multi-threading to parallelise workflows. 
 
 #### jupyter
 This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
@@ -41,15 +44,26 @@ This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are ru
 #### jupytergpu
 This queue has NVIDIA A40 (48GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
+#### medium
+This queue is for single node jobs, using up to an entire node - 64 cores and 450GB of RAM.*
+
+#### large 
+This queue is for whole node jobs, using an entire node - 128 cores and 920GB of RAM.* 
+
 #### gpu72
 There is an additional limit of 12 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs. See the section on [GPU Jobs](#gpu-jobs) for further information.
 
+#### capability
+This queue is for larger multi-node jobs, using up to 4 entire nodes at once. Workflows in this queue will normally be using technologies such as MPI to communicate between all nodes.
+
 #### interactive
-You can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
+While not listed in the table above, you can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
 ```console
 qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
 ```
 You should not request an interactive job longer than 8 hours, and should make sure to end your session once you are done as to not leave it idle.
+
+**Note that on CX3 Phase 2, some nodes have up to 128 cores and 920GB of RAM, and some have up to 64 cores and 450GB of RAM. This is why there are separate [medium](#medium) and [large](#large) queues for them although technically both are "whole node queues".* 
 
 ## Explanation of PBS Directives
 The following table provides an explanation of what each directive means in the context of your resource request on CX3 Phase 2.
