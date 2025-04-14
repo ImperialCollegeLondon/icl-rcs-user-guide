@@ -8,7 +8,6 @@ These following pages provide further information on how the queuing system/job 
 
 * [Purpose of the Queuing System](./purpose-of-the-queue.md)
 * [How it works](./how-it-works.md)
-* [Classes of Jobs](./classes-of-jobs.md)
 * [Express Access](./express-access.md)
 * [Array Jobs](./array-jobs.md)
 * [Job Dependencies](./job-dependencies.md)
