@@ -4,15 +4,8 @@
 
     This page **has** been rewritten for CX3 Phase 2.
 
-## Submitting a  job
-The recommended method for users to run their applications on the college HPC systems is to use the job scheduler (PBS Pro), which manages all resources. Jobs are submitted using "qsub" command. All jobs require a resource specification that indicates the size of the compute resources required and anticipated runtime. This specification should be in the top of the job script and must include the following fields:
-
-```bash
-#PBS -l select=N:ncpus=X:mem=Ygb
-#PBS -l walltime=HH:00:00
-```
-
-Where N is the number of nodes, and X and Y are the number of cpus and amount of memory per node (RAM). HH is the expected runtime of the job in hours.
+## Submitting a job
+For information about submitting a job to our systems, please see our [how it works page.](./how-it-works.md)
 
 There is no need to specify a queue, simply define the job in terms of the resources it requires and the system will run it as soon as suitable resources become available. When more than one queue matches a job specification, PBS will place the jobs in the first queue by alphabetical order.
 
@@ -42,7 +35,7 @@ This queue is for low-core jobs, up to 16 cores and 128gb of RAM. Jobs in this q
 This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### jupytergpu
-This queue has NVIDIA A40 (48GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
+This queue has NVIDIA A40 (48GB) and NVIDIA RTX6000 (24GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### medium
 This queue is for single node jobs, using up to an entire node - 64 cores and 450GB of RAM.*
