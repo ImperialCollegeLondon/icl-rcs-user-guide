@@ -2,15 +2,16 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
-You will be used to logging into a Linux or Unix system, typing in commands to the shell, running programs and viewing data. Once you are finished you log out and your session ends. The queuing system reproduces this environment, and runs the same shell and commands as interactive login sessions. The difference is that the script is run under the control of the system at a time which it chooses, and thus a connection to a terminal window from the session is not used. The standard input (stdin) for the session is read from the script file which you provide and the standard output and error files (stdout and sterr) are returned as file(s) in your directory when the job is completed.
+You will be used to logging into a Linux or Unix system, typing in commands to the shell, running programs and viewing data. Once you are finished, you log out and your session ends. The queuing system reproduces this environment, and runs the same shell and commands as interactive login sessions. The difference is that the script is run under the control of the system at a time which it chooses, and thus a connection to a terminal window from the session is not used. The standard input (stdin) for the session is read from the script file which you provide and the standard output and error files (stdout and stderr) are returned as file(s) in your directory when the job is completed.
 
 You initiate the job using the qsub command. This takes your script and passes control to PBSPro to have it executed. You can add parameters to the qsub command to specify the resources the job will need and to flag various options to the system. You can also put special directives at the start of your script file to give the same information to PBSPro, which is the way we recommend doing it.
 
-You can observe the jobs you have queued (waiting for execution) or running using the qstat command.
+You can observe the jobs you have queued (waiting for execution) or running, you can use the `qstat` command. This will show every job running on the system. In order to filter down to only your jobs, you can do the following:
+`qstat -u $USER`
 
-As part of the contents of your script, or on the qsub command itself, you must provide some information to the system as to how much resource your job will need while it it running. The primary resources you will need to specify are number of CPUs, amount of memory and the elapsed time the job will need to run. It is important that the information you give is reasonably accurate. If the job uses more than you asked for, then the system will terminate the job. If you ask for a lot more than you need, then your job may well be delayed waiting to start because there were not enough resources available at the time.
+As part of the contents of your script, or on the qsub command itself, you must provide some information to the system as to how much resource your job will need while it is running. The primary resources you will need to specify are number of CPUs, amount of memory and the elapsed time the job will need to run. It is important that the information you give is reasonably accurate. If the job uses more than you asked for, then the system will terminate the job. If you ask for a lot more than you need, then your job may well be delayed waiting to start because there were not enough resources available at the time.
 
 ## Very simple PBSPro script
 
@@ -44,10 +45,10 @@ It will return a JobID which you can use to keep track of your job or to delete 
 ## Deleting Jobs
 You can delete any jobs from PBSPro either before it has run or while it is running. 
 
-First, you need to find the ID of the job you want to delete. You can use the qstat command to display a list of all the jobs currently running or queued:
+First, you need to find the ID of the job you want to delete. You can use the qstat command to display a list of all your jobs currently running or queued:
 
 ```console
-qstat
+qstat -u $USER
 ```
 
 This will display a table of all the jobs, along with their status, ID, and other information. Find the ID of the job you want to delete in the first column of the table.
