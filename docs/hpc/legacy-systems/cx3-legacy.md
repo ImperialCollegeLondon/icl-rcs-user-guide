@@ -25,7 +25,7 @@ These are jobs that require large amounts of memory in order to run. For Imperia
 ### GPU
 The GPU class of job refers to those jobs/applications that are utilising GPU technologies such as NVidia's CUDA to run computational work on GPU accelerator cards. See the section on GPUs in the [Job sizing guidance](#job-sizing-guidance) for further information.
 
-### Job Sizing Guidance
+## Job Sizing Guidance
 The following queues of jobs are supported:
 
 | Queue | Use Cases | Nodes per job | No. of cores per job<br>(ncpus) | Mem<br>(GB) | Walltime<br>(hrs) |
@@ -40,3 +40,121 @@ The following queues of jobs are supported:
 | [gpu72](#gpu72) | Main queue for gpu job* | 1 - 4 | 1 - 256 | 1 - 920 | 0 - 72 |
 | capability24 | Multi-node jobs 24h |2 - 8 | 64 - 128  | 1 - 920 |     0 - 24 |
 | capability48 | Multi-node jobs 48h | 2 - 8 | 64 - 128 | 1 - 920 | 24 - 48 |
+
+\* Please see details for specific queues below as there may be additional restrictions or limitations.
+
+### pqjupyter
+
+This queue is where JupyterHub jobs are run. There is a limit of 1 concurrent job per user.
+
+### pqood
+
+This queue is used by Open OnDemand (RStudio) jobs. There is a limit of 1 concurrent job per user.
+
+### interactive
+
+Unfortunatly it isn't possible to run interactive jobs on CX3 Phase 1. If you need an interactive session for debugging please use Jupyterhub/Open OnDemand or you can check out [cx3-phase2](../pilot/cx3-phase2.md).
+
+### medium72
+
+Job extensions are allowed on the medium queue only for jobs requesting the maximum walltime (72h). This is done via the self-service page. You will only be able to extend jobs when they are within 18 hours of reaching the walltime. You can only extend for an additional 24 hours at a time, up to a maximum of 144 hours. The job extension feature exists to be used sparingly, and isn't something to rely on being available at any particular time.
+
+### gpu72
+
+There is an additional limit of 32 GPUs total per user on the gpu72 queue to allow for fair usage of the GPUs. Please see our [GPU Jobs guide](./gpu-jobs.md) for how to run GPU jobs.
+
+### largemem72
+
+There is an additional limit of 16384 GB total per user on the largemem72 queue to allow for fair usage.
+
+### large72
+
+There is an additional limit of 5 running jobs per users on this queue to allow for fair usage. In addition, all nodes requesting 128 CPUS or more will be allocated a whole node as the CPUS from 129-256 are from SMT and are not from physical cores.
+
+Please note there is a default limit of 50 concurrent jobs (queued or running) per user. Some queues may impose additional limits to guarantee fair-share and prevent monopolization.
+
+### Advanced PBS Flags
+
+PBS supports flags (also referred to as directives) in submission scripts that enable advanced users to give more details about the node(s) your job needs to run on. With the decommission of CX1 and CX2, and with CX3 Phase 1 consisting of mostly the same specification of compute node (AMD Rome, GPFS file system and ethernet interconnect) they now have limited usefulness on the current legacy HPC platform; the table below and examples are therefore provided here for reference purposes.
+
+The [cx3-phase2](../pilot/cx3-phase2.md) facility has an updated set of flags/directives which can be reviewed in the documentation.
+
+!!! warning
+
+    We generally advise PBS flags/directives not to be left in submission scripts unless they are actively being used as they can increase queue times.
+
+| Flag | Value | Description |
+| ---- | ----- | ----------- |
+| writabletmp | True/False | Some applications need to write to /tmp, (cx3 only) |
+| filesystem_type | gpfs/nfs | Target only nodes with given filesystem type |
+| cpu_type | rome | Target only nodes with given CPU type |
+| gpu_type | RTX6000 | Select a specific type of GPU |
+| interconnect | infiniband/ethernet | cx1/cx3 uses Ethernet while cx2 uses IB |
+
+#### Flag Examples
+
+##### Example 1
+
+```bash
+#PBS -lselect=1:ncpus=12:mem=50gb
+#PBS -lwalltime=20:0:0
+```
+
+A job with more than 8 CPUs, more than 8 hours walltime and less than 920 GB of memory would be run in the **medium72** queue.
+
+```bash
+#PBS -lselect=1:ncpus=12:mem=50gb:cpu_type=rome
+#PBS -lwalltime=20:0:0
+```
+
+Setting filesystem_type to GPFS would have the same effect as that is a distinguishing feature between the two queues.
+
+##### Example 2
+
+```bash
+#PBS -lselect=2:ncpus=64:mem=50gb
+#PBS -lwalltime=20:0:0
+```
+
+There are 2 multi-node queues, **capability24** and **capability48**. Capability queues are currently running on AMD Rome with 100 GbE ethernet. To target this system, request either 64 or 128 CPUs and up to 8 nodes. If you are regularly submitting multi-node jobs, please consider applying for access to the [HX1 capability cluster](../hx1.md).
+
+## Which queue will I end up in?
+
+### Single node job example - CPU
+
+```bash
+#PBS -lselect=1:ncpus=x:mem=32gb
+#PBS -lwalltime=2:0:0
+```
+
+* 8 CPUs or less and 8 hours walltime or less then the job will go to **short8**
+* 8 CPUs or less but walltime is more than 8 hours then the job will go to **throughput72**
+* more than 8 CPUs and more than 8 hours walltime then job will go to **medium72** (see [Advanced PBS Flags](#advanced-pbs-flags) section above)
+* more than 8 CPUs but less than 128 and more than 8 hours walltime then job will go to **medium72**
+* more than 127, more than 8 hours walltime then job will go to **large72**
+
+### Single node job example - Mem
+
+```bash
+#PBS -lselect=1:ncpus=2:mem=xgb
+#PBS -lwalltime=2:0:0
+```
+
+* 8 CPUs or less, 8 hours walltime or less then the job will go to **short8**
+* 8 CPUs or less but walltime is more than 8 hours while mem is 100 GB or less then the job will go to **throughput72**
+* more than 8 CPUs but less than 128, more than 8 hours walltime and more than 100 GB then the job will go to **medium72**
+* more than 127, more than 8 hours walltime then job will go to **large72**
+* more than 920 GB of mem and the job will go to **largemem72**
+
+### Multinode example
+
+```bash
+#PBS -lselect=x:ncpus=2:mem=100gb
+#PBS -lwalltime=2:0:0
+```
+Please request whole nodes when using the capablity queue. If you need to use more than 1 node your job is likely using all of at least 1 resource on the nodes and so you should be requesting the whole node. The simplest method is to request all the CPUs.
+
+* 64 or less CPUs and 2 or more nodes while walltime is 72 hours or less is not an accepted job format.
+* 64 or 128 CPUs, 8 or less nodes while walltime is 48 hours or less then the job will go to **capability48**
+* 64 or 128 CPUs, 8 or less nodes while walltime is 24 hours or less then the job will go to **capability24**
+                                                                                                             
