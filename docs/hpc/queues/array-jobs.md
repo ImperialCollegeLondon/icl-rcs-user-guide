@@ -29,7 +29,7 @@ Having created the jobscript as you would do normally, add in the additional dir
 #PBS -J 1-N
 ```
 
-where `N` is the number of copies of the job you want to run. You may then `qsub` the jobscript once, and the system will run N instances of it. Each of these sub-jobs run independently of all of the others, and are identical except for the value of the environment variable `PBS_ARRAY_INDEX`. This will contain a unique value in the range 1-N, allowing you to select the particular input for that sub-job.
+where `N` is the number of copies of the job you want to run. You may then `qsub` the jobscript once, and the system will run N instances of it. Each of these sub-jobs run independently of all of the others, and are identical except for the value of the environment variable `PBS_ARRAY_INDEX`. This will contain a unique value in the range 1-N, allowing you to select the particular input for that sub-job. The range does not need to start at 1, but there is a **maximum limit** in size of **10,000**. That is 10,000 sub-jobs per array job.
 
 The resources you request apply to each individual sub-job, not the entire array. For example, if you request 32 cores and 32GB of RAM in the jobscript, that will allocate 32 cores and 32GB of RAM to each sub-job. See more in the [strategies for writing array jobs section](#strategies-for-writing-array-jobs).
 
@@ -43,7 +43,6 @@ This will produce sub-job indices of 1, 3, 5 and 7.
 
 The system will run individual sub-jobs as soon as resources become available. Occasionally, the system may re-queue running sub-jobs to free resources for larger jobs. Always write your jobscripts with this in mind. For example, consider what would happen if the re-run subjob detects partial output from a previous run. 
 
-The range does not need to start at 1, but there is a **maximum limit** in size of **10,000**. That is 10,000 sub-jobs per array job.
 
 ## Monitoring array jobs
 
