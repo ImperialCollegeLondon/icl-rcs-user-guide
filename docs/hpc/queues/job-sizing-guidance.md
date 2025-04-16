@@ -7,7 +7,7 @@
 ## Submitting a job
 For information about submitting a job to our systems, please see our [how it works page.](./how-it-works.md)
 
-There is no need to specify a queue, simply define the job in terms of the resources it requires and the system will run it as soon as suitable resources become available. When more than one queue matches a job specification, PBS will place the jobs in the first queue by alphabetical order.
+There is no need to specify a queue, simply define the job in terms of the resources it requires and the system will run it as soon as suitable resources become available. We use routing queues, so PBS will place the job in the first queue that it fits into.
 
 The following queues of jobs are supported:
 
