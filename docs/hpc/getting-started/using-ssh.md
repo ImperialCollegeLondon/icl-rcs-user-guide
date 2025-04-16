@@ -2,15 +2,29 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
 To access the HPC facility you would normally use a Secure Shell (or SSH) client on your computer to connect to the login nodes. You will need to be on the college network or connected to Unified Acecss in order to connect to the login nodes.
 
 ## Hostname for SSH
 
+The below can be used if you don't have a specific CPU architecture in mind, and just want to get onto any login node.
 ```console
-login.hpc.imperial.ac.uk
+login.cx3.hpc.imperial.ac.uk
 ```
+If you wish to target a specific CPU architecture, either Intel (Ice Lake) or AMD (Rome), please see the table below.
+
+| Login node      | CPU Type |
+| ----------- | ----------- |
+| login-b.cx3.hpc.ic.ac.uk    | AMD EPYC 7742 64-Core Processor (Rome)    |
+| login-ai.cx3.hpc.ic.ac.uk   | Intel Xeon Platinum 8358 (Ice Lake)       |
+| login-bi.cx3.hpc.ic.ac.uk   | Intel Xeon Platinum 8358 (Ice Lake)       |
+
+For identification, the key fingerprints are:
+
+3072 SHA256:nwz0/vwlsKqb8hD+anE34qGKbNZDpo5aUsxzIvv9r3U login.cx3.hpc.ic.ac.uk (RSA)
+256 SHA256:kjRWzuUtzkhdaSzRbQ5pPg4JrkSuGrx1SsfLAfLHv4o login.cx3.hpc.ic.ac.uk (ECDSA)
+256 SHA256:Mddqkum9DwRsvrxoJckFP/aIKuN1+41qIKpU2vuZjIg login.cx3.hpc.ic.ac.uk (ED25519) 
 
 Do note that due to security concerns, key-based authentication is disabled for the login-nodes. Users will need to login using  their college username and password.
 
@@ -22,7 +36,7 @@ Open a terminal session on your computer.
 Run:
 
 ```console
-ssh username@login.hpc.imperial.ac.uk
+ssh username@login.cx3.hpc.imperial.ac.uk
 ```
 
 at the command prompt, substituting your own College username and entering your password when prompted.
@@ -40,7 +54,7 @@ As of Window 10 (build 1809 and later) an OpenSSH client can be installed on Win
 
 ### Windows Subsystem for Linux
 
-Windows Subsystem for Linux or WSL, enables you to run a Linux environment (such as Ubuntu or AlmaLinux) on your computer unmodified. WSL is available on Windows 10 build 1607 and later and installing it on your computer will require administrator access. Most of our clusters are IPv6 which requires a change in WSL settings before you will be able to connect. Press the start key and open "WSL Settings", then under "Networking" change the "Networking Mode" to "Mirrored" and restart your WSL instance. You should then have an IPv6 address and be able to connect to clusters like [CX3 Phase 2](../pilot/cx3-phase2.md). This can only be done on Windows 11 22H2, please ensure you have updated your OS before attempting to connect. 
+Windows Subsystem for Linux or WSL, enables you to run a Linux environment (such as Ubuntu or AlmaLinux) on your computer unmodified. WSL is available on Windows 10 build 1607 and later and installing it on your computer will require administrator access. Most of our clusters are IPv6 which requires a change in WSL settings before you will be able to connect. Press the start key and open "WSL Settings", then under "Networking" change the "Networking Mode" to "Mirrored" and restart your WSL instance. You should then have an IPv6 address and be able to connect to our clusters. **This can only be done on Windows 11 22H2, please ensure you have updated your OS before attempting to connect.** 
 
 ### MobaXterm
 
@@ -78,8 +92,8 @@ On Linux and macOS you have to use a terminal to connect using a regular SSH cli
 
 Your connect command will look like:
 
-```
-ssh -X username@login.hpc.ic.ac.uk
+```console
+ssh -X username@login.cx3.hpc.ic.ac.uk
 ```
 
 #### Other SSH Clients
