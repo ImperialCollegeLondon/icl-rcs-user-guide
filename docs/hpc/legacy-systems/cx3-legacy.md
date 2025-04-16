@@ -2,6 +2,36 @@
 
 This page contains information regarding the origin CX3 "legacy" facility for those users who have not transferred their workflow to the refreshed system yet. CX3 Phase 2 is a refresh of the CX3 platform, with an upgraded operating system and job scheduler. 
 
+## Using SSH
+### Hostname for SSH
+```bash
+login.hpc.imperial.ac.uk
+```
+Do note that due to security concerns, key-based authentication is disabled for the login-nodes. Users will need to login using their college username and password.
+
+### Linux and MacOS
+Linux and macOS users have the OpenSSH SSH client automatically installed on their operating system and this can be accessed from a terminal session.
+
+Open a terminal session on your computer and run:
+```bash
+ssh username@login.hpc.imperial.ac.uk
+```
+at the command prompt, substituting your own College username and entering your password when prompted.
+
+### Command-line SSH clients
+
+On Linux and macOS you have to use a terminal to connect using a regular SSH client with the "Enable X11 forward" flag "-X".
+
+Your connect command will look like:
+
+```
+ssh -X username@login.hpc.ic.ac.uk
+```
+
+On other clients you will have to look for the "Enable X11 forwarding" option.
+
+For example on Putty, you will need to navigate to Connection -> SSH -> X11 and activate the "Enable X11 forwarding".
+
 ## Classes of jobs
 
 With the latest [job sizing guidance](#job-sizing-guidance), it is no longer necessary to know which queue to send your job to as this will automatically be determined by the job scheduler. However, it can still be useful to understand the different classes of jobs that may typically be run on an HPC system such as that provided by Imperial.
