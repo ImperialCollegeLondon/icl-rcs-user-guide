@@ -44,7 +44,7 @@ This queue is for single node jobs, using up to an entire node - 64 cores and 45
 This queue is for whole node jobs, using an entire node - 128 cores and 920GB of RAM.* 
 
 #### gpu72
-There is an additional limit of 12 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs. See the section on [GPU Jobs](#gpu-jobs) for further information.
+There is an additional limit of 12 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs. See the section on [GPU Jobs](./gpu-jobs.md#gpu-node-specification) for further information.
 
 #### capability
 This queue is for larger multi-node jobs, using up to 4 entire nodes at once. Workflows in this queue will normally be using technologies such as MPI to communicate between all nodes.
