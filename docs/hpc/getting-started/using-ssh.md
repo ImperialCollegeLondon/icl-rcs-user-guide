@@ -44,10 +44,6 @@ at the command prompt, substituting your own College username and entering your 
 ## Windows
 Windows users have a number of options when it comes to SSH clients, some of these are dependent upon the age of the operating system you are running.
 
-### Putty
-
-Putty is the SSH client traditionally used by many on Windows and is installed on managed College computers. If you are intending to use Putty on your own (personal or unmanaged) computer, please make sure you install the latest version and only download from [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). If you already have Putty installed, please make sure you update your version until at least 0.72.
-
 ### OpenSSH
 
 As of Window 10 (build 1809 and later) an OpenSSH client can be installed on Windows and is accessible via Powershell or Windows Terminal. You may need administrator access to your computer in order to install OpenSSH.

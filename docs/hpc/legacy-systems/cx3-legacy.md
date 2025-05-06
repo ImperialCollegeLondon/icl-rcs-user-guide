@@ -18,6 +18,10 @@ ssh username@login.hpc.imperial.ac.uk
 ```
 at the command prompt, substituting your own College username and entering your password when prompted.
 
+### Putty
+
+Putty is the SSH client traditionally used by many on Windows and is installed on managed College computers. If you are intending to use Putty on your own (personal or unmanaged) computer, please make sure you install the latest version and only download from [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). If you already have Putty installed, please make sure you update your version until at least 0.72.
+
 ### Command-line SSH clients
 
 On Linux and macOS you have to use a terminal to connect using a regular SSH client with the "Enable X11 forward" flag "-X".
