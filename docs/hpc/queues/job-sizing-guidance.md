@@ -56,7 +56,7 @@ qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
 ```
 You should not request an interactive job longer than 8 hours, and should make sure to end your session once you are done as to not leave it idle.
 
-**Note that on CX3 Phase 2, some nodes have up to 128 cores and 920GB of RAM, and some have up to 64 cores and 450GB of RAM. This is why there are separate [medium](#medium) and [large](#large) queues for them although technically both are "whole node queues".* 
+**Note that some nodes have up to 128 cores and 920GB of RAM, and some have up to 64 cores and 450GB of RAM. This is why there are separate [medium](#medium) and [large](#large) queues for them although technically both are "whole node queues".* 
 
 ## Explanation of PBS Directives
 The following table provides an explanation of what each directive means in the context of your resource request on CX3 Phase 2.
