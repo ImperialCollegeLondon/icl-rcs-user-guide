@@ -59,6 +59,50 @@ These are jobs that require large amounts of memory in order to run. For Imperia
 ### GPU
 The GPU class of job refers to those jobs/applications that are utilising GPU technologies such as NVidia's CUDA to run computational work on GPU accelerator cards. See the section on GPUs in the [Job sizing guidance](#job-sizing-guidance) for further information.
 
+## MPI Jobs
+
+An MPI job can be configured with the standard #PBS resource specification:
+
+```bash
+#PBS -lselect=N:ncpus=Y:mem=Z
+```
+and then run with:
+```bash
+module load mpi
+mpiexec a.out
+```
+This will start NxY MPI ranks, with Y ranks on each of N distinct compute nodes.
+
+### The eternal dilemma, "mpirun" or "mpiexec" ?
+
+The recommendation to use "mpiexec" wrapper or "mpirun" wrapper will depend on what application you are using and what MPI version it was compiled against.
+
+* If you are using any version prior to "mpi/intel-2019.8.254" then the recommendation would be to use "mpiexec". i.e. mpiexec myprogram
+
+* If you are compiling with a newer MPI version you would need to use "mpirun". See section below for details.  i.e. mpirun myprogram
+
+
+If you have any issues running your program or are not sure what to use, please get in touch with our support team following these guidelines.
+
+### Running a program with mpiexec
+
+mpiexec does not require any arguments other than the name of the program to run. For example:
+
+```bash
+mpiexec a.out [program arguments]
+```
+
+That being said, you can use the "-n" flag to specify the number of processes. This is useful if you would like to decrease the number of mpi ranks, whilst still selecting the same number of "ncpus" in the jobscript.
+
+```bash
+mpiexec -n 8 a.out [program arguments]
+```
+
+### Note in particular:
+
+It's not necessary to add "-n" or any other flag to specify the number of ranks. If a specific rank count is required and cannot be exactly specified with N x P, use the optional flag “-n <num>”. The number of ranks requested this way must be no more than N x P
+it isn't necessary to specify the full path to the program: mpiexec will search `PATH` for the program
+
 ## Job Sizing Guidance
 The following queues of jobs are supported:
 
