@@ -33,7 +33,12 @@ where `N` is the number of copies of the job you want to run. You may then `qsub
 
 The resources you request apply to each individual sub-job, not the entire array. For example, if you request 32 cores and 32GB of RAM in the jobscript, that will allocate 32 cores and 32GB of RAM to each sub-job. See more in the [strategies for writing array jobs section](#strategies-for-writing-array-jobs).
 
-You can also make use of a stepping factor when submitting jobs. For example:
+
+The system will run individual sub-jobs as soon as resources become available. Occasionally, the system may re-queue running sub-jobs to free resources for larger jobs. Always write your jobscripts with this in mind. For example, consider what would happen if the re-run subjob detects partial output from a previous run. 
+
+### Stepping factors in array jobs
+
+You can make use of a stepping factor when submitting array jobs. This means that only a given interval of the entire array job will be run. For example:
 
 ```bash
 #PBS -J 1-8:2
@@ -41,7 +46,15 @@ You can also make use of a stepping factor when submitting jobs. For example:
 
 This will produce sub-job indices of 1, 3, 5 and 7.
 
-The system will run individual sub-jobs as soon as resources become available. Occasionally, the system may re-queue running sub-jobs to free resources for larger jobs. Always write your jobscripts with this in mind. For example, consider what would happen if the re-run subjob detects partial output from a previous run. 
+### Limiting array jobs
+
+You can also limit array jobs down so that only a given number can run at any given time.
+
+```bash
+#PBS -J 1-20%2
+```
+
+This would allow only 2 array jobs to run at any given time. 
 
 
 ## Monitoring array jobs
