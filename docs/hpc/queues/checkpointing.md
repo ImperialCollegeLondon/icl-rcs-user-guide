@@ -2,13 +2,12 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
-All HPC jobs have a walltime limit and any jobs that exceeds this will be stopped and work can be lost. If a job needs to run longer then any progress will need to be saved and a new job submitted to continue the calculation. For some applications this is as simple as saving the current progress to a file and then reloading it later, indeed some applications have built-in methods of doing this. However, if it doesn't it might be possible to use an external tool called [DMTCP](https://github.com/dmtcp/dmtcp) to checkpoint a job.
+All HPC jobs have a walltime limit so any jobs that exceeds this will be stopped and work may be lost. If a job needs to run longer, progress will need to be saved and a new job submitted to continue the calculation. For some applications this is as simple as saving the current progress to a file and then reloading it later, indeed some applications have built-in methods of doing this. However, if it doesn't it might be possible to use an external tool called [DMTCP](https://github.com/dmtcp/dmtcp) to checkpoint a job.
 
 ## Loading DMCTP into your environment
-DMCTP is provided by Easybuild so first the production tool base needs to be loaded the DMTCP module can be loaded. Please ensure the selected version matches the current toolchain used for the rest of the job. 
-For example, here we are using the GCCcore 11.3.0 tool chain:
+DMCTP is provided by Easybuild so can load it as a module. Please ensure the selected version matches the current toolchain used for the rest of the job (if any). For example, here we are using the GCCcore 11.3.0 tool chain 
 
 ```bash
 module load tools/prod
