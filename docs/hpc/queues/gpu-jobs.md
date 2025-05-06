@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
 ## Submitting GPU Jobs
 To see the current GPU's we have available in the cluster, take a look at the [following section](#gpu-node-specification). To request any GPU, you need to use the flag `ngpus` (to request the desired number of gpus);
