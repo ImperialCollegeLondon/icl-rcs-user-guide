@@ -75,17 +75,6 @@ samtools view -S -b sample_${PBS_ARRAY_INDEX}.sam > sample_${PBS_ARRAY_INDEX}.ba
 cp $TMPDIR/sample_${PBS_ARRAY_INDEX}.bam $HOME/project1/outputs/
 ```
 
-### Nodes with GPFS
-
-The new cx3 nodes have GPFS filesystem which can handle better heavy I/O workflows. That being said, this system still has its limits and detrimental workflows can still cause it to bottleneck/freeze.
-
-To aim for these nodes you can add `cpu_type=rome` to your PBS resource selection. See the section "Advanced PBS Flags" for more information. 
-
-```bash
-#PBS -l walltime=01:00:00
-#PBS -l select=1:ncpus=8:mem=10gb:cpu_type=rome
-```
-
 ### Number of files
 
 Be mindful of the amount of files you are working with (inputs, outputs, temporary files). Avoid having a large number of files ( > 10,000) in a single directory. See the section below "File Management".
@@ -111,7 +100,7 @@ Note that creating a "master" logs directory for all your submitted jobs' log fi
 
 ### IMPORTANT
 
-* If you are unsure how your workflow impact the filesystem, please follow the advice above to '[Stage via $TMPDIR](#stage-via-tmpdir)' and aim for '[Nodes with GPFS](#nodes-with-gpfs)'. 
+* If you are unsure how your workflow impact the filesystem, please follow the advice above to '[Stage via $TMPDIR](#stage-via-tmpdir)'
 * If you are planning to start to run a new workflow as an array job, please do not run this during the holidays while the systems are unattended.
 
 ## File Management
