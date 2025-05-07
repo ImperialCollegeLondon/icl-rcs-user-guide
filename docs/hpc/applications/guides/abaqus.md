@@ -2,9 +2,9 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2. (Still all relevant)
 
-Several versions of [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) are installed on our systems, use the command `module avail abaqus` to see the exact versions available.
+Several versions of [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) are installed on our systems, use the command `module spider abaqus` to see the exact versions available.
 
 ## Licensing
 
@@ -17,6 +17,8 @@ export LM_LICENSE_FILE=port@hostname
 before running Abaqus. Your group leader will know the correct `port@hostname` details for their licenses.
 
 If you have no license entitlement, licenses can be purchased from the [ICT Technology Store](mailto:techstore@imperial.ac.uk).
+
+Please note that RCS do not provide any licenses for Abaqus.
 
 ## Checkpointing your work
 
