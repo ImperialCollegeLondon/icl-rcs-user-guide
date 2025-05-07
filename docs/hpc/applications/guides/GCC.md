@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
 This page is a small guide on what type of modules to be used for compiling your programs with the GCC compiler. We are creating this page because of the way our module are built.
 
@@ -26,57 +26,36 @@ To compile the program, we need to load the GCC compilers first. To load them, w
 module load tools/prod
 
 # Then search for all GCC modules by
-module avail -i GCC
+module spider GCC
 ```
 
 The above command will give you output like below:
 
-```bash
------------------------------- /sw-eb/modules/all ------------------------------
-GCC/8.3.0   GCC/11.2.0  GCC/13.2.0      GCCcore/10.3.0  GCCcore/12.3.0  
-GCC/9.3.0   GCC/11.3.0  GCCcore/8.3.0   GCCcore/11.2.0  GCCcore/13.2.0  
-GCC/10.2.0  GCC/12.2.0  GCCcore/9.3.0   GCCcore/11.3.0  gcccuda/2020a   
-GCC/10.3.0  GCC/12.3.0  GCCcore/10.2.0  GCCcore/12.2.0  
+```text
+-------------------------------------------------------------------------------------------------------------------------------    
+  GCC:
+-------------------------------------------------------------------------------------------------------------------------------    
+    Description:
+      The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada, as well as libraries        
+      for these languages (libstdc++, libgcj,...).
 
------------------------ /apps/modules/4.7.1/modulefiles ------------------------
-gcc-xml/2013-01-04  gcc/4.9.1                      gcc/6.2.0  gcc/10.2.0  
-gcc/4.7.2           gcc/5.4.0(default)             gcc/8.2.0  gcc/11.2.0  
-gcc/4.7.4           gcc/5.4.0-disable-linux-futex  gcc/9.3.0
+     Versions:
+        GCC/7.3.0-2.30
+        GCC/9.3.0
+        GCC/10.2.0
+        GCC/10.3.0
+        GCC/11.2.0
+        GCC/11.3.0
+        GCC/12.2.0
+        GCC/12.3.0
+        GCC/13.2.0
+        GCC/13.3.0
 ```
 
-For performance reasons, we recommend using the modules under the `/sw-eb/modules/all` directory. 
-
-Someone may decide to use modules like `GCCcore/12.3.0` i.e. the one which has the word core in it. Let us go ahead and compile our program.
+Let's use `GCC/12.3.0` for example:
 
 ```bash
-# Load the module
-module load GCCcore/12.3.0
-
-# Compile the program
-g++ -o HelloWorld HelloWorld.cpp
-```
-
-You will get errors like
-
-```bash
-/usr/bin/ld: /rds/easybuild/zen2/apps/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/libgcc.a(_muldi3.o): unable to initialize decompress status for section .debug_info
-```
-
-This is because the core modules do not load the `binutils` module which is required for the GCC compiler to work correctly. To see this, if you type the following
-
-```bash
-# See all loaded modules
-module list
-
-# You will see the output
-Currently Loaded Modulefiles:
- 1) tools/prod   2) GCCcore/12.3.0 
-```
-
-Now, let us use the correct GCC module and compile the program.
-
-```bash
-# First unload the current modules
+# First unload the current modules (if any)
 module purge
 
 # Then load the tools/prod and necessary GCC module
@@ -87,14 +66,52 @@ module load GCC/12.3.0
 g++ -o HelloWorld HelloWorld.cpp
 ```
 
-This time the program will compile without any errors.
+The program should compile without any errors.
 
-If you see the list of modules loaded, you will see the following:
+## A note about GCCcore
+!!! info
+	Generally, it's best if you avoid using `GCCcore` alone and instead use one of the `GCC` modules. Below you will see an explanation of why.
+
+One may decide to use modules like `GCCcore/12.3.0` i.e. the one which has the word "core" in it. Let us go ahead and test compiling our program.
 
 ```bash
+# First unload the current modules (if any)
+module purge
+
+# Load the module
+module load GCCcore/12.3.0
+
+# Compile the program
+g++ -o HelloWorld HelloWorld.cpp
+```
+
+You will see errors like:
+
+```bash
+/usr/bin/ld: /rds/easybuild/zen2/apps/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/libgcc.a(_muldi3.o): unable to initialize decompress status for section .debug_info
+```
+
+This is because the "core" modules do not load the `binutils` module which is required for the GCC compiler to work correctly. You can see this by typing the following:
+
+```bash
+# See all loaded modules
+module list
+
+# You will see the following output, note that "binutils" is missing
+Currently Loaded Modulefiles:
+ 1) tools/prod   2) GCCcore/12.3.0 
+```
+
+If we were to load `binutils` now, by doing:
+```bash
+module load binutils/2.40-GCCcore-12.3.0
+
+module list
 Currently Loaded Modulefiles:
  1) tools/prod            3) zlib/1.2.13-GCCcore-12.3.0 <aL>    
  2) GCCcore/12.3.0 <aL>   4) binutils/2.40-GCCcore-12.3.0 <aL>
 ```
 
-As you can see from the output, the `binutils` module is loaded which is required for the GCC compiler to work correctly.
+We can see the `binutils` module is loaded which is required for the GCC compiler to work correctly.
+
+You can try re-compiling again and it should work successfully.
