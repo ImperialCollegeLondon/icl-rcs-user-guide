@@ -115,6 +115,13 @@ conda activate /rds/general/user/username/home/anaconda3/envs/tf2_env
 
 If you are still using the old Anaconda3/personal module can we please ask that you [Disable the "defaults" channel](../applications/guides/conda.md#how-to-disable-the-defaults-channel)  as this may require the University to purchase a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)
 
+## Jupyter
+[JupyterHub](https://jupyter.org/) is a web service enabling multiple users to run their Jupyter Notebooks on shared resources. The Imperial College RCS team provide a JupyterHub service which runs interactive Jupyter notebook sessions on HPC hardware by running them as "batch" jobs. The URL for the JupyterHub service is:
+
+[https://jupyter.rcs.imperial.ac.uk/](https://jupyter.rcs.imperial.ac.uk/)
+
+You must be registered with the HPC service in order to use the JupyterHub service.
+
 ## Job Sizing Guidance
 The following queues of jobs are supported:
 
