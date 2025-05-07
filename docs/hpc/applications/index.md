@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2 - in progress
+    This page **has** been rewritten for CX3 Phase 2.
 
 Because HPC systems include lots of different compilers, tools, and applications, it’s easy for command names and file paths to clash. We also need to support multiple versions of the same software. To make this easier for users, we use a module system that lets you load and switch between different programs and versions without any hassle.
 
@@ -35,10 +35,10 @@ You can use the `module avail` command to see what compilers, applications and t
    Abseil/20240722.0-GCCcore-13.3.0               (D)     Voro++/0.4.6-GCCcore-13.2.0                       (D)
 ```
 
-You can view the versions of a single application by running `module avail <name>`. For example:
+You can view the versions of a single application by running either `module avail <name>` or `module spider <name>`. For example:
 
 ```bash
-[user@login ~]$ module avail GROMACS
+[user@login ~]$ module spider GROMACS
 
 ------------------------------------------------- /sw-eb/modules/all --------------------------------------------------
    GROMACS/2021.3-foss-2021a-CUDA-11.3.1     GROMACS/2021.5-foss-2021b-PLUMED-2.8.0    GROMACS/2023.1-foss-2022a
@@ -54,7 +54,7 @@ You can view the versions of a single application by running `module avail <name
 When you first log in, you will have the `tools/prod` module loaded; this module is used to make our "production" applications accessible to your module commands. You can see this with the `module list` command:
 
 ```bash
-[user@login ~]$
+[user@login ~]$ module list
 
 Currently Loaded Modules:
   1) tools/prod
