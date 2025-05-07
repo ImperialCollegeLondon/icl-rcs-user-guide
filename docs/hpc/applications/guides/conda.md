@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
 [Conda](https://docs.conda.io/en/latest/index.html) is a package, dependency and environment management system. There are a couple of different versions avaible but we recommend using [conda-forge](https://conda-forge.org/download/). It is one of the ways for users to manage their own environments and supports a wide range of languages: Python, R, Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN.
 
@@ -21,19 +21,35 @@ module load miniforge/3
 miniforge-setup
 ```
 
-You only need to run this once for your user account to install miniforge into your home directory. Once complete you can load conda,
+You only need to run this once for your user account to install miniforge into your home directory. Once complete you can load conda:
 
 ```
 eval "$(~/miniforge3/bin/conda shell.bash hook)"
 ```
 
-You should use this command any time you wish to load conda. This also loads [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) into your environment. Mamba is similar to conda but can be a lot quicker and is able to handle more complex installations. Which you use is mostly up to you and your workflow. 
+You should use this command any time you wish to load conda. 
 
-One last thing to note, we recommend creating a new environment for each workflow and to never modify the base environment as this can break the conda installation. The best way to prevent this is to disable the automatic loading of the base environment by running:
+If you're using a different distribution of Conda such as `anaconda3` or `miniconda` you can simply replace `miniforge3` in the command above with whatever you are using.
+
+One last thing to note, we recommend creating a new environment for each workflow and to **never** modify the base environment as this can break the conda installation. The best way to prevent this is to disable the automatic loading of the base environment by running:
 
 ```
 conda config --set auto_activate_base false
 ```
+
+## Using Mamba
+This above also loads [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) into your environment. Mamba is similar to conda but can be a lot quicker and is able to handle more complex installations. Which you use is mostly up to you and your workflow. 
+
+Mamba can be used exactly as you would use Conda. All you need to do differently is use the `mamba` command instead of `conda`. For example: `mamba create` and `mamba install`
+
+## Anaconda licensing
+Unfortunately due to changes in the Anaconda license users need to manually disable the *defaults* channel and instead use conda-forge. This shouldn't affect most users as most package developers focus on conda-forge anyway. To make this change please run the following:
+
+```console
+[username@login-b ~]$ conda config --remove channels defaults
+[username@login-b ~]$ conda config --add channels conda-forge
+```
+To see more about this change, please look below at the [How to disable the defaults channel page](#how-to-disable-the-defaults-channel)
 
 ## Conda Table of Commands
 
@@ -49,17 +65,7 @@ conda config --set auto_activate_base false
 | Remove unused packages and caches | conda clean |
 
 For a full list of commands please see [conda commands](https://docs.conda.io/projects/conda/en/stable/commands/index.html) provided by Anaconda.
-
-## Anaconda3/personal
-
-Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employess buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving to using the open source product provided by the same team that manage those repos. Users can continue to use their original environments if they install miniforge but they will have to be activated using the full path. For example, if you installed [Tensorflow](./tensorflow.md) following the old documentation you can still activate that envornment with the following:
-
-```
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
-conda activate /rds/general/user/username/home/anaconda3/envs/tf2_env
-```
-
-If you are still using the old Anaconda3/personal module can we please ask that you [Disable the "defaults" channel](#how-to-disable-the-defaults-channel)  as this may require the University to purchase a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)
+The majority of these commands can be used with Mamba as well.
 
 ## How to disable the defaults channel
 
@@ -87,7 +93,7 @@ channels:
   - bioconda
 ```
 
-As mentioned in the section [Anaconda3/personal](#anaconda3personal), anaconda recently updated its licensing terms and we cannot use the defaults channel. We need to remove this channel from all our `.condarc` files. For some users who may have installed their own version of conda, they may have the `.condarc` file in multiple locations. They can use the following command to see the location of such files.
+Anaconda recently updated its licensing terms meaning we cannot use the `defaults` channel. We need to remove this channel from all our `.condarc` files. For some users who may have installed their own version of conda, they may have the `.condarc` file in multiple locations. They can use the following command to see the location of such files.
 
 ```bash
 # Input Command
@@ -104,7 +110,7 @@ channels:
 
 ```
 
-For most of the users, the file will be in their home directory. To remove the defaults channel, they can use the following command.
+For most of the users, the file will be in their home directory. To remove the `defaults` channel, they can use the following command.
 
 ```bash
 conda config --remove channels defaults

@@ -103,6 +103,18 @@ mpiexec -n 8 a.out [program arguments]
 It's not necessary to add "-n" or any other flag to specify the number of ranks. If a specific rank count is required and cannot be exactly specified with N x P, use the optional flag “-n <num>”. The number of ranks requested this way must be no more than N x P
 it isn't necessary to specify the full path to the program: mpiexec will search `PATH` for the program
 
+## Conda 
+### Anaconda3/personal
+
+Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employees to buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving towards using the open source product provided by the same team that manage those repos. Users can continue to use their original environments if they install miniforge but they will have to be activated using the full path. For example, if you installed [Tensorflow](./tensorflow.md) following the old documentation you can still activate that environment with the following:
+
+```
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
+conda activate /rds/general/user/username/home/anaconda3/envs/tf2_env
+```
+
+If you are still using the old Anaconda3/personal module can we please ask that you [Disable the "defaults" channel](../applications/guides/conda.md#how-to-disable-the-defaults-channel)  as this may require the University to purchase a license for every user. More information on Anaconda's terms of service can be found at: [https://www.anaconda.com/pricing/terms-of-service-faqs](https://www.anaconda.com/pricing/terms-of-service-faqs)
+
 ## Job Sizing Guidance
 The following queues of jobs are supported:
 
