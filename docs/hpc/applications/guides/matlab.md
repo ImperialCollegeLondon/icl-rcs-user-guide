@@ -2,25 +2,32 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page has partially been rewritten for CX3 Phase 2.
 
 MATLAB is a programming and numeric computing platform used by millions of engineers and scientists to analyse data, develop algorithms, and create models.
 
 ## Loading MATLAB
 
-There are a number of versions installed on the RDS which you can see by first loading into the Production release of our [Easybuild](../easybuild.md) stack and then running `module -i av matlab`
+There are a number of versions installed on the RDS which you can see by first loading into the Production release of our [Easybuild](../easybuild.md) stack and then running `module spider MATLAB`
 
 ```console
 $ module load tools/prod
-$ module -i av matlab
--------------------------------------------------- /sw-eb/modules/all --------------------------------------------------
-MATLAB/2023a_Update_3
- 
------------------------------------------------------------------------------------ /apps/modules/4.7.1/modulefiles -----------------------------------------------------------------------------------
-matlab/R2017a(default)  matlab/R2017b  matlab/R2018a  matlab/R2019a  matlab/R2020a  matlab/R2020a-latest-jre  matlab/R2020b  matlab/R2021a
+$ module spider MATLAB
+-------------------------------------------------------------------------------------------------------------------    
+  MATLAB:
+-------------------------------------------------------------------------------------------------------------------    
+    Description:
+      MATLAB is a high-level language and interactive environment that enables you to perform computationally
+      intensive tasks faster than with traditional programming languages such as C, C++, and Fortran.
+
+     Versions:
+        MATLAB/2021a-r8
+        MATLAB/2023a_Update_3
+        MATLAB/2023b
+        MATLAB/2024b
 ```
 
-Note that the older MATLAB modules have a lower case name, and the newer modules have an upper case name, the -i option to module performs a case insensitive search.
+You can also run `module spider matlab` (in lowercase) which will show all software that has "matlab" in it. At the time of writing, this includes only one other package: `CVX/2.2.2-MATLAB-2024b`
 
 ## Submitting a Job
 
@@ -47,8 +54,8 @@ Going through this line-by-line:
 1. PBS directive giving the maximum walltime. This should be the length of time your MATLAB code takes to run. It is advisable to give a bit of margin here but remember the more time your request, the longer your job is likely to be queued.
 1. PBS directive giving the job name. This isn't required but can be useful when checking what jobs have run.
 1. Load the production instance of our Easybuild software installations.
-1. Load the necessary modules. By default no versions of MATLAB are available so a compatible version needs to be loaded.
-1. Change directory (cd) to the location this script was submitted. This can be any cd command but here the `$PBS_O_WORKDIR`  environment variable was used as short hand. Have a look at the General best practices for information about data locations.
+1. Load the necessary modules.
+1. Change directory (`cd`) to the location this script was submitted. This can be any `cd` command but here the `$PBS_O_WORKDIR` environment variable was used as short hand. Have a look at the [General best practices](../../best-practice.md) for information about data locations.
 1. Finally the Matlab command to start the MDCS job (`matlab -nosplash -nodisplay -nojvm -batch myMfile -logfile myTestRun_output.log`), with the Matlab script myMfile.m.
 
 Note that this assumes your PBS script and MATLAB script are in the same location on the RDS. To submit the job to PBSPro, use the following command as given in Getting started
