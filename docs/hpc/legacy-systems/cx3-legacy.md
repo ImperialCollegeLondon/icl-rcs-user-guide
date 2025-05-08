@@ -106,7 +106,7 @@ it isn't necessary to specify the full path to the program: mpiexec will search 
 ## Conda 
 ### Anaconda3/personal
 
-Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employees to buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving towards using the open source product provided by the same team that manage those repos. Users can continue to use their original environments if they install miniforge but they will have to be activated using the full path. For example, if you installed [Tensorflow](./tensorflow.md) following the old documentation you can still activate that environment with the following:
+Long term users will remember the anaconda3/personal module and the attached documentation. This method relied on packages provided by Anaconda Inc. but in 2020 they changed their terms of service requiring all companies with more than 200 employees to buy a commercial license. As most workflows on HPC use the conda-forge repo anyway we are moving towards using the open source product provided by the same team that manage those repos. Users can continue to use their original environments if they install miniforge but they will have to be activated using the full path. For example, if you installed Tensorflow following the old documentation you can still activate that environment with the following:
 
 ```
 eval "$(~/miniforge3/bin/conda shell.bash hook)"
@@ -158,7 +158,7 @@ Job extensions are allowed on the medium queue only for jobs requesting the maxi
 
 ### gpu72
 
-There is an additional limit of 32 GPUs total per user on the gpu72 queue to allow for fair usage of the GPUs. Please see our [GPU Jobs guide](./gpu-jobs.md) for how to run GPU jobs.
+There is an additional limit of 32 GPUs total per user on the gpu72 queue to allow for fair usage of the GPUs.
 
 ### largemem72
 
