@@ -2,9 +2,9 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
-The default Python that you will find on our systems is fine for trivial use. For anything demanding, however, you will need to use a different version of Python. The sections below how to use different versions of python on the HPC facility. If you are unable to use one of the methods below to install the python modules you need, please view the Support and Training page for information on raising a ticket for help from us.
+The default Python that you will find on our systems is fine for trivial use. For anything demanding, however, you will need to use a different version of Python. The sections below how to use different versions of python on the HPC facility. If you are unable to use one of the methods below to install the python modules you need, please [raise a ticket with us](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/).
 
 ## Easybuild Python
 
@@ -17,7 +17,7 @@ module load tools/prod
 You can then see all the versions of Python available
 
 ```console
-module av Python
+module spider Python
 ```
 
 The versions called "bare" provide very little and we generally recommend users avoid them. If you are looking to use that standard scientific packages like NumPy, SciPy, and matplotlib then you only need to load a version of the SciPy-bundle. Loading this will automatically load the required version of Python. For example,
@@ -26,7 +26,7 @@ The versions called "bare" provide very little and we generally recommend users 
 module load SciPy-bundle/2022.05-foss-2022a
 ```
 
-These versions of Python also include virtualenv to allow users to create custom environments. For example, to create an environment called "example-env"
+These versions of Python also include virtualenv (venv) to allow users to create custom environments. For example, to create an environment called "example-env"
 
 ```console
 mkdir ~/venv
@@ -68,24 +68,31 @@ cd $PBS_O_WORKDIR
 
 python3 some_python_script.py
 ```
+It's important to remember that if you create a `venv` with any of the given modules such as `SciPy-bundle/2022.05-foss-2022a`, then you will need to load that same module before you can activate the environment.
 
 ## Conda and Python
 
-If you are already familiar with package managers like Anaconda, this may be your best option in terms of getting your environment (set of python modules) working on the HPC facility. To begin, following the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called py39 containing python 3.9, and would install numpy in that environment.
+If you are already familiar with package managers like Anaconda, this may be your best option in terms of getting your environment (set of python modules) working on the HPC facility. To begin, follow the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called `py39` containing Python 3.9, and would install `numpy` in that environment.
 
 ```console
 eval "$(~/miniforge3/bin/conda shell.bash hook)"
-conda create -n py39 python=3.9
+conda create -n py39 python=3.9 numpy
 source activate py39
-(py39) conda search numpy
-(py39) conda install numpy
 ```
+This will:
+
+1. Get Conda ready for use with the `eval` command.
+1. Create a Conda environment called `py39` with Python 3.9 and the latest version of `numpy` compatible with it.
+1. Activate the environment so that it's ready to be used.
+
+!!! info
+	To prevent dependency conflicts in Conda, we recommend installing everything in one go as we did in the 2nd line above, rather than creating your environment and installing one package at a time. You can read more about this on our [Conda page](./conda.md).
 
 ### Conda interoperability with pip
 
 If you cannot find a package you need from a conda channel, you may need to try a conventional `pip install`.
 
-Conda and pip have historically had difficulties getting along.  Pip didn't respected Conda’s environment constraints, while Conda was all too happy to clobber pip-installed software. Conda 4.6.0 adds preview support for better interoperability. With this interoperability, Conda can use pip-installed packages to satisfy dependencies, and can even remove pip-installed software cleanly and replace them with Conda packages when appropriate.
+Conda and pip have historically had difficulties getting along.  Pip didn't respect Conda’s environment constraints, while Conda was all too happy to clobber pip-installed software. Conda 4.6.0 adds preview support for better interoperability. With this interoperability, Conda can use pip-installed packages to satisfy dependencies, and can even remove pip-installed software cleanly and replace them with Conda packages when appropriate.
 
 This feature is disabled by default right now because it can significantly impact Conda’s performance.  If you’d like to try it, you can set this condarc setting:
 
@@ -93,7 +100,7 @@ This feature is disabled by default right now because it can significantly impac
 conda config --set pip_interop_enabled True
 ```
 
-Where previous versions of Conda will show a confusing ambiguity on exactly what’s present in “conda list” if you installed a pip package when it was already present in the environment. Conda 4.6 now shows only one correct entry.
+Where previous versions of Conda will show a confusing ambiguity on exactly what’s present in `conda list` if you installed a pip package when it was already present in the environment. Conda 4.6 now shows only one correct entry.
 
 ## Memory Profiling Python
 
