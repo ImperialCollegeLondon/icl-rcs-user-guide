@@ -8,7 +8,7 @@
 
 There are a number of methods that can be used to install TensorFlow, such as using pip to install the wheels available on PyPI, or using conda. 
 
-However, neither are installing the software optimised for the used computing hardware and such might lead to performance penalties. Furthermore, although Tensorflow also works in a CPU mode only, it is not recommended to do so at the performance is inferior compared with a GPU installation.
+However, neither install the software optimised for our computing hardware and such might lead to performance penalties. Furthermore, although Tensorflow also works in a CPU mode only, it is not recommended to do so at the performance is massively inferior compared with a GPU installation.
 
 With the move to use EasyBuild as a software management tool, we now can provided architecture specific GPU compiled versions of Tensorflow where the user only needs to load the module and does not require any further installation steps to be done. We leave the now outdated advice about the use of conda for documentation purposes for now.
 
@@ -18,39 +18,29 @@ In the submission script, the following module commands, and only these, need to
 
 ```console
 module purge
-module add tools/prod
-module add TensorFlow/2.7.1-foss-2021b-CUDA-11.4.1
+module load tools/prod
+module load TensorFlow/2.15.1-foss-2023a-CUDA-12.1.1
 ```
 
-This will add the latest currently installed version of Tensorflow (2.7.1) using the foss-2021b toolchain, which is basically compilers etc., with CUDA version 11.4.1. Newer versions can be installed upon request. Below is an example submission script using this version of Tensorflow:
+This will add the latest currently installed version of Tensorflow (2.15.1) using the foss-2023a toolchain (basically compilers etc.), with CUDA version 12.1.1. Newer versions can be installed upon request. Below is an example submission script using this version of Tensorflow:
 
 ```bash
 #!/bin/bash
-#PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=RTX6000
+#PBS -l select=1:ncpus=4:mem=24gb:ngpus=1
 #PBS -l walltime=01:00:00
  
 module purge
-module add tools/prod
-module add TensorFlow/2.7.1-foss-2021b-CUDA-11.4.1
+module load tools/prod
+module load TensorFlow/2.15.1-foss-2023a-CUDA-12.1.1
  
 # Your python code utilising tensorflow e.g.
-# python tf2-benchmarks.py --model resnet50 --enable_xla --batch_size 256 --num_gpus 1
+python tf2-benchmarks.py --model resnet50 --enable_xla --batch_size 256 --num_gpus 1
 ```
 
 Further advice on submitting jobs to GPU nodes may be found on our [GPU Jobs page](../../queues/gpu-jobs.md).
 
-To see which software is installed on the GPU nodes a special module is provided for that on the **login nodes**, which is only to **view** the module names, not to **use** the program:
-
-```console
-module purge
-module add tools/gpu-headnode
-module av Tensor
-```
-
-This will display all the currently installed versions of Tensorflow.
-
 ## Conda
-Whether using  CPU's or GPU's, you should install TensorFlow into a clean conda environment. You will need to first setup up your own [conda environment](./conda.md).
+Whether using CPU's or GPU's, you should install TensorFlow into a clean conda environment. You will need to first setup up your own [conda environment](./conda.md).
 
 Please take care when installing Tensorflow with other packages. It isn't uncommon for Tensorflow to conflict with other packages so we generally recommend keeping your Tensorflow environment to a minimum. 
 
