@@ -69,6 +69,11 @@ As such, the way to avoid this, would be to install both packages in one go, as 
 ```bash
 conda create -n py39 python=3.9 package-a=2.0
 ```
+### Base Conda Environment
+Avoid install anything into your base Conda environment. Conda itself and its core dependencies are installed here so modifying them can introduce dependency conflicts or break Conda. So, always create a Conda environment and install your packages into there.
+
+### Updating Conda
+Avoid updating Conda itself unless it's very old and is causing issues/missing features. This is because it could cause further dependency issues or be incompatible with some packages.
 
 ## Conda Table of Commands
 
