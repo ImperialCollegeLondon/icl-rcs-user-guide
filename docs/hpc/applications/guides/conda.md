@@ -51,6 +51,25 @@ Unfortunately due to changes in the Anaconda license users need to manually disa
 ```
 To see more about this change, please look below at the [How to disable the defaults channel page](#how-to-disable-the-defaults-channel)
 
+## Conda Best Practices
+
+### Resolving Dependencies
+Conda can sometimes have issues resolving dependencies, which is where it tries to find versions of packages that are compatible with one another. With potentially hundreds of packages, this can take a long time. [Mamba](#using-mamba) does a better job at this, but still can't solve everything.
+
+In order to prevent this from happening, we recommend that when you create a Conda environment, you also do your best to install all the packages you need in one go. Here's a simple example of why:
+
+1. Suppose you want to install `Python 3.9` and `package-a v2.0` into a new environment.
+1. You start by creating the environment and installing `Python 3.9` This will install the latest version of available of `Python 3.9`. <br /> `conda create -n py39 python=3.9`
+1. Now, you want to install `package-a v2.0` into that environment as well. <br /> `conda install package-a=2.0`
+1. You get an error saying `package-a requires Python<=3.9.6`
+
+This has occurred because when you did `conda create -n py39 python=3.9`, it installed the latest version of `Python 3.9`, which is `3.9.22`. However, the program `package-a v2.0` requires something older than or equal to `Python 3.9.6`.
+
+As such, the way to avoid this, would be to install both packages in one go, as Conda would see that `package-a v2.0` requires 3.9.6 or earlier, and would install that instead of the latest version:
+```bash
+conda create -n py39 python=3.9 package-a=2.0
+```
+
 ## Conda Table of Commands
 
 | Conda basic commands | COMMAND |

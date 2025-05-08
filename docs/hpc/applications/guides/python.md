@@ -86,7 +86,7 @@ This will:
 1. Activate the environment so that it's ready to be used.
 
 !!! info
-	To prevent dependency conflicts in Conda, we recommend installing everything in one go as we did in the 2nd line above, rather than creating your environment and installing one package at a time. You can read more about this on our [Conda page](./conda.md).
+	To prevent dependency conflicts in Conda, we recommend installing everything in one go as we did in the 2nd line above, rather than creating your environment and installing one package at a time. You can read more about this on our [Conda Best Practices Page](./conda.md#conda-best-practices).
 
 ### Conda interoperability with pip
 
