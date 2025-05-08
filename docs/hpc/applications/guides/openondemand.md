@@ -12,36 +12,39 @@ You must be registered with the HPC service in order to use the OOD service.
 
 We recommend you setup a [Conda](./conda.md) environment when using RStudio; these instructions demonstrate how to do this.
 
-## Creating an Conda Environment
+## Creating a Conda Environment
 
 We recommend you familiarise yourself with the use of Conda and R by going to the [R application page](./R.md). You will then need to prepare your Conda environment by first connecting to the login node using SSH (see the [Getting started](../../getting-started/index.md) guide for advice on doing this).
 
-From there, load Anaconda and create a new environemnt.
+!!! info
+	If you have not setup Conda yet, please do so first by following both sections - [Using Conda](./conda.md#using-conda) and [Anaconda Licensing](./conda.md#anaconda-licensing)
+
+Once you've done that, you can now create a Conda environment to use within OOD.
 
 ```console
-module load anaconda3/personal
-anaconda-setup
+module load miniforge/3
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
 conda create -n Renv r-base=4.1.2 -c conda-forge
 ```
 
-The anaconda-setup command will only need to be run the first time you load anaconda3/personal. The name after "-n" is a unique name for this environment. Once that completes and other packages can be installed via Anaconda. This environment can then be activated with:
+The name after "-n" is a unique name for this environment, you can set this to whatever you see fit. Once that completes, you can install any other packages you may need. This environment can then be activated with:
 
 ```console
 source activate Renv
-(Renv)
 ```
 
-**Users should not install packages using package.install as this may lead to conflicts.**
+!!! warning
+	Users should **not** install packages using install.packages or Cran as this may lead to conflicts, instead use Conda to install them.
 
-For example, to install tidyverse,
+For example, to install tidyverse, you can do:
 
 ```console
 (Renv) conda install -c conda-forge r-tidyverse
 ```
 
-To find packages, either search on the [Anaconda website](https://anaconda.org/search) or use the following replacing "package_name" with the name of the R package to be installed,
+To find packages, either search on the [Anaconda website](https://anaconda.org/search), or use the following replacing `package_name` with the name of the R package to be installed:
 
-```
+```text
 (Renv) conda search "package_name"
 ```
 
@@ -58,7 +61,11 @@ Once the page load it will look something like the following,
 
 ![OOD RStudio Launch](img/ood-rstudio-launch.png)
 
-From the Resources drop down list select the most appropriate instance. Then in the text box below that labelled "Conda Environment Name" input the name of the environment generated above. In this example that would be "Renv". Then click launch. The job will then join a queue. Please be patient while your job sits in queue. The wait time depends on the number of cores and time requested as well as how busy the queue is. Once is starts a button labelled "Connect to RStudio Server" should appear.
+1. From the Resources drop down list select the most appropriate instance. 
+1. In the text box below labelled "Conda Environment Name (Optional)" input the name of the environment we created above ("Renv" in this case), or any other environment you've previously created. 
+1. The option "Conda Software Name (Optional)" supports different Conda distributions such as `anaconda3`, `miniforge3` and a few others. This can be changed so that you select the correct distribution which you've got your Conda environment installed in. 
+1. Click launch and the job will join a queue. Please be patient while your job sits in queue. The wait time depends on the number of cores and time requested as well as how busy the queue is. 
+1. Once it starts, a button labelled "Connect to RStudio Server" should appear.
 
 Clicking on that will start up Rstudio in a new window using the created Anaconda environment. 
 
@@ -67,7 +74,9 @@ Clicking on that will start up Rstudio in a new window using the created Anacond
 ## Installing packages on Open OnDemand
 Once the above has been followed, users can install new packages via the Rstudio Terminal.
 
-**Users should not install packages using Cran or the packages.install command.**
+!!! warning
+	As mentioned above, users should **not** install packages using install.packages or Cran, as this may lead to conflicts, instead use Conda to install them.
+
 
 At the top left of the screen select the tab called Terminal. This will drop the user in to a bash screen on the compute node the job is running. This can be useful for running monitoring command like top or free but here it will be used to install packages. 
 
@@ -76,11 +85,11 @@ At the top left of the screen select the tab called Terminal. This will drop the
 First the R environment needs to be loaded, which is done in a similar way to before.
 
 ```console
-module load anaconda3/personal
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
 source activate Renv
 ```
 
-Packages can then be installed. For example, to install tidyverse,
+Packages can then be installed. For example, to install tidyverse, you can do:
 
 ```console
 (Renv) conda install -c conda-forge r-tidyverse
@@ -96,7 +105,7 @@ The session doesn't need to be reloaded once packages are installed, simply swit
 
 ## Clearing browser cache
 
-Open on-Demand uses single sign-on to allow users to connect without having to input their password every time. However this can sometime become corrupted, preventing users from even loading the OOD home page. If issue can be identified if you are able to login via an Incognito or private browsing window but not via your normal browser. If closing all browser windows doesn't help then you may have to clear your browser cache. Below is some guidance on how to do this for the major browsers.
+Open on-Demand uses single sign-on to allow users to connect without having to input their password every time. However, this can sometimes become corrupted, preventing users from even loading the OOD home page. The issue can be identified if you are able to login via an Incognito or private browsing window but not via your normal browser. If closing all browser windows doesn't help then you may have to clear your browser cache. Below is some guidance on how to do this for the major browsers.
 
 ### Clearing browser cache on Firefox:
 
