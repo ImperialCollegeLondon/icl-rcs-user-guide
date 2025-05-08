@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has partially been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2. Not many changes needed
 
 MATLAB is a programming and numeric computing platform used by millions of engineers and scientists to analyse data, develop algorithms, and create models.
 
@@ -27,7 +27,7 @@ $ module spider MATLAB
         MATLAB/2024b
 ```
 
-You can also run `module spider matlab` (in lowercase) which will show all software that has "matlab" in it. At the time of writing, this includes only one other package: `CVX/2.2.2-MATLAB-2024b`
+You can also run `module spider matlab` (in lowercase) which will show all software that has "matlab" in its name. At the time of writing, this includes only one other package: `CVX/2.2.2-MATLAB-2024b`
 
 ## Submitting a Job
 
