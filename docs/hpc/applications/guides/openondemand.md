@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2.
 
 [Open OnDemand](https://openondemand.org/) (OOD) is a service that enables interactive applications to run as "batch" jobs on a normal HPC facility; these applications are then accessed via a web browser. The OOD service at Imperial is primarily focused on R and Rstudio. The URL for the OOD service hosted by the Imperial College RCS team is:
 
