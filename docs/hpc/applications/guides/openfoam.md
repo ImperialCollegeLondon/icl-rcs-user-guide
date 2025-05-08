@@ -2,7 +2,7 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page **has** been rewritten for CX3 Phase 2. Not many changes needed
 
 [OpenFOAM](https://www.openfoam.com/) is the free, open source CFD software developed primarily by OpenCFD Ltd since 2004. We have many versions of OpenFOAM available on our HPC systems, and we recommend using the latest version available as shown below.
 
@@ -12,24 +12,33 @@ You can search which versions of OpenFOAM are available on the HPC by running th
 
 ```bash
 module load tools/prod
-module avail -i openfoam
+module spider openfoam
 ```
 
 This will show output similar to the following
 ```bash
-OpenFOAM/8-foss-2020b            OpenFOAM/v2006-foss-2020a  
-OpenFOAM/8-foss-2022a            OpenFOAM/v2106-foss-2021a  
-OpenFOAM/10-foss-2022a           OpenFOAM/v2206-foss-2022a  
-OpenFOAM/10-foss-2022a-20230119
-```
+-------------------------------------------------------------------------------------------------------------------------------    
+  OpenFOAM:
+-------------------------------------------------------------------------------------------------------------------------------    
+    Description:
+      OpenFOAM is a free, open source CFD software package. OpenFOAM has an extensive range of features to solve anything from     
+      complex fluid flows involving chemical reactions, turbulence and heat transfer, to solid dynamics and electromagnetics.      
 
-We highly recommend to use the software under `sw-eb/modules/all` whenever you can. These are our production grade software which are built and optimized for our HPC systems.
+     Versions:
+        OpenFOAM/v2206-foss-2022a
+        OpenFOAM/v2306-foss-2022b
+        OpenFOAM/v2406-foss-2023a
+        OpenFOAM/7-foss-2022a-20200508
+        OpenFOAM/10-foss-2022a-20230119
+```
+You can of course also do `module avail openfoam`, both commands are very similar.
 
 To load a specific version of OpenFOAM, you can use the following command:
 
 ```bash
 module load <version>
-#where version could be any one of the versions listed above
+#Where version could be any one of the versions listed above, for example
+module load OpenFOAM/v2406-foss-2023a
 ```
 
 ## How to get the OpenFOAM commands
