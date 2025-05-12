@@ -1,10 +1,10 @@
 # Same or Previous Code not working
 
-This is one of the most common type of message or ticket that we receive at RCS. In almost all cases, users say that their code is not working now for some reasons which has been working perfectly until a few days back. Most often, users say that they have not made any changes in the code, input files or their workflows.
+This is one of the most common type of message or ticket that we receive. In almost all cases, users say that their code is not working now for some reason, but has been working perfectly until a few days/weeks back. Most often, users say that they have not made any changes in the code, input files or their workflows.
 
 When we talk to these users, we notices some small changes introduced by them either intentionally or unintentionally while they were trying something new. We regret to inform that such type of tickets are most difficult to resolve and are most time consuming from our end. We do not have any strategy that we can mention on this page which may help to avoid the issues altogether. This is because the issue may arise from several different reasons which can be summarized here.
 
-Instead, the idea of this page is to provide some guidelines for the user to create a Minimal reproducible example which definitely helps a lot in identifying and resolving an issue.
+Instead, the idea of this page is to provide some guidelines for the user to create a minimal reproducible example which definitely helps a lot in identifying and resolving an issue.
 
 ### Minimal Reproducible Example
 
