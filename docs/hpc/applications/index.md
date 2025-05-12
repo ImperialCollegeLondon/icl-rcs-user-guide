@@ -55,7 +55,7 @@ You can use the `module avail` command to see what compilers, applications and t
 --More--
 ```
 
-You can view the versions of a single application by running either `module avail <name>` or `module spider <name>`. For example:
+You can view the versions of a single application by running either `module avail <name>`; note that the `module avail` command is **case-insensitive**. For example:
 
 ```bash
 [user@login ~]$ module avail GROMACS
@@ -70,51 +70,11 @@ You can view the versions of a single application by running either `module avai
   Where:
    D:  Default Module
 
-If the avail list is too long consider trying:
-
-"module --default avail" or "ml -d av" to just list the default modules.
-"module overview" or "ml ov" to display the number of modules for each name.
-
-Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
-```
-
-and `module spider GROMACS`:
-
-```bash
-[user@login ~]$ module spider GROMACS
-
-----------------------------------------------------------------------------------------
-  GROMACS:
-----------------------------------------------------------------------------------------
-    Description:
-      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
-      Newtonian equations of motion for systems with hundreds to millions of particles.
-      This is a CPU only build, containing both MPI and threadMPI binaries for both
-      single and double precision. It also contains the gmxapi extension for the single
-      precision MPI build.
-
-     Versions:
-        GROMACS/2021.3-foss-2021a-CUDA-11.3.1
-        GROMACS/2021.3-foss-2021a-PLUMED-2.7.2
-        GROMACS/2021.3-foss-2021a
-        GROMACS/2021.5-foss-2021b-PLUMED-2.8.0
-        GROMACS/2021.5-foss-2021b
-        GROMACS/2023.1-foss-2022a-CUDA-11.7.0
-        GROMACS/2023.1-foss-2022a
-        GROMACS/2023.3-foss-2023a
-        GROMACS/2024.1-foss-2023b
-
-----------------------------------------------------------------------------------------
-  For detailed information about a specific "GROMACS" package (including how to load the mod
-ules) use the module's full name.
-  Note that names that have a trailing (E) are extensions provided by other modules.
-  For example:
-
---More--
 ```
 
 ## Loading modules
+
+Modules are loaded into your environment using the `module load` command; note that the `module load` command is **case-sensitive**.
 
 If you load a module for an application into your environment without specifying the version you will load the default version (marked with a `(D)` as above). The default version of a module will normally be the latest version we have installed unless we have set a particular version to be the default. We generally recommend that you use the latest installed version of an module unless there are specific reasons not to do so. For example:
 
@@ -185,10 +145,9 @@ Currently Loaded Modules:
 | Module Command | Description |
 | -------------- | ----------- |
 | `module list` | Lists all modules that are currently loaded in your environment. |
-| `module load <name>` | Loads the module called <name\>. |
+| `module load <name>` | Loads the module called <name\> (case-sensitive). |
 | `module avail` | Report the names and versions of all the applications that can be loaded. |
-| `module avail <name>` | Reports all the versions of an application that matches the name <name\> and that can be loaded directly. |
-| `module spider <name>` | Reports all the versions of an application that matches the name <name\> on the system (note that some of these applications may require extra steps to load). | 
+| `module avail <name>` | Reports all the versions of an application that matches the name <name\> (case-insensitive). |
 | `module help <name>` | Gives information about the module called <name\>, similar to man <name\>. |
 | `module purge` | Unloads any loaded modules. We strongly recommend you place this in your submission script before loading any new modules. |
 | `module show <name>` | Displays will list the full path of the modulefile and the environment changes the modulefile will make if loaded. |
