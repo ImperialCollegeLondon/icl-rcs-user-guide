@@ -1,6 +1,6 @@
 # Bad interpreter: No such file or directory
 
-Although not very common, RCS team receives messages from user who experience this error or issue. Fortunately, both the cause and the resolution are quite straightforward to understand.
+The RCS team receives messages from user who experience this error or issue. Fortunately, both the cause and the resolution are quite straightforward to understand.
 
 ## Cause
 
