@@ -1,10 +1,10 @@
 # Jobs causing issues with the RDS
 
-Quite often, we come across users whose jobs slowdown the RDS, increase significant load on the RDS or degrade its performance in any other way. In some cases, the RCS team has to quickly figure out the job causing such issues. When the team finds such a user, their job has to be killed or we have to hold it for further checks so that other users are not affected. The RCS team may also send an email to the user asking them to review their workflows and talk to the RCS team for any help
+Quite often, we come across users whose jobs slowdown the RDS, increase significant load on the RDS or degrade its performance in any other way. In some cases, the RCS team has to quickly figure out the job causing such issues. When the team finds such a user, their job has to be killed or we have to hold it for further checks so that other users are not affected. The RCS team may also send an email to the user asking them to review their workflows and talk to the RCS team for any help.
 
 In the recent past, we had quite a few such occasions. In almost all cases, the reason was reading the same input file by multiple jobs, subjobs, processes etc. We would also like to categorically point out that any code doing Parallel I/O using MPI or any other similar libraries cannot cause such issues as they are designed to allow multiple processes to read the same file.
 
-In order to understand how reading from same file can cause issues, we present a simple example script which is self-explanatory in  general.
+In order to understand how reading from same file can cause issues, take a look at this example script:
 
 ```bash
 #!/bin/bash
@@ -18,7 +18,7 @@ cd $PBS_O_WORKDIR
  
 # Load any necessary modules for your C++ program
 module load tools/prod
-module load gcc/11.2.0
+module load GCC/11.2.0
  
 # Define the input file location
 input_file="/home/input_file_location/my_input_file.txt"
@@ -43,29 +43,13 @@ In the above script, we are running an array job (For more details, please see [
 
 Now depending on the load on the cluster, it may happen that some of these 10 jobs start roughly at the same time. Assume that 5 jobs start at the same time. For simplicity, further assume that only the master thread/process is reading the file while others are waiting. This means out of 4 processes (ppn value), only 1 of them reads the entire file. Since 5 jobs started at the same time, it cause problems to OS to decide which of these should be allowed to read the file first. This finally results in file locking (more details can be found in [https://www.egnyte.com/guides/file-sharing/file-locking](https://www.egnyte.com/guides/file-sharing/file-locking)).
 
-Please note that not just the reading but such an attempt to write the same file can lead to worse results (details skipped here as they are not relevant directly).
+Please note that not just the reading but such an attempt to write the same file can lead to worse results (details skipped here as they are not directly relevant).
 
 ## How to resolve this file locking issue
 There are multiple steps that you can use in your job script that can reduce or completely eliminate file locking issues (and high load on the RDS that we talked about earlier).
 
-* [Use Compute Nodes Connected to the RDS over GPFS](#use-compute-nodes-connected-to-the-rds-over-gpfs)
 * [Use Staging](#use-staging)
 * [Use a separate location or unique copy of input/output files for your sub-jobs](#use-a-separate-location-or-unique-copy-of-inputoutput-files-for-your-sub-jobs)
-
-We briefly describe each one below.
-
-### Use Compute Nodes Connected to the RDS over GPFS
-
-HPC compute nodes are connected to the RDS using two different methods:
-
-* NFS (https://en.wikipedia.org/wiki/Network_File_System)
-* GPFS or Spectrum Scale (https://en.wikipedia.org/wiki/GPFS)
-
-The GPFS file system is better in handling the issue described above and it will not increase the load on the RDS as much as with NFS. In some cases, this step alone can minimise the problem to a great extent. To use compute nodes connected to the RDS using GPFSfor your application, all you have to do is include the flag `filesystem_type` in your submission script as described in [Job sizing guidance](../queues/job-sizing-guidance.md) and also given below.
-
-```bash
-#PBS -l select=1:ncpus=12:mem=50gb:filesystem_type=gpfs
-```
 
 ### Use Staging
 
@@ -77,7 +61,7 @@ You can find more details about staging on using TMPDIR on the [Best Practice pa
 
 ### Use a separate location or unique copy of input/output files for your sub-jobs.
 
-As you can possibly imagine, that one of the root cause of file locking was due to the fact that multiple sub-jobs were trying to read from the same file. Thus, it makes sense to provide input files at different locations for each sub job. Quite often, this step is one of the most important and eliminates the issue completely.
+As you can possibly imagine, one of the root causes of file locking was due to the fact that multiple sub-jobs were trying to read from the same file. Thus, it makes sense to provide input files at different locations for each sub job. Quite often, this step is one of the most important and eliminates the issue completely.
 
 For users whose input file size is small, it is easy to make copies (let us say 10) of these files at unique locations so that each sub-job reads from its unique location. However, for users whose input  files are very large, this step may not be possible. In that case, we suggest you to limit the number of sub-jobs that can be launched simultaneously or make use of dependency in your job scripts as described in Job Dependencies.
 
