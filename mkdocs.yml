@@ -77,7 +77,6 @@ nav:
       - Long Queue Times: hpc/faq/long-queue-times.md
       - Accidentally Deleted Files: hpc/faq/deleted-files.md
       - Cannot Create Conda Environment: hpc/faq/cannot-create-conda-env.md
-      - Cannot SSH to HX1: hpc/faq/cannot-ssh-hx1.md
       - How much resource should I ask for: hpc/faq/how-much-resource.md
       - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
       - No such file or directory: hpc/faq/bad-interpreter.md
