@@ -2,11 +2,11 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page has been partially rewritten for CX3 Phase 2.
 
 The Imperial HPC facility is a batch processing system. Rather than carrying out work directly on the command line, jobs are submitted to the queue of a work manager (or resource scheduler) where they are held until compute resource become free. A job is defined by a shell script that contains all of the commands to be run.
 
-The Imperial HPC facility uses the PBSPro workload manager, which some existing HPC users may be familiar with using on other HPC facilities.
+The Imperial HPC facility uses the [PBSPro workload manager](https://altair.com/pbs-professional/), which some existing HPC users may be familiar with using on other HPC facilities.
 
 
 ## Anatomy of a job script
@@ -17,26 +17,34 @@ The very first line of a PBSPro job submission script specifies the interpreter 
 #!/bin/bash
 ```
 
-Every job script must include two lines that describe the resources required by the work. The first specifies the maximum amount of time the job will be allowed to run for in hours:minutes:seconds:
+Every job script must include two lines that describe the resources required by the work. The first specifies the maximum amount of time the job will be allowed to run for in `hours:minutes:seconds`:
 
 ```bash
 #PBS -lwalltime=HH:MM:00
 ```
 
-The second gives the the number of cores N and memory M that the job needs. These are per-node and here only a single node is request. Requesting more nodes only makes sense if your code is able to run across multiple nodes:
+The second line gives the the number of cores `N` and memory `M` that the job needs. These values are per-node and here only a single node is requested:
 
 ```bash
 #PBS -lselect=1:ncpus=N:mem=Mgb
 ```
 
-Next comes the module loads for all of the software the job needs. Imperial has shifted to using EasyBuild for software installations so you will first need to load the production environment. The example below does this and then loads the SciPy bundle that includes many commend Python libraries:
+You should only request more than one node if your application is able to run across multiple nodes. See [job sizing guidance](../queues/job-sizing-guidance.md) for more advice on resource requests.
 
-```console
-module load tools/prod
+Next comes the `module load` command, which loads the software you need for your job into the environment; by default, your job should have access to our "production" module environment. The following example then uses the module load command to load the "SciPy bundle" that includes many common Python libraries.
+
+```bash
 module load SciPy-bundle/2022.05-foss-2022a
 ```
 
-The initial working directory of a job is a private temporary directory created locally on the head node just for the job, and deleted once it is done. Take that into account when crafting paths to input files. The path of the directory that the job was submitted from is present in the environment variable PBS_O_WORKDIR, and that of the temporary directory in TMPDIR. For this simple example we will stick to using PBS_O_WORKDIR but if you job has a lot of IO it would be best to copy data to TMPDIR and work on it locally.
+For more information on loading modules, please see the [Loading Applications](../applications/index.md) page.
+
+The initial working directory when your job starts will be your `$HOME` directory; it is important to be aware of this when you are writing submission scripts as you may need to change directories while running commands. Within your job environment, you will also have access to two environment variables which you may find useful:
+
+* `$PBS_O_WORKDIR` - this is the directory from which your job was submitted.
+* `$TMPDIR` - this is a temporary directory created on the compute node your job is running. This directory is only accessible from the compute node itself and is deleted when your job ends.
+
+For this simple example we will stick to using `$PBS_O_WORKDIR` but if the application you are running in your job is accessing the file system a lot, it would be best to copy data to `$TMPDIR` and work on it locally.
 
 ```bash
 cd ${PBS_O_WORKDIR}
