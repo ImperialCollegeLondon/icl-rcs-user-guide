@@ -7,7 +7,6 @@ Please note that this page would be under active development for some time as we
 * [Long Queue Times](./long-queue-times.md)
 * [Accidentally Deleted Files](./deleted-files.md)
 * [Cannot Create Conda Environment](./cannot-create-conda-env.md)
-* [Cannot SSH to HX1](./cannot-ssh-hx1.md)
 * [How much resource should I ask for?](./how-much-resource.md)
 * [Jobs causing issues with the RDS](./job-issues-rds.md)
 * [Bad interpreter: No such file or directory](./bad-interpreter.md)
