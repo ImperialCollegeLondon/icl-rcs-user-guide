@@ -1,13 +1,10 @@
 # Cannot create a new Conda Environment
 
-Some of the users have faced issues while creating a new conda environment.
-
-To explain further, let us suppose that a user is trying to create an envitonment named my_env on CX3 cluster. The user will use the commands
+Some of users have faced issues creating a new conda environment. Let us suppose a user is trying to create an environment named `my_env`. Assuming you've followed the [Conda setup guide](../applications/guides/conda.md#using-conda) The user will use the commands:
 
 ```console
 #Load the modules.
-module load tools/prod
-module load anaconda3/personal
+eval "$(~/miniforge3/bin/conda shell.bash hook)"
  
 #Create the new environment
 conda create -n my_env
@@ -22,11 +19,11 @@ Solving environment: done
 # >>>>>>>>>>>>>>>>>>>>>> ERROR REPORT <<<<<<<<<<<<<<<<<<<<<<
  
     Traceback (most recent call last):
-      File "/rds/general/user/mgetino/home/anaconda3/lib/python3.7/site-packages/conda/gateways/repodata/__init__.py", line 132, in conda_http_errors
+      File "/rds/general/user/username/home/miniforge3/lib/python3.7/site-packages/conda/gateways/repodata/__init__.py", line 132, in conda_http_errors
         yield
-      File "/rds/general/user/mgetino/home/anaconda3/lib/python3.7/site-packages/conda/gateways/repodata/__init__.py", line 101, in repodata
+      File "/rds/general/user/username/home/miniforge3/lib/python3.7/site-packages/conda/gateways/repodata/__init__.py", line 101, in repodata
         response.raise_for_status()
-      File "/rds/general/user/mgetino/home/anaconda3/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
+      File "/rds/general/user/username/home/miniforge3/lib/python3.7/site-packages/requests/models.py", line 1021, in raise_for_status
         raise HTTPError(http_error_msg, response=self)
     requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://conda.anaconda.org/imperial-college-research-computing/linux-64/current_repodata.json
 ```
