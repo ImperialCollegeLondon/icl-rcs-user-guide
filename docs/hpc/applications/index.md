@@ -4,7 +4,7 @@
 
     This page **has** been rewritten for CX3 Phase 2.
 
-Because HPC systems include lots of different compilers, tools, and applications, it’s easy for command names and file paths to clash. We also need to support multiple versions of the same software. To make this easier for users, we use a module system that lets you load and switch between different programs and versions without any hassle.
+HPC systems include lots of different compilers, tools, and applications so it’s easy for command names and file paths to clash. We also need to support multiple versions of the same software. To make this easier for users, we use a "module" system that lets you find what programs and their versions are installed on the system, and load and switch between these.
 
 When you start a session or job, only the basic system commands are available by default. If you need access to specific compilers, tools, or applications, you can use the module command to load them. This temporarily updates your environment, making everything in the selected package available for the duration of your session or job. You can even load multiple modules at once if needed.
 
@@ -12,73 +12,111 @@ The best feature of modules is that when you switch to different versions of app
 
 ## Finding what applications are installed
 
+Most of the software on Imperial's HPC clusters is installed using the [EasyBuild](./easybuild.md) software installation system. When you first log in, you will have the `tools/prod` module loaded; this module is used to make our "production" applications accessible to your module commands. You can see this with the `module list` command:
+
+```bash
+[user@login ~]$
+
+Currently Loaded Modules:
+  1) tools/prod
+```
+
 You can use the `module avail` command to see what compilers, applications and tools are available for you to use. For example:
 
 ```bash
 [user@login ~]$ module avail
-
-------------------------------------------------- /sw-eb/modules/all --------------------------------------------------
-   ABINIT/9.6.2-foss-2022a                                VASP/6.5.0-intel-2024a
-   ABINIT/9.6.2-intel-2022a                               VEP/113.3-GCC-13.3.0
-   ABINIT/9.10.3-intel-2022a                      (D)     VTK/9.0.1-foss-2021a
-   AFNI/24.0.02-foss-2023a                                VTK/9.2.2-foss-2022a
-   ANTs/2.3.5-foss-2021a                                  VTK/9.3.0-foss-2023a
-   ATK/2.36.0-GCCcore-10.3.0                              VTK/9.3.0-foss-2023b                              (D)
-   ATK/2.38.0-GCCcore-11.3.0                              VTune/2021.6.0
-   ATK/2.38.0-GCCcore-12.2.0                              VTune/2021.9.0
-   ATK/2.38.0-GCCcore-12.3.0                              VTune/2022.0.0
-   ATK/2.38.0-GCCcore-13.2.0                      (D)     VTune/2022.2.0
-   AUGUSTUS/3.5.0-foss-2023a                              VTune/2022.3.0                                    (D)
-   Abseil/20230125.2-GCCcore-12.2.0                       Voro++/0.4.6-GCCcore-11.3.0
-   Abseil/20230125.3-GCCcore-12.3.0                       Voro++/0.4.6-GCCcore-12.2.0
-   Abseil/20240116.1-GCCcore-13.2.0                       Voro++/0.4.6-GCCcore-12.3.0
-   Abseil/20240722.0-GCCcore-13.3.0               (D)     Voro++/0.4.6-GCCcore-13.2.0                       (D)
+----------------------------------------- /sw-eb/modules/all ------------------------------------
+   ABINIT/9.6.2-foss-2022a
+   ABINIT/9.6.2-intel-2022a
+   ABINIT/9.10.3-intel-2022a
+   ABINIT/10.2.5-intel-2023a                         (D)
+   AFNI/24.0.02-foss-2023a
+   ANTs/2.3.5-foss-2021a
+   ATK/2.36.0-GCCcore-10.3.0
+   ATK/2.38.0-GCCcore-11.3.0
+   ATK/2.38.0-GCCcore-12.2.0
+   ATK/2.38.0-GCCcore-12.3.0
+   ATK/2.38.0-GCCcore-13.2.0                         (D)
+   AUGUSTUS/3.5.0-foss-2023a
+   Abseil/20230125.2-GCCcore-12.2.0
+   Abseil/20230125.3-GCCcore-12.3.0
+   Abseil/20240116.1-GCCcore-13.2.0
+   Abseil/20240722.0-GCCcore-13.3.0                  (D)
+   Advisor/2023.2.0
+   AlphaFold/2.3.1-foss-2022a-CUDA-11.8.0
+   AlphaPulldown/2.0.0b4-foss-2022a-CUDA-11.8.0
+   Archive-Zip/1.68-GCCcore-13.2.0
+   Archive-Zip/1.68-GCCcore-13.3.0                   (D)
+   Armadillo/11.4.3-foss-2022b
+   Armadillo/12.6.2-foss-2023a
+   Armadillo/12.8.0-foss-2023b
+   Armadillo/14.0.3-foss-2024a                       (D)
+   Arrow/6.0.0-foss-2021b
+--More--
 ```
 
 You can view the versions of a single application by running either `module avail <name>` or `module spider <name>`. For example:
 
 ```bash
-[user@login ~]$ module spider GROMACS
+[user@login ~]$ module avail GROMACS
 
-------------------------------------------------- /sw-eb/modules/all --------------------------------------------------
-   GROMACS/2021.3-foss-2021a-CUDA-11.3.1     GROMACS/2021.5-foss-2021b-PLUMED-2.8.0    GROMACS/2023.1-foss-2022a
-   GROMACS/2021.3-foss-2021a-PLUMED-2.7.2    GROMACS/2021.5-foss-2021b                 GROMACS/2023.3-foss-2023a
-   GROMACS/2021.3-foss-2021a                 GROMACS/2023.1-foss-2022a-CUDA-11.7.0     GROMACS/2024.1-foss-2023b (D)
+----------------------------------------- /sw-eb/modules/all ------------------------------------
+   GROMACS/2021.3-foss-2021a-CUDA-11.3.1     GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+   GROMACS/2021.3-foss-2021a-PLUMED-2.7.2    GROMACS/2023.1-foss-2022a
+   GROMACS/2021.3-foss-2021a                 GROMACS/2023.3-foss-2023a
+   GROMACS/2021.5-foss-2021b-PLUMED-2.8.0    GROMACS/2024.1-foss-2023b             (D)
+   GROMACS/2021.5-foss-2021b
 
   Where:
    D:  Default Module
+
+If the avail list is too long consider trying:
+
+"module --default avail" or "ml -d av" to just list the default modules.
+"module overview" or "ml ov" to display the number of modules for each name.
+
+Use "module spider" to find all possible modules and extensions.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+```
+
+and `module spider GROMACS`:
+
+```bash
+[user@login ~]$ module spider GROMACS
+
+----------------------------------------------------------------------------------------
+  GROMACS:
+----------------------------------------------------------------------------------------
+    Description:
+      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
+      Newtonian equations of motion for systems with hundreds to millions of particles.
+      This is a CPU only build, containing both MPI and threadMPI binaries for both
+      single and double precision. It also contains the gmxapi extension for the single
+      precision MPI build.
+
+     Versions:
+        GROMACS/2021.3-foss-2021a-CUDA-11.3.1
+        GROMACS/2021.3-foss-2021a-PLUMED-2.7.2
+        GROMACS/2021.3-foss-2021a
+        GROMACS/2021.5-foss-2021b-PLUMED-2.8.0
+        GROMACS/2021.5-foss-2021b
+        GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+        GROMACS/2023.1-foss-2022a
+        GROMACS/2023.3-foss-2023a
+        GROMACS/2024.1-foss-2023b
+
+----------------------------------------------------------------------------------------
+  For detailed information about a specific "GROMACS" package (including how to load the mod
+ules) use the module's full name.
+  Note that names that have a trailing (E) are extensions provided by other modules.
+  For example:
+
+--More--
 ```
 
 ## Loading modules
 
-When you first log in, you will have the `tools/prod` module loaded; this module is used to make our "production" applications accessible to your module commands. You can see this with the `module list` command:
-
-```bash
-[user@login ~]$ module list
-
-Currently Loaded Modules:
-  1) tools/prod
-```
-
-You can purge all the loaded modules from your environment by running the `module purge` command:
-
-```bash
-[user@login ~]$ module purge
-[user@login ~]$ module list
-No modules loaded
-```
-
-You may wish to do this if you've accidentally loaded the wrong modules. To load the production modules into your environment again, you can use the `module load` command:
-
-```bash
-[user@login ~]$ module load tools/prod
-[user@login ~]$ module list
-
-Currently Loaded Modules:
-  1) tools/prod
-```
-
-If you load a module for an application into your environment without specifying the version you will load the default version (marked with a `(D)` as above). The default version of a module will normally be the latest version we have installed unless we have set a particular version to the default. We generally recommend that you use the latest installed version of an module unless there are specific reasons not to do so. For example:
+If you load a module for an application into your environment without specifying the version you will load the default version (marked with a `(D)` as above). The default version of a module will normally be the latest version we have installed unless we have set a particular version to be the default. We generally recommend that you use the latest installed version of an module unless there are specific reasons not to do so. For example:
 
 ```bash
 [user@login ~]$ module load GROMACS
@@ -108,27 +146,49 @@ Currently Loaded Modules:
  21) gompi/2023b
 ```
 
-In the above example, the default version of the GROMACS application at the time the command was run was `2024.1-foss-2023b` and this is what was loaded since a version wasn't specified at the command line.
-
-When you load a single module on our HPC system, you will often find many other modules are automatically loaded. These modules will be "dependencies" of the module that you loaded and will have been automatically defined by the [EasyBuild software](./easybuild.md) that we use to build applications centrally.
+When you load a single module on our HPC system, you will often find many other modules are automatically loaded. These modules will be "dependencies" of the module that you loaded and will have been automatically defined by [EasyBuild software](./easybuild.md).
 
 Modules are required at compile and run time so must be present in your qsub file when you submit a job.
 
-### Loading a specific version of an application
+## Loading a specific version of an application
+
+In the above example, the default version of the GROMACS application at the time the command was run was `2024.1-foss-2023b` and this is what was loaded.
 
 A specific version of an application can be loaded by specifying the application name and version when running the module load command:
 
 ```bash
-[user@login ~]$ module load GROMACS/2024.1-foss-2023b
+[user@login ~]$ module load GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+```
+
+## Unloading and purging modules
+
+You can purge all the loaded modules from your environment by running the `module purge` command:
+
+```bash
+[user@login ~]$ module purge
+[user@login ~]$ module list
+No modules loaded
+```
+
+You may wish to do this if you've accidentally loaded the wrong modules. To load the production modules into your environment again, you can use the `module load` command:
+
+```bash
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module list
+
+Currently Loaded Modules:
+  1) tools/prod
 ```
 
 ## Summary of module commands
 
 | Module Command | Description |
 | -------------- | ----------- |
-| `module load <name>` | Loads the module called <name\>. |
-| `module avail` | Lists all available modules for applications, compilers and tools that can be found on the system. |
 | `module list` | Lists all modules that are currently loaded in your environment. |
+| `module load <name>` | Loads the module called <name\>. |
+| `module avail` | Report the names and versions of all the applications that can be loaded. |
+| `module avail <name>` | Reports all the versions of an application that matches the name <name\> and that can be loaded directly. |
+| `module spider <name>` | Reports all the versions of an application that matches the name <name\> on the system (note that some of these applications may require extra steps to load). | 
 | `module help <name>` | Gives information about the module called <name\>, similar to man <name\>. |
 | `module purge` | Unloads any loaded modules. We strongly recommend you place this in your submission script before loading any new modules. |
 | `module show <name>` | Displays will list the full path of the modulefile and the environment changes the modulefile will make if loaded. |
