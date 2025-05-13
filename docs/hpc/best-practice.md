@@ -59,16 +59,18 @@ Example:
 ```bash
 #!/bin/bash
 #PBS -l walltime=02:00:00
-#PBS -l select=1:ncpus=1:mem=1gb
+#PBS -l select=1:ncpus=2:mem=4gb
 #PBS -N 1-10
  
-module load anaconda3/personal
-source activate env1
- 
+module load SAMtools/1.19.2-GCC-13.2.0
+
 # Copy input file to $TMPDIR
 cp $HOME/project1/inputs/sample_${PBS_ARRAY_INDEX}.sam $TMPDIR
  
-# Run application. As we have not changed directory, currently location is $TMPDIR
+# Change to the $TMPDIR
+cd $TMPDIR
+
+# Run application
 samtools view -S -b sample_${PBS_ARRAY_INDEX}.sam > sample_${PBS_ARRAY_INDEX}.bam
  
 # Copy required files back
@@ -77,9 +79,9 @@ cp $TMPDIR/sample_${PBS_ARRAY_INDEX}.bam $HOME/project1/outputs/
 
 ### Number of files
 
-Be mindful of the amount of files you are working with (inputs, outputs, temporary files). Avoid having a large number of files ( > 10,000) in a single directory. See the section below "File Management".
+Be mindful of the number of files you are working with (inputs, outputs, temporary files). Avoid having a large number of files ( > 10,000) in any single directory. You might need to break down your files into dedicated folders for inputs and outputs.
 
-You might need to break down your files into dedicated folders for inputs and outputs. 
+See the section the section on [File Management](#file-management) for more advice.
 
 ### Array job log files
 
@@ -89,14 +91,14 @@ i.e.
 
 ```bash
 #PBS -l walltime=02:00:00
-#PBS -l select=1:ncpus=1:mem=1gb
-#PBS -o /rds/general/user/slacalle/home/project1/logs_project1/
-#PBS -e /rds/general/user/slacalle/home/project1/logs_project1/
+#PBS -l select=1:ncpus=2:mem=4gb
+#PBS -o /rds/general/user/user/home/project1/logs_project1/
+#PBS -e /rds/general/user/user/home/project1/logs_project1/
 ```
 
 Note that the directory needs to exist prior submitting the job.
 
-Note that creating a "master" logs directory for all your submitted jobs' log files would defeat the purpose, as this would quickly populate with a large number of files. (see section "File Management" below). It is best to create a directory on a per-job basis.
+Note that creating a "master" logs directory for all your submitted jobs' log files would defeat the purpose, as this would quickly populate with a large number of files. (see section "[File Management](#file-management)" below). It is best to create a directory on a per-job basis.
 
 ### IMPORTANT
 
@@ -105,12 +107,12 @@ Note that creating a "master" logs directory for all your submitted jobs' log fi
 
 ## File Management
 
-We want to make users aware that certain types of workflows are known to currently cause issues for the stable operation of the entire service. Please be careful as your actions have an impact on all other users of our systems.
+Certain types of workflows are known to cause issues for the stable operation of the entire service by overloading the file system. Please be careful as your actions have an impact on all other users of our systems.
 
-Particularly, we would like all users to be mindful of the following operations:
+We would like all users to be mindful of the following operations in particular:
 
 * Number of files/directories in single directory:
-    * Avoid large number (>10,000) of files (or directories) in a single directory.  Any listing operations or wildcard operations (such as grep *) will be significantly slowed by many files in a directory. 
+    * Avoid large number (>10,000) of files (or directories) in a single directory.  Any listing operations or wildcard operations (such as `grep *`) will be significantly slowed by many files in a directory. 
     * If needing to work with a large number of files, try and break the number down into smaller folders. 
 * In programming:
     * Do not open a file then write a small amount of data then close many times a second. Always write to files in large chunks if possible.
@@ -119,6 +121,6 @@ Particularly, we would like all users to be mindful of the following operations:
 
 ### Quotas
 
-* Quotas are displayed when you login via ssh to the login-nodes. You can also use the quota command to display this information in the terminal at any time.
+* Quotas are displayed when you login via ssh to the login-nodes. You can also use the `quota` command to display this information in the terminal at any time.
 * Different storage spaces have different quotas. For more information please see [Data Management on HPC](getting-started/data-management-on-hpc.md)
-* Apart from the storage quota, there is also a quota for maximum number of files. If you reach this quota for maximum number of files you will need to delete or archive off your data. A good approach to keep the number of files down is to package/archive (using tools such as gzip, tar, zip, 7za) data that is no longer needed or temporary files.
+* Apart from the storage quota, there is also a quota for maximum number of files. If you reach this quota for maximum number of files you will need to delete or archive some of you data. A good approach to keep the number of files down is to package/archive (using tools such as gzip, tar, zip, 7za) data that is no longer needed or temporary files.
