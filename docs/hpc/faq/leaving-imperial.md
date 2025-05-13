@@ -36,4 +36,4 @@ We strongly recommend you discuss any data you need to keep before the individua
 
 If the data is held in a shared space such as an RDS Project or RDF-Active group space, please contact the owner of the space for access to the files. If you are the owner of the space, please raise a ticket by following the links at our [Getting Support](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/).
 
-We consider home directories as personal data so if you require data that is held in their home directory (and it has not yet been deleted, see the section on [home directory retention](#home-directory-retention)), we will need explicit permission from them (or a corresponding faculty level representative) to provide access to the data. 
+We consider home directories as personal data so if you require data that is held in their home directory (and it has not yet been deleted, see the section on [home directory retention](#home-directory-retention)), we will need explicit permission from them to provide access to the data. 
