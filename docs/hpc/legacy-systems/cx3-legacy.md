@@ -1,6 +1,7 @@
 # CX3 Legacy
 
-This page contains information regarding the origin CX3 "legacy" facility for those users who have not transferred their workflow to the refreshed system yet. CX3 Phase 2 is a refresh of the CX3 platform, with an upgraded operating system and job scheduler. 
+!!! info 
+	This page contains information regarding the origin CX3 "legacy" facility for those users who have not transferred their workflow to the refreshed system yet. CX3 Phase 2 is a refresh of the CX3 platform, with an upgraded operating system and job scheduler. 
 
 ## Using SSH
 ### Hostname for SSH
