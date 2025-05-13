@@ -50,33 +50,21 @@ If you are the owner or delegated administrator of an RDS project allocation, yo
 
 If the person you wish to share with already has an Imperial College account, then all you need to do is add them to the relevant [RDS access control group](https://selfservice.rcs.imperial.ac.uk/groups/manage/rds/). This will give them direct access as shown above. 
 
-To share data you create a new guest collection:
+## Creating a Guest Collection
 
-Step 1: Starting from the Globus web application, go to [Endpoints](https://app.globus.org/endpoints) and search for "Imperial College London Research Data Store Sharing"
+1. Head to [https://app.globus.org/file-manager](https://app.globus.org/file-manager) and make sure to login with your Imperial credentials.
+1. In the "Collection" section at the top, search "Imperial" and select "Imperial College London Research Data Store".
+1. Select the directory you want to share and press "Share" in the middle section.
+1. There will be an option to "Add Guest Collection", choose that and select/modify any options as you see fit, then press "Create Collection".
+1. You should then see an option to "Add Permissions - Share With", select that and you should then see the following options:
 
-Step 2: Go to the Collections tab and select "Add a new Collection". Log in with your college identity when challenged, and then select  Imperial College London Research Data Store (Storage Gateway) (POSIX)
+* **Path** the folder from which to start the sharing. This is relative to the base directory you specified earlier. The default is "/" - sharing everything in the base directory and below
+* **Username or email** the person you wish to share with. This should be an institutional ID that the person can log in to Globus with.
+* **Permissions** you may grant write access for the user. Note if you can't grant write access to files or folders that you yourself can't write.
 
-You will now see:
+6. You should then have a shareable link which you can send to the user you want to share the data with. The user should also be emailed with the link automatically.
 
-![Globus sharing data](./img/globus-sharing-data.jpg)
-
-To complete this:
-
-* credentials leave this as your Imperial College identity. The guests you share this collection with will have at most the same amount of access that you do. It's not possible to give read or write access to files that you yourself don't have. When setting up the sharing later, you will have the option to further restrict guests to have read-only access.
-* base directory this is the RDS path from which the sharing will start. Start it with /project/RDS project shortname/live/   All the files and folders below this point will be shared within this new collection. Don't make it broader than you need to, or you may share more than you intended. When setting up the sharing later, you have the option to further restrict access to subfolders. 
-* collection display name  a meaningful name for the collection, this is the name used to search for the collection when setting up a file transfer
-
-Step 3: Click on Create Collection then "Share data on this collection with other users", then click on "Add Permissions - Share With". To complete this:
-
-* **path** the folder from which to start the sharing. This is relative to the base directory you specified earlier. The default is "/" - sharing everything in the base directory and below
-* **username or email** the person you wish to share with. This should be an institutional ID that the person can log in to Globus with.
-* **permissions** you may grant write access for the user. Note if you can't grant write access to files or folders that you yourself can't write.
-
-Step 4: Click "**Add Permission**" to activate the sharing
-
-Step 5: Repeat as necessary. You can return to the sharing configuration at any time finding your collection under [Endpoints](https://app.globus.org/endpoints), "Administered by You". Click the ">" and then select the "Sharing" tab.
-
-Step 6: If you are making several collections, you may find it convenient to create [Groups](https://app.globus.org/groups).
+If you are making several collections, you may find it convenient to create [Groups](https://app.globus.org/groups).
 
 ## Transfer data to your Personal Computer using Globus
 For transferring data to your own computer, or another resource that doesn't have its own Globus endpoint, you will need to install [Globus Connect Personal](https://www.globus.org/globus-connect-personal). This creates a Globus endpoint on your personal computer, allowing you to move data using the Globus web app.
