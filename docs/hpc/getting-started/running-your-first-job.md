@@ -23,26 +23,28 @@ Every job script must include two lines that describe the resources required by 
 #PBS -lwalltime=HH:MM:00
 ```
 
-The second line gives the the number of cores `N` and memory `M` that the job needs. These values are per-node and here only a single node is requested:
+The second line gives the the number of cores `N` and memory `M` that the job needs. These values are per-node and in this example, only a single node is requested:
 
 ```bash
 #PBS -lselect=1:ncpus=N:mem=Mgb
 ```
 
-You should only request more than one node if your application is able to run across multiple nodes. See [job sizing guidance](../queues/job-sizing-guidance.md) for more advice on resource requests.
+You should only request more than one node if your application is able to run across multiple nodes.
 
-Next comes the `module load` command, which loads the software you need for your job into the environment; by default, your job should have access to our "production" module environment. The following example then uses the module load command to load the "SciPy bundle" that includes many common Python libraries.
+See [job sizing guidance](../queues/job-sizing-guidance.md) for more advice on resource requests.
+
+Next comes the `module load` command, which loads the software you need for your job into the environment; by default, your job should have access to our "production" module environment. The following example then uses the `module load` command to load a version of Python.
 
 ```bash
-module load SciPy-bundle/2022.05-foss-2022a
+module load Python/3.12.3-GCCcore-13.3.0
 ```
 
 For more information on loading modules, please see the [Loading Applications](../applications/index.md) page.
 
-The initial working directory when your job starts will be your `$HOME` directory; it is important to be aware of this when you are writing submission scripts as you may need to change directories while running commands. Within your job environment, you will also have access to two environment variables which you may find useful:
+The initial working directory when your job starts will be your `$HOME` directory; it is important to be aware of this when you are writing submission scripts as you may need to change the working directory while running commands. Within your job environment, you will also have access to two environment variables which you may find useful:
 
 * `$PBS_O_WORKDIR` - this is the directory from which your job was submitted.
-* `$TMPDIR` - this is a temporary directory created on the compute node your job is running. This directory is only accessible from the compute node itself and is deleted when your job ends.
+* `$TMPDIR` - this is a temporary directory created on the local disk of the compute node your job is running on. This directory is only accessible from the compute node itself and is deleted when your job ends.
 
 For this simple example we will stick to using `$PBS_O_WORKDIR` but if the application you are running in your job is accessing the file system a lot, it would be best to copy data to `$TMPDIR` and work on it locally.
 
@@ -56,18 +58,17 @@ Next come the commands for the program you actually want to run, for example:
 python myprog.py path/to/input.txt
 ```
 
-So putting it all together we might get something like the following, where we are asking for 1 cpu and 1 gb of ram on a single node and then running a Python scirpt.
+So putting it all together we might get something like the following, where we are asking for 2 cpus and 4 gb of ram on a single node and then running a Python scirpt.
 
 ```bash
 #!/bin/bash
-#PBS -l select=1:ncpus=1:mem=1gb
+#PBS -l select=1:ncpus=2:mem=4gb
 #PBS -l walltime=00:01:00
 #PBS -N hello_world
- 
+
+module load Python/3.12.3-GCCcore-13.3.0
+
 cd $PBS_O_WORKDIR
- 
-module load tools/prod
-module load SciPy-bundle/2022.05-foss-2022a
  
 python myprog.py path/to/input.txt
 ```
@@ -75,60 +76,81 @@ python myprog.py path/to/input.txt
 Open a file with a text editor (nano, vim, emacs) and save it as job.sh. You can then submit this with 
 
 ```console
-qsub job.sh
+[user@login ~]$ qsub job.sh
 ```
 
-## Copying to load storage
+## Copying to local storage
 
-As mentioned, your job will start in `$TMPDIR`. If your workflow has a lot of file system access (reading and/or writing - IO) it is better to copy data here, process it and then finally, copy any output files back from `$TMPDIR` to permanent storage in your WORK or HOME directory. Have a look at the following example that stages the bam file locally and the copy backs the result. 
+As mentioned in the previous section, your job will start in your `$HOME` directory. If your workflow has a lot of file system access (reading and/or writing - IO) it is better to copy data to the `$TMPDIR`, process it and then finally, copy any output files back from `$TMPDIR` to permanent storage in your `$HOME` directory (or RDS project directory if you have access to one). Have a look at the following example that stages a [BAM](https://en.wikipedia.org/wiki/Binary_Alignment_Map) file to `$TMPDIR` and then copy backs the result. 
 
 ```bash
 #!/bin/bash
 #PBS -l walltime=02:00:00
-#PBS -l select=1:ncpus=1:mem=1gb
+#PBS -l select=1:ncpus=2:mem=4gb
   
-module load tools/prod
-module load SAMtools/1.16.1-GCC-11.3.0
+module load SAMtools/1.19.2-GCC-13.2.0
   
 # Copy input file to $TMPDIR
 cp $HOME/project1/inputs/some_sample.bam $TMPDIR
   
-# Run application. As we have not changed directory, currently location is $TMPDIR
+# Change to the $TMPDIR
+cd $TMPDIR
+
+# Run application
 samtools view -S -b some_sample.bam > sample_output.bam
   
 # Copy required files back
 cp $TMPDIR/sample_output.bam $HOME/project1/outputs/
 ```
 
-One this to note is that the local storage may only be 200 GB so you will not be able to copy more than that over.
+Please be aware that `$TMPDIR` is on the local disk of the compute nodes and is shared between users whose jobs are running on the compute node. If you are likely to need more than 100 GB of temporary space per job, please consider discussing with us first so we can advise you on the best way to run your jobs.
 
 ## Choosing job resources
 
-It's very important that you accurately specify the jobs' resource requirements in the #PBS directives.
+It's very important that you accurately specify the jobs' resource requirements in the `#PBS` directives.
 
-Advice on choosing the right resource requirements for your work is in our job sizing guidelines. As a general rule, the smaller the resource request, the less time the job will spend queuing.
+Advice on choosing the right resource requirements for your work is in our [job sizing guidance](../queues/job-sizing-guidance.md). As a general rule, the smaller the resource request, the less time the job will spend queuing.
 
 ## Submitting and monitoring a job
-Submit a job with the following command:
+
+You can submit a job with the qsub command. For example:
 
 ```console
-qsub your_job_script
+[user@login ~]$ qsub your_job_script
+403036.pbs-7
 ```
 
-Once a job is submitted, you can follow its progress with qstat command. 
+If the submission is successful, the unique ID for the job will be returned; in the above example the job ID is `403036.pbs-7`.
 
-The image below shows an example of a job script being submitted.  The job script is called blastp.pbs, it starts a BLAST job on 16 cores on one node.  The job is started with qsub blastp.pbs. This will return a unique id for the job (9582789). 
-
-![Qsub Blast](img/running-your-first-job-blast.jpg)
-
-Jobs belonging to one user can be monitored with `qstat`. In the example below, the first invocation shows the job waiting in the queue (status "S" is "Q"). The second time, it shows that the job is running "R".
-
-When a job finishes, it disappears from the queue. Any text output is captured by the system and returned to the submission directory, in two files named after the jobscript and with the job id as suffix.
-
-If you need to delete a job, ether while it is still queuing, or running, use the command
+You can monitor your job submissions using the `qstat` command. Without any options, qstat will list all jobs from all users currently running and queued on the system. You can narrow this list down to your own user by providing the `-u user` option to qstat. For example:
 
 ```console
-qdel jobid
+[user@login ~]$ qstat -u user
+
+pbs-7:
+                                                            Req'd  Req'd   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+403063.pbs-7    user v1_smal* hello_wor*    --    1   1    1gb 00:01     R   --
+403064.pbs-7    user v1_smal* hello_wor*    --    1   1    1gb 00:01     R   --
+403065.pbs-7    user v1_smal* hello_wor*    --    1   1    1gb 00:01     Q   --
+```
+
+The S column in the output tells you the status of your job. A status of "Q" means the job is currently queued whereas a status of "R" means the job is running. You may occassionally see other status values for your jobs such as "H" meaning your job has is held or "B" which means that it is an array job.
+
+When a job finishes, it disappears from the queue. Any text output is captured by the system and returned to the submission directory, in two files named after the jobscript and with the job id as suffix e.g.:
+
+```console
+[user@login ~]$ ls
+your_job_script         # The job script
+your_job_script.o403036 # The output file
+your_job_script.e403036 # The error file
+```
+
+If you need to delete a job, ether while it is still queuing, or running, use the `qdel` command such as
+
+```console
+[user@login ~]$ qdel 403120.pbs-7
 ```
 
 ## Where to go on from here
