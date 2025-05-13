@@ -2,40 +2,70 @@
 
 !!! info
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    This page has been partially rewritten for CX3 Phase 2.
 
-A large number of software/applications are already installed on our systems and we use the "environment modules" system to enable users to load different applications and different versions of those applications into their environment.
+A large number of software/applications are already installed on our systems and we use a "[modules](#modules)" system to enable users to load different applications and different versions of those applications into their environment.
 
-# Environment Modules
-The module command is used to access the environment modules system, and load/unload applications from your environment. When you first log into the login node, you will not have any modules load:
+# Modules
+
+The `module` command is used to access the modules system, and load/unload applications from your environment. When you first log into the system, you will only have the `tools/prod` module load which provides you access to our "production" modules.
 
 ```console
-$ module list
-No Modulefiles Currently Loaded
+[user@login ~]$ module list
+
+Currently Loaded Modules:
+  1) tools/prod
+```
+
 You can see a list of what applications are installed by running the module avail command (as there are many applications installed, this may take some time):
 
-module avail
-------------------------------------------------------------- /apps/modules/4.7.1/modulefiles --------------------------------------------------------------
-7zip/9.20                              dolfin/1.7.0                         kgg/2.5                               plink/1.06
-7zip/16.02(default)                    dolfin/1.7.0.old                     king/2.0                              plink/1.06-multivariate
-7zip/22.01                             dot                                  lammps/1Feb13                         plink/1.07
-21cmsimfast                            doxygen/1.8.8(default)               lammps/03Feb10                        plink/1.90
-31Mar17                                drmaa/1.0.19                         lammps/4Feb14                         plink/1.90p(default)
-abaqus/6.6                             dsdp/5.8(default)                    lammps/5Nov13                         plinkseq/0.10
- 
-...
+```console
+[user@login ~]$ module avail
+----------------------------------------- /sw-eb/modules/all ------------------------------------
+   ABINIT/9.6.2-foss-2022a
+   ABINIT/9.6.2-intel-2022a
+   ABINIT/9.10.3-intel-2022a
+   ABINIT/10.2.5-intel-2023a                         (D)
+   AFNI/24.0.02-foss-2023a
+   ANTs/2.3.5-foss-2021a
+   ATK/2.36.0-GCCcore-10.3.0
+   ATK/2.38.0-GCCcore-11.3.0
+   ATK/2.38.0-GCCcore-12.2.0
+   ATK/2.38.0-GCCcore-12.3.0
+   ATK/2.38.0-GCCcore-13.2.0                         (D)
+   AUGUSTUS/3.5.0-foss-2023a
+   Abseil/20230125.2-GCCcore-12.2.0
+   Abseil/20230125.3-GCCcore-12.3.0
+   Abseil/20240116.1-GCCcore-13.2.0
+   Abseil/20240722.0-GCCcore-13.3.0                  (D)
+   Advisor/2023.2.0
+   AlphaFold/2.3.1-foss-2022a-CUDA-11.8.0
+   AlphaPulldown/2.0.0b4-foss-2022a-CUDA-11.8.0
+   Archive-Zip/1.68-GCCcore-13.2.0
+   Archive-Zip/1.68-GCCcore-13.3.0                   (D)
+   Armadillo/11.4.3-foss-2022b
+   Armadillo/12.6.2-foss-2023a
+   Armadillo/12.8.0-foss-2023b
+   Armadillo/14.0.3-foss-2024a                       (D)
+   Arrow/6.0.0-foss-2021b
+--More--
 ```
+
 
 A program can then be loaded into your environment by running the module load name command:
 
 ```console
-module load 7zip/22.01
+[user@login ~]$ module load GROMACS
 ```
 
-Read more about working with installed applications.
+Please see the [Loading Applications](../applications/index.md) page for more advice on using the module system.
 
 # Application Guides
-We have Application Guides for some of the most commonly used applications on the HPC facility. For example, users familiar with the Anaconda Data Science platform should review our Conda guide before using it on the system (we also recommend Conda for those uses wishing to manage their own R, Python or Perl environments).
+
+We have [Application Guides](../applications/guides/index.md) for some of the most commonly used applications on the HPC facility. For example, those users who are using Python should review our [Python guide](../applications/guides/python.md) before using it on the system.
 
 # What to do if an application you need isn't installed
-If there's a package you need that isn't installed under modules nor available through conda, please follow the links in our "Get Support" page to raise a software installation request.
+
+If there is an application you need that isn't currently [installed on the system](../applications/index.md) and you are unable to build it yourself, then you may need to raise a software installation request with us.
+
+Before raising such a request (which you can do so from our [Getting Support](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) page), please be mindful that if the application is old, incompatible with modern supported operating systems or particularly complex to install, we may not be able to install it!
