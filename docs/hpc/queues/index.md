@@ -8,7 +8,7 @@ These following pages provide further information on how the queuing system/job 
 
 * [Purpose of the Queuing System](./purpose-of-the-queue.md)
 * [How it works](./how-it-works.md)
-* [Express Access](./express-access.md)
+* [Priority Access](./priority-access.md)
 * [Array Jobs](./array-jobs.md)
 * [Job Dependencies](./job-dependencies.md)
 * [Job sizing guidance](./job-sizing-guidance.md)
