@@ -12,7 +12,7 @@ Your Home and Ephemeral spaces, as well as any Research Data Store project alloc
 
 ### Home Directory
 
-This is your default working space on the HPC systems and will be your current directory when you login to the HPC facility. Here you have an allocation of 930GB (and up to 10 million files). Your home area will remain for as long as you are a registered user of the HPC service and will be deleted once your are removed from an HPC group or leave the University.
+This is your default working space on the HPC systems and will be your current directory when you login to the HPC facility. Here you have an allocation of 930GB (and up to 10 million files). Please see the [Home directory retention](../faq/leaving-imperial.md#home-directory-retention) section for further information on what happens to your home directory when you leave Imperial.
 
 To refer to this location in job scripts use the environment variable `$HOME`.
 

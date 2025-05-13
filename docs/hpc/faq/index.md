@@ -4,6 +4,7 @@ This page provides some information and resolution methods to solve some of the 
 
 Please note that this page would be under active development for some time as we will be adding more and more information. Also note that the directory structure of pages linked with this title may change in the near future.
 
+* [What happens when I leave Imperial](./leaving-imperial.md)
 * [Long Queue Times](./long-queue-times.md)
 * [Accidentally Deleted Files](./deleted-files.md)
 * [Cannot Create Conda Environment](./cannot-create-conda-env.md)
