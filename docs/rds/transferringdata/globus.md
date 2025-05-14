@@ -22,13 +22,13 @@ Once logged in, you will see the Globus web application File Manager:
 
 ![Globus File Manager](./img/globus-file-manager.jpg)
 
-From here you will be able to browse your files and folders in the different **collections**. An endpoint is a location where data resides. The RDS collection is called Imperial College London Research Data Store.
+From here you will be able to browse your files and folders in the different **collections**. An endpoint is a location where data resides and it can hold several collections. The RDS collection is called **Imperial College London Research Data Store**.
 
 ## Transferring Data
 
-Step 1: Under [File Manager](https://app.globus.org/file-manager), in the collection field, select or search for a specific endpoint The RDS collection is called Imperial College London Research Data Store.
+Step 1: Under [File Manager](https://app.globus.org/file-manager), in the collection field, search for a specific endpoint - The RDS collection is called **Imperial College London Research Data Store**.
 
-Step 2: Choose the files/folders you wish to transfer and on the right pane select "**Transfer or Sync to...**"
+Step 2: Once you select the collection you can choose the files/folders you wish to transfer and on the right pane select "**Transfer or Sync to...**"
 
 ![Transferring data with Globus](./img/globus-transferring-data.jpg)
 
