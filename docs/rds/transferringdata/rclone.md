@@ -12,7 +12,9 @@ Rclone is already installed on the HPC server as a [module](../../hpc/getting-st
 Rclone is already installed on the HPC service as a module. It can be loaded into your environment in the following way:
 
 ```console
-$ module load rclone
+Check what versions of rclone are already installed. 
+$ module spider rclone
+$ module load rclone/1.68.1
 For setting up rclone for Onedrive checkout: https://rclone.org/onedrive/
 $ rclone config
 2024/05/09 10:30:50 NOTICE: Config file "/rds/general/user/username/home/.config/rclone/rclone.conf" not found - using defaults
