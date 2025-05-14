@@ -239,8 +239,6 @@ module load foss/2024a
 
 ### Using EasyBuild yourself
 
-If you are interested in using EasyBuild yourself, we strongly recommend you review the extensive [EasyBuild documentation](https://docs.easybuild.io/) and [tutorial](https://tutorial.easybuild.io/).
-
-If you require help with using EasyBuild on Imperial HPC systems, please [raise a ticket](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) to contact us.
+If you are interested in using EasyBuild yourself, we strongly recommend you review the extensive [EasyBuild documentation](https://docs.easybuild.io/) and [tutorial](https://tutorial.easybuild.io/). If you require help with using EasyBuild on Imperial HPC systems, please [raise a ticket](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) to contact us.
 
 We will also be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the [usual channels](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/newsletter-subscription/).
