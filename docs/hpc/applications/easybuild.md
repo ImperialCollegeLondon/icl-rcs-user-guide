@@ -4,452 +4,243 @@
 
     This page has not yet been rewritten for CX3 Phase 2.
 
-We are now using the software installation system called [EasyBuild](https://easybuild.io) to manage the installation of user software requests. Key advantages of using this software management tool are that we can now provide a method to manage production vs development versions of software applications, provide versions optimised for the different types of hardware available within RCS systems, and provide users themselves with the ability to manage re-deployable versions of their own software.
+We use the [EasyBuild](https://easybuild.io) software installation system to manage the central installation of most user software requests. EasyBuild enables us to provide software that is optimised for the HPC hardware, as well as respond to requests more timely than if we installed the software manually.
 
-Use of EasyBuild has many advantages including making it quicker and easier to install applications that are already part of the EasyBuild system. At present over 3670 applications are already supported through Easybuild and as part of the broader community using EasyBuild application installs have already been peer-reviewed and tested across machines at numerous other HPC sites.
+You do **not** need to understand how EasyBuild works to load and use the applications we've installed using it. Please see the [Loading Applications](./index.md) page for assistance with finding and loading installed applications.
 
-## EasyBuild Software Stacks
-Software is now presented via two stacks:
+The following sections cover more details of how EasyBuild is used on the Imperial HPC service for those who are interested or require further information.
 
-* [Production](#using-the-production-software-stack)
-* [Development](#using-the-development-software-stack)
+## Understanding the EasyBuild module naming - toolchains
 
-The development stack is for software which is currently not available directly from EasyBuild and is a generic build. It should work on the entire cluster, but no guarantee can be given here. This software stack might change on short notice due to required rebuilds. The production stack is for software which is already available as an EasyBuild package and which has been built to support specific CPU architectures thereby providing better performance than the generic builds. The following two sections provide examples of how to use the two software stacks.
+When listing the available modules on the system, you may notice that aside from the application name and version, the module name includes some extra information; this extra information refers to the "toolchain" used to build (or compile) the software from the source code, which we do so to ensure the application gets the best performance from the hardware.
 
-## Using the Production Software Stack
+EasyBuild uses the concept of ["compiler" toolchains](https://docs.easybuild.io/terminology/#toolchains) to refer to the set of software that was used to compile the application. These named and versioned tool chains (such as "*foss-2024b*" or "*intel-2023b*") will include one or more compilers, maths libraries providing optimised routines for common maths operations, and an MPI distribution (MPI or Message Passing Interface is used by programs to communicate between multiple compute nodes). There are also a number of "sub-toolchains" for programs that don't, for example, don't require MPI support. The following diagram demonstrates how these toolchains fit together:
 
-### On the Login Nodes
+![EasyBuild Toolchains](../img/easybuild-2022b-toolchains-diagram.png)
 
-The production software stack is loaded per default on the login nodes and compute nodes. The following examples demonstrates how to use the production software stack on the login nodes (please remember when loading modules on the login node, it is forbidden to run computational workloads):
+On the Imperial HPC systems you will typically find applications compiled with either the *foss* (based on the GCC compiler) or the *intel* (based on the Intel compiler) toolchains. Details on these toolchains (including version numbers of the tools) may be found on the [EasyBuild Common Toolchains](https://docs.easybuild.io/common-toolchains/#common_toolchains_overview) page. We generally recommend you avoid trying to load applications for different toolchains as this can result in problems when running your applications.
 
-Loading the production software stack on the login nodes and viewing available modules.
+### Deciphering an example module name
+
+[GROMACS](https://www.gromacs.org/) is a molecular dynamics program commonly used on HPC facilities. As per the advice on the [Loading Applications](./index.md) page, a list of all modules providing GROMACS may be found by using the `module avail` command:
 
 ```console
-[username@login ~]$ module avail
------------------------------- /sw-eb/modules/all -------------------------------
-ANTLR/2.7.7-GCCcore-11.3.0-Java-11                       SciPy-bundle/2020.11-foss-2020b
-archspec/0.1.2-GCCcore-10.2.0                            SciPy-bundle/2021.05-foss-2021a
-archspec/0.1.2-GCCcore-10.3.0                            SciPy-bundle/2021.10-foss-2021b
-archspec/0.1.3-GCCcore-11.2.0                            SciPy-bundle/2022.05-foss-2022a
-archspec/0.1.4-GCCcore-11.3.0                            SCOTCH/6.0.9-gompi-2020a
-arpack-ng/3.8.0-foss-2021b                               SCOTCH/6.1.0-gompi-2020b
-astropy/5.1.1-foss-2022a                                 SCOTCH/6.1.0-gompi-2021a
-ATK/2.38.0-GCCcore-11.3.0                                SCOTCH/7.0.1-gompi-2022a
-Autoconf/2.69-GCCcore-8.3.0                              SCOTCH/7.0.1-iimpi-2022a
-Autoconf/2.69-GCCcore-9.3.0                              snappy/1.1.8-GCCcore-9.3.0 
-...
+[user@login ~]$ module avail GROMACS
+
+-------------------------------- /sw-eb/modules/all ---------------------------------
+   GROMACS/2021.3-foss-2021a-CUDA-11.3.1
+   GROMACS/2021.3-foss-2021a-PLUMED-2.7.2
+   GROMACS/2021.3-foss-2021a
+   GROMACS/2021.5-foss-2021b-PLUMED-2.8.0
+   GROMACS/2021.5-foss-2021b
+   GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+   GROMACS/2023.1-foss-2022a
+   GROMACS/2023.3-foss-2023a
+   GROMACS/2024.1-foss-2023b              (D)
+
+  Where:
+   D:  Default Module
 ```
 
-As evident, this is a rather long detailed list. It is often better just to have an **overview** of the modules which are available.
+Using the example of `GROMACS/2024.1-foss-2023b`, you can see that the module name includes the name of the application `GROMACS` followed by the suffix `GROMACS/2024.1-foss-2023b`. The first part of the suffix `2024.1` is the version of GROMACS this is referring to. The second part of the suffix, `foss-2023b` is the EasyBuild compiler toolchain used to build that version of GROMACS.
+
+The compiler toolchains also have their own corresponding module and in the case of `foss-2023b` this would be `foss/2023b`. You can then use the `module show` command with this module name to see what tools were used to build the application. For example:
 
 ```console
-[username@login ~]$ ml ov
------------------------------- /sw-eb/modules/all -------------------------------
-AFNI                  (1)    GTK2            (1)
-ANTs                  (1)    GTK3            (4)
-ATK                   (4)    GTS             (1)
-Abseil                (2)    Gaussian        (1)
-Armadillo             (2)    Gdk-Pixbuf      (4)
-Arrow                 (4)    Ghostscript     (4)
-Autoconf              (8)    Graphviz        (1)
-...
+[dwitheri@login-bi ~]$ module show foss/2023b
+----------------------------------------------------------------------------------
+   /sw-eb/modules/all/foss/2023b.lua:
+----------------------------------------------------------------------------------
+help([[
+Description
+===========
+GNU Compiler Collection (GCC) based compiler toolchain, including
+ OpenMPI for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK.
+
+
+More information
+================
+ - Homepage: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#foss-to
+olchain
+]])
+whatis("Description: GNU Compiler Collection (GCC) based compiler toolchain, including
+ OpenMPI for MPI support, OpenBLAS (BLAS and LAPACK support), FFTW and ScaLAPACK.")
+whatis("Homepage: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#fo
+ss-toolchain")
+whatis("URL: https://easybuild.readthedocs.io/en/master/Common-toolchains.html#foss-to
+olchain")
+conflict("foss")
+load("GCC/13.2.0")
+load("OpenMPI/4.1.6-GCC-13.2.0")
+load("FlexiBLAS/3.3.1-GCC-13.2.0")
+load("FFTW/3.3.10-GCC-13.2.0")
+load("FFTW.MPI/3.3.10-gompi-2023b")
+load("ScaLAPACK/2.2.0-gompi-2023b-fb")
+setenv("EBROOTFOSS","/sw-eb/software/foss/2023b")
+setenv("EBVERSIONFOSS","2023b")
+setenv("EBDEVELFOSS","/sw-eb/software/foss/2023b/easybuild/foss-2023b-easybuild-devel"
+)
 ```
 
-Note the change from using `module` to using the Lmod specific `ml` command. Lmod makes searching for particular software easier as well:
+The load commands at the end of output show that the following tools were used to build this version of GROMACS:
+
+* GCC 13.2.0
+* OpenMPI 4.1.6
+* FlexiBLAS/3.3.1
+* FFTW 3.3.10
+* ScaLAPACK/2.2.0
+
+## Accessing CUDA or GPU accelerated software
+
+If an application is CUDA/GPU accelerated, EasyBuild includes CUDA in the module name. You can see a list of all modules/applications installed with CUDA support by running:
 
 ```console
-[username@login ~]$ ml spider groma
-----------------------
-  GROMACS:
-----------------------
-    Description:
-      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
-      equations of motion for systems with hundreds to millions of particles. This is a CPU
-      only build, containing both MPI and threadMPI binaries for both single and double
-      precision. It also contains the gmxapi extension for the single precision MPI build. 
-
-     Versions:
-        GROMACS/2021.3-foss-2021a-PLUMED-2.7.2
-        GROMACS/2021.3-foss-2021a
-        GROMACS/2021.5-foss-2021b-PLUMED-2.8.0
-        GROMACS/2021.5-foss-2021b
-        GROMACS/2023.1-foss-2022a
-        GROMACS/2023.3-foss-2023a
-        GROMACS/2024.1-foss-2023b
+[user@login ~]$ module avail CUDA
+---------------------------- /sw-eb/modules/all ----------------------------
+   AlphaFold/2.3.1-foss-2022a-CUDA-11.8.0
+   AlphaPulldown/2.0.0b4-foss-2022a-CUDA-11.8.0
+   CUDA/11.4.1
+   CUDA/11.5.2
+   CUDA/11.7.0
+   CUDA/11.8.0
+   CUDA/12.0.0
+   CUDA/12.1.1
+   CUDA/12.2.0
+   CUDA/12.2.2
+   CUDA/12.3.0
+   CUDA/12.3.2
+   CUDA/12.4.0
+   CUDA/12.5.0
+   CUDA/12.6.0                                    (D)
+   CuPy/13.0.0-foss-2023a-CUDA-12.1.1
+   GROMACS/2021.3-foss-2021a-CUDA-11.3.1
+   GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+   HOOMD-blue/4.0.1-foss-2022a-CUDA-11.7.0
+   NCCL/2.10.3-GCCcore-10.3.0-CUDA-11.3.1
+   NCCL/2.10.3-GCCcore-11.2.0-CUDA-11.5.2
+   NCCL/2.12.12-GCCcore-11.3.0-CUDA-11.7.0
+--More--
 ```
 
-This conveniently shows all the installed modules starting with `groma` . Note it is case *insensitive* and even shorter strings can be searched. 
-
-More information about a specific module can be obtained too.
+You can then load one of these modules and it will automatically load any dependencies including CUDA itself.
 
 ```console
- [username@login ~]$ ml spider GROMACS/2024.1-foss-2023b
-----------------------
-  GROMACS: GROMACS/2024.1-foss-2023b
-----------------------
-    Description:
-      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian
-      equations of motion for systems with hundreds to millions of particles. This is a CPU
-      only build, containing both MPI and threadMPI binaries for both single and double
-      precision. It also contains the gmxapi extension for the single precision MPI build. 
+[user@login ~]$ module load GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+[user@login ~]$ module list
 
-
-    You will need to load all module(s) on any one of the lines below before the 
-    "GROMACS/2024.1-foss-2023b" module is available to load.
-
-      tools/prod
- 
-    Help:
-      
-      Description
-      ===========
-      GROMACS is a versatile package to perform molecular dynamics, i.e. simulate the
-      Newtonian equations of motion for systems with hundreds to millions of
-      particles.
-      
-      This is a CPU only build, containing both MPI and threadMPI binaries
-      for both single and double precision.
-      
-      It also contains the gmxapi extension for the single precision MPI build.
-          
-      More information
-      ================
-       - Homepage: https://www.gromacs.org
-          
-      Included extensions
-      ===================
-      gmxapi-0.4.2
-
-```
-
-Again, note it is also listing the *extensions* which are included in the build. That is particularly interesting if and when you looking for say **Python**, **R** or other software packages which are using extensions. 
-
-Loading the production software stack on the login nodes and loading the GROMACS/2024.1-foss-2023b module.
-
-```console
-[username@login ~]$ ml GROMACS/2024.1-foss-2023b
-```
-
-Note that it does not print out which modules are loaded, per default `ml` *silently* loads the required modules. Also, only the module of the software you want to use is required, all dependencies are automagically resolved. Furthermore, the `-foss-2023b` is what is called a *toolchain*. You only can load software within the same toolchain hierarchy, you cannot mix-and-match. See [here](https://docs.easybuild.io/common-toolchains/#toolchains_diagram) for more information.
-
-To view a full list of currently loaded modules, you would do:
-
-```console
-[username@login ~]$ ml
 Currently Loaded Modules:
-  1) tools/prod                        12) libevent/2.1.12-GCCcore-13.2.0   23) ScaLAPACK/2.2.0-gompi-2023b-fb  34) cryptography/41.0.5-GCCcore-13.2.0
-  2) GCCcore/13.2.0                    13) UCX/1.15.0-GCCcore-13.2.0        24) foss/2023b                      35) virtualenv/20.24.6-GCCcore-13.2.0
-  3) zlib/1.2.13-GCCcore-13.2.0        14) libfabric/1.19.0-GCCcore-13.2.0  25) bzip2/1.0.8-GCCcore-13.2.0      36) Python-bundle-PyPI/2023.10-GCCcore-13.2.0
-  4) binutils/2.40-GCCcore-13.2.0      15) PMIx/4.2.6-GCCcore-13.2.0        26) ncurses/6.4-GCCcore-13.2.0      37) pybind11/2.11.1-GCCcore-13.2.0
-  5) GCC/13.2.0                        16) UCC/1.2.0-GCCcore-13.2.0         27) libreadline/8.2-GCCcore-13.2.0  38) SciPy-bundle/2023.11-gfbf-2023b
-  6) numactl/2.0.16-GCCcore-13.2.0     17) OpenMPI/4.1.6-GCC-13.2.0         28) Tcl/8.6.13-GCCcore-13.2.0       39) networkx/3.2.1-gfbf-2023b
-  7) XZ/5.4.4-GCCcore-13.2.0           18) OpenBLAS/0.3.24-GCC-13.2.0       29) SQLite/3.43.1-GCCcore-13.2.0    40) mpi4py/3.1.5-gompi-2023b
-  8) libxml2/2.11.5-GCCcore-13.2.0     19) FlexiBLAS/3.3.1-GCC-13.2.0       30) libffi/3.4.4-GCCcore-13.2.0     41) GROMACS/2024.1-foss-2023b
-  9) libpciaccess/0.17-GCCcore-13.2.0  20) FFTW/3.3.10-GCC-13.2.0           31) Python/3.11.5-GCCcore-13.2.0
- 10) hwloc/2.9.2-GCCcore-13.2.0        21) gompi/2023b                      32) gfbf/2023b
- 11) OpenSSL/1.1                       22) FFTW.MPI/3.3.10-gompi-2023b      33) cffi/1.15.1-GCCcore-13.2.0
-
+  1) tools/prod                        21) gompi/2022a
+  2) GCCcore/11.3.0                    22) FFTW.MPI/3.3.10-gompi-2022a
+  3) zlib/1.2.12-GCCcore-11.3.0        23) ScaLAPACK/2.2.0-gompi-2022a-fb
+  4) binutils/2.38-GCCcore-11.3.0      24) foss/2022a
+  5) GCC/11.3.0                        25) CUDA/11.7.0
+  6) numactl/2.0.14-GCCcore-11.3.0     26) GDRCopy/2.3-GCCcore-11.3.0
+  7) XZ/5.2.5-GCCcore-11.3.0           27) UCX-CUDA/1.12.1-GCCcore-11.3.0-CUDA-11.7.0
+  8) libxml2/2.9.13-GCCcore-11.3.0     28) bzip2/1.0.8-GCCcore-11.3.0
+  9) libpciaccess/0.16-GCCcore-11.3.0  29) ncurses/6.3-GCCcore-11.3.0
+ 10) hwloc/2.7.1-GCCcore-11.3.0        30) libreadline/8.1.2-GCCcore-11.3.0
+ 11) OpenSSL/1.1                       31) Tcl/8.6.12-GCCcore-11.3.0
+ 12) libevent/2.1.12-GCCcore-11.3.0    32) SQLite/3.38.3-GCCcore-11.3.0
+ 13) UCX/1.12.1-GCCcore-11.3.0         33) GMP/6.2.1-GCCcore-11.3.0
+ 14) libfabric/1.15.1-GCCcore-11.3.0   34) libffi/3.4.2-GCCcore-11.3.0
+ 15) PMIx/4.1.2-GCCcore-11.3.0         35) Python/3.10.4-GCCcore-11.3.0
+ 16) UCC/1.0.0-GCCcore-11.3.0          36) pybind11/2.9.2-GCCcore-11.3.0
+ 17) OpenMPI/4.1.4-GCC-11.3.0          37) SciPy-bundle/2022.05-foss-2022a
+ 18) OpenBLAS/0.3.20-GCC-11.3.0        38) networkx/2.8.4-foss-2022a
+ 19) FlexiBLAS/3.2.0-GCC-11.3.0        39) GROMACS/2023.1-foss-2022a-CUDA-11.7.0
+ 20) FFTW/3.3.10-GCC-11.3.0
 ```
 
+## Accessing the development software stack
 
-
-### Within a Batch Job
-
-To use the production software stack within a batch job, you need to load the tools/prod module. We advice to purge all modules first and start with a clean slate. 
-
-For example to load GROMACS-2024.1 from the production software stack and use within a batch you, you could do the following:
-
-Using GROMACS-2024.1 from the production software stack in a batch job.
-
-```bash
-#PBS -lwalltime=01:00:00
-#PBS -lselect=1:ncpus=16:mem=16gb
-
-ml purge
-ml tools/prod
-ml GROMACS/2024.1-foss-2023b
-# optional
-ml
-
-mpirun gmx_mpi <your options>
-```
-
-This would purge any loaded modules, loads the production software stack, loads the requested program, in this case GROMACS-2024.1 and optional lists all loaded modules. The last `ml` is only to document which other modules are loaded which might be of interest if other software is used at the same time!
-
-## Using the Development Software Stack
-
-### On the Login Nodes
-
-The EasyBuild development software stack may be accessed on the login nodes by first loading the 'tools/dev' module and then the corresponding program module (see the Applications for more advice on using the module system). The following examples demonstrates how to use the development software stack on the login nodes (please remember when loading modules on the login node, it is forbidden to run computational workloads):
-
-Loading the development software stack on the login nodes and viewing available modules.
+When you log in, by default you will have access to our "*production*" modules; these are modules that have been installed and tested by the wider EasyBuild community. You can tell if you are using the production modules using the `module list` command:
 
 ```console
-[username@login ~]$ ml tools/dev
-[username@login ~]$ module avail
--------------------------------------- /apps/sw-eb/modules/all ---------------------------------------
-ADIOS/1.13.1-foss-2020a-Python-3.8.2                     SciPy-bundle/2020.11-foss-2020b
-ADIOS/20210804-foss-2020a-Python-3.8.2                   SciPy-bundle/2021.05-foss-2021a
-ambit/733c529-foss-2021b-psi4                            SciPy-bundle/2021.05-intel-2021a
-AMPL-MP/3.1.0-GCCcore-10.3.0                             SciPy-bundle/2021.10-foss-2021b
-ant/1.10.9-Java-11                                       SciPy-bundle/2022.05-foss-2022a
-ant/1.10.11-Java-11                                      SCOTCH/6.0.9-gompi-2020a
-ANTLR/2.7.7-GCCcore-11.3.0-Java-11                       SCOTCH/6.1.0-gompi-2020b
-archspec/0.1.2-GCCcore-10.2.0                            SCOTCH/6.1.0-gompi-2021a
-archspec/0.1.2-GCCcore-10.3.0                            SCOTCH/6.1.2-gompi-2021b
-archspec/0.1.3-GCCcore-11.2.0                            SCOTCH/7.0.1-gompi-2022a
-archspec/0.1.4-GCCcore-11.3.0                            SCOTCH/7.0.1-iimpi-2022a
-...
-```
+[user@login ~]$ module list
 
-Note: the `tools/prod` and `tools/dev` software stack are mutually exclusive, so you can only load one at the time!
-
-Loading the development software stack on the login nodes and loading the GROMACS/2024.1-foss-2023b module.
-
-```console
-[username@login ~]$ ml tools/dev
-[username@login ~]$ ml GROMACS/2024.1-foss-2023b
-[username@login ~]$ ml 
 Currently Loaded Modules:
-  1) tools/dev                        12) libevent/2.1.12-GCCcore-13.2.0   23) ScaLAPACK/2.2.0-gompi-2023b-fb  34) cryptography/41.0.5-GCCcore-13.2.0
-  2) GCCcore/13.2.0                    13) UCX/1.15.0-GCCcore-13.2.0        24) foss/2023b                      35) virtualenv/20.24.6-GCCcore-13.2.0
-  3) zlib/1.2.13-GCCcore-13.2.0        14) libfabric/1.19.0-GCCcore-13.2.0  25) bzip2/1.0.8-GCCcore-13.2.0      36) Python-bundle-PyPI/2023.10-GCCcore-13.2.0
-  4) binutils/2.40-GCCcore-13.2.0      15) PMIx/4.2.6-GCCcore-13.2.0        26) ncurses/6.4-GCCcore-13.2.0      37) pybind11/2.11.1-GCCcore-13.2.0
-  5) GCC/13.2.0                        16) UCC/1.2.0-GCCcore-13.2.0         27) libreadline/8.2-GCCcore-13.2.0  38) SciPy-bundle/2023.11-gfbf-2023b
-  6) numactl/2.0.16-GCCcore-13.2.0     17) OpenMPI/4.1.6-GCC-13.2.0         28) Tcl/8.6.13-GCCcore-13.2.0       39) networkx/3.2.1-gfbf-2023b
-  7) XZ/5.4.4-GCCcore-13.2.0           18) OpenBLAS/0.3.24-GCC-13.2.0       29) SQLite/3.43.1-GCCcore-13.2.0    40) mpi4py/3.1.5-gompi-2023b
-  8) libxml2/2.11.5-GCCcore-13.2.0     19) FlexiBLAS/3.3.1-GCC-13.2.0       30) libffi/3.4.4-GCCcore-13.2.0     41) GROMACS/2024.1-foss-2023b
-  9) libpciaccess/0.17-GCCcore-13.2.0  20) FFTW/3.3.10-GCC-13.2.0           31) Python/3.11.5-GCCcore-13.2.0
- 10) hwloc/2.9.2-GCCcore-13.2.0        21) gompi/2023b                      32) gfbf/2023b
- 11) OpenSSL/1.1                       22) FFTW.MPI/3.3.10-gompi-2023b      33) cffi/1.15.1-GCCcore-13.2.0
+  1) tools/prod
 ```
 
-Note: As evident from the example above, apart from the "gateway" module`tools/dev` only the module for the software you want to use is required to be loaded. Any other module which is required will be loaded now automagically. It does not print out which modules are loaded, per default `ml` *silently* loads the required modules. Also, only the module of the software you want to use is required, all dependencies are automagically resolved. Furthermore, the `-foss-2023b` is what is called a *toolchain*. You only can load software within the same toolchain hierarchy, you cannot mix-and-match. See [here](https://docs.easybuild.io/common-toolchains/#toolchains_diagram) for more information.
-
-### Within a Batch Job
-
-Using the development software stack within a batch job is the same as for using it on the login node. For example to load GROMACS 2021.5 from the development stack and use within a batch you, you could do the following:
-
-Using GROMACS 2021.5 from the development software stack in a batch job.
-
-```bash
-#PBS -lwalltime=01:00:00
-#PBS -lselect=1:ncpus=16:mem=16gb
-
-ml purge
-ml tools/dev
-ml GROMACS/2021.5-foss-2021b
-# optional
-ml
-
-mpirun gmx_mpi <your options>
-```
-
-This would purge any loaded modules, loads the development software stack, loads the requested program, in this case GROMACS-2024.1 and optional lists all loaded modules. The last ml is only to document which other modules are loaded which might be of interest if other software is used at the same time!
-
-## Using the GPU Software Stack
-
-As part of the architecture specific installation, we are also building software specifically for our GPU nodes.
-
-### On the login nodes
-
-The production GPU software stack cannot be directly loaded on the login nodes. However, it IS possible to "view" which software has been installed and is therefore available on the compute nodes. This is done the same way as shown in the [Production](#using-the-production-software-stack) software stack section.
-
-Note: the login nodes do not have suitable GPUs to run computational work, thus any attempts to run `CUDA` software will fail.
-
-### Within a batch job
-
-To use the production software stack within a batch job, the `tools/prod` module needs to be used
-
-For example to load GROMACS 2021.3 (with CUDA acceleration) from the production GPU software stack and use within a batch you, you could do the following:
-
-Using production GPU modules within a batch script
-
-```bash
-#PBS -lwalltime=01:00:00
-#PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=RTX6000
-
-ml purge
-ml tools/prod
-ml AlphaFold/2.3.4-foss-2022a-CUDA-11.8.0-ColabFold
-
-<your options>
-```
-
-More information on running GPU jobs may be found on our [GPU Jobs page](../queues/gpu-jobs.md)
-
-## User Software Development
-### Using EasyBuild
-
-In order to make it easier for those users who are either developing software, or need to quickly install some software to test, we are now offering a development module: `tools/eb-dev`.
-
-This allows you to install software with EasyBuild in your own user space, so that you can use a locally modified version of software, or set up a reproducible build environment when working on your own software development projects. The latter will allow you to change your build environment without going through Anaconda or any other virtual environment.
-If you only want to switch compilers etc, you can make use of the already installed `buildenv` modules (see below) which will give you convenient access to various versions of both GCC and Intel compilers, next to MPI access.
-
-Note: EasyBuild is quite prescriptive, so if you are selecting a specific tool-chain you will get a specific version of the compiler, MPI etc. It is not a mix-and-match approach.
-Note: Remember we got a heterogeneous cluster (CX3-Phase2) regarding the various CPUs we are using (AMD, and Intel). Care needs to be taken when building software from source to make sure it will run on the cluster. Please come to one of our workshops if you are  doing software development seriously.
-
-We will be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the [usual channels](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/newsletter-subscription/).
-
-#### Example:
-
-As an example, consider the installation of a particular `zlib` version. We are not interested in a particular toolchain as we are only want to use `zlib`. Here the *toolchain* would be called `SYSTEM` as that indicates the tools coming from the Operating System (OS) are being used. 
-The first step would be to load the `tools/eb-dev` module:
-
-```bash
-$ ml purge
-$ ml tools/prod
-$ ml tools/eb-dev
-```
-
-This will remove any already loaded modules, load the `tools/prod` default module again and then load the `tools/eb-dev` modules. This also will set up the environment for you which can be checked like this:
-
-```shell
-$ eb --show-config
-```
-
-The output should be something similar like this, with `USERNAME` being your username of course:
+Occassionally you may be asked by the RCS team to load a module from the "*development*" software stack; this is software which has been built and tested by Imperial using EasyBuild, but that has not been tested by the wider EasyBuild community. To access these modules, you would need to unload or purge the production module set and then load the development modules, for example:
 
 ```console
+[user@login ~]$ module purge
+[user@login ~]$ module load tools/dev
+[user@login ~]$ module list
+
+Currently Loaded Modules:
+  1) tools/dev
+```
+
+## Advanced Topics
+
+### Compiling your own software with EasyBuild toolchains
+
+If you have your own code to compile, or you wish to compile a modified version of a widely used code, you may find it useful to build the application using the EasyBuild toolchains. For this purpose, EasyBuild provides the [buildenv](https://docs.easybuild.io/version-specific/supported-software/b/buildenv/) modules, which not only load tools and libraries corresponding to the toolchain in question, it also sets some helpful environment variables used during compilation and linking such as `OPTFLAGS`.
+
+You can see a list all available *buildenv* modules using the `module avail` command: 
+
+```console
+[user@login ~]$ module avail buildenv
+ module avail buildenv
+
+---------------------------------- /sw-eb/modules/all ----------------------------------
+   buildenv/default-foss-2022a                buildenv/default-foss-2024a
+   buildenv/default-foss-2022b-CUDA-12.0.0    buildenv/default-intel-2022a
+   buildenv/default-foss-2022b                buildenv/default-intel-2022b
+   buildenv/default-foss-2023a-CUDA-12.1.1    buildenv/default-intel-2023a
+   buildenv/default-foss-2023a                buildenv/default-intel-2023b
+   buildenv/default-foss-2023b                buildenv/default-intel-2024a (D)
+
+  Where:
+   D:  Default Module
+```
+
+You can use the `module show` command to see what other modules will be loaded, as well as seeing what environment variables are set by the module:
+
+```console
+[user@login ~]$ module show buildenv/default-foss-2024a
+-------------------------------------------------------------------------------------
+   /sw-eb/modules/all/buildenv/default-foss-2024a.lua:
+-------------------------------------------------------------------------------------
+help([[
+Description
+===========
+This module sets a group of environment variables for compilers, linkers, maths 
+libraries, etc., that you can use to easily transition between toolchains when 
+building your software. To query the variables being set please use: 
+module show <this module name>
 #
-# Current EasyBuild configuration
-# (C: command line argument, D: default value, E: environment variable, F: configuration file)
+# output shortened for clarity
 #
-accept-eula-for  (E) = Intel-oneAPI, NVHPC, NVIDIA-driver, CUDA
-buildpath        (E) = /dev/shm/USERNAME
-containerpath    (E) = /rds/general/user/USERNAME/home/apps/containers
-download-timeout (C) = 100.0
-installpath      (E) = /rds/general/user/USERNAME/home/apps
-optarch          (E) = {'Intel': 'axAVX2 -mavx2', 'GCC': 'march=haswell -mtune=generic'}
-packagepath      (E) = /rds/general/user/USERNAME/home/apps/packages
-parallel         (E) = 8
-prefix           (E) = /rds/general/user/USERNAME/home/apps
-repositorypath   (E) = /rds/general/user/USERNAME/home/apps/ebfiles_repo
-robot            (C) = /sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs
-robot-paths      (D) = /sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs
-sourcepath       (E) = /rds/general/user/USERNAME/home/apps/sources:/rds/easybuild/sources
-tmpdir           (E) = /dev/shm/USERNAME
+setenv("CXX","g++")
+setenv("CXXFLAGS","-O2 -ftree-vectorize -march=native -fno-math-errno")
+setenv("F77","gfortran")
+setenv("F90","gfortran")
+setenv("F90FLAGS","-O2 -ftree-vectorize -march=native -fno-math-errno")
+setenv("FC","gfortran")
+setenv("FCFLAGS","-O2 -ftree-vectorize -march=native -fno-math-errno")
+setenv("FFLAGS","-O2 -ftree-vectorize -march=native -fno-math-errno")
+# etc.
 ```
 
-Without going into too much details, the software, the modules and any source codes which are downloaded are stored in `~/apps` and this folder will be created automatically the first time you use EasyBuild. The `optarch` is specific to `CX3-Phase2` where we have the already explained mix of AMD and Intel CPUs. If all works out well, both the `Intel` and `GCC` compiler should compile binary packages which should run on both, AMD and Intel CPUs. Usually that is working but sometimes there are hickups. 
-
-Having set up and checked our environment we want to install `zlib`. First step is to search for it using EasyBuild:
+You can load the *buildenv* module as you would load any other module, with the `module load` command:
 
 ```console
-$ eb -S zlib
-== found valid index for /sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs, so using it...
-CFGS1=/sw-eb/software/EasyBuild/4.9.4/easybuild/easyconfigs
-[ ... ]
- * $CFGS1/z/zlib/zlib-1.3.1-GCCcore-14.2.0.eb
- * $CFGS1/z/zlib/zlib-1.3.1.eb
+[user@login ~]$ module load buildenv/default-foss-2024a
 ```
 
-Your list will be much longer as all EasyConfig files which contain the string 'zlib' will be searched and displayed. We are only interested in the last two entries shown here. The `zlib-1.3.1-GCCcore-14.2.0.eb` would install `zlib` which is compiled using the `GCCcore-14.2.0` toolchain. That is not what we want. The `zlib-1.3.1.eb` does not have a toolchain version and thus automatically falls back to `SYSTEM`. 
+When you come to running the application you have compiled, you will need to load the corresponding toolchain module in your submission script. For example, if you compiled your software using the `buildenv/default-foss-2024a` module, you would need to add the following line to your submission script:
 
-Installation is simple:
-
-```console
-$ eb --trace zlib-1.3.1.eb
+```bash
+module load foss/2024a
 ```
 
-The `--trace` will give you a bit more information. EasyBuild will first consult the installed module files to see if that particular version of `zlib` is already installed. If it is, it will not build it. If it is not, it will:
+### Using EasyBuild yourself
 
-- download the source package unless it can be found in the centrally managed source packages folder
-- compares the checksum of the downloaded file with the one stored in the EasyConfig file
-- unpack the source if required
-- installs the software as instructed in the EasyConfig file
-- tests the installation
-- writes the module file
-- finish off the installation by cleaning both the `buildpath` and `tmpdir` locations.
+If you are interested in using EasyBuild yourself, we strongly recommend you review the extensive [EasyBuild documentation](https://docs.easybuild.io/) and [tutorial](https://tutorial.easybuild.io/).
 
-In order to use the so installed software, you only need to load the `tools/eb-dev` module before loading the newly installed software package:
-```console
-$ ml tools/eb-dev
-$ ml zlib/1.3.1
-```
-You can see the name of the module file from the output of the EasyBuild installation, or simply search for the software.
+If you require help with using EasyBuild on Imperial HPC systems, please [raise a ticket](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) to contact us.
 
-### Using the buildenv
-
-Sometimes software is not (yet) in EasyBuild, either because the software package is very specific, or it is something which is currently written. Compiling software is usually quite tricky, and big software projects often rely on external libraries and software. Managing this can be a nightmare as quickly you are in what is called *dependency hell*. 
-However, there is help around as well. The first thing you need to consider is, which compiler and which compiler version do I want to use. If the software is currently written, we would suggest to go for the latest installed compiler version. This way, you are writing software for a current compiler release and not for something where compilation later will be difficult or impossible as the compiler version might no longer be supported and thus cannot be downloaded. 
-
-#### Example:
-
-In order to see what is the latest installed compilers, simply search for the `buildenv` modules:
-
-```console
-$ ml spider buildenv
-```
-
-This will return the currently installed compilers, i.e.
-
-```console
-------------------------------------------------------------------------------------------
-  buildenv:
-------------------------------------------------------------------------------------------
-    Description:
-      This module sets a group of environment variables for compilers, linkers, maths
-      libraries, etc., that you can use to easily transition between toolchains when
-      building your software. To query the variables being set please use: module show
-      <this module name>
-
-     Versions:
-        buildenv/default-foss-2022a
-        buildenv/default-foss-2022b-CUDA-12.0.0
-        buildenv/default-foss-2022b
-        buildenv/default-foss-2023a-CUDA-12.1.1
-        buildenv/default-foss-2023a
-        buildenv/default-foss-2023b
-        buildenv/default-intel-2022a
-        buildenv/default-intel-2022b
-        buildenv/default-intel-2023a
-        buildenv/default-intel-2023b
-
-```
-
-Evidently, the latest version for the `foss` compiler is `buildenv/default-foss-2023b`. But what compiler is that actually? The quickest way is simply loading the module and see what else has been loaded:
-
-```console
-$ ml buildenv/default-foss-2023b
-§ ml
-```
-
-These modules are loaded per default:
-
-```console
-Currently Loaded Modules:
-  1) tools/prod                        14) libfabric/1.19.0-GCCcore-13.2.0
-  2) GCCcore/13.2.0                    15) PMIx/4.2.6-GCCcore-13.2.0
-  3) zlib/1.2.13-GCCcore-13.2.0        16) UCC/1.2.0-GCCcore-13.2.0
-  4) binutils/2.40-GCCcore-13.2.0      17) OpenMPI/4.1.6-GCC-13.2.0
-  5) GCC/13.2.0                        18) OpenBLAS/0.3.24-GCC-13.2.0
-  6) numactl/2.0.16-GCCcore-13.2.0     19) FlexiBLAS/3.3.1-GCC-13.2.0
-  7) XZ/5.4.4-GCCcore-13.2.0           20) FFTW/3.3.10-GCC-13.2.0
-  8) libxml2/2.11.5-GCCcore-13.2.0     21) gompi/2023b
-  9) libpciaccess/0.17-GCCcore-13.2.0  22) FFTW.MPI/3.3.10-gompi-2023b
- 10) hwloc/2.9.2-GCCcore-13.2.0        23) ScaLAPACK/2.2.0-gompi-2023b-fb
- 11) OpenSSL/1.1                       24) foss/2023b
- 12) libevent/2.1.12-GCCcore-13.2.0    25) buildenv/default-foss-2023b
-```
-
-As evident, quite some modules are being loaded and thus the build environment has the following software packages loaded:
-
-- GCC
-- OpenSSL
-- OpenMPI
-- OpenBLAS/FlexiBLAS
-- FFTW
-- ScaLAPACK
-
-next to some auxiliary programs we don't look too much in here. This would be a very basic build environment. For the sake of this example. we require `cmake`. Thus, we search for it and load the required module:
-
-```console
-$ ml spider cmake
-$ ml CMake/3.27.6-GCCcore-13.2.0
-```
-
-Note: The same version of `GCCcore` as the already loaded modules is required.
-
-If other libraries or software packages are required, they either can be loaded via the already installed modules, or can be build and installed in the user's home directory as explained above.
-
+We will also be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the [usual channels](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/newsletter-subscription/).
