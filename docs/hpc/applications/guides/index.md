@@ -5,7 +5,6 @@ The following pages have guides for running specific applications on the HPC ser
 * [Abaqus](./abaqus.md)
 * [Conda](./conda.md)
 * [Jupyter](./jupyter.md)
-* [Lumerical](./lumerical.md)
 * [MATLAB](./matlab.md)
 * [Open OnDemand](./openondemand.md)
 * [ORCA](./orca.md)

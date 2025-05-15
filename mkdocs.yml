@@ -60,7 +60,6 @@ nav:
         - Conda: hpc/applications/guides/conda.md
         - GCC: hpc/applications/guides/GCC.md
         - Jupyter: hpc/applications/guides/jupyter.md
-        - Lumerical: hpc/applications/guides/lumerical.md
         - MATLAB: hpc/applications/guides/matlab.md
         - OpenFOAM: hpc/applications/guides/openfoam.md
         - Open OnDemand: hpc/applications/guides/openondemand.md
