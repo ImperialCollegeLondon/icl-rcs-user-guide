@@ -8,6 +8,9 @@ MATLAB is a programming and numeric computing platform used by millions of engin
 
 ## Loading MATLAB
 
+!!! warning 
+	We are aware of issues when running array jobs using `MATLAB/2024b`. If you encounter issues with it, please opt for any earlier version.
+
 There are a number of versions installed on the RDS which you can see by first loading into the Production release of our [Easybuild](../easybuild.md) stack and then running `module spider MATLAB`
 
 ```console
