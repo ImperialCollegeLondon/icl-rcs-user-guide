@@ -8,7 +8,9 @@ Quota limits are in place on the RDS that control the amount of disk space used,
 We recommend you use the [self-service website](https://selfservice.rcs.imperial.ac.uk/) to check the usage in your project allocation. From the self-service website, go to "Research Data Store" and then "Your Project Allocations". Expand the list that is shown and click the "Usage" link under the corresponding RDS project. The usage shown via this link is calculated every night by running the du or "disk usage" command under your project directory and will give you the most accurate estimate of your disk space usage.
 
 ### HPC User Accounts
-When you log into a login node, you will see your disk usage in your Home and Ephemeral spaces presented to you automatically, for example:
+You can see quota information at any time by running the `quota` command at the command prompt.
+
+These values are calculated by the RDS quota system and are updated every hour. You will additionally have an approximation of the disk usage of any RDS project you are member of; although we recommend you use the self-service website for more accurate usage.
 
 ```console
  RDS usage at 14:10 on 1/8/2022
@@ -31,10 +33,6 @@ When you log into a login node, you will see your disk usage in your Home and Ep
               Files: 0k of 20.97M (0%)
 ```
 
-These values are calculated by the RDS quota system and are updated every hour. You will additionally an approximation of the disk usage in any RDS project you a member of although we recommend you use the self-service website for more accurate usage.
-
-You can see this information at any time by running the `quota` command at the command prompt.
-
 ## What happens when I reach my quota limit?
 
 When you reach your quota limit, it will appear as though you are writing to a computer disk that is full. This means:
@@ -43,7 +41,7 @@ When you reach your quota limit, it will appear as though you are writing to a c
 * you may not be able to log into the HPC login nodes
 * your compute jobs may fail as they are unable to write data
 
-Your first step, if you are still able to, is to remove/delete any files you no longer need so as to bring you under your quota limit. If you are unable to do this, please go to [Support and Training](../../support/index.md) follow the details for raising a ticket with us to explore options.
+If you have any of these symptoms, your first step is to verify using the `quota` command. Then try to remove/delete any files you no longer need so as to bring your usage under your quota limit. If you are unable to do this, please go to [Support and Training](../../support/index.md) follow the details for raising a ticket with us to explore options.
 
 ## How do I increase my quota?
 ### RDS Project Allocations
