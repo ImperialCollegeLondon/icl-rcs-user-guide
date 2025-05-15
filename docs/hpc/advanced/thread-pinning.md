@@ -1,9 +1,5 @@
 # Thread Pinning
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 In this page, we describe some settings and flags that can help you to run your code faster without making any changes in the code or the way you compile your code. Most of the changes that we describe below will need to be added to the job script only.
 
 !!! note

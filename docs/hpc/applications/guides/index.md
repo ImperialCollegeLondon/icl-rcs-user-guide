@@ -1,9 +1,5 @@
 # Application Guides
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 The following pages have guides for running specific applications on the HPC service.
 
 * [Abaqus](./abaqus.md)

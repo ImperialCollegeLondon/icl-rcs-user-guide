@@ -1,9 +1,5 @@
 # Job Sizing Guidance
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 ## Submitting a job
 For information about submitting a job to our systems, please see our [how it works page.](./how-it-works.md)
 

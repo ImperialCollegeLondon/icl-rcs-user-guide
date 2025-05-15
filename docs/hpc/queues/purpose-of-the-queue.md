@@ -1,9 +1,5 @@
 # Purpose of the Queuing System
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 ## Manage work on behalf of the user
 Running work on HPC systems often requires users to manage numerous jobs, sometimes numbering in the hundreds or thousands. The queuing system provides a mechanism to handle this easily without the need for constant monitoring and attention from the user. The users are able to create and submit standard Linux scripts of any degree of complexity to be run on the system, allowing complete flexibility as to the work which is being run.
 

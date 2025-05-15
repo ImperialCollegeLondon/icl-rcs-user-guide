@@ -1,9 +1,5 @@
 # StarCCM
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2. Not many changes needed
-
 Please note that Imperial does not have a site license for StarCCM. Users will need to contact their school to obtain the license server information.
 
 ## Simple example

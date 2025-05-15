@@ -1,9 +1,5 @@
 # Nsight Compute
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 [Nvidia Nsight Compute](https://developer.nvidia.com/nsight-compute) is an interactive kernel profiler for CUDA applications. Once you are satisfied with how your code is interacting with CPU using [Nsight Systems](./nsight_systems.md), you can now turn to go deeper to see how your kernels are actually using the GPU.
 
 We suggest that you login using the X11 forwarding enabled. To profile the code with Nsight Compute, you can use the following steps.

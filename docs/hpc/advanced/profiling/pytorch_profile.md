@@ -1,9 +1,5 @@
 # How to profile your AI/ML workload using PyTorch
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 If you have an AI/ML workload that uses PyTorch, you can profile it using PyTorch's built-in profiler. The full details can be found on [PyTorch Profiler](https://pytorch.org/tutorials/recipes/recipes/profiler_recipe.html#using-profiler-to-analyze-memory-consumption).
 
 We are writing this page as a general guidance on the most important step only. Rest of details can be found in the above link.

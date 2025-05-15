@@ -1,9 +1,5 @@
 # ORCA
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 ## Access to Orca
 
 Access to Orca requires the user to register at the Orca forum, [https://orcaforum.kofo.mpg.de/](https://orcaforum.kofo.mpg.de/). There you will agree to the EULA and receive a confirmation email. Please raise a ticket via [https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) giving a screen shot of this email and ask to be added to the Orca access list.

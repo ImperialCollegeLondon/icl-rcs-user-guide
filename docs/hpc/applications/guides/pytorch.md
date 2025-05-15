@@ -1,9 +1,5 @@
 # PyTorch
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2. Not many changes needed
-
 [PyTorch](https://pytorch.org/) enables fast, flexible experimentation and efficient production through a user-friendly front-end, distributed training, and ecosystem of tools and libraries.
 
 ## Conda

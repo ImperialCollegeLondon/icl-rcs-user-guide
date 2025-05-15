@@ -1,9 +1,5 @@
 # HPC Cluster Specification
 
-!!! info
-
-    This page has been rewritten for CX3 Phase 2.
-
 The RCS Platforms team currently run two HPC clusters, a general purpose cluster available for most research workloads called [CX3](#cx3), and a "capabilty cluster" called [HX1](#hx1) which is designed for multi-node workloads and GPU accelerated jobs requiring more than 48 GB of GPU RAM.
 
 The total facility size (as of March 2025) is: 711 compute nodes, 67,896 cores, 876 TB of RAM and 216 GPUs. Specific details on each cluster are provided below.

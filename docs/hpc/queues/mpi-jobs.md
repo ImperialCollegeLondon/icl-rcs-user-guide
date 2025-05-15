@@ -1,9 +1,5 @@
 # MPI Jobs
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 ## What is MPI
 MPI or Message Passing Interface is a standardised message passing protocol for parallel computing. It enables multiple processes or tasks to communicate between each other, often between multiple compute nodes. Most of the applications we (Imperial RCS) see running on more than one compute node, utilise MPI to do so.
 

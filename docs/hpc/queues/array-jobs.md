@@ -1,9 +1,5 @@
 # Array Jobs
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 Often you may find that you want to run a large number of very similar jobs. Rather than directly submitting each task as a separate job, you should consider using an array job.
 
 ## What to consider before using an array job

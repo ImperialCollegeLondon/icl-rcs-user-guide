@@ -1,9 +1,5 @@
 # Python
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 The default Python that you will find on our systems is fine for trivial use. For anything demanding, however, you will need to use a different version of Python. The sections below how to use different versions of python on the HPC facility. If you are unable to use one of the methods below to install the python modules you need, please [raise a ticket with us](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/).
 
 ## Easybuild Python

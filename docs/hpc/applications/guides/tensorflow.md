@@ -1,9 +1,5 @@
 # TensorFlow
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 [TensorFlow](https://www.tensorflow.org/) is an open source software library for high-performance numerical computation that allows users to create sophisticated deep learning and machine learning applications. The flexible architecture of this library enables you to deploy computation to one or more CPUs or GPUs. TensorFlow also includes [TensorBoard](https://www.tensorflow.org/guide/summaries_and_tensorboard), a data visualization toolkit.
 
 There are a number of methods that can be used to install TensorFlow, such as using pip to install the wheels available on PyPI, or using conda. 

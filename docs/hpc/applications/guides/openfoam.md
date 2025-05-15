@@ -1,9 +1,5 @@
 # OpenFOAM
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2. Not many changes needed
-
 [OpenFOAM](https://www.openfoam.com/) is the free, open source CFD software developed primarily by OpenCFD Ltd since 2004. We have many versions of OpenFOAM available on our HPC systems, and we recommend using the latest version available as shown below.
 
 ## Running OpenFOAM on the HPC

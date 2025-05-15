@@ -1,9 +1,5 @@
 # Applications
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 HPC systems include lots of different compilers, tools, and applications so it’s easy for command names and file paths to clash. We also need to support multiple versions of the same software. To make this easier for users, we use a "module" system that lets you find what programs and their versions are installed on the system, and load and switch between these.
 
 When you start a session or job, only the basic system commands are available by default. If you need access to specific compilers, tools, or applications, you can use the module command to load them. This temporarily updates your environment, making everything in the selected package available for the duration of your session or job. You can even load multiple modules at once if needed.

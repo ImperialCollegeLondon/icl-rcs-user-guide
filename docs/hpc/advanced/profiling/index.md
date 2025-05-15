@@ -1,9 +1,5 @@
 # Profiling an Application
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 In most simple terms, application profiling refers to the task of running your application and identifying areas which are critical for improvement by using some performance metrics ([https://hpc-wiki.info/hpc/Performance_profiling](https://hpc-wiki.info/hpc/Performance_profiling)). While there are many tools available in the market to profile your applications, they differ in the ease of operations and how much details they can identify for your applications. Some profilers can be just command line based while some others offer a combination of both the GUI and command line.
 
 Some of the famous profilers are:-

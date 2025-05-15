@@ -1,9 +1,5 @@
 # nvitop
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 [nvitop](https://nvitop.readthedocs.io/en/latest/index.html) is an interactive, easy to use command-line tool that provides a real-time view of the GPU utilization on a node. It helps to monitor the GPU usage and its memory consumption on a node.
 
 The output is graphical in nature as shown below which makes it easy to understand and interpret.

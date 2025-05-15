@@ -1,9 +1,5 @@
 # How it works
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 You will be used to logging into a Linux or Unix system, typing in commands to the shell, running programs and viewing data. Once you are finished, you log out and your session ends. The queuing system reproduces this environment, and runs the same shell and commands as interactive login sessions. The difference is that the script is run under the control of the system at a time which it chooses, and thus a connection to a terminal window from the session is not used. The standard input (stdin) for the session is read from the script file which you provide and the standard output and error files (stdout and stderr) are returned as file(s) in your directory when the job is completed.
 
 You initiate the job using the qsub command. This takes your script and passes control to PBSPro to have it executed. You can add parameters to the qsub command to specify the resources the job will need and to flag various options to the system. You can also put special directives at the start of your script file to give the same information to PBSPro, which is the way we recommend doing it.

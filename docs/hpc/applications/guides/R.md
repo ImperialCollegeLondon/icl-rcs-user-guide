@@ -1,9 +1,5 @@
 # R
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 We have many versions of R already available via [EasyBuild](../easybuild.md) ready for you to use that are optimised for our systems.
 
 ## EasyBuild R

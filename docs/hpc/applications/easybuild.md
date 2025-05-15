@@ -1,9 +1,5 @@
 # EasyBuild
 
-!!! info
-
-    This page has been rewritten for CX3 Phase 2.
-
 We use the [EasyBuild](https://easybuild.io) software installation system to manage the central installation of most user software requests. EasyBuild enables us to provide software that is optimised for the HPC hardware, as well as respond to requests more timely than if we installed the software manually.
 
 You do **not** need to understand how EasyBuild works to load and use the applications we've installed using it. Please see the [Loading Applications](./index.md) page for assistance with finding and loading installed applications.

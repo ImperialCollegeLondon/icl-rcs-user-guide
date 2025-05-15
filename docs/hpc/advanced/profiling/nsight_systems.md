@@ -1,9 +1,5 @@
 # Nsight Systems
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 [NVIDIA Nsight Systems](https://developer.nvidia.com/nsight-systems) is a system-wide performance analysis tool designed to visualize an application’s algorithms, identify the largest opportunities to optimize, and tune to scale efficiently across any quantity or size of CPUs and GPUs, from large servers to our smallest systems-on-a-chip (SoCs).
 
 ## Profile the code using nsight systems

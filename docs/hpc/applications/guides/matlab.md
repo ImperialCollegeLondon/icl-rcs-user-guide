@@ -1,9 +1,5 @@
 # MATLAB
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2. Not many changes needed
-
 MATLAB is a programming and numeric computing platform used by millions of engineers and scientists to analyse data, develop algorithms, and create models.
 
 ## Loading MATLAB

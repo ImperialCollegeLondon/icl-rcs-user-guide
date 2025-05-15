@@ -2,10 +2,6 @@
 
 !!! info
 
-    This page **has** been rewritten for CX3 Phase 2.
-
-!!! info
-
     The following pages have been written for the CX3 Phase 2 facility. If you are looking for information on using our legacy CX3 systems, please see our [CX3 (legacy) guide](../legacy-systems/cx3-legacy.md).
 
 These following pages will help you get started on this HPC facility. From these pages you can learn:
