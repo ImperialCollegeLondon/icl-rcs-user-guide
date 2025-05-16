@@ -1,6 +1,6 @@
 # Abaqus
 
-Several versions of [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) are installed on our systems, use the command `module spider abaqus` to see the exact versions available.
+Several versions of [Abaqus](https://www.3ds.com/products-services/simulia/products/abaqus/) are installed on our systems, use the command `module avail abaqus` to see the exact versions available.
 
 ## Licensing
 

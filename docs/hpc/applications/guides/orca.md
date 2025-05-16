@@ -8,7 +8,7 @@ Access to Orca requires the user to register at the Orca forum, [https://orcafor
 There are a few versions of Orca installed on HPC, use the module system to list and then load the desired version
 
 ```console
-[user@login-ai ~]$ module spider orca
+[user@login ~]$ module spider orca
 
 -------------------------------------------------------------------------------------------------------------------------------
   ORCA:
@@ -55,7 +55,7 @@ orca my_input_file.inp > orca_output.log
 Save this as orca_job.pbs and then submit the job by running the following command:
 
 ```console
-qsub orca_job.pbs
+[user@login ~]$ qsub orca_job.pbs
 ```
 
 This will submit the job to PBSPro. The job will run the ORCA executable with the specified input file, and any output will be written to the orca_output.log file in the job's working directory. For more information on using Orca have a look at the official documentation: [https://www.orcasoftware.de/tutorials_orca/](https://www.orcasoftware.de/tutorials_orca/)

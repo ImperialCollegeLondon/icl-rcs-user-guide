@@ -62,15 +62,15 @@ If you copy this file directly on our system (which are Unix based) and try to r
     If for some reason, you actually want to try this out and you copy the contents of file from this page, you may be able to run the script directly without any issues. This is because of the formatting of this  page. To see the error, you can use unix2dos command on file my_script.sh as shown below
 
 ```console
-unix2dos my_script.sh
+[user@login ~]$ unix2dos my_script.sh
 ```
 
 ### Resolution
 
 If you have managed to reproduce the above error or you were getting that error right from the start, you can force the line endings in the file to the Unix style by using the command dos2unix which is just the opposite of unix2dos as described above.
 
-```bash
-dos2unix my_script.sh
+```console
+[user@login ~]$ dos2unix my_script.sh
 ```
 
 With this we hope that you should be able to resolve your error and continue with your work.

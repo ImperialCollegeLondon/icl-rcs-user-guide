@@ -12,15 +12,15 @@ Using different conda environments for different projects/applications is highly
 ## Using conda
 If its the first time loading you will need to install miniforge. We have created a simple helper script which will install everything or update your installtion if you already have miniforge installed. To get started run the following on any login node:
 
-```
-module load miniforge/3
-miniforge-setup
+```console
+[user@login ~]$ module load miniforge/3
+[user@login ~]$ miniforge-setup
 ```
 
 You only need to run this once for your user account to install miniforge into your home directory. Once complete you can load conda:
 
-```
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
+```console
+[user@login ~]$ eval "$(~/miniforge3/bin/conda shell.bash hook)"
 ```
 
 You should use this command any time you wish to load conda. 
@@ -29,21 +29,23 @@ If you're using a different distribution of Conda such as `anaconda3` or `minico
 
 One last thing to note, we recommend creating a new environment for each workflow and to **never** modify the base environment as this can break the conda installation. The best way to prevent this is to disable the automatic loading of the base environment by running:
 
-```
-conda config --set auto_activate_base false
+```console
+[user@login ~]$ conda config --set auto_activate_base false
 ```
 
 ## Using Mamba
+
 This above also loads [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html) into your environment. Mamba is similar to conda but can be a lot quicker and is able to handle more complex installations. Which you use is mostly up to you and your workflow. 
 
 Mamba can be used exactly as you would use Conda. All you need to do differently is use the `mamba` command instead of `conda`. For example: `mamba create` and `mamba install`
 
 ## Anaconda licensing
+
 Unfortunately due to changes in the Anaconda license users need to manually disable the *defaults* channel and instead use conda-forge. This shouldn't affect most users as most package developers focus on conda-forge anyway. To make this change please run the following:
 
 ```console
-[username@login-b ~]$ conda config --remove channels defaults
-[username@login-b ~]$ conda config --add channels conda-forge
+[user@login ~]$ conda config --remove channels defaults
+[user@login ~]$ conda config --add channels conda-forge
 ```
 To see more about this change, please look below at the [How to disable the defaults channel page](#how-to-disable-the-defaults-channel)
 
@@ -62,13 +64,16 @@ In order to prevent this from happening, we recommend that when you create a Con
 This has occurred because when you did `conda create -n py39 python=3.9`, it installed the latest version of `Python 3.9`, which is `3.9.22`. However, the program `package-a v2.0` requires something older than or equal to `Python 3.9.6`.
 
 As such, the way to avoid this, would be to install both packages in one go, as Conda would see that `package-a v2.0` requires 3.9.6 or earlier, and would install that instead of the latest version:
-```bash
-conda create -n py39 python=3.9 package-a=2.0
+
+```console
+[user@login ~]$ conda create -n py39 python=3.9 package-a=2.0
 ```
 ### Base Conda Environment
+
 Avoid install anything into your base Conda environment. Conda itself and its core dependencies are installed here so modifying them can introduce dependency conflicts or break Conda. So, always create a Conda environment and install your packages into there.
 
 ### Updating Conda
+
 Avoid updating Conda itself unless it's very old and is causing issues/missing features. This is because it could cause further dependency issues or be incompatible with some packages.
 
 ## Conda Table of Commands
@@ -101,12 +106,13 @@ The list of channels is usually stored in a file called `.condarc`. `.condarc` i
 
 You can see the list of all channels in your `.condarc` file by using the following command
 
-```bash
-conda config --show channels
+```console
+[user@login ~]$ conda config --show channels
 ```
 
 For example, running in my home directory may give output like
-```bash
+
+```console
 channels:
   - defaults
   - conda-forge
@@ -132,13 +138,13 @@ channels:
 
 For most of the users, the file will be in their home directory. To remove the `defaults` channel, they can use the following command.
 
-```bash
-conda config --remove channels defaults
+```console
+[user@login ~]$ conda config --remove channels defaults
 ```
 
 This will remove the `defaults` channel from your list of channels. To see if `defaults` channel was actually removed, please run this command again.
 
-```bash
+```console
 # Input command
 conda config --show channels
 
@@ -152,8 +158,8 @@ You should not see the `defaults` channel now as shown above.
 
 If you would like to manually delete/edit the file, you can do so by using your favourite editor such as vim, nano etc. For example, you can use
 
-```bash
-vim /full_path_to_condarc_file
+```console
+[user@login ~]$ vim /full_path_to_condarc_file
 ```
 
 Please delete the `defaults` channel, save your file and exit. Please make sure that you do this for all your `.condarc` files.

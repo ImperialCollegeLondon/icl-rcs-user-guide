@@ -2,7 +2,7 @@
 
 !!! warning
 
-    The content will continue to be updated inline with testing on the new platform.
+    Documentation support CX3 Phase 2 has now been merged into the main site. Please go to the [Getting Started](../getting-started/index.md) page for more information.
 
 CX3 Phase 2 is a project to migrate the CX3 HPC system to a new server management platform, enabling better management of the operating system and more timely security updates. This upgrade will also enable a significant upgrade to the job scheduler, ensuring better resource management and isolation of jobs when they are running. We are currently migrating hardware with the eventual goal of moving the entirety of the CX3 facility to this new platform.
 

@@ -33,7 +33,7 @@ Let's break down this script line by line:
 To submit this job to PBSPro, you can use the qsub command followed by the name of the script file. For example:
 
 ```console
-qsub hello_world.pbs
+[user@login ~]$ qsub hello_world.pbs
 ```
 
 It will return a JobID which you can use to keep track of your job or to delete it.
@@ -44,7 +44,7 @@ You can delete any jobs from PBSPro either before it has run or while it is runn
 First, you need to find the ID of the job you want to delete. You can use the qstat command to display a list of all your jobs currently running or queued:
 
 ```console
-qstat -u $USER
+[user@login ~]$ qstat -u $USER
 ```
 
 This will display a table of all the jobs, along with their status, ID, and other information. Find the ID of the job you want to delete in the first column of the table.
@@ -52,13 +52,13 @@ This will display a table of all the jobs, along with their status, ID, and othe
 Once you have the job ID, you can delete the job using the qdel command:
 
 ```console
-qdel <job_id>
+[user@login ~]$ qdel <job_id>
 ```
 
 Replace <job_id> with the actual ID of the job you want to delete. For example:
 
 ```console
-qdel 12345
+[user@login ~]$ qdel 12345
 ```
 
 This will send a request to PBSPro to delete the specified job.
@@ -66,7 +66,7 @@ This will send a request to PBSPro to delete the specified job.
 If the job is in a state where it cannot be deleted (e.g., it is running or has already completed), you can use the -Wforce option to force the deletion:
 
 ```console
-qdel -Wforce <job_id>
+[user@login ~]$ qdel -Wforce <job_id>
 ```
 
 This will force the deletion of the job, even if it is in a state where it cannot be deleted normally. Note that forcing the deletion of a running job can cause data loss or other issues, so use this option with caution.

@@ -119,14 +119,15 @@ We have identified that at some point the behaviour of Jupyter kernels have chan
 If you cannot see your previously created environments on the new Jupyterhub service, do this:
 
 First, activate the environment you wish to use:
-```bash
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
-conda activate python39_jupyter
+
+```console
+[user@login ~]$ eval "$(~/miniforge3/bin/conda shell.bash hook)"
+[user@login ~]$ conda activate python39_jupyter
 ```
 
 Then run the following:
-```bash
- python -m ipykernel install --user --name python39_torch_env --display-name "Python3.9 (torch)"
+```console
+[user@login ~]$ python -m ipykernel install --user --name python39_torch_env --display-name "Python3.9 (torch)"
 ```
 You can of course change `--display-name` to whatever you'd like, and the `--name` should be the same as your Conda environment name.
 You should now be able to see this kernel after refreshing the page or restarting your session.

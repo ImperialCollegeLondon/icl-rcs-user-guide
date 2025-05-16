@@ -10,8 +10,8 @@ MATLAB is a programming and numeric computing platform used by millions of engin
 There are a number of versions installed on the RDS which you can see by first loading into the Production release of our [Easybuild](../easybuild.md) stack and then running `module spider MATLAB`
 
 ```console
-$ module load tools/prod
-$ module spider MATLAB
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module spider MATLAB
 -------------------------------------------------------------------------------------------------------------------    
   MATLAB:
 -------------------------------------------------------------------------------------------------------------------    
@@ -60,13 +60,13 @@ Going through this line-by-line:
 Note that this assumes your PBS script and MATLAB script are in the same location on the RDS. To submit the job to PBSPro, use the following command as given in Getting started
 
 ```
-qsub mdcs.pbs
+[user@login ~]$ qsub mdcs.pbs
 ```
 
 This command will submit the job to PBSPro and return a job ID. You can monitor the status of the job using the following command:
 
 ```
-qstat
+[user@login ~]$ qstat
 ```
 
 Once the job is completed, you can retrieve the results from the output and error files specified in the PBSPro script file (`mdcs_job.o<job_id>` and `mdcs_job.e<job_id>`, respectively).

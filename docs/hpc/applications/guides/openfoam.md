@@ -6,9 +6,9 @@
 
 You can search which versions of OpenFOAM are available on the HPC by running the following command:
 
-```bash
-module load tools/prod
-module spider openfoam
+```console
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module spider openfoam
 ```
 
 This will show output similar to the following
@@ -31,10 +31,10 @@ You can of course also do `module avail openfoam`, both commands are very simila
 
 To load a specific version of OpenFOAM, you can use the following command:
 
-```bash
-module load <version>
-#Where version could be any one of the versions listed above, for example
-module load OpenFOAM/v2406-foss-2023a
+```console
+[user@login ~]$ module load <version>
+# Where version could be any one of the versions listed above, for example
+[user@login ~]$ module load OpenFOAM/v2406-foss-2023a
 ```
 
 ## How to get the OpenFOAM commands

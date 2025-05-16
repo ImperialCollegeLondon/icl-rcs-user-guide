@@ -11,19 +11,19 @@ Let us assume that the file named my_file was present in the folder /rds/general
 1 Change to the directory where the file was originally present.
 
 ```console
-$ cd /rds/general/user/lragta/home/Usr_query
+[user@login ~]$ cd /rds/general/user/lragta/home/Usr_query
 ```
 
 2 Change to the .snapshots directory (where we keep the files from the last 2 weeks).
 
 ```console
-$ cd /rds/general/user/lragta/home/Usr_query/.snapshots
+[user@login ~]$ cd /rds/general/user/lragta/home/Usr_query/.snapshots
 ```
 
 3 Type ls and you will see folders named with dates corresponding to last 2  weeks.
 
 ```console
-$ ls
+[user@login ~]$ ls
 ```
 
 4 This will give you output like
@@ -41,13 +41,13 @@ apsync.userdirs.1702523964  @GMT-2023.12.01-19.30.14  @GMT-2023.12.08-19.30.14
 5 Suppose you deleted the file on 7th Dec, then go to that directory by
 
 ```console
-$ cd @GMT-2023.12.07-19.30.14
+[user@login ~]$ cd @GMT-2023.12.07-19.30.14
 ```
 
 6 Type ls again and you should see your deleted file or folder.
 
 ```console
-$ ls
+[user@login ~]$ ls
 #This will show your deleted file or folder.
  
 my_file
@@ -56,7 +56,7 @@ my_file
 7 Copy it back to your home directory.
 
 ```console
-$ cp my_file /rds/general/user/lragta/home/Usr_query/my_file
+[user@login ~]$ cp my_file /rds/general/user/lragta/home/Usr_query/my_file
 ```
 
 With this you should be able to recover your deleted files.

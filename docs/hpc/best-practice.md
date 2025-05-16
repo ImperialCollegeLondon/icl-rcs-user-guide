@@ -1,9 +1,5 @@
 # Best Practice
 
-!!! info
-
-    This page has been partially rewritten for CX3 Phase 2.
-
 This page is intended as best practice guidelines for using the RCS. These recommendations are generally applicable for daily use (and may apply on HPC services offered elsewhere), but particularly important to keep in mind at times of reduced support, such as when the college closes during holiday periods.
 
 ## Running applications on the login nodes

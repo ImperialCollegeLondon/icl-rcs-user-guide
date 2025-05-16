@@ -7,9 +7,9 @@ We have many versions of R already available via [EasyBuild](../easybuild.md) re
 To view the versions of R available for you to use, you can do:
 
 ```console
-module purge
-module load tools/prod
-module spider R
+[user@login ~]$ module purge
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module spider R
 ```
 
 `module purge` is useful if you have loaded other modules that may interfere, otherwise it's not necessary. This will also load the gateway module `tools/prod` which will allow you to view modules which are currently in the production software stack.
@@ -17,8 +17,8 @@ module spider R
 To load `R/4.2.1-foss-2022a` as an example, you can do the following:
 
 ```console
-module load tools/prod
-module load R/4.2.1-foss-2022a
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module load R/4.2.1-foss-2022a
 ```
 
 Remember, that the login nodes are not for running extensive calculations, especially if they are heavy on the file system. If you need to run jobs interactively, please look at the [interactive queue section](../../queues/job-sizing-guidance.md#interactive).
@@ -27,22 +27,22 @@ Remember, that the login nodes are not for running extensive calculations, espec
 To begin, following the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called `r413` containing R version 4.1.3.
 
 ```console
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
-conda create -n r413 r-base=4.1.3 -c conda-forge
-source activate r413
+[user@login ~]$ eval "$(~/miniforge3/bin/conda shell.bash hook)"
+[user@login ~]$ conda create -n r413 r-base=4.1.3 -c conda-forge
+[user@login ~]$ source activate r413
 ```
 
 You should then see `(r413)` on the left hand side which indicates you are in that environment. For installing R packages, it is generally best to stick to the conda-forge channel or the R channel. For example, to install additional packages from the R channel:
 
 ```console
-conda search -c r "r-*" 
-conda install -c r r-png 
+[user@login ~]$ conda search -c r "r-*" 
+[user@login ~]$ conda install -c r r-png 
 ```
 
 An activated environment can be deactivated using:
 
 ```console
-conda deactivate
+[user@login ~]$ conda deactivate
 ```
 
 ### Bioconductor
@@ -50,13 +50,13 @@ conda deactivate
 Follow the instructions above to create a suitable conda environment, such as `r413`. Once you have created this environment, you can search for bioconductor packages by running the following:
 
 ```console
-conda search bioconductor-*
+[user@login ~]$ conda search bioconductor-*
 ```
 
 and you can install bioconductor packages such as bioconductor-teqc by running:
 
 ```console
-conda install bioconductor-teqc
+[user@login ~]$ conda install bioconductor-teqc
 ```
 
 ## RStudio

@@ -18,11 +18,11 @@ int main()
 
 To compile the program, we need to load the GCC compilers first. To load them, we first load the `tool/prod` as shown below:
 
-```bash
-module load tools/prod
+```console
+[user@login ~]$ module load tools/prod
 
 # Then search for all GCC modules by
-module spider GCC
+[user@login ~]$ module spider GCC
 ```
 
 The above command will give you output like below:
@@ -50,16 +50,16 @@ The above command will give you output like below:
 
 Let's use `GCC/12.3.0` for example:
 
-```bash
+```console
 # First unload the current modules (if any)
-module purge
+[user@login ~]$ module purge
 
 # Then load the tools/prod and necessary GCC module
-module load tools/prod
-module load GCC/12.3.0
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module load GCC/12.3.0
 
 # Compile the program
-g++ -o HelloWorld HelloWorld.cpp
+[user@login ~]$ g++ -o HelloWorld HelloWorld.cpp
 ```
 
 The program should compile without any errors.
@@ -72,26 +72,26 @@ One may decide to use modules like `GCCcore/12.3.0` i.e. the one which has the w
 
 ```bash
 # First unload the current modules (if any)
-module purge
+[user@login ~]$ module purge
 
 # Load the module
-module load GCCcore/12.3.0
+[user@login ~]$ module load GCCcore/12.3.0
 
 # Compile the program
-g++ -o HelloWorld HelloWorld.cpp
+[user@login ~]$ g++ -o HelloWorld HelloWorld.cpp
 ```
 
 You will see errors like:
 
-```bash
+```console
 /usr/bin/ld: /rds/easybuild/zen2/apps/software/GCCcore/12.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/12.3.0/libgcc.a(_muldi3.o): unable to initialize decompress status for section .debug_info
 ```
 
 This is because the "core" modules do not load the `binutils` module which is required for the GCC compiler to work correctly. You can see this by typing the following:
 
-```bash
+```console
 # See all loaded modules
-module list
+[user@login ~]$ module list
 
 # You will see the following output, note that "binutils" is missing
 Currently Loaded Modulefiles:
@@ -99,10 +99,10 @@ Currently Loaded Modulefiles:
 ```
 
 If we were to load `binutils` now, by doing:
-```bash
-module load binutils/2.40-GCCcore-12.3.0
+```console
+[user@login ~]$ module load binutils/2.40-GCCcore-12.3.0
 
-module list
+[user@login ~]$ module list
 Currently Loaded Modulefiles:
  1) tools/prod            3) zlib/1.2.13-GCCcore-12.3.0 <aL>    
  2) GCCcore/12.3.0 <aL>   4) binutils/2.40-GCCcore-12.3.0 <aL>

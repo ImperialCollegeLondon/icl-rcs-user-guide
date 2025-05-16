@@ -7,44 +7,44 @@ The default Python that you will find on our systems is fine for trivial use. Fo
 We use [Easybuild](../easybuild.md) to provide an optimized installation that users can build upon. To see these modules you will need to load the production tools
 
 ```console
-module load tools/prod
+[user@login ~]$ module load tools/prod
 ```
 
 You can then see all the versions of Python available
 
 ```console
-module spider Python
+[user@login ~]$ module spider Python
 ```
 
 The versions called "bare" provide very little and we generally recommend users avoid them. If you are looking to use that standard scientific packages like NumPy, SciPy, and matplotlib then you only need to load a version of the SciPy-bundle. Loading this will automatically load the required version of Python. For example,
 
 ```console
-module load SciPy-bundle/2022.05-foss-2022a
+[user@login ~]$ module load SciPy-bundle/2022.05-foss-2022a
 ```
 
 These versions of Python also include virtualenv (venv) to allow users to create custom environments. For example, to create an environment called "example-env"
 
 ```console
-mkdir ~/venv
-virtualenv ~/venv/example-env
+[user@login ~]$ mkdir ~/venv
+[user@login ~]$ virtualenv ~/venv/example-env
 ```
 
 We can then activate this virtual environment with
 
 ```console
-source ~/venv/example-env/bin/activate
+[user@login ~]$ source ~/venv/example-env/bin/activate
 ```
 
 Extra packages can then be added using pip.
 
 ```console
-python3 -m pip install mypy
+[user@login ~]$ python3 -m pip install mypy
 ```
 
 To return to the base environment use
 
-```
-deactivate
+```console 
+[user@login ~]$ deactivate
 ```
 
 ### Example PBS job
@@ -64,6 +64,7 @@ cd $PBS_O_WORKDIR
 
 python3 some_python_script.py
 ```
+
 It's important to remember that if you create a `venv` with any of the given modules such as `SciPy-bundle/2022.05-foss-2022a`, then you will need to load that same module before you can activate the environment.
 
 ## Conda and Python
@@ -71,10 +72,11 @@ It's important to remember that if you create a `venv` with any of the given mod
 If you are already familiar with package managers like Anaconda, this may be your best option in terms of getting your environment (set of python modules) working on the HPC facility. To begin, follow the instructions in the [Conda application guide](./conda.md) to setup Conda for your account. Assuming you have done this, the following set of instructions would create an environment called `py39` containing Python 3.9, and would install `numpy` in that environment.
 
 ```console
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
-conda create -n py39 python=3.9 numpy
-source activate py39
+[user@login ~]$ eval "$(~/miniforge3/bin/conda shell.bash hook)"
+[user@login ~]$ conda create -n py39 python=3.9 numpy
+[user@login ~]$ conda activate py39
 ```
+
 This will:
 
 1. Get Conda ready for use with the `eval` command.
@@ -93,7 +95,7 @@ Conda and pip have historically had difficulties getting along.  Pip didn't resp
 This feature is disabled by default right now because it can significantly impact Conda’s performance.  If you’d like to try it, you can set this condarc setting:
 
 ```console
-conda config --set pip_interop_enabled True
+[user@login ~]$ conda config --set pip_interop_enabled True
 ```
 
 Where previous versions of Conda will show a confusing ambiguity on exactly what’s present in `conda list` if you installed a pip package when it was already present in the environment. Conda 4.6 now shows only one correct entry.
@@ -109,7 +111,7 @@ memory_profiler is a library specifically designed to profile memory usage in Py
 You can install memory_profiler directory from pip. We recommend installing the library within a virtualenv or [conda environment](#conda-and-python). 
 
 ```console
-python3 -m pip install memory-profiler
+[user@login ~]$ python3 -m pip install memory-profiler
 ```
 
 #### Usage

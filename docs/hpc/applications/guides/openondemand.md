@@ -1,9 +1,5 @@
 # Open OnDemand
 
-!!! info
-
-    This page **has** been rewritten for CX3 Phase 2.
-
 [Open OnDemand](https://openondemand.org/) (OOD) is a service that enables interactive applications to run as "batch" jobs on a normal HPC facility; these applications are then accessed via a web browser. The OOD service at Imperial is primarily focused on R and Rstudio. The URL for the OOD service hosted by the Imperial College RCS team is:
 
 [https://openondemand.rcs.ic.ac.uk/](https://openondemand.rcs.ic.ac.uk/)
@@ -22,15 +18,15 @@ We recommend you familiarise yourself with the use of Conda and R by going to th
 Once you've done that, you can now create a Conda environment to use within OOD.
 
 ```console
-module load miniforge/3
-eval "$(~/miniforge3/bin/conda shell.bash hook)"
-conda create -n Renv r-base=4.1.2 -c conda-forge
+[user@login ~]$ module load miniforge/3
+[user@login ~]$ eval "$(~/miniforge3/bin/conda shell.bash hook)"
+[user@login ~]$ conda create -n Renv r-base=4.1.2 -c conda-forge
 ```
 
 The name after "-n" is a unique name for this environment, you can set this to whatever you see fit. Once that completes, you can install any other packages you may need. This environment can then be activated with:
 
 ```console
-source activate Renv
+[user@login ~]$ source activate Renv
 ```
 
 !!! warning
@@ -39,13 +35,13 @@ source activate Renv
 For example, to install tidyverse, you can do:
 
 ```console
-(Renv) conda install -c conda-forge r-tidyverse
+[user@login ~]$ (Renv) conda install -c conda-forge r-tidyverse
 ```
 
 To find packages, either search on the [Anaconda website](https://anaconda.org/search), or use the following replacing `package_name` with the name of the R package to be installed:
 
-```text
-(Renv) conda search "package_name"
+```console
+[user@login ~]$ (Renv) conda search "package_name"
 ```
 
 Once all packages have been install OOD can be started.
@@ -72,6 +68,7 @@ Clicking on that will start up Rstudio in a new window using the created Anacond
 ![OOD RStudio Connect](img/ood-rstudio-connect.png)
 
 ## Installing packages on Open OnDemand
+
 Once the above has been followed, users can install new packages via the Rstudio Terminal.
 
 !!! warning

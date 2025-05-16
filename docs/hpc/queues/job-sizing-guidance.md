@@ -47,8 +47,9 @@ This queue is for larger multi-node jobs, using up to 4 entire nodes at once. Wo
 
 #### interactive
 While not listed in the table above, you can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
+
 ```console
-qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
+[user@login ~]$ qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
 ```
 You should not request an interactive job longer than 8 hours, and should make sure to end your session once you are done as to not leave it idle.
 
@@ -170,6 +171,7 @@ The number in ncpus and mpiprocs is per-node so here we have a total of 128 mpi 
 ### GPU Jobs
 
 Note that the GPU nodes have less CPUs than the standard compute nodes. Also while all GPU types are given here, the A40 cards can only be used on [Jupyterhub](https://jupyterhub-11.rcs.ic.ac.uk/).
+
 #### GPU Specification
 
 |  | [L40S PCIe 48 GB](https://resources.nvidia.com/en-us-l40s/l40s-datasheet-28413) | [A100 PCIe 40GB](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet.pdf) | [A40](https://images.nvidia.com/content/Solutions/data-center/a40/nvidia-a40-datasheet.pdf) |

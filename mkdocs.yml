@@ -99,8 +99,6 @@ nav:
         - Overview: hpc/advanced/debugging_mpi_programs/debugging_overview.md
         - Use of GDB to debug MPI program: hpc/advanced/debugging_mpi_programs/gdb_mpi_debug.md
     - HX1: hpc/hx1.md
-    - Pilot Systems:
-      - CX3 Phase 2: hpc/pilot/cx3-phase2.md
     - Legacy Systems:
       - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
   - RDS:

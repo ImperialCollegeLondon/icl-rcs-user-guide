@@ -1,9 +1,5 @@
 # Running your first job
 
-!!! info
-
-    This page has been partially rewritten for CX3 Phase 2.
-
 The Imperial HPC facility is a batch processing system. Rather than carrying out work directly on the command line, jobs are submitted to the queue of a work manager (or resource scheduler) where they are held until compute resource become free. A job is defined by a shell script that contains all of the commands to be run.
 
 The Imperial HPC facility uses the [PBSPro workload manager](https://altair.com/pbs-professional/), which some existing HPC users may be familiar with using on other HPC facilities.
@@ -113,7 +109,7 @@ Advice on choosing the right resource requirements for your work is in our [job 
 
 ## Submitting and monitoring a job
 
-You can submit a job with the qsub command. For example:
+You can submit a job with the `qsub` command. For example:
 
 ```console
 [user@login ~]$ qsub your_job_script

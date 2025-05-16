@@ -1,14 +1,10 @@
 # Accessing Software
 
-!!! info
-
-    This page has been partially rewritten for CX3 Phase 2.
-
 A large number of software/applications are already installed on our systems and we use a "[modules](#modules)" system to enable users to load different applications and different versions of those applications into their environment.
 
 # Modules
 
-The `module` command is used to access the modules system, and load/unload applications from your environment. When you first log into the system, you will only have the `tools/prod` module load which provides you access to our "production" modules.
+The `module` command is used to access the modules system, and load/unload applications from your environment. When you first log into the system, you will only have the `tools/prod` module load which provides you access to our "*production*" modules.
 
 ```console
 [user@login ~]$ module list
@@ -17,7 +13,7 @@ Currently Loaded Modules:
   1) tools/prod
 ```
 
-You can see a list of what applications are installed by running the module avail command (as there are many applications installed, this may take some time):
+You can see a list of what applications are installed by running the `module avail` command (as there are many applications installed, this may take some time):
 
 ```console
 [user@login ~]$ module avail
@@ -52,7 +48,7 @@ You can see a list of what applications are installed by running the module avai
 ```
 
 
-A program can then be loaded into your environment by running the module load name command:
+A program can then be loaded into your environment by running the `module load` command:
 
 ```console
 [user@login ~]$ module load GROMACS

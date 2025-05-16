@@ -13,9 +13,9 @@ With the move to use EasyBuild as a software management tool, we now can provide
 In the submission script, the following module commands, and only these, need to be used:
 
 ```console
-module purge
-module load tools/prod
-module load TensorFlow/2.15.1-foss-2023a-CUDA-12.1.1
+[user@login ~]$ module purge
+[user@login ~]$ module load tools/prod
+[user@login ~]$ module load TensorFlow/2.15.1-foss-2023a-CUDA-12.1.1
 ```
 
 This will add the latest currently installed version of Tensorflow (2.15.1) using the foss-2023a toolchain (basically compilers etc.), with CUDA version 12.1.1. Newer versions can be installed upon request. Below is an example submission script using this version of Tensorflow:
@@ -46,15 +46,15 @@ The example below installs both the CPU and GPU version of Tensorflow. If you do
 
 
 ```console
-conda create -n tf2_env -c conda-forge cudatoolkit=11.8 python=3.11
-source activate tf2_env
-conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
-python3 -m pip install nvidia-cudnn-cu11==8.6.0.163
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-python3 -m pip install tensorflow==2.12.*
+[user@login ~]$ conda create -n tf2_env -c conda-forge cudatoolkit=11.8 python=3.11
+[user@login ~]$ source activate tf2_env
+[user@login ~]$ conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
+[user@login ~]$ python3 -m pip install nvidia-cudnn-cu11==8.6.0.163
+[user@login ~]$ mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+[user@login ~]$ echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+[user@login ~]$ echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+[user@login ~]$ source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+[user@login ~]$ python3 -m pip install tensorflow==2.12.*
 ```
 
 ## Check TensorFlow Installation

@@ -7,26 +7,26 @@ Whether using  CPU's or GPU's, you should install PyTorch into a clean conda env
 
 Please take care when installing PyTorch with other packages. It isn't uncommon for PyTorch to conflict with other packages so we generally recommend keeping your PyTorch environment to a minimum. Also, for users who are interested in having both Pytorch and TensorFlow installed in the same environment, please replace the last line in the code block with the one provided in the TensorFlow and Pytorch section.
 
-```text
-conda create -n pytorch_env -c conda-forge cudatoolkit=11.8 python=3.11
-conda activate pytorch_env
-conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
-python3 -m pip install nvidia-cudnn-cu11==8.6.0.163
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib/:$CUDNN_PATH/lib:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+```console
+[user@login ~]$ conda create -n pytorch_env -c conda-forge cudatoolkit=11.8 python=3.11
+[user@login ~]$ conda activate pytorch_env
+[user@login ~]$ conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
+[user@login ~]$ python3 -m pip install nvidia-cudnn-cu11==8.6.0.163
+[user@login ~]$ mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+[user@login ~]$ echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+[user@login ~]$ echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib/:$CUDNN_PATH/lib:$LD_LIBRARY_PATH' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+[user@login ~]$ source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
 # !!! For both TensorFlow and Pytorch, use the command in the next section. !!!
-python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+[user@login ~]$ python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ## TensorFlow and Pytorch
 
 Please make sure that you have run all the commands (except the last one as mentioned in the comments) from the above section before running the following command.
 
-```bash
-python3 -m pip install torch torchvision torchaudio tensorflow==2.12.*
+```console
+[user@login ~]$ python3 -m pip install torch torchvision torchaudio tensorflow==2.12.*
 ```
 
 ## Check Pytorch Installation
@@ -41,7 +41,7 @@ You should then be able to test this works in a job, for example:
 cd $PBS_O_WORKDIR
 
 eval "$(~/miniforge3/bin/conda shell.bash hook)"
-source activate pytorch_env
+conda activate pytorch_env
   
 ## Verify install:
 python -c "import torch;print(torch.cuda.is_available())"
