@@ -8,7 +8,7 @@ Please see the pages below which provide an introduction to the Linux command li
 * [Command line](./command-line.md)
 * [Shell scripting](./shell-scripting.md)
 
-The Imperial College Graduate School additionally provide a course on **The Linux Command Line for Scientific Computing**; [click here](../courses.md#the-linux-command-line-for-scientific-computing) to find out more.
+The Imperial Graduate School additionally provides a course on **The Linux Command Line for Scientific Computing**; [click here](../courses.md#the-linux-command-line-for-scientific-computing) to find out more.
 
 ## External Resources
 We provide the following useful links in the hope they provide useful to your journey in learning how to use Linux. Some of the links may contain paid advertising!
