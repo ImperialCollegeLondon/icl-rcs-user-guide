@@ -332,3 +332,46 @@ Please request whole nodes when using the capablity queue. If you need to use mo
 * 64 or 128 CPUs, 8 or less nodes while walltime is 48 hours or less then the job will go to **capability48**
 * 64 or 128 CPUs, 8 or less nodes while walltime is 24 hours or less then the job will go to **capability24**
                                                                                                              
+## Migrating to CX3 Phase 2
+
+CX3 Phase 2 was developed in response to growing issues with the legacy system used to maintain and install the CX3 HPC cluster. This original system, custom-built for Imperial over a decade ago, had become increasingly unreliable and difficult to manage. Its design also made it hard to update the operating system, leading to conflicts between system libraries.
+
+Rather than continuing to patch an outdated and fragile setup, we chose to rebuild the system from the ground up using modern, industry-standard tools. This fresh start allowed us to create a more robust and maintainable installation process for the CX3 cluster.
+
+As part of this overhaul, we also transitioned to a standard version of PBS Pro, moving away from the bespoke variant. This change enables us to receive timely updates and better support for the job scheduler.
+
+The purpose of this section is to highlight changes between CX3 Legacy and CX3 Phase 2 in order to aid your migration between the systems. We will continue to add to this section as more useful information becomes relevant.
+
+### Connecting to CX3
+
+The hostname for connecting to CX3 Legacy is `login.hpc.imperial.ac.uk` whereas on Phase 2 this has become `login.cx3.hpc.ic.ac.uk`. As per CX3 Legacy, this new hostname has multiple login nodes behind it but these now include servers with Intel processors. Please see the [Using SSH](../getting-started/using-ssh.md#hostname-for-ssh) page for more information.
+
+### Batch Jobs
+
+#### Submission scripts
+
+Submission scripts are broadly the same between the Legacy and Phase 2 facilities. However, there are changes in the way that some resource requests work, particularly [MPI jobs](../queues/mpi-jobs.md). We strongly recommend you review those sections of the documentation that relate to [Queuing](../queues/index.md), especially for the types of jobs that you are running.
+
+It may also be important to be aware on the Legacy system, jobs started in the `$TMPDIR` directory (local to the compute node), whereas on the Phase 2 system they start in your `$HOME` directory. You may need to change directories or paths within your submission script to account for this difference.
+
+#### Queues
+
+There have been some changes to the queuing structure, which can be viewed on the [Job Sizing guidance](../queues/job-sizing-guidance.md) page.
+
+#### Running Environment
+
+PBSPro on Phase 2 has much better control of the job environment and tracking of resource usage meaning that you may find your jobs running out of memory on Phase 2 whereas on the Legacy system they did not. We recommend you start with the same resource request as for the Legacy system and make adjustments on Phase 2 as required.
+
+#### Monitoring your jobs
+
+Running `qstat` on the login nodes will now show you all jobs running on the cluster rather than just your own. You can limit qstat to showing just your own jobs by providing your username as an option to `qstat` i.e.
+
+```console
+[user@login ~]$ qstat -u user
+```
+
+### Scientific applications
+
+Over the past few years, we’ve transitioned from using an ad-hoc approach to centrally installing software to adopting the EasyBuild software installation system. If you're already familiar with [modules installed via EasyBuild](../applications/easybuild.md), the module structure in Phase 2 will look familiar. However, unlike before, you no longer need to manually load the "production" EasyBuild modules using `module load tools/prod` command — these are now automatically loaded on Phase 2 when you login.
+
+If you are using one of the "older" modules, we recommend you use the [module tool](../applications/index.md) to search for modules providing the software and/or libraries that you need. If you are unable to find the software you require, please [contact us](../../support/index.md) to discuss it further.
