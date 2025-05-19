@@ -1,9 +1,5 @@
 # Job Dependencies
 
-!!! info
-
-    This page has not yet been rewritten for CX3 Phase 2.
-
 PBS allows you to specify dependencies between two or more jobs. Dependencies are useful for a variety of tasks, such as:
 
 Specifying the order in which jobs in a set should execute
@@ -11,6 +7,9 @@ Requesting a job run only if an error occurs in another job
 Holding jobs until a particular job starts or completes execution
 
 ## Limitations of job dependencies
+
+!!! info
+	Consider the following circumstance: Job 1 (J1) depends on job 3 (J3) to finish before running. Should job J3 take more than roughly 2 weeks to run (including queue time), J1 may be rejected. This is due to how PBS deals with job history being maintained on CX3 Phase 2.
 
 Job dependencies are supported:
 
@@ -60,6 +59,10 @@ This job may start only after all jobs in arg list have terminated with errors.
 **afterany: <arg list>**
 
 This job may start after all jobs in arg list have finished execution, with or without errors. This job will not run if a job in the arg list was deleted without ever having been run.
+
+**runone: <arg list>**
+
+This command groups jobs so that only one job from the group will be allowed to run, and the rest will be held back.
 
 **before: <arg list>**
 
