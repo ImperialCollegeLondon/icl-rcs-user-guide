@@ -1,8 +1,8 @@
 # Paraview
 
-!!! info
+!!! danger 
 
-    This page has not yet been rewritten for CX3 Phase 2.
+    We have identified some issues with ParaView when running on campus, so it remains under testing.
 
 !!! warning
 
