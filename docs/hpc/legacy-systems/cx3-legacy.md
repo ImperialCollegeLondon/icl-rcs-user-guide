@@ -1,7 +1,9 @@
 # CX3 Legacy
 
 !!! info 
-	This page contains information regarding the origin CX3 "legacy" facility for those users who have not transferred their workflow to the refreshed system yet. CX3 Phase 2 is a refresh of the CX3 platform, with an upgraded operating system and job scheduler. 
+	This page contains information regarding the original CX3 "legacy" facility for those users who have not transferred their workflow to the refreshed system yet. CX3 Phase 2 is a refresh of the CX3 platform, with an upgraded operating system and job scheduler. As more users move over to CX3 Phase 2, we will continue to migrate hardware across with the aim to have moved over completely by January 2026.
+
+    The [main documentation](../getting-started/index.md) on this web site has now been rewritten to reflect CX3 Phase 2 and you will find some additional pointers in the [migration to Phase 2](#migrating-to-cx3-phase-2) section of this page.
 
 ## Using SSH
 ### Hostname for SSH
