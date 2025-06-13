@@ -85,6 +85,9 @@ This test function manually creates a vector, takes the square of each element, 
 
 ### Getting the right number of cores
 
+!!! info 
+	In order for this to work correctly, you must make sure to request the `ompthreads` flag in your jobscript. For example: `#PBS -lselect=1:ncpus=8:ompthreads=8:mem=4gb`	
+
 You can detect the correct number of cores available to your job using `future::availableCores()`. The function within the `parallel::detectCores()`, will report the wrong number, the total number of cores in the node, which are not available to you. Using this one when parallelising your code might have unexpected consequences. In other words, you can use the following code snippet to get the maximum number of cores available to you:
 
 ```R
