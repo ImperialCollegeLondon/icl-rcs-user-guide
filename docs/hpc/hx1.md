@@ -28,14 +28,14 @@ Once you have been granted access to HX1, you will be added to the **hpc-hx1** s
 
 There are two login nodes for hx1 which are accessible over ssh. These can be accessed using the `login.hx1.hpc.ic.ac.uk` hostname. If you see a message asking you to confirm the host key, the fingerprint given in the message should match one of those given below:
 
-3072 SHA256:5rlfNbjizjC3EQqdcSUBsSi90CdoriR2gSS6S1DFUBM hx1-c12-login-2.hx1.hpc.ic.ac.uk (RSA)
-256 SHA256:n+mpFNQcNSFscvVEKE7QyYM18lSBSkwrgZ9yMnyVlas hx1-c12-login-2.hx1.hpc.ic.ac.uk (ECDSA)
-256 SHA256:lYTv2ukiW7T+LOTRrw2pV4Zo45A0RGwxmKJShMcW3LY hx1-c12-login-2.hx1.hpc.ic.ac.uk (ED25519)
 
+* 3072 SHA256:5rlfNbjizjC3EQqdcSUBsSi90CdoriR2gSS6S1DFUBM hx1-c12-login-2.hx1.hpc.ic.ac.uk (RSA)
+* 256 SHA256:n+mpFNQcNSFscvVEKE7QyYM18lSBSkwrgZ9yMnyVlas hx1-c12-login-2.hx1.hpc.ic.ac.uk (ECDSA)
+* 256 SHA256:lYTv2ukiW7T+LOTRrw2pV4Zo45A0RGwxmKJShMcW3LY hx1-c12-login-2.hx1.hpc.ic.ac.uk (ED25519)
 
-3072 MD5:48:fa:ad:db:a8:a8:b7:be:3b:bb:fa:99:38:76:1c:8f hx1-c12-login-2.hx1.hpc.ic.ac.uk (RSA)
-256 MD5:ea:03:50:47:d5:fd:e5:5f:76:28:51:9a:2a:da:0c:a1 hx1-c12-login-2.hx1.hpc.ic.ac.uk (ECDSA)
-256 MD5:78:7f:eb:0c:c9:14:65:b8:bf:c7:c1:84:fa:6b:98:54 hx1-c12-login-2.hx1.hpc.ic.ac.uk (ED25519)
+* 3072 MD5:48:fa:ad:db:a8:a8:b7:be:3b:bb:fa:99:38:76:1c:8f hx1-c12-login-2.hx1.hpc.ic.ac.uk (RSA)
+* 256 MD5:ea:03:50:47:d5:fd:e5:5f:76:28:51:9a:2a:da:0c:a1 hx1-c12-login-2.hx1.hpc.ic.ac.uk (ECDSA)
+* 256 MD5:78:7f:eb:0c:c9:14:65:b8:bf:c7:c1:84:fa:6b:98:54 hx1-c12-login-2.hx1.hpc.ic.ac.uk (ED25519)
 
 Do note that due to security concerns, key-based authentication is disabled for the login-nodes. Users will need to login using their college username and password.
 
