@@ -32,7 +32,7 @@ There are two login nodes for hx1 which are accessible over ssh. These can be ac
 * SHA256:n+mpFNQcNSFscvVEKE7QyYM18lSBSkwrgZ9yMnyVlas (ECDSA)
 * SHA256:lYTv2ukiW7T+LOTRrw2pV4Zo45A0RGwxmKJShMcW3LY (ED25519)
 
-Some ssh clients might give them as MD5 sum so we have provided them as here
+Some ssh clients might give them as MD5 sum so we have provided them here:
 
 * MD5:48:fa:ad:db:a8:a8:b7:be:3b:bb:fa:99:38:76:1c:8f (RSA)
 * MD5:ea:03:50:47:d5:fd:e5:5f:76:28:51:9a:2a:da:0c:a1 (ECDSA)
