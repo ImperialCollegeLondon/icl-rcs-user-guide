@@ -83,7 +83,6 @@ nav:
       - Same or Previous Code not working: hpc/faq/code-not-working.md
       - Not enough slots to run MPI program: hpc/faq/not-enough-slots.md
       - SSH to a compute node: hpc/faq/ssh-compute-node.md
-      - How to run multinode Mpi4py jobs: hpc/faq/multinode-mpi4py.md
       - Issues in running multinode Mpi4py jobs: hpc/faq/multinode-mpi4py.md
     - Debugging and Profiling:
       - Overview: hpc/advanced/index.md
