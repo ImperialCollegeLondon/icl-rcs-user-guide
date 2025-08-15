@@ -84,6 +84,7 @@ nav:
       - Not enough slots to run MPI program: hpc/faq/not-enough-slots.md
       - SSH to a compute node: hpc/faq/ssh-compute-node.md
       - Issues in running multinode Mpi4py jobs: hpc/faq/multinode-mpi4py.md
+      - Blas code not running on multi cores: hpc/faq/blas_multicore_issue.md
     - Debugging and Profiling:
       - Overview: hpc/advanced/index.md
       - Thread Pinning: hpc/advanced/thread-pinning.md
