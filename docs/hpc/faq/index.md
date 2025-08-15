@@ -12,3 +12,7 @@ Please note that this page would be under active development for some time as we
 * [Jobs causing issues with the RDS](./job-issues-rds.md)
 * [Bad interpreter: No such file or directory](./bad-interpreter.md)
 * [Same or Previous Code not working](./code-not-working.md)
+* [Not enough slots to run MPI program](./not-enough-slots.md)
+* [SSH to a compute node](./ssh-compute-node.md)
+* [Issues in running multinode Mpi4py program](./multinode-mpi4py.md)
+* [Blas code not running on multi cores](./blas_multicore_issue.md)

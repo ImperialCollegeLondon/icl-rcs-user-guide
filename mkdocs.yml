@@ -79,7 +79,7 @@ nav:
       - Cannot Create Conda Environment: hpc/faq/cannot-create-conda-env.md
       - How much resource should I ask for: hpc/faq/how-much-resource.md
       - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
-      - No such file or directory: hpc/faq/bad-interpreter.md
+      - Bad interpreter, No such file or directory: hpc/faq/bad-interpreter.md
       - Same or Previous Code not working: hpc/faq/code-not-working.md
       - Not enough slots to run MPI program: hpc/faq/not-enough-slots.md
       - SSH to a compute node: hpc/faq/ssh-compute-node.md
