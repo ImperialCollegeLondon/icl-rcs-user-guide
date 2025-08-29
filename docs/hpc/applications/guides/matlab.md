@@ -108,3 +108,38 @@ We then use the `parfor` loop to execute the `my_fun` function on each element o
 Finally, we close the parallel pool by calling the `delete(gcp)` function, which shuts down the workers and releases their resources.
 
 Note that the `parpool` function and the parfor loop are just two examples of the many parallel computing tools available in Matlab. For more information and examples, you can consult the Matlab documentation or visit the [MathWorks website](https://uk.mathworks.com/products/matlab.html).
+
+## Running Python code from within Matlab
+
+In some cases, users may want to run Python code from within a Matlab script using their own environment. This could be because Python has some features which are not available in Matlab, or because users want to leverage existing Python code or libraries.
+
+You would first need to tell Matlab about your Python enviroment using a variable called [`pyenv`](https://www.mathworks.com/help/matlab/ref/pyenv.html).
+
+Once you have done that, you can run run Python commands from within the Matlab as shown in the following example.
+
+```matlab
+% Ensure Python is properly set up in MATLAB
+pyenv('Version','/rds/general/user/username/home/miniforge3/envs/Your_environment_name/bin/python')
+
+% Use NumPy to create a Python array and square it
+np = py.importlib.import_module('numpy');
+
+% Create a NumPy array from a MATLAB vector
+py_array = np.array([1, 2, 3, 4, 5]);
+
+% Square each element
+squared = np.square(py_array);
+
+% Convert the Python result back to MATLAB array
+matlab_result = double(squared.tolist());
+
+% Display result
+disp('Squared values using NumPy from MATLAB:');
+disp(matlab_result);
+```
+
+This will print the following result:
+```bash
+Squared values using NumPy from MATLAB:
+     1     4     9    16    25
+```
