@@ -151,3 +151,7 @@ Line #    Mem usage    Increment  Occurrences   Line Contents
 ```
 
 We can see when extra memory was allocated and when it was cleared. This is clearly a very useful tool but it should be noted that running profiling can slow down code so it should not be left on all the time. 
+
+## Running Python code from within Matlab
+
+If you would like to run your Python code from within Matlab so that you can make use of features available in both the Matlab and Python, you can do so easily. We have provided a small example here on [How to run Python code from within Matlab](./matlab.md#running-python-code-from-within-matlab).

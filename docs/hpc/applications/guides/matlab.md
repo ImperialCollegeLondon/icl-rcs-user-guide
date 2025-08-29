@@ -109,7 +109,7 @@ Finally, we close the parallel pool by calling the `delete(gcp)` function, which
 
 Note that the `parpool` function and the parfor loop are just two examples of the many parallel computing tools available in Matlab. For more information and examples, you can consult the Matlab documentation or visit the [MathWorks website](https://uk.mathworks.com/products/matlab.html).
 
-## Running Python job from Matlab
+## Running Python code from within Matlab
 
 In some cases, users may want to run Python code from within a Matlab script using their own environment. This could be because Python has some features which are not available in Matlab, or because users want to leverage existing Python code or libraries.
 
