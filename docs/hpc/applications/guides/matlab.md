@@ -113,7 +113,7 @@ Note that the `parpool` function and the parfor loop are just two examples of th
 
 In some cases, users may want to run Python code from within a Matlab script using their own environment. This could be because Python has some features which are not available in Matlab, or because users want to leverage existing Python code or libraries.
 
-You would first need to tell Matlab about your Python enviroment using a variable called '[pyenv](https://www.mathworks.com/help/matlab/ref/pyenv.html)'.
+You would first need to tell Matlab about your Python enviroment using a variable called [`pyenv`](https://www.mathworks.com/help/matlab/ref/pyenv.html).
 
 Once you have done that, you can run run Python commands from within the Matlab as shown in the following example.
 
