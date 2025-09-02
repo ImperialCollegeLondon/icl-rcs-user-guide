@@ -6,16 +6,16 @@ While the login nodes and interactive services can be used to transfer smaller f
 
 It is preferable to use a Data Transfer Node (dtn) when uploading/downloading larger volumes of data to/from the RDS as it keep the associated load off of the loading nodes. The dtn nodes themselves have a very limited OS and users will only have access to data transfer programs like rsync and scp. Users should NOT use a dtn node for general use.
 
-Rsync and scp are two commonly used tools for moving data securely between local and remote servers. In this technical documentation, we will explain how to use rsync and scp to move data from a local server to the RDS (Research Data Storage) via the remote host `dtn-c.hpc.ic.ac.uk`. We will also explain how to connect to the remote host using university username and password and provide examples for transferring data.
+Rsync and scp are two commonly used tools for moving data securely between local and remote servers. In this technical documentation, we will explain how to use rsync and scp to move data from a local server to the RDS (Research Data Storage) via the remote host `dtn-c.cx3.hpc.ic.ac.uk`. We will also explain how to connect to the remote host using university username and password and provide examples for transferring data.
 
 ## Prerequisites:
-Before using rsync and scp, you need to have access to the remote host `dtn-c.hpc.ic.ac.uk` and the RDS.
+Before using rsync and scp, you need to have access to the remote host `dtn-c.cx3.hpc.ic.ac.uk` and the RDS.
 
-To test if you can connect to the remote host `dtn-c.hpc.ic.ac.uk`, the use the following command:
+To test if you can connect to the remote host `dtn-c.cx3.hpc.ic.ac.uk`, the use the following command:
 
 
 ```console
-ssh username@dtn-c.hpc.ic.ac.uk
+ssh username@dtn-c.cx3.hpc.ic.ac.uk
 ```
 
 Replace username with your university username. When prompted, enter your university password.
@@ -47,10 +47,10 @@ When transferring data into an RDS project it is recommend to use the options `-
 * `-o`: This option preserves the ownership of the files being transferred, so that the destination files have the same owner as the source files.
 * `-D`: This option is equivalent to using --devices --specials, which means that it will transfer device files and special files, such as sockets and fifos.
 
-To transfer data from a local server to the RDS via the remote host "dtn-c.hpc.ic.ac.uk", you need to use the following command:
+To transfer data from a local server to the RDS via the remote host "dtn-c.cx3.hpc.ic.ac.uk", you need to use the following command:
 
 ```console
-rsync -rvltoD /path/to/local/folder username@dtn-c.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/folder
+rsync -rvltoD /path/to/local/folder username@dtn-c.cx3.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/folder
 ```
 
 Replace `/path/to/local/folder` with the path to the local folder you want to transfer. Replace `<username>` with your university username. Replace `/path/to/remote/folder` with the path to the destination folder on the RDS. Note that you need to give the full path on the RDS when transferring data. For example, to transfer data to `~/home/new_data` you should use `/rds/general/user/<username>/home/new_data`.
@@ -58,7 +58,7 @@ Replace `/path/to/local/folder` with the path to the local folder you want to tr
 To transfer date from the RDS to the local server simply swap the SOURCE and DESTINATION 
 
 ```console
-rsync -rvltoD username@dtn-c.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/folder /path/to/local/folder
+rsync -rvltoD username@dtn-c.cx3.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/folder /path/to/local/folder
 ```
 
 ## Moving data with scp
@@ -72,10 +72,10 @@ scp [OPTIONS] SOURCE DESTINATION
 * `-v`: verbose mode, displays the progress of the transfer.
 
 
-To transfer data from a local server to the RDS via the remote host "dtn-c.hpc.ic.ac.uk", you need to use the following command:
+To transfer data from a local server to the RDS via the remote host "dtn-c.cx3.hpc.ic.ac.uk", you need to use the following command:
 
 ```console
-scp [OPTIONS] /path/to/local/file username@dtn-c.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/file
+scp [OPTIONS] /path/to/local/file username@dtn-c.cx3.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/file
 ```
 
 Replace /path/to/local/file with the path to the local file you want to transfer. Replace <username> with your university username. Replace /path/to/remote/ with the path to the destination folder on the RDS. Note that you need to give the full path on the RDS when transferring data.
@@ -83,5 +83,5 @@ Replace /path/to/local/file with the path to the local file you want to transfer
 As with rsync, to transfer from the RDS to a local machine you just switch the SOURCE and DESTINATION.
 
 ```console
-scp [OPTIONS] username@dtn-c.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/file /path/to/local/file
+scp [OPTIONS] username@dtn-c.cx3.hpc.ic.ac.uk:/rds/general/user/<username>/path/to/remote/file /path/to/local/file
 ```
