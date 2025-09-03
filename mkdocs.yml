@@ -58,6 +58,7 @@ nav:
         - Overview: hpc/applications/guides/index.md
         - Abaqus: hpc/applications/guides/abaqus.md
         - Conda: hpc/applications/guides/conda.md
+        - FreeSurfer: hpc/applications/guides/freesurfer.md
         - GCC: hpc/applications/guides/GCC.md
         - Jupyter: hpc/applications/guides/jupyter.md
         - MATLAB: hpc/applications/guides/matlab.md
