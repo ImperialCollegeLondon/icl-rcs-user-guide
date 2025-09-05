@@ -6,7 +6,7 @@ People have experienced some issues in running this software on our cluster. We 
 
 ## Library not found error
 
-Like most of our software on the cluster, we have installed Freesurfer version 7.4.1 using Easybuild. However, the installation seems to have an issue as it does not install the dependent `libgfortran.so.5` library, which is required to run FreeSurfer or other associated packages.
+Like most of our software on the cluster, we have installed Freesurfer version 7.4.1 using [Easybuild](https://docs.easybuild.io/). However, the installation seems to have an issue as it does not install the dependent `libgfortran.so.5` library, which is required to run FreeSurfer or other associated packages.
 
 For example, if you load the FreeSurfer module and run the following command:
 
