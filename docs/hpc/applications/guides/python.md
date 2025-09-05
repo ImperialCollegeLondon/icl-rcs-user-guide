@@ -160,7 +160,7 @@ If you would like to run your Python code from within Matlab so that you can mak
 
 If you would like to use some of the Matlab's function inside Python code, you can do so with the help of [`Matlab Engine`](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html) package. This allows you to start a Matlab session and run Matlab commands from Python.
 
-In many cases, people would like to use many of the packages in their conda environment along with the ability to run the matlab code as well. We explain the detailed steps below.
+In many cases, people would like to use many of the packages in their conda environment along with the ability to run the MATLAB code as well. We explain the detailed steps below.
 
 First, you would need to load an appropriate Matlab module. In our case, we use the following.
 
@@ -176,7 +176,7 @@ $ export LD_LIBRARY_PATH=$EBROOTMATLAB/bin/glnxa64:LD_LIBRARY_PATH
 
 Next, you would need to create a conda environment and install your packages there. For simplicity, we only install `numpy` below but you can install any other packages you need as well.
 
-An important point to note is the Python version that you must use. The `MATLAB Engine` works with different `python` version and you can find the [comptabile version of Python and matlab engine here](https://www.mathworks.com/support/requirements/python-compatibility.html). For our case, we have Matlab 2024b, so we will use Python 3.12.
+An important point to note is the Python version that you must use. The MATLAB Engine works with different `python` version and you can find the [compatible version of Python and MATLAB Engine here](https://www.mathworks.com/support/requirements/python-compatibility.html). For our case, we have MATLAB 2024b, so we will use Python 3.12.
 
 ```bash
 # Activate conda
@@ -192,7 +192,7 @@ conda activate matlab_eng_env
 conda install python=3.12 numpy pip
 ```
 
-Next you need to install the MATLAB Engine. You can check various versions here to see the compatibility with your MATLAB version (https://pypi.org/project/matlabengine/#history).
+Next you need to install the MATLAB Engine. You can check various versions at the [PyPI MATLAB Engine page](https://pypi.org/project/matlabengine/#history) to see the compatibility with your MATLAB version.
 
 ```bash
 # Install MATLAB Engine (make sure you are still in th same environment as above)
