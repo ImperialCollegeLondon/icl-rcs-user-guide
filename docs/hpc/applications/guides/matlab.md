@@ -146,4 +146,4 @@ Squared values using NumPy from MATLAB:
 
 ## Running MATLAB code from within Python
 
-If you would like to run some of the functions of Matlab from Python, you can do so with the help of [`Matlab Engine`](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html) package. We have provided one small example and set up instructions on [Running Matlab code from within Python](./python.md#running-matlab-code-from-within-python).
+If you would like to run some of the functions of Matlab from Python, you can do so with the help of [MATLAB Engine](https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html) package. We have provided one small example and set up instructions on [Running Matlab code from within Python](./python.md#running-matlab-code-from-within-python).
