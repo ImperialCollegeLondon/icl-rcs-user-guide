@@ -31,6 +31,8 @@ nav:
       - Overview: support/using-linux/index.md
       - Linux Command Line: support/using-linux/command-line.md
       - Shell Scripting: support/using-linux/shell-scripting.md
+  - RECAP:
+    - Research Computing Access Portal: recap/index.md
   - HPC:
     - HPC at Imperial: hpc/index.md
     - Cluster Specification: hpc/cluster-specification.md
@@ -105,6 +107,8 @@ nav:
     - HX1: hpc/hx1.md
     - Legacy Systems:
       - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
+  - RDF-Active:
+    - RDF-Active: rdfactive/index.md
   - RDS:
     - RDS: rds/index.md
     - RDS Paths: rds/paths.md
