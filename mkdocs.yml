@@ -32,7 +32,7 @@ nav:
       - Linux Command Line: support/using-linux/command-line.md
       - Shell Scripting: support/using-linux/shell-scripting.md
   - RECAP:
-    - Research Computing Access Portal: recap/index.md
+    - REsearch Computing Access Portal: recap/index.md
   - HPC:
     - HPC at Imperial: hpc/index.md
     - Cluster Specification: hpc/cluster-specification.md
