@@ -49,3 +49,23 @@ Thus, your `recon-all` command (one of most basic command of FreeSurfer) would l
 ```bash
 recon-all -s <subject_id> -i <input_nifti_file> -all -qcache -parallel -openmp <num_threads>
 ```
+
+## FreeSurfer array job not running
+
+Recently, we have come across an issue where some people were trying to run FreeSurfer as an array job and they were getting the following error in all of their sub-jobs.
+
+```bash
+rca-config: No match.
+```
+
+We investigated this issue and noted that the error is occurring because of how the `TMPDIR` environment variable is being set by the PBS and how the FreeSurfer parses it. In an array job, the `TMPDIR` variable gets assigned with some special characters (like `[]`) which was causing issues.
+
+An easy workaround is to set the `TMPDIR` variable to a different location in your job script. For example, you can set it to your home directory or any other directory where you have write permissions.
+
+```bash
+mkdir -p $HOME/FreeSurferTempDir
+export TMPDIR=$HOME/FreeSurferTempDir
+```
+
+This will create a temporary directory in your home directory and set the `TMPDIR` variable to that location, which should resolve the issue.
+Please remember to clean up the temporary directory after your job is done to avoid using up your disk quota.
