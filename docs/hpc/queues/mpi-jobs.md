@@ -30,7 +30,7 @@ mpirun -v6 a.out
 
 ### The eternal dilemma, "mpirun" or "mpiexec" ?
 
-Use should use `mpirun` over `mpiexec` where possible as `mpirun` handles setting up the environment better, particularly in HPC environments.
+Users should use `mpirun` over `mpiexec` where possible as `mpirun` handles setting up the environment better, particularly in HPC environments.
 
 If you have any issues running your program or are not sure what to use, please get in touch with our support team following these guidelines. 
 
