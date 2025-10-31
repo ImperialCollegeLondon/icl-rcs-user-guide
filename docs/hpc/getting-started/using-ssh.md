@@ -13,9 +13,9 @@ If you wish to target a specific CPU architecture, either Intel (Ice Lake) or AM
 | Login node      | CPU Type |
 | ----------- | ----------- |
 | login-b.cx3.hpc.ic.ac.uk    | AMD EPYC 7742 64-Core Processor (Rome)    |
+| login-c.cx3.hpc.ic.ac.uk    | AMD EPYC 7742 64-Core Processor (Rome)    |
 | login-ai.cx3.hpc.ic.ac.uk   | Intel Xeon Platinum 8358 (Ice Lake)       |
 | login-bi.cx3.hpc.ic.ac.uk   | Intel Xeon Platinum 8358 (Ice Lake)       |
-| login-c.cx3.hpc.ic.ac.uk    | AMD EPYC 7742 64-Core Processor (Rome)    |
 
 For identification, the key fingerprints are:
 
