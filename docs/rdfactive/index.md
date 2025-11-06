@@ -31,6 +31,15 @@ We have begun contacting [RDS Project](../rds/index.md) owners to provide them a
 Eventually all RDS project owners will be contacted but if you are yet to have been contacted and are interested in migrating sooner, please [raise a ticket with us](../support/index.md) so we can provide you the necessary information to complete the migration form.
 ///
 
+/// details | How do I request access to an existing storage allocation?
+    type: faq
+Please contact the research group lead of the storage allocation (or designated administrator), who can provide you access.
+///
+
 ## How to Access the RDF-Active
 
 Please view our dedicated section on [Accessing the RDF-Active](./access/index.md).
+
+## Cost
+
+The RDF-Active is charged on a *per TB of quota* basis, prepaid for a mininum term of 12 months; all data is stored with two copies (i.e. dual copy) in physically separate locations. Current rates may be found on the [RCS Charging Structure](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/charging-structure/) page.

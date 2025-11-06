@@ -114,7 +114,11 @@ nav:
       - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
   - RDF-Active:
     - RDF-Active: rdfactive/index.md
-    - Accessing the RDF-Active: rdfactive/access/index.md
+    - Accessing the RDF-Active:
+      - Overview: rdfactive/access/index.md
+      - Windows: rdfactive/access/windows.md
+      - macOS: rdfactive/access/macos.md
+      - Linux: rdfactive/access/linux.md
     - Managing the RDF-Active: rdfactive/managing/index.md
     - FAQ: rdfactive/rdfactive-faq.md
   - RDS:
