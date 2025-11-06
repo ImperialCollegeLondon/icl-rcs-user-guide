@@ -16,6 +16,11 @@ markdown_extensions:
   - admonition
   - tables
   - sane_lists
+  - pymdownx.blocks.details:
+      types:
+        faq:
+          class: "faq"
+  - pymdownx.superfences
 extra_css:
   - stylesheets/extra.css
 
@@ -109,6 +114,13 @@ nav:
       - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
   - RDF-Active:
     - RDF-Active: rdfactive/index.md
+    - Accessing the RDF-Active:
+      - Overview: rdfactive/access/index.md
+      - Windows: rdfactive/access/windows.md
+      - macOS: rdfactive/access/macos.md
+      - Linux: rdfactive/access/linux.md
+    - Managing the RDF-Active: rdfactive/managing/index.md
+    - FAQ: rdfactive/rdfactive-faq.md
   - RDS:
     - RDS: rds/index.md
     - RDS Paths: rds/paths.md
