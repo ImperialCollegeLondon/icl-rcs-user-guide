@@ -16,3 +16,16 @@ You must be connected to either the College network or otherwise following the a
 * Enter **ic.ac.uk** in **Domain**
 * Enter your Imperial **Password**
 * Click **Connect**
+
+## Cinnamon (Mint 22.2)
+
+* Open the file manager (**Files**) by clicking the icon
+* From the **File** menu, click **Connect to Server..**
+* In the window that appears, use the menu to change the **Type** to **Windows share**.
+* Enter the following connection details:
+    * **Server:** `rdf-active.ic.ac.uk`
+    * **Share:** `research`
+    * **Folder:** Either leave as "`/`" for the base of the file system or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation.
+    * **Domain Name:** Enter `ic.ac.uk`
+    * **User name** and **Password:** Enter your Imperial username and password.
+* Click **Connect**
