@@ -26,9 +26,7 @@ Information on how to request a new RDF-Active storage allocation will appear he
 
 /// details | What is the process to request migrating my RDS projects to RDF-Active?
     type: faq
-We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of the projects for which they own so they can decide which of them to migrate to the RDF-Active (and in to how many storage allocations) and which projects can be closed down. For each storage allocation required on the RDF-Active, research group leads can then raise our form to raise a [Migration of RDS Project Space to RDF Group Space request](https://servicemgt.imperial.ac.uk/esc?id=sc_category&sys_id=52a4a8f21be62110557837b5464bcbd2&catalog_id=-1&spa=1).
-
-Eventually all RDS project owners will be contacted but if you are yet to have been contacted and are interested in migrating sooner, please [raise a ticket with us](../support/index.md) so we can provide you the necessary information to complete the migration form.
+We have a [dedicate page](./rds-rdfactive-migration.md) to provide information and advice on migrating from the RDS to the RDF-Active.
 ///
 
 /// details | How do I request access to an existing storage allocation?

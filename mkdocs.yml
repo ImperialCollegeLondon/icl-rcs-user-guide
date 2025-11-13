@@ -120,6 +120,7 @@ nav:
       - macOS: rdfactive/access/macos.md
       - Linux: rdfactive/access/linux.md
     - Managing the RDF-Active: rdfactive/managing/index.md
+    - RDS to RDF-Active Migration: rdfactive/rds-rdfactive-migration.md
     - FAQ: rdfactive/rdfactive-faq.md
   - RDS:
     - RDS: rds/index.md
