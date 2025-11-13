@@ -1,8 +1,16 @@
 # RDS on Linux
 
-The following instructions will show you how to connect (mount) your Linux computer to the RDS. The may be some differences between Linux desktop environments and instructions for some of the most common one's have been provided here.
+The following instructions will show you how to connect (mount) your Linux computer to the RDS. There may be some differences between Linux desktop environments and instructions for some of the most common one's have been provided here.
 
 You must be connected to either the College network or otherwise following the advice on [accessing services remotely](../../remoteaccess.md) before you can connect to the RDS. 
+
+These days the packages to mount Samba exports aren't installed by default so they may need to be installed before the RDS can be mounted. On Ubuntu and Mint this was would be done by running:
+
+```
+sudo apt-get install cifs-utils
+```
+
+If you see a "no route to host" error when trying to mount the RDS this often occurs because cifs-utils hasn't been installed. It's obviously not the most useful error message but try running the command above before raising a ticket.
 
 ## Gnome (Ubuntu 22.04)
 
