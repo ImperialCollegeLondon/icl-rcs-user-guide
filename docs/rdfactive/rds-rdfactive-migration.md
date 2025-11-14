@@ -18,14 +18,14 @@ In moving to the RDF-Active, you will now find the following:
 * We have introduced the concept of *Research Groups*. A *Research Group* is an administrative unit, typically led by a single PI, which is used to manage access to RCS resources such as *Storage Allocations* and future HPC systems. The *Research Groups* are managed (such as adding and removing members) via the RECAP portal. An individual may be a member of one or more *Research Groups* in RECAP.
 * A *Storage Allocation* is a single location (directory or folder) on the RDF-Active file system with its own quota and access group. A *Research Group* can have one or more *Storage Allocations*. An individual must be a member of the *Research Group* before they can be added to the access group of a *Storage Allocation*. A *Storage Allocation* does not have to be tied to a specific research project!
 * The file system structure now matches Imperial's structure: `/Faculty/Department/Research Group/Storage Allocation/` (see [Where are my files](./access/index.md#where-are-my-files) for more details).
-* All data on the RDF-Active is stored in a second location (i.e. dual-site).
+* All data on the RDF-Active is replicated to a second location by default (i.e. dual-copy). There is no additional charge for this service.
 * RDF-Active storage allocations are pre-paid for a minimum of 12 months, based on a requested level of quota.
 
 # Reviewing your RDS Projects
 
 We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of the RDS projects they own for them to review; if you have not yet received this spreadsheet and would prefer not to wait, please [raise a ticket with us](../support/index.md) so we can send you a copy. In reviewing the list of RDS Projects, you have two options for each one:
 
-* **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raise a ticket with us](../support/index.md). *Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.*
+* **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raising a ticket with us](../support/index.md). *Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.*
 * **Migration:** You can fill in our migration form to request one or more RDS projects to be migrated to the RDF-Active. Please see the [following section for more information](#what-to-consider-before-submitting-the-migration-form).
 
 # What to consider before submitting the migration form
@@ -35,7 +35,7 @@ We have begun contacting [RDS Project](../rds/index.md) owners to provide them a
 
 ## What research group to migrate the data to
 
-The first question on the migration form is whether the migration is On behalf of myself or someone self. The option you provide here will be used to set up the *Research Group* in the self-service portal and *Research Group* path on the file system will be based on the username of the Research Group lead.
+The first question on the migration form is whether the migration is On behalf of myself or someone else. The option you provide here will be used to set up the *Research Group* in the self-service portal and *Research Group* path on the file system will be based on the username of the Research Group lead.
 
 If your *Research Group* is led by multiple individuals and/or you would like a different "file system friendly" path, please get in [contact with us](../support/index.md) before you submit the migration form. 
 
@@ -45,13 +45,13 @@ The RDS to RDF-Active migration form must be filled in once per Storage Allocati
 
 ### I only have one RDS Project to migrate
 
-If you only have a single RDS Project to migrate to the RDF-Active, then your option is straight forward in that you only need to fill the form in once, attaching a file containing the name of the RDS Project to migrate (this can either be the spreadsheet that we've provided you or simply a text file with the name of the RDS Project). When filling in the form, please make sure to request suffient quota to cover the volume of data currently stored on the RDS as well as any additional usage for the next 12 months after moving to the RDF-Active.
+If you only have one RDS Project to migrate to the RDF-Active, then you only need to fill the form in once, attaching a file containing the name of the RDS Project to migrate (this can either be the spreadsheet that we've provided you or simply a text file with the name of the RDS Project). When filling in the form, please make sure to request suffient quota to cover the volume of data currently stored on the RDS as well as any additional usage for the next 12 months after moving to the RDF-Active.
 
 ### I have multiple RDS Projects to migrate
 
 When you have multiple RDS Projects to migrate to the RDF-Active, you have essentially three options:
 
-* **A one-to-one mapping of RDS Projects to RDF-Active storage allocations**. You may want every RDS Project map to a single Storage Allocation on the RDF-Active if, for example, you need to very clearly separate out who can access which project. You will need to fill in the migration form for every RDS Project you wish to migrate to the RDF-Active, attaching either the spreadsheet we've provided with just the row containing the corresponding project, or a text file containing the name of the project.
+* **A one-to-one mapping of RDS Projects to RDF-Active storage allocations**. You may want every RDS Project to map to a single Storage Allocation on the RDF-Active if, for example, you need to very clearly separate out who can access which project. You will need to fill in the migration form for every RDS Project you wish to migrate to the RDF-Active, attaching either the spreadsheet we've provided with just the row containing the corresponding project, or a text file containing the name of the project.
 * **A many-to-one mapping of multiple RDS Projects to a single RDF-Active storage alloction**. You may want to do this if you find it easier to have all of your RDS Projects copied into a single "shared" space for your research group. You will only need to fill the form in once but you will need to attach a file containing a list of the projects you wish to merge to the single storage allocation; please make sure to request a quota level that covers the data volume from all the RDS Projects you wish to migrate to the RDF-Active as well as any expected new usage for the next 12 months. When it comes to migrating your data, we will copy each RDS Project into a similarly named directory/folder within your "shared" storage allocation.
 * **Merging some RDS projects but not others** As a combination of the previous two options, you may wish to merge some RDS Projects into a single storage alllocation on the RDF-Active but not others. To achieve this, follow the guidance in the previous two options, filling in the form once per storage allocation you'd like on the RDF-Active.
 
@@ -69,8 +69,8 @@ If you believe you have sufficient information to fill in the [RDS to RDF-Active
     * Set up a storage allocation with the specified quota and access group.
 1. **Data Transfer**: Once your storage allocation has been created, we will use our dedicated data transfer tool to begin copying your data from the RDS to the RDF-Active.
 1. **Finalise Transfer**: After most of the data has been transferred, our team will:
-    * Contact you to arrange a time for removing access from the RDS and completing the final transfer. Please make sure you to contact the current users of your RDS Project so that they know to stop using the RDS at the agree time.
-1. **Start using the RDF-Active**: Once the transfer has completed you will be able to start using the RDF-Active. You will need to add any one who needs to access a storage allocation, first to your research group (if they are not already a member) and then to the corresponding storage allocation. Any migrated RDS Project/s will be disabled in the old self-service portal and will no longer be accessible.
+    * Contact you to arrange a time for removing access from the RDS and completing the final transfer. Please make sure you contact the current users of your RDS Project so that they know to stop using the RDS at the agreed time.
+1. **Start using the RDF-Active**: Once the transfer has completed you will be able to start using the RDF-Active. You will need to add anyone who needs to access a storage allocation, first to your research group (if they are not already a member) and then to the corresponding storage allocation. Any migrated RDS Project/s will be disabled in the old self-service portal and will no longer be accessible.
 
 !!! note
     * The RDS project currently has 1700+ projects using approximately 9PB of storage, we are therefore expecting it to take many months to migrate RDS Projects to the RDF-Active.
