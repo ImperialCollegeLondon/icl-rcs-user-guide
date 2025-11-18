@@ -4,6 +4,20 @@
     background-color: #0000CD; /* Imperial Blue */
 }
 
+/* Style the FAQ sections */
+/* Add space between FAQ blocks */
+details.faq {
+    margin-bottom: 0.1em;  /* space below each FAQ */
+    padding: 0.2em 0;      /* optional: internal padding */
+}
+
+/* Make the FAQ summary bold */
+details.faq summary {
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0.3em;  /* space between summary and content */
+}
+
 /* Adjust the with of the main content pane. Commented out due to rendering issues.
 .wy-nav-content {
     max-width: 60%; 
