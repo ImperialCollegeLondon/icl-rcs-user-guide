@@ -45,7 +45,8 @@ The first question on the migration form is whether the migration is On behalf o
 
 If your *Research Group* is led by multiple individuals and/or you would like a different "file system friendly" path, please get in [contact with us](../support/index.md) before you submit the migration form. 
 
-### How many storage allocations do I need
+### How many storage allocations do I need?
+
 
 The RDS to RDF-Active migration form must be filled in once per Storage Allocation required on the RDF-Active (remember that a Storage Allocation has its own quota and access group).
 
