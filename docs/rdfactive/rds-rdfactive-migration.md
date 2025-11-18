@@ -11,6 +11,8 @@ As an RDS Project owner or user, you will likely be aware of the following:
 * All RDS Projects are essentially in the same folder/directory on the RDS.
 * RDS Projects are only dual-copy if requested when the project is created.
 * RDS Projects are charged on a month basis based on usage.
+* The RDS is accessible via the CX3 HPC service.
+
 
 In moving to the RDF-Active, you will now find the following:
 
@@ -20,6 +22,7 @@ In moving to the RDF-Active, you will now find the following:
 * The file system structure now matches Imperial's structure: `/Faculty/Department/Research Group/Storage Allocation/` (see [Where are my files](./access/index.md#where-are-my-files) for more details).
 * All data on the RDF-Active is replicated to a second location by default (i.e. dual-copy). There is no additional charge for this service.
 * RDF-Active storage allocations are pre-paid for a minimum of 12 months, based on a requested level of quota.
+* The RDF-Active is not directly accessible via the HPC services - please see our [FAQ](./rdfactive-faq.md#why-isnt-the-rdf-active-accessible-from-hpc-systems) for more information.
 
 # Reviewing your RDS Projects
 
@@ -31,7 +34,9 @@ We have begun contacting [RDS Project](../rds/index.md) owners to provide them a
 # What to consider before submitting the migration form
 
 !!! warning
-    The current [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) contains several inaccuracies regarding terminology, namely where you see references to RDF Group Space, this should instead refer to and **RDF-Active Storage Allocation**. We are working to correct the form as soon as possible but please [contact us](../support/index.md) if you have any questions in relation to this.
+    The current [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) contains several inaccuracies regarding terminology, namely where you see references to RDF Group Space, this should instead refer to and **RDF-Active Storage Allocation**. Note also that you are **NOT** limited to G and P codes as the form infers, you may also use other codes including departmental F codes.
+    
+    We are working to correct the form as soon as possible but please [contact us](../support/index.md) if you have any questions in relation to this.
 
 ## What research group to migrate the data to
 
