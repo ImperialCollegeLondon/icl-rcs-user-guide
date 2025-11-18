@@ -2,7 +2,7 @@
 
 The Research Data Facility - Active (or RDF-Active) is a large storage service provided by the RCS for active or working research data. The RDF-Active is one of several storage facilities (including the RDF-HPC) that replaces the single storage service provided by the [Research Data Store or RDS](../rds/index.md).
 
-The RDF-Active runs on IBM's high-performance, scalable Spectrum Scale file system (on Lenovo hardware) and stores all data at two separate sites more than 30 km apart for resilience. You can access it as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access via Globus will be available soon.
+The RDF-Active runs on IBM's high-performance, scalable Storage Scale file system (on Lenovo hardware) and stores all data at two separate sites more than 30 km apart for resilience. You can access it as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access via Globus will be available soon.
 
 /// details | Can my data be stored on the RDF-Active? (data security)
     type: faq
