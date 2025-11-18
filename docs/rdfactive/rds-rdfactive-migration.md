@@ -38,7 +38,8 @@ We have begun contacting [RDS Project](../rds/index.md) owners to provide them a
     
     We are working to correct the form as soon as possible but please [contact us](../support/index.md) if you have any questions in relation to this.
 
-### What research group to migrate the data to
+### What should I name the research group?
+
 
 The first question on the migration form is whether the migration is On behalf of myself or someone else. The option you provide here will be used to set up the *Research Group* in the self-service portal and *Research Group* path on the file system will be based on the username of the Research Group lead.
 
