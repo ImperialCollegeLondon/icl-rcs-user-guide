@@ -66,7 +66,8 @@ When you have multiple RDS Projects to migrate to the RDF-Active, you have essen
 
 If you believe you have sufficient information to fill in the [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2), please go ahead and do so. Please [contact us](../support/index.md) if you have any further questions.
 
-## What happens when you submit the migration form
+## What happens when I submit the migration form?
+
 
 1. **Initial Processing**: When your form is initially submitted, it will go direct to the ICT Demand and Recharge Team who will review your request and arrange for the transfer of funds from the account you specified.
 1. **Allocation to a migration stage**: Once your ticket is passed to us we will allocate you to a "migration stage" which will be dependent upon when we receive the request and the type of data you have. We will/have begun transferring projects in "Stage 1" and given the large number of projects and the volume of data to migrate, it will likely take months for us to transfer all projects in this stage. Once we have finished transferring users in "Stage 1", we will start migrating users in "Stage 2". 
