@@ -104,6 +104,8 @@ cd $PBS_O_WORKDIR
 ./dmtcp_restart_script.sh
 ```
 
+[Job dependencies](./job-dependencies.md) can be leveraged to start the main job and enqueue checkpoint-based restart jobs that trigger on successful completion.
+
 ## Important environmental variables
 Generally it is fine to use the default settings for DMTCP but there a few settings that can tweeked.
 
