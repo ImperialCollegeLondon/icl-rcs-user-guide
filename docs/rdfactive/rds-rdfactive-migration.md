@@ -73,7 +73,7 @@ If you believe you have sufficient information to fill in the [RDS to RDF-Active
 1. **Allocation to a migration stage**: Once your ticket is passed to us we will allocate you to a "migration stage" which will be dependent upon when we receive the request and the type of data you have. We will/have begun transferring projects in "Stage 1" and given the large number of projects and the volume of data to migrate, it will likely take months for us to transfer all projects in this stage. Once we have finished transferring users in "Stage 1", we will start migrating users in "Stage 2". 
 1. **Data Migration**: When we get to the stage of migrating your data, our team will:
     * Notify you that data migration is starting.
-    * Create a "[Research Group](#what-research-group-to-migrate-the-data-to)" in the RECAP portal if one does not exist already.
+    * Create a "[Research Group](#what-should-i-name-the-research-group)" in the RECAP portal if one does not exist already.
     * Set up a storage allocation with the specified quota and access group.
 1. **Data Transfer**: Once your storage allocation has been created, we will use our dedicated data transfer tool to begin copying your data from the RDS to the RDF-Active.
 1. **Finalise Transfer**: After most of the data has been transferred, our team will:
