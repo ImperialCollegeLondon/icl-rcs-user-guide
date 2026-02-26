@@ -45,7 +45,7 @@ Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 1234567[].pbs-7 me       v1_smal* myarray_j*    --    1  16   64gb 03:00 B   --
 ```
 
-To biew the status of the individual subjobs, you would use the `-t` option to qstat:
+To view the status of the individual subjobs, you would use the `-t` option to qstat:
 
 ```console
 [user@login ~]$ qstat -u $USER -t
