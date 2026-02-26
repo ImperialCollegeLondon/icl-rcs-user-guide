@@ -29,8 +29,39 @@ where `N` is the number of copies of the job you want to run. You may then `qsub
 
 The resources you request apply to each individual sub-job, not the entire array. For example, if you request 32 cores and 32GB of RAM in the jobscript, that will allocate 32 cores and 32GB of RAM to each sub-job. See more in the [strategies for writing array jobs section](#strategies-for-writing-array-jobs).
 
-
 The system will run individual sub-jobs as soon as resources become available. Occasionally, the system may re-queue running sub-jobs to free resources for larger jobs. Always write your jobscripts with this in mind. For example, consider what would happen if the re-run subjob detects partial output from a previous run. 
+
+## Monitoring array jobs
+
+When running `qstat -u` to view your jobs in the queue, array jobs will typically appear as a single entry:
+
+```console
+[user@login ~]$ qstat -u $USER
+
+pbs-7:
+                                                            Req'd  Req'd   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+1234567[].pbs-7 me       v1_smal* myarray_j*    --    1  16   64gb 03:00 B   --
+```
+
+To biew the status of the individual subjobs, you would use the `-t` option to qstat:
+
+```console
+[user@login ~]$ qstat -u $USER -t
+
+pbs-7:
+                                                            Req'd  Req'd   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+1234567[1].pbs* me       v1_smal* myarray_j* 32024*   1  16   64gb 03:00 X 00:08
+1234567[2].pbs* me       v1_smal* myarray_j* 42024*   1  16   64gb 03:00 R 00:12
+1234567[3].pbs* me       v1_smal* myarray_j* 32084*   1  16   64gb 03:00 X 00:11
+1234567[4].pbs* me       v1_smal* myarray_j* 32224*   1  16   64gb 03:00 R 00:08
+1234567[5].pbs* me       v1_smal* myarray_j*    --    1  16   64gb 03:00 Q   --
+```
+
+Subjobs with a state of "X" have finished running.
 
 ### Stepping factors in array jobs
 
