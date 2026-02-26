@@ -18,7 +18,7 @@ which can also be added directly into the submission file by adding the followin
 
 ## Changing where the log files are written to
 
-You can use the `-o` and `-e` options to `qsub` to change the locations that the standard out and standard error files are written to at the end of the job. For example:
+You can use the `-o` and `-e` options with `qsub` to change the locations that the standard out and standard error files are written to at the end of the job. For example:
 
 ```console
 [user@login ~]$ qsub -o /rds/general/user/home/project1/logs_project1/ -e /rds/general/user/home/project1/logs_project1/ myjob.pbs
