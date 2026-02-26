@@ -60,7 +60,9 @@ The "S" column shows the current state of your job, these are the most common st
 | Q | Job is queued |
 | R | Job is running |
 | E | Job is exiting after having completed running |
+| F | Job is finished |
 | B | [Array job](./array-jobs.md) with at least one subjob running |
+| X | Subjob has completed execution or has been deleted |
 | H | Job is held |
 
 You can find more information about the available queues in the [Job Sizing Guidance](./job-sizing-guidance.md).
