@@ -6,13 +6,13 @@ By default, when your job runs, PBS directs the Standard Out (stdout) and Standa
 
 By default, PBSPro will create separate standard out and standard error files for each job that has run. You can use the `-j` option to qsub to combine the two into a single file. For example, to combine the standard out and standard error into the standard out file, you can run:
 
-```
+```console
 [user@login ~]$ qsub -j oe myjob.pbs
 ```
 
 which can also be added directly into the submission file by adding the following PBS directive:
 
-```
+```bash
 #PBS -j oe
 ```
 
@@ -28,7 +28,7 @@ Would write both the standard out and standard error from the job into `/rds/gen
 
 This can also go directly in to the job submisson script:
 
-```
+```bash
 #PBS -o /rds/general/user/home/project1/logs_project1/
 #PBS -e /rds/general/user/home/project1/logs_project1/
 ```
@@ -43,7 +43,7 @@ As mentioned above, by default the job logs are written to a local temporary dir
 
 With this option standard out and standard error (`oe`) to be written to their final destination as the job is running so it can be viewed as the job runs. You can add this as a PBS directive to the submission script:
 
-```
+```bash
 #PBS -koed
 ```
 
@@ -57,6 +57,6 @@ Sometimes you might be running jobs where you don't need to keep the job logs. I
 
 This can be added as a PBS directive in your submission script by adding the following:
 
-```
+```bash
 #PBS -koed -o /dev/null -e /dev/null
 ```
