@@ -41,7 +41,7 @@ As mentioned above, by default the job logs are written to a local temporary dir
 [user@login ~]$ qsub -koed myjob.pbs
 ```
 
-This option forces the standard out and standard error (`oe`) to be written to their final destination from the compute node that the job is running on. You can add this as a PBS directive to the submission script:
+With this option standard out and standard error (`oe`) to be written to their final destination as the job is running so it can be viewed as the job runs. You can add this as a PBS directive to the submission script:
 
 ```
 #PBS -koed
