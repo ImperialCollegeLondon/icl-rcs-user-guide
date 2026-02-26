@@ -1,11 +1,12 @@
 # How it works
 
-You will be used to logging into a Linux or Unix system, typing in commands to the shell, running programs and viewing data. Once you are finished, you log out and your session ends. The queuing system reproduces this environment, and runs the same shell and commands as interactive login sessions. The difference is that the script is run under the control of the system at a time which it chooses, and thus a connection to a terminal window from the session is not used. The standard input (stdin) for the session is read from the script file which you provide and the standard output and error files (stdout and stderr) are returned as file(s) in your directory when the job is completed.
+You will be used to logging into a Linux or Unix system, typing in commands to the shell, running programs and viewing data. Once you are finished, you log out and your session ends.
 
-You initiate the job using the qsub command. This takes your script and passes control to PBSPro to have it executed. You can add parameters to the qsub command to specify the resources the job will need and to flag various options to the system. You can also put special directives at the start of your script file to give the same information to PBSPro, which is the way we recommend doing it.
+The queuing system reproduces this environment, and runs the same shell and commands as interactive login sessions. The difference is that the script is run under the control of the system at a time which it chooses, and thus a connection to a terminal window from the session is not used. The standard input (stdin) for the session is read from the script file which you provide and the standard output and error files (stdout and stderr) are returned as file(s) in your directory when the job is completed.
 
-You can observe the jobs you have queued (waiting for execution) or running, you can use the `qstat` command. This will show every job running on the system. In order to filter down to only your jobs, you can do the following:
-`qstat -u $USER`
+You initiate the job using the `qsub` command. This takes your script and passes control to PBSPro to have it executed. You can add parameters to the qsub command to specify the resources the job will need and to flag various options to the system. You can also put special directives at the start of your script file to give the same information to PBSPro, which is the way we recommend doing it.
+
+You can observe the jobs you have queued (waiting for execution) or running, you can use the `qstat` command. 
 
 As part of the contents of your script, or on the qsub command itself, you must provide some information to the system as to how much resource your job will need while it is running. The primary resources you will need to specify are number of CPUs, amount of memory and the elapsed time the job will need to run. It is important that the information you give is reasonably accurate. If the job uses more than you asked for, then the system will terminate the job. If you ask for a lot more than you need, then your job may well be delayed waiting to start because there were not enough resources available at the time.
 
@@ -37,6 +38,46 @@ To submit this job to PBSPro, you can use the qsub command followed by the name 
 ```
 
 It will return a JobID which you can use to keep track of your job or to delete it.
+
+## Monitoring your jobs
+
+As stated above, you can monitor your jobs in the queue using the `qstat` command which will show all jobs for all users currently in the queue.
+
+```console
+[user@login ~]$ qstat
+qstat
+Job id            Name             User              Time Use S Queue
+----------------  ---------------- ----------------  -------- - -----
+1.pbs-7           hello_world      me                00:45:13 R queue_name
+2.pbs-7           test_job         someone_else      01:10:25 R other_queue
+3.pbs-7           hello_world_2    me                       0 Q queue_name
+```
+
+The "S" column shows the current state of your job, these are the most common states that you might see:
+
+| | State |
+| :-: | ----- |
+| Q | Job is queued |
+| R | Job is running |
+| E | Job is exiting after having completed running |
+| F | Job is finished |
+| B | [Array job](./array-jobs.md) with at least one subjob running |
+| X | Subjob has completed execution or has been deleted |
+| H | Job is held |
+
+You can find more information about the available queues in the [Job Sizing Guidance](./job-sizing-guidance.md).
+
+You can filter qstat to only show your own jobs using the `-u` option, this will also give you an "alternative view" of the job queue (also accessible without filtering using the `-a`) option:
+
+```console
+[user@login ~]$ qstat -u $USER
+pbs-7:
+                                                            Req'd  Req'd   Elap
+Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+1.pbs-7         me       queue-n* hello_wor* 589848   1   8   32gb 01:30 R 00:45
+3.pbs-7         me       queue-n* hello_wor*    --    1   8   32gb 01:30 Q   -- 
+```
 
 ## Deleting Jobs
 You can delete any jobs from PBSPro either before it has run or while it is running. 

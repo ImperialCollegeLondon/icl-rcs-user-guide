@@ -17,7 +17,7 @@ The following queues of jobs are supported:
 | [medium72](#medium) | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
 | [large24](#large) | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
 | [large72](#large) | Whole node jobs 72h | 1 | 1 - 128 | 1 - 920 | 24 - 72 |
-| <s>largemem72</s> | <s>Large memory jobs</s> | <s>1</s> | <s>1 - 128</s> | <s>921 - 4000</s> | <s>0 - 72</s> |
+| [largemem72](#largemem) | Large memory jobs | 1 | 1 - 128 | 921 - 4000 | 0 - 72 |
 | [gpu72](#gpu72) | Main queue for gpu jobs* | 1 | 1 - 64 | 1 - 920 | 0 - 72 |
 | [capability24](#capability) | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
 | [capability48](#capability) | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
@@ -38,6 +38,9 @@ This queue is for single node jobs, using up to an entire node - 64 cores and 45
 
 #### large 
 This queue is for whole node jobs, using an entire node - 128 cores and 920GB of RAM.* 
+
+#### largemem
+This queue is for jobs requiring large amounts of memory, between 920 and 4,000 GB of RAM. *Please only submit jobs to this queue if you genuinely need more than 920GB of RAM as there are only a limited number of nodes available.*
 
 #### gpu72
 There is an additional limit of 12 GPU's total per user on the gpu72 queue to allow for fair usage of the GPUs. See the section on [GPU Jobs](./gpu-jobs.md#gpu-node-specification) for further information.

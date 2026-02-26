@@ -82,6 +82,7 @@ nav:
     - FAQ and Common Issues:
       - Overview: hpc/faq/index.md
       - Leaving Imperial: hpc/faq/leaving-imperial.md
+      - Controlling Job Logs: hpc/faq/controlling-job-log-files.md
       - Long Queue Times: hpc/faq/long-queue-times.md
       - Accidentally Deleted Files: hpc/faq/deleted-files.md
       - Cannot Create Conda Environment: hpc/faq/cannot-create-conda-env.md
