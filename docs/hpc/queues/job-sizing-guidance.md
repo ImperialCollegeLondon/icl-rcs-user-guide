@@ -11,8 +11,6 @@ The following queues of jobs are supported:
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
 | [small24](#small) | Low core jobs 24h | 1 | 1 - 16 | 1 - 128 | 0 - 24 |
 | [small72](#small) | Low core jobs 72h | 1 | 1 - 16 | 1 - 128 | 24 - 72 |
-| [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
-| [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
 | [medium24](#medium) | Single-node jobs 24h | 1 | 1 - 64 | 1 - 450 | 0 - 24 |
 | [medium72](#medium) | Single-node jobs 72h | 1 | 1 - 64 | 1 - 450 | 24 - 72 |
 | [large24](#large) | Whole node jobs 24h | 1 | 1 - 128 | 1 - 920 | 0 - 24 |
@@ -21,23 +19,19 @@ The following queues of jobs are supported:
 | [gpu72](#gpu72) | Main queue for gpu jobs* | 1 | 1 - 64 | 1 - 920 | 0 - 72 |
 | [capability24](#capability) | Multi-node jobs 24h | 2 - 4 | 1 - 64 | 1 - 450 | 0 - 24 |
 | [capability48](#capability) | Multi-node jobs 48h | 2 - 4 | 1 - 64 | 1 - 450 | 24 - 48 |
-
+| [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
+| [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
+| [ood](#ood) | Queue for Open OnDemand* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
 
 #### small
-This queue is for low-core jobs, up to 16 cores and 128gb of RAM. Jobs in this queue typically make use of OpenMP or multi-threading to parallelise workflows. 
-
-#### jupyter
-This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
-
-#### jupytergpu
-This queue has NVIDIA A40 (48GB) and NVIDIA RTX6000 (24GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
+This queue is for low-core jobs, up to 16 cores and 128gb of RAM. Jobs in this queue typically make use of OpenMP or multi-threading to parallelise workflows.
 
 #### medium
-This queue is for single node jobs, using up to an entire node - 64 cores and 450GB of RAM.*
+This queue is jobs using up-to 64 cores and/or 450GB of RAM. This is half an AMD EPIC 7742 node or all of an Intel IceLake.
 
 #### large 
-This queue is for whole node jobs, using an entire node - 128 cores and 920GB of RAM.* 
+This queue is for whole node jobs, using an entire node - 128 cores and 920GB of RAM.
 
 #### largemem
 This queue is for jobs requiring large amounts of memory, between 920 and 4,000 GB of RAM. *Please only submit jobs to this queue if you genuinely need more than 920GB of RAM as there are only a limited number of nodes available.*
@@ -48,6 +42,15 @@ There is an additional limit of 12 GPU's total per user on the gpu72 queue to al
 #### capability
 This queue is for larger multi-node jobs, using up to 4 entire nodes at once. Workflows in this queue will normally be using technologies such as MPI to communicate between all nodes.
 
+#### jupyter
+This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
+
+#### jupytergpu
+This queue has NVIDIA A40 (48GB) and NVIDIA RTX6000 (24GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
+
+#### ood
+This is the queue for [Open OnDemand](../applications/guides/openondemand/). This service allows users to run R-studio on our compute nodes via a web portal. Only 1 job can be run at a time.
+
 #### interactive
 While not listed in the table above, you can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
 
@@ -56,11 +59,18 @@ While not listed in the table above, you can run an interactive job with the "-I
 ```
 You should not request an interactive job longer than 8 hours, and should make sure to end your session once you are done as to not leave it idle.
 
-**Note that some nodes have up to 128 cores and 920GB of RAM, and some have up to 64 cores and 450GB of RAM. This is why there are separate [medium](#medium) and [large](#large) queues for them although technically both are "whole node queues".* 
+**Note that some CPU nodes have up to 128 cores and 920GB of RAM (cpu_type=rome), while some only have up to 64 cores and 450GB of RAM (cpu_type=icelake). This means both large and medium queues could be considered whole node queues depending on what CPU type is requested.
+
+## CX3 cluster Limits
+
+For ensure fair access to resources for all researchers there are a couple of limits that apply across all queues:
+* 1 Jupyterhub or Open Ondemand job
+* Maximum of 500 CPUs running across all jobs, including interactive jobs
+* Maximum of 12 GPUs running across all jobs, including interactive jobs
+* Maximum array size in any queue is 10000. 
 
 ## Explanation of PBS Directives
 The following table provides an explanation of what each directive means in the context of your resource request on CX3 Phase 2.
-
 
 | Directive | Description |Default|
 | --------- | ----------- |---------|
