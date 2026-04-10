@@ -61,7 +61,7 @@ Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 1234567[5].pbs* me       v1_smal* myarray_j*    --    1  16   64gb 03:00 Q   --
 ```
 
-Subjobs with a state of "X" have finished running.
+Subjobs with a state of "X" have finished running. You can also look at the comment field in the output of `qstat -f [jobid]`.
 
 ### Stepping factors in array jobs
 
@@ -82,11 +82,6 @@ You can also limit array jobs down so that only a given number can run at any gi
 ```
 
 This would allow only 2 array jobs to run at any given time. 
-
-
-## Monitoring array jobs
-
-When execution of the sub-jobs of an array job has begun, the `qstat` listing will show the state of the array job as "B" rather than "R". To see the progress through the array, use `qstat -t [jobid]` or look at the comment field in the output of `qstat -f [jobid]`.
 
 ## Strategies for writing array jobs
 
