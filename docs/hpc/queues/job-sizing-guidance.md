@@ -29,7 +29,7 @@ The following queues of jobs are supported:
 This queue is for low-core jobs, up to 16 cores and 128gb of RAM. Jobs in this queue typically make use of OpenMP or multi-threading to parallelise workflows.
 
 #### medium
-This queue is jobs using up-to 64 cores and/or 450GB of RAM. This is half an AMD EPIC 7742 node or all of an Intel IceLake.
+This queue is jobs using up-to 64 cores and/or 450GB of RAM. This is half an AMD EPYC 7742 node or all of an Intel Ice Lake node.
 
 #### large 
 This queue is for whole node jobs, using an entire node - 128 cores and 920GB of RAM.
