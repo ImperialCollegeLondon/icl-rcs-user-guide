@@ -64,7 +64,8 @@ You should not request an interactive job longer than 8 hours, and should make s
 
 ## CX3 cluster Limits
 
-For ensure fair access to resources for all researchers there are a couple of limits that apply across all queues:
+To ensure fair access to resources for all researchers there are a couple of limits that apply across all queues:
+
 * 1 Jupyterhub or Open Ondemand job
 * Maximum of 500 CPUs running across all jobs, including interactive jobs
 * Maximum of 12 GPUs running across all jobs, including interactive jobs
