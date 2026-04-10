@@ -50,7 +50,7 @@ This queue is where [JupyterHub](https://jupyter.cx3.rcs.ic.ac.uk/) jobs are run
 This queue has NVIDIA A40 (48GB) and NVIDIA RTX6000 (24GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### ood
-This is the queue for [Open OnDemand](../applications/guides/openondemand/). This service allows users to run R-studio on our compute nodes via a web portal. Only 1 job can be run at a time.
+This is the queue for [Open OnDemand](../../applications/guides/openondemand/). This service allows users to run R-studio on our compute nodes via the [web portal](https://openondemand.rcs.ic.ac.uk). Only 1 job can be run at a time.
 
 #### interactive
 While not listed in the table above, you can run an interactive job with the "-I" qsub flag. You would use this flag directly on the command line specifying the resources you need. e.g.:
