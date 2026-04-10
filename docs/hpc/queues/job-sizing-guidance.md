@@ -22,6 +22,7 @@ The following queues of jobs are supported:
 | [jupyter](#jupyter) | Queue for JupyterHub jobs* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
 | [jupytergpu](#jupytergpu) | Queue for JupyterHub GPU jobs* | 1 | 4 | 32 | 8 |
 | [ood](#ood) | Queue for Open OnDemand* | 1 | 1, 4, 8 | 8, 32, 64 | 2, 4, 8 |
+
 \* Please see details for specific queues below as there may be additional restrictions or limitations.
 
 #### small
