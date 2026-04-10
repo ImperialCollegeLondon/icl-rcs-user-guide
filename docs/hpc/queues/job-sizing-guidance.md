@@ -44,7 +44,7 @@ There is an additional limit of 12 GPU's total per user on the gpu72 queue to al
 This queue is for larger multi-node jobs, using up to 4 entire nodes at once. Workflows in this queue will normally be using technologies such as MPI to communicate between all nodes.
 
 #### jupyter
-This queue is where [JupyterHub](https://jupyterhub-11.rcs.ic.ac.uk) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
+This queue is where [JupyterHub](https://jupyter.cx3.rcs.ic.ac.uk/) jobs are run. There is a limit of 1 concurrent job per user across both jupyter queues.
 
 #### jupytergpu
 This queue has NVIDIA A40 (48GB) and NVIDIA RTX6000 (24GB) GPU's. There is a limit of 1 concurrent job per user across both jupyter queues.
