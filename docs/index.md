@@ -1,5 +1,6 @@
 
 # Welcome to Imperial College London's RCS User Guide
+XXX revamp to be a good landing page for ALL RCS services, make easy to extend
 
 This web site contains the user guides for services provided by Imperial College London's [Research Computing Support or RCS](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) Platforms team.
 
@@ -9,4 +10,4 @@ The following services are currently provided by the RCS Platforms team, please 
 
 * [High Performance Computing](hpc/index.md)
 * [Research Data Store](rds/index.md)
-
+* [RDF-Active](rdfactive/index.md)
