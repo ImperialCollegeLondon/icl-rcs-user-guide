@@ -38,6 +38,10 @@ nav:
       - Shell Scripting: support/using-linux/shell-scripting.md
   - RECAP:
     - REsearch Computing Access Portal: recap/index.md
+    - RECAP Help:
+        - Accessing RECAP: recap/access.md
+        - Managing Research Groups: recap/research-groups.md
+        - Managing Allocations: recap/allocations.md
   - HPC:
     - HPC at Imperial: hpc/index.md
     - Cluster Specification: hpc/cluster-specification.md
