@@ -26,6 +26,7 @@ extra_css:
 
 repo_url: https://github.com/ImperialCollegeLondon/icl-rcs-user-guide
 repo_name: GitHub
+edit_url: edit/main/docs/
 
 nav:
   - Home: index.md
