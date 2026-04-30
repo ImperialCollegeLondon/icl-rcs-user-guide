@@ -24,6 +24,9 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 
+repo_url: https://github.com/ImperialCollegeLondon/icl-rcs-user-guide
+repo_name: GitHub
+
 nav:
   - Home: index.md
   - Remote Access: remoteaccess.md
