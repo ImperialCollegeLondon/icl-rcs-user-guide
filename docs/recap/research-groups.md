@@ -7,11 +7,11 @@ When you first login to [RECAP](./access.md) you should see the home page with t
 * Click on **Groups** on the menu bar
 * Click on **Groups** again on the drop-down list that appears
 
-You should then be presented with a list of research groups for which you are a member of. 
+You should then be presented with a list of research groups of which you are a member. 
 
 ## Viewing details of a Research Group
 
-Follow the steps above to view a list of the research groups you are a member of. In the list that appears, you should have a table with **ID**, **PI**, **Title** and **Status**. Click the corresponding ID number to go to see details of that particular research group.
+Follow the steps above to view a list of the research groups of which you are a member. In the list that appears, you should have a table with **ID**, **PI**, **Title** and **Status**. Click the corresponding ID number to see the details of that particular research group.
 
 On the page that appears, you should see:
 
@@ -47,15 +47,15 @@ To add users to your Research Group:
 
 After clicking search, you will be presented with a list of allocations (such as storage) associated with your Research Group, and a list of users matching your search criteria.
 
-By default, RECAP automatically selects all allocations, which means users added to a Research Group will also be given access to those allocations. If these users should not have access to certain allocations, you can remove their access by unticking the box next to the relevant allocation.
+By default, RECAP automatically selects all allocations, which means users added to a Research Group will also be given access to all available allocations. If these users should not have access to certain allocations, you can remove their access by unticking the box next to the relevant allocation.
 
 In the list of users shown, decide which of them you wish to add to your research group by selecting the tick box next to the corresponding user, and decide what role they should have for the research group (see the section on [Roles](#roles) for more information on what that means).
 
 ### Removing users from your Research Group
 
-From the Research Group [details view](#viewing-details-of-a-research-group), click the **Remove Users** option at the top of the Users section. On the page that appears, select the tick box next to each user you would to remove from your research group and then click the **Remove selected users from Project button**.
+From the Research Group [details view](#viewing-details-of-a-research-group), click the **Remove Users** option at the top of the Users section. On the page that appears, select the tick box next to each user you would like to remove from your research group and then click the **Remove selected users from Project button**.
 
-Note that when you remove a user from your Research Project, they will also be removed from any allocation within the Research Group that they are also a member of.
+Note that when you remove a user from your Research Group, they will also be removed from any allocation within that Research Group.
 
 ### Change roles of existing users
 

@@ -25,11 +25,11 @@ Faculty/Department/Research Group/Storage Allocation/
 * **Storage Allocation** - this will be the shortname created for the storage allocation.
 
 !!! example 
-    Lets assume I'm a member of the *Physics Department* (in the *Faculty of Natural Sciences*) and I have a storage allocation called **my_group_share** which is owned by my research group called **my_research_group**. Based on the above described file system layout, my storage allocation would then be found at:
+    Let's assume I'm a member of the *Physics Department* (in the *Faculty of Natural Sciences*) and I have a storage allocation called **my_group_share** which is owned by my research group called **my_research_group**. Based on the above described file system layout, my storage allocation would then be found at:
 
     `/fons/physics/my_research_group/my_group_share/`
 
-    If you wanted to map this to this path directly on [Windows](windows.md) then you could then use
+    If you wanted to map to this path directly on [Windows](windows.md) then you could then use
 
     `\\rdf-active.ic.ac.uk\research\fons\physics\my_research_group\my_group_share\`
 
