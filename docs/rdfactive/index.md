@@ -26,7 +26,7 @@ Information on how to request a new RDF-Active storage allocation will appear he
 
 /// details | What is the process to request migrating my RDS projects to RDF-Active?
     type: faq
-We have a [dedicate page](./rds-rdfactive-migration.md) to provide information and advice on migrating from the RDS to the RDF-Active.
+We have a [dedicated page](./rds-rdfactive-migration.md) to provide information and advice on migrating from the RDS to the RDF-Active.
 ///
 
 /// details | How do I request access to an existing storage allocation?

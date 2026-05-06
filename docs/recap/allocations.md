@@ -30,7 +30,7 @@ You can the view the details of any allocation by clicking the **Action** button
 
 ### Adding a user to an allocation
 
-A user **MUST** be added to your [Research Group](./research-groups.md) before being adding to an allocation. Adding a user to a Research Group will also give you the option to add them to the allocation at the same time, so following the steps under [Adding users to your Research Group](./research-groups.md#adding-users-to-your-research-group) if the user is not yet a member of the Research Group.
+A user **MUST** be added to your [Research Group](./research-groups.md) before being adding to an allocation. Adding a user to a Research Group will also give you the option to add them to the allocation at the same time, so, if the user is not yet a member of the Research Group, please follow the steps under [Adding users to your Research Group](./research-groups.md#adding-users-to-your-research-group).
 
 If a user IS already a member of the Research Group but is not yet a member of the allocation:
 
@@ -43,7 +43,7 @@ If a user IS already a member of the Research Group but is not yet a member of t
 
 ### Removing a user from an allocation
 
-If would like to remove a user from all allocations and the research group, please following the instructions on the [Removing users from your Research Group](./research-groups.md#removing-users-from-your-research-group) page as this will automatically remove the user from any associated allocation.
+If you would like to remove a user from all allocations and the research group, please following the instructions on the [Removing users from your Research Group](./research-groups.md#removing-users-from-your-research-group) page as this will automatically remove the user from any associated allocation.
 
 If you only want to remove a user from a single allocation:
 
