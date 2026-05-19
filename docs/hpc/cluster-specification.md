@@ -1,40 +1,59 @@
 # HPC Cluster Specification
 
-The RCS Platforms team currently run two HPC clusters, a general purpose cluster available for most research workloads called [CX3](#cx3), and a "capabilty cluster" called [HX1](#hx1) which is designed for multi-node workloads and GPU accelerated jobs requiring more than 48 GB of GPU RAM.
+As of 20th March 2026, the RCS Platforms team provides two HPC services:
 
-The total facility size (as of March 2025) is: 711 compute nodes, 67,896 cores, 876 TB of RAM and 216 GPUs. Specific details on each cluster are provided below.
+1. The "capabilty machine" [HX1](#hx1) which is designed for inherently multi-node workloads such as simulations, as well as GPU accelerated jobs requiring more than 48 GB of GPU RAM. This service has gated access due to its specialised nature.
 
-## CX3
+2. The general purpose cluster available for most research workloads called [CX3](#cx3), suited for high throughput processing and 'single-node' jobs. This service also acts as an entry-point and sandbox to people new to engaging with HPC systems.
 
-CX3 is the primary HPC facility at Imperial. It is large-scale facility designed for most computational research workflows. CX3 is currently undergoing a refresh, migrating from the "CX3 Legacy" platform to the "CX3 Phase 2" platform, with an updated operating system and job scheduler. The documentation on this site has been rewritten for CX3 Phase 2, the [CX3 Legacy page](./legacy-systems/cx3-legacy.md) provides advice on using that service if you have not yet migrated.
+Each service runs on their own cluster of computers, where each computer is referred to technically as a "node", as specified below.
 
-The hardware listed below is for both "CX3 Legacy" and "CX3 Phase 2" although you should expect all of the hardware is eventually migrated to CX3 Phase 2.
+## HX1 Hardware
 
-* Compute Nodes
-    * 325 x AMD nodes, with 2x AMD EPYC 7742 (128 cores, 1TB RAM per node)
-    * 53 x Intel nodes, with 2x Intel Icelake Xeon Platinum 8358 (64 cores, 500GB RAM)
-    * 12 x AMD (Large Mem) nodes, with 2x AMD EPYC 7742 (128 cores, 4TB RAM per node)
-* GPU Nodes
-    * 11 x AMD nodes, with 2x AMD EPYC 7742 (128 cores, 1TB RAM, 8 Quadro RTX 6000 per node)
-    * 7 x Intel nodes, with 2x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1TB RAM, 8 L40S 48 GB GPUs per node
-    * 2 x Intel nodes, with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 2 x A100 40GB GDDR6 GPUs per node
-    * 2 x Intel nodes, with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 1 TB RAM, 4 x A40 48GB GDDR6 GPUs per node
-* Interconnect: 100GbE
-* Storage: Direct access to the Research Data Store
+HX1 is a "capability machine" cluster, suited to running complex code managing so much data that a multiple CPUs managing unique workloads are required. Because multiple CPUs are required, these workloads are known as multi-node tasks due to the need for multiple nodes to process data in tandem with one another.
 
-**Total**: 408 nodes, 48,384 cores, 717.5 TB RAM, 56 L40S, 88 Quadro (Turing) RTX 6000
+How to request access along with further details of how to use the service can be found on [the HX1 Cluster page](./hx1.md).
 
-You must be registered in order to access the CX3 facility. Further information on this is provided on the [Get Access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/) page under the [main RCS web pages](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/).
+* **Compute Only Nodes**:
+  * 288 nodes running 2 Intel Icelake Xeon Platinum 8358 CPUs, giving each node 64 cores with 512 GB RAM
+* **GPU-fitted Nodes**:
+  * 15 nodes running 2 Intel Xeon Platinum 8360Y (Ice Lake) CPUs, giving each node 72 core with 1 TB RAM and 4 NVidia A100 GPUs
+* **Networking**:
+  * InfiniBand (200 Gbit/s) via NVidia ConnectX-6 HDR200 between each compute node
+  * Ethernet (100GbE) between each node and storage
+* **Storage**:
+  * 2 PB of HDD storage
+  * 300TB of SSD storage
 
-## HX1
+**Total**: 303 nodes, 19,512 cores, 159 TB of RAM, 60 A100 GPUs.
 
-HX1 (or Hex) is our production "capability" HPC cluster.
+## CX3 Hardware
 
-* Compute nodes: Lenovo SD630v2 servers each with 2 x Intel Xeon Platinum 8358 (Ice Lake) 2.60GHz 32-core processors; 64 cores per node; 288 nodes; 18,432 compute cores; 512 GB RAM per node
-* GPU nodes: Lenovo servers each with 4 x NVidia A100 80 GB RAM GPUs; 2 x Intel Xeon Platinum 8360Y (Ice Lake) 2.40GHz 36-core processors; 1 TB RAM per node; 15 nodes; 60 GPUs in total
-* Interconnect: NVidia ConnectX-6 HDR200 (200 Gbit/s) InfiniBand
-* Storage: 2 PB IBM Spectrum Scale (GPFS) on Lenovo DSS-G Storage system. Approximately 300TB of additional solid stage storage
+CX3 is the primary HPC facility at Imperial. It is large-scale facility designed for most computational research workflows, typically those that are high throughput single-node tasks but is able to handle small multi-node tasks. Please note that wait times for these multi-node tasks are incredibly long as it requires waiting for multiple nodes to become free, thus we recommend consider utilising the HX1 system instead
 
-**Total**: 303 compute nodes, 19,512 cores, 159 TB of RAM, 60 A100 GPUs
+While anyone can use our CX3 serice, you must be a registered user. Further information on this is provided on the [Get Access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/) page under the [main RCS web pages](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/).
 
-Further details including how to request access can be found on the [HX1 Cluster page](./hx1.md).
+!!! info
+
+    The current documentation here is for the latest version of the CX3 service, dubbed "CX3 Phase 2". If you are an older user still using the previous system version -- dubbed "CX3 Legacy" -- we highly suggest you migrate your work to the latest CX3 service. If you are unable to migrate your work, then please see [the advice proivded](./legacy-systems/cx3-legacy.md) for CX3 Legacy.
+
+The hardware listed below is comprehensive for both the Legacy system and for Phase 2, where all CX3 Legacy hardware will eventually be repurposed under the Phase 2 system.
+
+* **CPU Only Nodes**:
+  * 325 nodes running 2 AMD EPYC 7742 CPUs, giving 128 cores each node with 1 TB RAM
+  * 12 nodes running 2 AMD EPYC 7742 CPUs, giving each node 128 cores with 4 TB RAM
+  * 53 nodes running 2 Intel Icelake Xeon Platinum 8358 CPUs, giving each node 64 cores with 500 GB RAM
+  
+* **GPU-fitted Nodes**:
+  * 11 nodes running 2 AMD EPYC 7742 CPUs, giving each node 128 cores with 1TB RAM and 8 Quadro (Turing) RTX 6000 GPUs
+  * 11 nodes running 2 Intel Xeon Platinum 8358 (Ice Lake) CPUs, giving each node 64 cores with 1 TB RAM and a set of GPUs; where the GPUs are distributed as follows:
+    * 7 nodes have 8 L40S GPUs with 48 GB RAM
+    * 2 nodes have 4 A40 GPUs with 48 GB RAM
+    * 2 nodes have 2 A100 GPUs with 40 GB RAM
+* **Networking**:
+  * Ethernet (100GbE) between each node and storage
+* **Storage**:
+  * Direct access to [the Research Data Store](..\rds\index.md) system
+
+**Total**: 412 nodes, 48,384 cores, 717.5 TB RAM, 156 GPUs (88 Quadro RTX 6000, 56 L40S, 8 A40s, 4 A100s).
+
