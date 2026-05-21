@@ -1,6 +1,6 @@
 # RDS Directory Paths
 
-The folder or directories you have access to on the RDS are dependent upon whether you are registered to use the HPC service, and whether you have access to any RDS project spaces. The following table is a guide on how to access these spaces, both when logged into the HPC service, and when [accessing from your own personal computer](./access/index.md).
+The folder or directories you have access to on the RDS are dependent upon whether you are registered to use the HPC service, and whether you have access to any RDS project spaces. The following table is a guide on how to access these spaces, both when logged into the HPC service, and when [accessing from your own personal computer](./access/rds-access-index.md).
 
 | Location | Who has access | RDS Directory Path | RDS Directory Path on HPC |
 | -------- | -------------- | ------------------ | ------------------------- |

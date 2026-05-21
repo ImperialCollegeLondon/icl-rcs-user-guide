@@ -6,7 +6,7 @@ The HX1 system, occasionally called Hex for short, is the High Performance Compu
    2. GPU accelerated workloads that require double precision.
    3. GPU accelerated workloads requiring more than 48GB of GPU RAM.
 
-For all other workloads, we ask you to use the CX3 service. This restriction is in place to ensure the efficient running of the HX1 facility for those users wishing to run large scale workloads. Moreover, for some for AI/ML workloads it may be better to work on the CX3 nodes fitted with the L40s GPUs due to the newer, faster architecture (Ada Lovelace) than what HX1 offers. If you are in any doubt whether your job is suited to HX1, you can [contact the RCS team](../support/index.md) via a support ticket or another channel.
+For all other workloads, we ask you to use the CX3 service. This restriction is in place to ensure the efficient running of the HX1 facility for those users wishing to run large scale workloads. Moreover, for some for AI/ML workloads it may be better to work on the CX3 nodes fitted with the L40s GPUs due to the newer, faster architecture (Ada Lovelace) than what HX1 offers. If you are in any doubt whether your job is suited to HX1, you can [contact the RCS team](../support/support-index.md) via a support ticket or another channel.
 
 ## Cluster Specification
 
@@ -85,7 +85,7 @@ Please make sure any software you run on HX1 has been optimised for the hardware
 
 ### Loading Applications
 
-Loading modules/applications on HX1 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](./applications/index.md) page for advice on how to load modules on HX1.
+Loading modules/applications on HX1 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](./applications/applications-index.md) page for advice on how to load modules on HX1.
 
 ### EasyBuild
 
@@ -187,7 +187,7 @@ The following queues of jobs are supported:
 
 #### single core to single node jobs
 
-Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 Phase 2](./getting-started/index.md) facility.
+Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 Phase 2](./getting-started/hpc-getting-started-index.md) facility.
 
 #### capability24
 

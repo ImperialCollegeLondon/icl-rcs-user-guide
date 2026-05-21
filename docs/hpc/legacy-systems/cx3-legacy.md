@@ -352,7 +352,7 @@ The hostname for connecting to CX3 Legacy is `login.hpc.imperial.ac.uk` whereas 
 
 #### Submission scripts
 
-Submission scripts are broadly the same between the Legacy and Phase 2 facilities. However, there are changes in the way that some resource requests work, particularly [MPI jobs](../queues/mpi-jobs.md). We strongly recommend you review those sections of the documentation that relate to [Queuing](../queues/index.md), especially for the types of jobs that you are running.
+Submission scripts are broadly the same between the Legacy and Phase 2 facilities. However, there are changes in the way that some resource requests work, particularly [MPI jobs](../queues/mpi-jobs.md). We strongly recommend you review those sections of the documentation that relate to [Queuing](../queues/queues-index.md), especially for the types of jobs that you are running.
 
 It may also be important to be aware on the Legacy system, jobs started in the `$TMPDIR` directory (local to the compute node), whereas on the Phase 2 system they start in your `$HOME` directory. You may need to change directories or paths within your submission script to account for this difference.
 
@@ -376,4 +376,4 @@ Running `qstat` on the login nodes will now show you all jobs running on the clu
 
 Over the past few years, we’ve transitioned from using an ad-hoc approach to centrally installing software to adopting the EasyBuild software installation system. If you're already familiar with [modules installed via EasyBuild](../applications/easybuild.md), the module structure in Phase 2 will look familiar. However, unlike before, you no longer need to manually load the "production" EasyBuild modules using `module load tools/prod` command — these are now automatically loaded on Phase 2 when you login.
 
-If you are using one of the "older" modules, we recommend you use the [module tool](../applications/index.md) to search for modules providing the software and/or libraries that you need. If you are unable to find the software you require, please [contact us](../../support/index.md) to discuss it further.
+If you are using one of the "older" modules, we recommend you use the [module tool](../applications/applications-index.md) to search for modules providing the software and/or libraries that you need. If you are unable to find the software you require, please [contact us](../../support/support-index.md) to discuss it further.

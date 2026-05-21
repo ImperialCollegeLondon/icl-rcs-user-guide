@@ -2,7 +2,7 @@
 
 We use the [EasyBuild](https://easybuild.io) software installation system to manage the central installation of most user software requests. EasyBuild enables us to provide software that is optimised for the HPC hardware, as well as respond to requests more timely than if we installed the software manually.
 
-You do **not** need to understand how EasyBuild works to load and use the applications we've installed using it. Please see the [Loading Applications](./index.md) page for assistance with finding and loading installed applications.
+You do **not** need to understand how EasyBuild works to load and use the applications we've installed using it. Please see the [Loading Applications](./applications-index.md) page for assistance with finding and loading installed applications.
 
 The following sections cover more details of how EasyBuild is used on the Imperial HPC service for those who are interested or require further information.
 
@@ -18,7 +18,7 @@ On the Imperial HPC systems you will typically find applications compiled with e
 
 ### Deciphering an example module name
 
-[GROMACS](https://www.gromacs.org/) is a molecular dynamics program commonly used on HPC facilities. As per the advice on the [Loading Applications](./index.md) page, a list of all modules providing GROMACS may be found by using the `module avail` command:
+[GROMACS](https://www.gromacs.org/) is a molecular dynamics program commonly used on HPC facilities. As per the advice on the [Loading Applications](./applications-index.md) page, a list of all modules providing GROMACS may be found by using the `module avail` command:
 
 ```console
 [user@login ~]$ module avail GROMACS
@@ -235,6 +235,6 @@ module load foss/2024a
 
 ### Using EasyBuild yourself
 
-If you are interested in using EasyBuild yourself, we strongly recommend you review the extensive [EasyBuild documentation](https://docs.easybuild.io/) and [tutorial](https://tutorial.easybuild.io/). If you require help with using EasyBuild on Imperial HPC systems, please [raise a ticket](../../support/index.md) to contact us.
+If you are interested in using EasyBuild yourself, we strongly recommend you review the extensive [EasyBuild documentation](https://docs.easybuild.io/) and [tutorial](https://tutorial.easybuild.io/). If you require help with using EasyBuild on Imperial HPC systems, please [raise a ticket](../../support/support-index.md) to contact us.
 
 We will also be offering hands-on workshops throughout the year to explain the benefits of using EasyBuild for your software development project for example, or simply how to make the best use of the new and exciting software stack. These workshops will be announced via the [usual channels](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/newsletter-subscription/).

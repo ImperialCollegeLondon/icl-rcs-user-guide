@@ -42,7 +42,7 @@ Please see our [Remote Access guide](../../remoteaccess.md) for advice if you ha
 The RDS is directly connected to the CX3 Phase 2 in the same way as it is for the original CX3, therefore file paths for home and projects remain the same. Your home area on CX3 phase 2 is the same as the original CX3. Please see the following two links for further information:
 
 * [Data Management on HPC](../getting-started/data-management-on-hpc.md)
-* [Research Data Store](../../rds/index.md)
+* [Research Data Store](../../rds/rds-index.md)
 
 ## Software
 

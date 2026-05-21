@@ -7,6 +7,6 @@ Please go to the [Research Computing Service home page](https://www.imperial.ac.
 
 The following services are currently provided by the RCS Platforms team, please click on each link for further information.
 
-* [High Performance Computing](hpc/index.md)
-* [Research Data Store](rds/index.md)
+* [High Performance Computing](hpc/hpc-index.md)
+* [Research Data Store](rds/rds-index.md)
 

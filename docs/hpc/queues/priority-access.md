@@ -1,6 +1,6 @@
 # Priority Access
 
-We are currently developing a new priority access service for CX3 (Phase 2). While this new service is in development, if you have an urgent/imminent deadline to meet (such as a conference submission or PhD submission) and you are unable to make this deadline with standard queuing times, please [get in contact](../../support/index.md) with us for assistance.
+We are currently developing a new priority access service for CX3 (Phase 2). While this new service is in development, if you have an urgent/imminent deadline to meet (such as a conference submission or PhD submission) and you are unable to make this deadline with standard queuing times, please [get in contact](../../support/support-index.md) with us for assistance.
 
 ## Express access
 

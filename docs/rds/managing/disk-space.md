@@ -41,7 +41,7 @@ When you reach your quota limit, it will appear as though you are writing to a c
 * you may not be able to log into the HPC login nodes
 * your compute jobs may fail as they are unable to write data
 
-If you have any of these symptoms, your first step is to verify using the `quota` command. Then try to remove/delete any files you no longer need so as to bring your usage under your quota limit. If you are unable to do this, please go to [Support and Training](../../support/index.md) follow the details for raising a ticket with us to explore options.
+If you have any of these symptoms, your first step is to verify using the `quota` command. Then try to remove/delete any files you no longer need so as to bring your usage under your quota limit. If you are unable to do this, please go to [Support and Training](../../support/support-index.md) follow the details for raising a ticket with us to explore options.
 
 ## How do I increase my quota?
 ### RDS Project Allocations

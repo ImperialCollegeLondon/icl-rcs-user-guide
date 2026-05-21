@@ -42,4 +42,4 @@ Inside you will find the following list of topics:
 * MPI example.
 * Parallel Python. 
 
-Please note some administrative details (such as queue parameters) may change over time.  Please check the [HPC User Guide](../hpc/index.md) for up to date information.
+Please note some administrative details (such as queue parameters) may change over time.  Please check the [HPC User Guide](../hpc/hpc-index.md) for up to date information.

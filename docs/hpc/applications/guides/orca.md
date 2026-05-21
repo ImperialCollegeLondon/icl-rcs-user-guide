@@ -50,7 +50,7 @@ orca my_input_file.inp > orca_output.log
 
 1. Replace my_input_file.inp with the name of your ORCA input file.
 1. In the module load command, replace `ORCA/6.0.1-gompi-2023a-avx2` with the name of the ORCA module as it appears in `module spider` that you want to use.
-1. Modify the #PBS directives as needed to specify the resources required by your job, such as the number of nodes, cores, and walltime. Have a look at the [Queueing System](../../queues/index.md) pages for more information.
+1. Modify the #PBS directives as needed to specify the resources required by your job, such as the number of nodes, cores, and walltime. Have a look at the [Queueing System](../../queues/queues-index.md) pages for more information.
 
 Save this as orca_job.pbs and then submit the job by running the following command:
 

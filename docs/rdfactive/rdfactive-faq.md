@@ -2,7 +2,7 @@
 
 ## Why do my access groups need to be set up again?
 
-As part of our transition to RDF‑Active (and inline with the introduction of other new services at Imperial), we have adopted a new identity provider and self‑service portal ([REsearch Computing Access Portal](../recap/index.md)). This change ensures that RDF‑Active and all future RCS systems (such as HX2) will not be disrupted when the legacy identity services we currently rely on are decommissioned. However, this change has meant that access groups need to be setup again and we encourage you to take the opportunity to audit who can access what data.
+As part of our transition to RDF‑Active (and inline with the introduction of other new services at Imperial), we have adopted a new identity provider and self‑service portal ([REsearch Computing Access Portal](../recap/recap-index.md)). This change ensures that RDF‑Active and all future RCS systems (such as HX2) will not be disrupted when the legacy identity services we currently rely on are decommissioned. However, this change has meant that access groups need to be setup again and we encourage you to take the opportunity to audit who can access what data.
 
 ## Why isn't the RDF-Active accessible from HPC systems?
 

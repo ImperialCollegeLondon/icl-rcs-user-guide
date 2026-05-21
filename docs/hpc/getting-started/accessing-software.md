@@ -54,14 +54,14 @@ A program can then be loaded into your environment by running the `module load` 
 [user@login ~]$ module load GROMACS
 ```
 
-Please see the [Loading Applications](../applications/index.md) page for more advice on using the module system.
+Please see the [Loading Applications](../applications/applications-index.md) page for more advice on using the module system.
 
 # Application Guides
 
-We have [Application Guides](../applications/guides/index.md) for some of the most commonly used applications on the HPC facility. For example, those users who are using Python should review our [Python guide](../applications/guides/python.md) before using it on the system.
+We have [Application Guides](../applications/guides/application-guide-index.md) for some of the most commonly used applications on the HPC facility. For example, those users who are using Python should review our [Python guide](../applications/guides/python.md) before using it on the system.
 
 # What to do if an application you need isn't installed
 
-If there is an application you need that isn't currently [installed on the system](../applications/index.md) and you are unable to build it yourself, then you may need to raise a software installation request with us.
+If there is an application you need that isn't currently [installed on the system](../applications/applications-index.md) and you are unable to build it yourself, then you may need to raise a software installation request with us.
 
 Before raising such a request (which you can do so from our [Getting Support](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) page), please be mindful that if the application is old, incompatible with modern supported operating systems or particularly complex to install, we may not be able to install it!

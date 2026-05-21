@@ -8,7 +8,7 @@ The following instructions will show you how to connect your Mac to the RDF-Acti
 * Select **Connect to Server...**
 * Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
     * For the "base" path of the RDF-Active  `smb://rdf-active.ic.ac.uk/research/`
-    * Or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation.
+    * Or read the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to map a specific storage allocation.
 * Click **Connect**
 * When you asked to enter your name and password for the server "rdf-active.ic.ac.uk":
     * Select to *Connect As:* **Registered User**

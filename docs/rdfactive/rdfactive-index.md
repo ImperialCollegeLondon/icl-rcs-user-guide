@@ -1,12 +1,12 @@
 # RDF-Active
 
-The Research Data Facility - Active (or RDF-Active) is a large storage service provided by the RCS for active or working research data. The RDF-Active is one of several storage facilities (including the RDF-HPC) that replaces the single storage service provided by the [Research Data Store or RDS](../rds/index.md).
+The Research Data Facility - Active (or RDF-Active) is a large storage service provided by the RCS for active or working research data. The RDF-Active is one of several storage facilities (including the RDF-HPC) that replaces the single storage service provided by the [Research Data Store or RDS](../rds/rds-index.md).
 
 The RDF-Active runs on IBM's high-performance, scalable Storage Scale file system (on Lenovo hardware) and stores all data at two separate sites more than 30 km apart for resilience. You can access it as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access via Globus will be available soon.
 
 /// details | Can my data be stored on the RDF-Active? (data security)
     type: faq
-As with the [RDS](../rds/index.md), the RDF-Active is only suitable for storing data which is either public or unrestricted as per [Imperial data classifications](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/#glossary). You will find recommendations on where to store different classifications of data on the [Saving My Files page](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/).
+As with the [RDS](../rds/rds-index.md), the RDF-Active is only suitable for storing data which is either public or unrestricted as per [Imperial data classifications](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/#glossary). You will find recommendations on where to store different classifications of data on the [Saving My Files page](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/).
 
 We strongly recommend you contact your [faculty or departmental data protection coordinator](https://www.imperial.ac.uk/admin-services/governance/policies-and-guidance/contact-us/) if you have any concerns or questions relating to the classification of your data.
 ///
@@ -36,7 +36,7 @@ Please contact the research group lead of the storage allocation (or designated 
 
 ## How to Access the RDF-Active
 
-Please view our dedicated section on [Accessing the RDF-Active](./access/index.md).
+Please view our dedicated section on [Accessing the RDF-Active](./access/rdfactive-access-index.md).
 
 ## Cost
 

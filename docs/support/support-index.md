@@ -12,7 +12,7 @@ HPC code clinics are a good way to discuss your issue directly with an RCS team 
 
 Please see the links below for additional material in helping you learn how to use Linux, HPC and associated applications.
 
-* [Using Linux](./using-linux/index.md)
+* [Using Linux](./using-linux/using-linux-index.md)
 * [Relevant Courses Offered](./courses.md)
 * [Citing RCS In Research Outputs](./citing-rcs.md)
 * [University Courses](./courses.md)

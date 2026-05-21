@@ -12,7 +12,7 @@ DMCTP is provided by Easybuild so you can load it as a module. Please ensure the
 module load DMTCP/3.2.0-GCCcore-13.2.0
 ```
 
-If DMTCP is not available for the toolchain you wish to use, [please let us know](../../support/index.md).
+If DMTCP is not available for the toolchain you wish to use, [please let us know](../../support/support-index.md).
 To verify if DMTCP is available in your environment, run the following command:
 
 ```console
