@@ -10,4 +10,6 @@ The following services are currently provided by the RCS Platforms team, please 
 
 * [High Performance Computing](hpc/index.md)
 * [Research Data Store](rds/index.md)
-* [RDF-Active](rdfactive/index.md)
+* Various RDF Storage facilities, such as:
+  * The [RDF-Active](rdfactive/index.md)
+  * Others to be released...
