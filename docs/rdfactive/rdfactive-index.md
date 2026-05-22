@@ -1,8 +1,8 @@
 # RDF-Active
 
-The Research Data Facility - Active (or RDF-Active) is a large-scale storage service for research data in active use. The RDF-Active is one of several storage facilities that replaces the previous [Research Data Store](../rds/index.md) service.
+The "Research Data Facility - Active" (or the RDF-Active) is a large-scale storage service for research data in active use. The RDF-Active is one of several storage facilities that replaces the previous [Research Data Store](../rds/index.md) service. You can access the RDF-Active as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access via Globus will be available soon.
 
-You can access the RDF-Active as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access via Globus will be available soon. The RDF-Active runs on IBM's high-performance, scalable Storage Scale file system (on Lenovo hardware) and stores all data at two separate sites more than 30 km apart for resilience.
+The RDF-Active runs on IBM's high-performance, scalable Storage Scale file system with Lenovo hardware and stores all data at two separate sites more than 30 km apart for resilience.
 
 /// details | Can my data be stored on the RDF-Active? (data security)
     type: faq
@@ -13,7 +13,7 @@ We strongly recommend you contact the [data protection coordinator](https://www.
 
 ## Storage Allocations
 
-On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, an access group code as well as a research group to own that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
+On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, an access group code, and a research group to own that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
 
 You can organise your storage allocations to fit your workflow. Some groups prefer a single large allocation that hosts multiple projects, while others create separate allocations for each research project. 
 XXX So is it one allocation split into smaller partitions or what? Or both
