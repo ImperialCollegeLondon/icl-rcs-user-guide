@@ -30,7 +30,7 @@ Gnome Files relies on the Gnome Virtual File System (GVFS) to connect to SMB end
 * Click **+ Other Locations** on the side pane
 * Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
     * For the "base" path of the RDF-Active  `smb://rdf-active.ic.ac.uk/research/`
-    * Or read the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to map a specific storage allocation.
+    * Or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation.
 * Select **Registered User**
 * Enter your Imperial **username**
 * Enter **ic.ac.uk** in **Domain**
@@ -45,7 +45,7 @@ Gnome Files relies on the Gnome Virtual File System (GVFS) to connect to SMB end
 * Enter the following connection details:
     * **Server:** `rdf-active.ic.ac.uk`
     * **Share:** `research`
-    * **Folder:** Either leave as "`/`" for the base of the file system or read the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to map a specific storage allocation.
+    * **Folder:** Either leave as "`/`" for the base of the file system or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation.
     * **Domain Name:** Enter `ic.ac.uk`
     * **User name** and **Password:** Enter your Imperial username and password.
 * Click **Connect**

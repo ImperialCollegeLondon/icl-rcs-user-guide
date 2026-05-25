@@ -26,7 +26,7 @@ In order to map the RDF-Active as a network drive on your computer, you must be 
 * Select a **drive letter** in the box marked **Drive**. It can be any letter that does not have a path next to it already
 * Enter the **RDF-Active** path you wish to connect to in the box marked **Folder**,
     * For the "base" path of the RDF-Active  `\\rdf-active.ic.ac.uk\research\`
-    * Or read the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to map a specific storage allocation. 
+    * Or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation. 
 * Un-tick the **Reconnect at sign-in** tick box.
 * Select **Connect using different credentials**
 * Click the **Finish** button
