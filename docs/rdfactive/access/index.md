@@ -1,4 +1,5 @@
 # Accessing your Storage Allocation on the RDF-Active
+XXX rename file to `rdfactive-access-index.md`
 
 !!! warning
 
@@ -54,3 +55,5 @@ foe | Faculty of Engineering
 fom | Faculty of Medicine
 fons | Faculuty of Natural Sciences
 
+XXX Guide on how to use storage
+XXX how does storage on the RDF-Active differ from that of the
