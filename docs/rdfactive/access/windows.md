@@ -4,13 +4,13 @@ The following instructions will show you how to map the RDS as a network drive o
 
 !!! warning
 
-    When you have mapped a network drive on your computer:
+    When you have mapped a network drive on your computer the following activities may make your remote connection unstable, unusable or even make it fail (this may result in data corruption or even data loss, if you have open files).:
 
     * changing network
     * changing Wi-Fi HotSpot
     * disconnecting and reconnecting to the network
     
-    may make your remote connection unstable, unusable or even make it fail (this may result in data corruption or even data loss, if you have open files). For this reason and others, we strongly advise users to **always disconnect the RDS mapped drive**, when their workflow has finished and re-map the drive when they need it again.
+    For this reason and others, we strongly advise users to **always disconnect the RDF-Active mapped drive**, when their workflow has finished and re-map the drive when they need it again.
 
     Finally, please always make sure to unmap/disconnect any network drive (RDF-Active etc.) **BEFORE changing your main IC account passwords**! This will prevent accessibility issues and avoid any Microsoft account profile related lockouts, due to cached passwords, expired credentials or stale connections.
 
