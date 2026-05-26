@@ -1,10 +1,10 @@
 # Research Computing Access Portal (RECAP)
 
-**RECAP** (REsearch Computing Access Portal) is the new self-service portal to help you manage access to research computing services provided by the [RCS](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/).
+**RECAP** (REsearch Computing Access Portal) is the newly introduced self-service portal to help you manage your access to Imperial's research computing services.
 
-RECAP manages access to resources like storage and computing time using an allocation system. These allocations are set up and managed by Research Group and an individual can be a member of one or more research groups within RECAP.
+RECAP uses an allocation system to let you manage your access to our computing resources, such as data storage and compute time. While provided by the RCS department, these allocations are set up and managed independently from us by individual research groups which you can learn more about [here](docs\recap\research-groups.md). There is no restriction to the number of research group an individual can be a part of, neither as a standard member nor as a manager for that group.
 
-RECAP currently supports managing the following resources provided by the RCS.
+RECAP currently supports managing the following resources provided by the RCS:
 
 * [RDF-Active](../rdfactive/index.md)
 
