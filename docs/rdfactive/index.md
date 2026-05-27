@@ -1,7 +1,6 @@
 # RDF-Active
-XXX rename file to `rdfactive-index.md`
 
-The "Research Data Facility - Active" (or the RDF-Active) is a large-scale storage service for research data in active use. The RDF-Active is one of several storage facilities that replaces the previous [Research Data Store](../rds/index.md) service. You can access the RDF-Active as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access via Globus will be available soon.
+The "Research Data Facility - Active" (or the RDF-Active) is a large-scale storage service for research data in active use. The RDF-Active is one of several storage facilities that replaces the previous [Research Data Store](../rds/index.md) service. You can access the RDF-Active as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access is also available via Globus.
 
 The RDF-Active runs on IBM's high-performance, scalable Storage Scale file system with Lenovo hardware and stores all data at two separate sites more than 30 km apart for resilience.
 
@@ -17,15 +16,14 @@ We strongly recommend you contact the [data protection coordinator](https://www.
 On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, an access group code, and a research group to own that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
 
 You can organise your storage allocations to fit your workflow. Some groups prefer a single large allocation that hosts multiple projects, while others create separate allocations for each research project. 
-XXX So is it one allocation split into smaller partitions or what? Or both
+
 Whichever method you decide to use to organise your data, we strongly recommend you follow the [best practices for managing your research data](https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/) available online.
 
 ## How to Apply for Access
 
 /// details | How can I request a new RDF-Active Storage Allocation?
     type: faq
-Information on how to request a new RDF-Active storage allocation will appear here soon. 
-XXX will be filled in later
+We are now accepting new storage allocation requests for the RDF-Active. While we wait for the new request forms to become live, please [contact us](../support/index.md) for advice on how to request a new allocation.
 ///
 
 /// details | What is the process to request migrating my RDS projects to RDF-Active?
@@ -36,7 +34,6 @@ We have a [dedicated page](./rds-rdfactive-migration.md) to provide information 
 /// details | How do I request access to an existing storage allocation?
     type: faq
 Please contact the research group lead of the storage allocation, or its designated administrator, who can provide you access. 
-XXX how is this found?
 ///
 
 ## How to Access the RDF-Active
