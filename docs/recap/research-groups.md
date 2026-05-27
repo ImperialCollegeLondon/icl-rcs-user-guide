@@ -59,4 +59,4 @@ Note that when you remove a user from your Research Group, they will also be rem
 
 ### Change roles of existing users
 
-You can change the [Role](#roles) of an existing user but clicking the action icon in the row corresponding to their name. This will take you to a new form where you can change the role and click the **Update** button to apply the changes. 
+You can change the [Role](#roles) of an existing user but clicking the action icon in the row corresponding to their name. This will take you to a new form where you can change the role and click the **Update** button to apply the changes.
