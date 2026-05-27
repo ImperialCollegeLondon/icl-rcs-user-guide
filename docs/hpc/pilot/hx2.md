@@ -81,11 +81,11 @@ Please make sure any software you run on HX2 has been optimised for the hardware
 
 ### Loading Applications
 
-Loading modules/applications on HX2 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](./applications/index.md) page for advice on how to load modules on HX1.
+Loading modules/applications on HX2 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](../applications/index.md) page for advice on how to load modules on HX1.
 
 ### EasyBuild
 
-Most of the software installed on HX2 is done so using the EasyBuild software installation system and will have been optimised for the hardware. Please see our [EasyBuild](./applications/easybuild.md) page for more information.
+Most of the software installed on HX2 is done so using the EasyBuild software installation system and will have been optimised for the hardware. Please see our [EasyBuild](../applications/easybuild.md) page for more information.
 
 ### Python and Conda Environments
 
@@ -140,7 +140,7 @@ You can now enable miniforge in your environment by running the shell hook:
 (base) [username@hx2a04login01 ~]$
 ```
 
-You can then use the conda commands as usual. Please see our [Conda](./applications/guides/conda.md) page for more information on using conda.
+You can then use the conda commands as usual. Please see our [Conda](../applications/guides/conda.md) page for more information on using conda.
 
 ## Job Submission
 
