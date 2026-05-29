@@ -192,7 +192,8 @@ The final partition/queue layout is still being developed. Note that on standard
 #!/bin/bash
 #SBATCH --job-name=test_job
 #SBATCH --time=00:05:00
-#SBATCH --ntasks=1
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 
 ./my_program
@@ -203,13 +204,15 @@ The final partition/queue layout is still being developed. Note that on standard
 If the program uses threads on a single node:
 
 ```bash
-#SBATCH --ntasks=1
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=8
 ```
 
 What this means:
 
-* `--ntasks=1` -> one process
+* `--nodes=1` -> one node
+* `--ntasks-per-node=1` -> one process per node
 * `--cpus-per-task=8` -> that process can use 8 CPU cores (threads)
 
 You may also need to set:
@@ -231,7 +234,8 @@ To control threading within the OpenMP program.
 If your job supports multiple independent process (such as MPI):
 
 ```bash
-#SBATCH --ntasks=8
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
 #SBATCH --cpus-per-task=1
 ```
 
@@ -259,7 +263,8 @@ In both cases, the mpi distribution must be suitably configured to work with Slu
 If each MPI rank uses multiple threads:
 
 ```
-#SBATCH --ntasks=4
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=4
 ```
 
