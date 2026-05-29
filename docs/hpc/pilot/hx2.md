@@ -156,7 +156,7 @@ Job submission on HX2 differs slightly, as it uses the [SLURM Workload Manager](
 
 ### Basic job script
 
-The following shows an example of basic job script for slurm. It will ask for 1 cpu (based on 1 task x 1 cpus-per-task) for 5 minutes, with a total of 1 GB of RAM. When the job starts it will run `./my_program`.
+The following shows an example of a basic job script for slurm. It will ask for 1 cpu (based on 1 task x 1 cpus-per-task) for 5 minutes, with a total of 1 GB of RAM. When the job starts it will run `./my_program`.
 
 ```bash
 #!/bin/bash
