@@ -182,7 +182,7 @@ When the submission script has been successfully accepted by the queue, the job 
 
 ### Job Sizing Guidance
 
-Example partition/queue layout is still being developed. Note that on standard compute nodes, jobs are limited to 142 out of the 144 available cores; 2 cores are set aside to support the Weka file system and operating system.
+The final partition/queue layout is still being developed. Note that on standard compute nodes, jobs are limited to 142 out of the 144 available cores; 2 cores are set aside to support the Weka file system and operating system. This is increased to 4 cores on GPU nodes, so a maximum of 60 cores can be requested.
 
 #### single core jobs
 
