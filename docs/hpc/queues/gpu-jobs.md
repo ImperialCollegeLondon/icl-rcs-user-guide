@@ -16,20 +16,24 @@ The value of `ngpus` is per node. You can select up to 8 GPU's per node. If you 
 Within the context of the running job, the shell environment variable `CUDA_VISIBLE_DEVICES` will be set automatically with the UUID of the allocated GPUs. Our systems utilises [Cgroups](https://en.wikipedia.org/wiki/Cgroups), meaning you will only be able to see the resource that is allocated to your job, including GPU. 
 
 ## Job Limits
-All GPU jobs currently run via the **gpu72** and **gpu72_8** queues. You will find up to date job limits for this queue on the [Job sizing guidance page](./job-sizing-guidance.md).
+All GPU jobs currently run via the **gpu72** queue. You will find up to date job limits for this queue on the [Job sizing guidance page](./job-sizing-guidance.md).
 
 ## Requesting Specific GPU types
 In order to request a specific GPU type, you can add the following PBS flag - `gpu_type` 
 
-There are 2 GPU types available in the batch queue: `L40S` and `A100`:
+There are 3 GPU types available in the batch queue: `L40S`, `RTX6000`, and `A100`:
 ```bash
 #PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=L40S
 ```
 or
 ```bash
+#PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=RTX6000
+```
+or
+```bash
 #PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=A100
 ```
-Note that we recommend leaving this option empty unless you have a specific need for one or the other.
+The default option is the L40S cards, the RTX6000 can be good if your work doesn't require much GPU compute as they are normally in less demand. We only have a few A100 cards and even then, they only have 40GB of VRAM, they are normally used by those that need the double precision of an A100 but not the VRAM. 
 
 ## GPU Node Specification
 
