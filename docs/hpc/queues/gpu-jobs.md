@@ -33,7 +33,7 @@ or
 ```bash
 #PBS -l select=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=A100
 ```
-The default option is the L40S cards, the RTX6000 can be good if your work doesn't require much GPU compute as they are normally in less demain. We only have a few A100 cards and even then they only have 40GB of vram, they are normally used by those that need the double precision of an A100 but not the vram. 
+The default option is the L40S cards, the RTX6000 can be good if your work doesn't require much GPU compute as they are normally in less demand. We only have a few A100 cards and even then, they only have 40GB of VRAM, they are normally used by those that need the double precision of an A100 but not the VRAM. 
 
 ## GPU Node Specification
 
