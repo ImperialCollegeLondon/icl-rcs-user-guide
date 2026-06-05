@@ -1,5 +1,5 @@
-# Accessing RECAP
-XXX rename file to `recap-access.md`
+# Accessing ReCAP
+TODO rename file to `recap-access.md`
 
 !!! warning
 
@@ -11,4 +11,4 @@ To access the portal, open a web browser and go to:
 
 Select the large **Log In** button. You will be authenticated using Imperial Single Sign-On (SSO).
 
-XXX Trevor: "I have provisioned new ticket templates in our new service catalogue. When we have them in prod SNow we can add the links where needed"
+TODO Trevor: "I have provisioned new ticket templates in our new service catalogue. When we have them in prod SNow we can add the links where needed"

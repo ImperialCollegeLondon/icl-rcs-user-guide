@@ -1,11 +1,14 @@
-# Research Computing Access Portal (RECAP)
+# Research Computing Access Portal (ReCAP)
 
-**RECAP** (REsearch Computing Access Portal) is the newly introduced self-service portal to help you manage your access to Imperial's research computing services.
+**ReCAP** (REsearch Computing Access Portal) is the newly introduced self-service portal to help you manage your access to Imperial's research computing services. Instrutions on how you can access ReCAP can be found [here](access.md).
 
-RECAP uses an allocation system to let you manage your access to our computing resources, such as data storage and compute time. While provided by the RCS department, these allocations are set up and managed independently from us by individual research groups which you can learn more about [here](docs\recap\research-groups.md). There is no restriction to the number of research group an individual can be a part of, neither as a standard member nor as a manager for that group.
+!!! note
+    This new portal is entirely about accessing RCS resources, unlike the RCS, and thus doesn't involve any job-level management for computing workloads. Such management is now done solely in the virtual environments of the HPC systems themselves.
 
-RECAP currently supports managing the following resources provided by the RCS:
+Through ReCAP, the RCS department now deploys its resources via an allocation system. While the storage and compute resource allocations are provided by us, these allocations are set up and managed independently from us by individual [research groups](docs\recap\research-groups.md). This is an important distinction to understand if you are the manager of a research group, so please read the relevant documentation on them as well as [allocation management](allocations.md).
+
+ReCAP currently supports managing the following resources provided by the RCS:
 
 * [RDF-Active](../rdfactive/index.md)
 
-Please see the RECAP Help pages for guidance on how to access and use RECAP.
+Please see the ReCAP Help pages for guidance on how to access and use ReCAP.
