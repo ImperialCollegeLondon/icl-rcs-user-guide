@@ -41,10 +41,10 @@ nav:
       - Linux Command Line: support/using-linux/command-line.md
       - Shell Scripting: support/using-linux/shell-scripting.md
   - Services and Facilities:
-      - RECAP:
+      - ReCAP:
         - REsearch Computing Access Portal: recap/index.md
-        - RECAP Help:
-            - Accessing RECAP: recap/access.md
+        - ReCAP Help:
+            - Accessing ReCAP: recap/access.md
             - Managing Research Groups: recap/research-groups.md
             - Managing Allocations: recap/allocations.md
       - HPC:

@@ -28,7 +28,7 @@ Please note that CPUs 1,2 on CPU nodes and CPUs 1,2,62,63 on GPU nodes are assig
 
 ### Groups
 
-Groups will be managed via RECAP once that goes into production.
+Groups will be managed via ReCAP once that goes into production.
 
 ### Connecting to HX2
 
