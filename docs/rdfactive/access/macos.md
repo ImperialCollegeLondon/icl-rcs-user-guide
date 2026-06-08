@@ -1,20 +1,20 @@
-# RDF-Active on macOS
+# Accessing the RDF-Active on macOS
 
-The following instructions will show you how to connect your Mac to the RDF-Active so you can access the files. You must be connected to either the college network or otherwise following the advice on [accessing services remotely](../../remoteaccess.md) before you can connect to the RDS.
+The following instructions will show you how to access the RDF-Active by mapping it as a network drive on your Mac computer. To do this, you must be connected to the college network either directly or via [a private and secured remote connection](../../remoteaccess.md).
 
 ## Connecting your Mac to the RDS
 
-* Select **Go** from the **Finder menu**
-* Select **Connect to Server...**
-* Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
-    * For the "base" path of the RDF-Active  `smb://rdf-active.ic.ac.uk/research/`
-    * Or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation.
-* Click **Connect**
-* When you asked to enter your name and password for the server "rdf-active.ic.ac.uk":
-    * Select to *Connect As:* **Registered User**
-    * In the Name: field, enter your Imperial username as **username@ic.ac.uk**
-    * Enter your Imperial password in the *Password* field.
-* Click **Connect**
+1. Select **Go** from the **Finder menu**.
+2. Select **Connect to Server...**
+3. Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
+   * To access the RDF-Active's "root" directory, the Mac path is `smb://rdf-active.ic.ac.uk/research/`
+    * To access a specific storage allocation's directory, review the [Where are my files](./index.md#where-are-my-files) section to identify the allocation's path.
+4. Click **Connect**
+5. When you asked to enter your name and password for the server "rdf-active.ic.ac.uk":
+    * For the "Connect As:" field, enter "**Registered User**".
+    * For the name field, enter your Imperial username in the **username@ic.ac.uk** format.
+    * For the password, enter your Imperial password.
+6. Click **Connect**.
 
 !!! tip
     When you connect to an SMB share (for example, RDF-Active), macOS usually adds only the top-level share to the Finder sidebar, not the specific folder where your storage allocation lives. If you close the Finder window, getting back to that folder can be inconvenient (you might find it under *Go > Recent Folders*).
