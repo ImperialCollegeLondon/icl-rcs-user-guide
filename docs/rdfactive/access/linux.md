@@ -28,10 +28,10 @@ On Ubuntu and Mint you can provide support for this by making sure the `gvfs-bac
 sudo apt install gvfs-backends
 ```
 
-On RHEL-based operating systems you can instead install the `gvfs-smb` package.
+On RHEL-based operating systems you can instead install the `gvfs-smb` package with a command like:
 
 ```
-sudo apt install gvfs-smb
+yum install gvfs-smb
 ```
 
 ## Examples

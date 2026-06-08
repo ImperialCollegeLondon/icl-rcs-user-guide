@@ -23,7 +23,7 @@ You should then be presented with a tabular list of the research groups of which
 * **ID**: the backend numerical ID of the research group.
 * **PI**: the research group owner and manager.
 * **Title**: the name of the research group.
-* **Status**: XXX
+* **Status**: text note on whether the allocation is in active use or not.
 
 To see the more details on a specific research group, click on its corresponding ID number. This will take you to a page where you should see:
 
