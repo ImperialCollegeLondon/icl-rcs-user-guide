@@ -12,8 +12,6 @@ As with the RDS, the RDF-Active is only suitable for storing data which is eithe
 We strongly recommend you contact the [data protection coordinator](https://www.imperial.ac.uk/admin-services/governance/policies-and-guidance/contact-us/) for your department or faculty if you have any concerns or questions relating to the classification of your data.
 ///
 
-
-
 ## Storage Allocations
 
 On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, an access group code, and a research group assigned as the owner of that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
@@ -26,16 +24,9 @@ Whichever method you decide to use to organise your data, we strongly recommend 
 
 /// details | How can I request a new RDF-Active storage allocation?
     type: faq
-Information on how to request a new RDF-Active storage allocation will appear here soon.
-XXX is this just for storage allocations or all types?
-- THere will be a ticket system, waiting for the link.
-- But there's a button on ReCAP??
-- HeX2 access works
-- RDF-Active allocation button is broken
-- There will be a form where they request things
-- Separate but similar to the migration form
-TODO leave it for now, get Dugan to fill us in when he's back to explain the superficial
-For a new storage allocation, please submit a [general RCS enquiry ticket](https://servicemgt.service-now.com/esc?id=sc_cat_item&sys_id=470ee82a1b9df9101533a8a4bd4bcbd7&sysparm_category=52a4a8f21be62110557837b5464bcbd2&utm_source=Dynamics%20365%20Customer%20Insights%20-%20Journeys&utm_medium=email&utm_term=N%2FA&utm_campaign=RCS%20Newsletter%20June%202026&utm_content=RCS%20Newsletter%20June%2026#msdynmkt_trackingcontext=8352ebc5-ba47-42fd-8bfe-c3f580df0200) with the topic "RDF-Active new storage allocation". If you already have data on the RDS and would like to start the migration process, please submit the  [migration request ticket](https://servicemgttst.service-now.com/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&utm_source=Dynamics%20365%20Customer%20Insights%20-%20Journeys&utm_medium=email&utm_term=N%2FA&utm_campaign=RCS%20Newsletter%20June%202026&utm_content=RCS%20Newsletter%20June%2026#msdynmkt_trackingcontext=8352ebc5-ba47-42fd-8bfe-c3f580df0200) with as much detail as possible and one of the team will get back to you to explain the next steps.
+Due to overhead issues outside of the RCS department's control, requesting a new storage allocation is currently done indirectly by using the [RDS to RDF-Active migration ticket request](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) system. In order to submit a migration form in general, a file must be attached where normally the RDS projects to be migrated are specified. To make it clear the migration form is actually a request for a new storage allocation, attach a text file that instead asks for a new and *empty* storage allocation whilst skipping any other parts on the form discussing the RDS.
+
+We apologise for any confusion and inconvenience.
 ///
 
 /// details | How do I request access to an existing storage allocation?
@@ -46,7 +37,6 @@ To gain access to an allocation, you must be a part of the research group associ
 /// details | How do I manage a storage allocation?
     type: faq
 Most storage allocations don't need much managing after initialisation outside of [access control](../recap/allocations.md#user-management). However, if you want to change the storage quote or file quota of a storage allocation, then [create a ticket](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) with us.
-XXX add a trevor ticket link? 
 ///
 
 /// details | What is the process to request migrating my RDS projects to RDF-Active?
