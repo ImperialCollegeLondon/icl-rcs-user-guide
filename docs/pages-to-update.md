@@ -6,7 +6,7 @@ This is not guaranteed to be a comprehensive list of everywhere that needs updat
 
 ## Misc. to be updated
 
-* Update the ["How do I manage a storage allocation?" faq](rdfactive/index.md#how-to-apply-for-access)'s link for "create a ticket" from the 'Contact Us' web page link to the new ticket link when it's in SNow production. (Trevor knows.)
+* Update [ReCAP's access page](./recap/access.md) and the ["How do I manage a storage allocation?" faq](rdfactive/index.md#how-to-apply-for-access)'s link for "create a ticket" from the 'Contact Us' web page link to the new ticket link when it's in SNow production. (Trevor knows.)
 * Update the ["How can I request a new RDF-Active storage allocation?" faq](./rdfactive/index.md#how-to-access-the-rdf-active) proceedure when there's a less cumbersome method e.g. the built in request button.
 
 ## With every new facility/service release
