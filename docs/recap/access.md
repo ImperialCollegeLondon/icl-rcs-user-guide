@@ -11,4 +11,4 @@ To access the portal, open a web browser and go to:
 
 Select the large **Log In** button. You will be authenticated using Imperial Single Sign-On (SSO).
 
-TODO Trevor: "I have provisioned new ticket templates in our new service catalogue. When we have them in prod SNow we can add the links where needed"
+If you are having issues accessing ReCAP, please [contact us](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) via our ticket system.
