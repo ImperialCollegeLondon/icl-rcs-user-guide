@@ -51,12 +51,12 @@ Due to the elevated privileges of the Manager role, only grant it to trusted ind
 
 To add users to your research group:
 
-* Navigate to the details page of the research group in question.
-* Click the **Add Users** button on the top of the **Users** section.
-* Either:
+1. Navigate to the details page of the research group in question.
+2. Click the **Add Users** button on the top of the **Users** section.
+3. Either:
     * With **Exact Username only** selected, enter the usernames of each person you want to add into the search box, separating usernames by a space character or using a new line.
     * With **All Fields** selected, enter a search criteria for an individual such as their username. Note that this option can only search for single users.
-* Click the **Search** button.
+4. Click the **Search** button.
 
 After clicking search, you will be presented with two lists. One list is all the allocations associated with your research group, while the other list shows the users matching your search criteria and that can be added to the various allocations. In the list of users shown, decide which of them you wish to add to your research group by selecting the checkbox next to the corresponding user, and decide what role they should have for the research group (see above).
 
