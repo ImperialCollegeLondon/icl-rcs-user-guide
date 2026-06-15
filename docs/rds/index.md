@@ -1,6 +1,9 @@
 # Research Data Store
 
-The Research Data Store is provided by the RCS for storing large volume of research data. You **don't** have to be registered in the HPC to use this service. Please visit the [Research Computing Service Getting Access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/) for information on how to register for the RDS.
+The Research Data Store (RDS) is provided by the RCS for storing large volume of research data. You **don't** have to be registered in the HPC to use this service. Please visit the [Research Computing Service Getting Access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/) for information on how to register for the RDS.
+
+!!! warning
+    **After October, the RDS will no longer be useable** due to system-breaking changes being made to project- and cost-codes. Please look into [migrating your work to the RDF-active](../rdfactive/rds-rdfactive-migration.md) or any other Imperial storage services if available.
 
 ## Managing your Research Data
 

@@ -7,8 +7,15 @@ Please go to the [Research Computing Service home page](https://www.imperial.ac.
 
 The following services are currently provided by the RCS Platforms team, please click on each link for further information.
 
-* [High Performance Computing](hpc/index.md)
-* [Research Data Store](rds/index.md)
-* Various RDF Storage facilities, such as:
-    * The [RDF-Active](rdfactive/index.md)
-    * The [RDS](rds/index.md) (soon to be discontinued)
+Storage Services:
+
+* The [Research Data Store](rds/index.md) (to be discontinued in October)
+* The [RDF-Active](rdfactive/index.md)
+
+High Performance Computing and Cluster Services:
+
+* An introduction to [High Performance Computing](hpc/index.md)
+* The general use [CX3](./hpc/pilot/cx3-phase2.md) platform
+* The authorised-access only [HX1](./hpc/hx1.md) platform
+* The general use [HX2](./hpc/pilot/hx2.md) platform
+* The AI-focused HX3 platform (documentation TBA)
