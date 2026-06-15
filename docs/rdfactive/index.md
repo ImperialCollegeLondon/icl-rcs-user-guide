@@ -30,7 +30,7 @@ We apologise for any confusion and inconvenience.
 
 /// details | How do I request access to an existing storage allocation?
     type: faq
-To gain access to an allocation, you must be a part of the research group associated with said allocation. Contact the research group lead of the storage allocation or its designated administrator, who can provide you access.
+To gain access to an allocation, you must be a part of the research group associated with said allocation. Contact the research group lead of the storage allocation or a designated administrator, who can provide you access.
 ///
 
 /// details | How do I manage a storage allocation?
