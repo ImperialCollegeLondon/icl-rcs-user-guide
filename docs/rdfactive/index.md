@@ -13,7 +13,7 @@ We strongly recommend you contact the [data protection coordinator](https://www.
 
 ## Storage Allocations
 
-On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, an access group code, and a research group assigned as the owner of that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
+On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, a maximum file quota, a shortname, a file path, and a research group assigned as the owner of that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
 
 You can organise your storage allocations to fit your workflow. Some groups prefer a single large allocation that hosts multiple projects, while others create separate allocations for each research project.
 
