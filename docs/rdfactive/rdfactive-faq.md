@@ -20,5 +20,5 @@ Over five years of running the RDS service has taught us that while centralising
 
 To migrate your data out from the RDS, Globus will be the primary method used whether the destination facility is the RDF-Active, HX2, or any other of our newer and more robust facilities. (See [here](./rds-rdfactive-migration.md) for further details on migration.)
 
-For research groups that require shared spaces on HPC platforms — for collaborative workflows, permissions‑managed access to common datasets, and consistent data governance — we will provide shared data storage areas upon request. To make a request, please [contact us](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) via our ticket system.
+For research groups that require shared spaces on HPC platforms — for collaborative workflows, permissions‑managed access to common datasets, and consistent data governance — we will provide shared data storage areas upon request. To make a request, please [contact us](../support/index.md) via our ticket system.
 ///

@@ -67,7 +67,7 @@ When you have multiple RDS Projects to migrate to the RDF-Active, there are thre
 * **A many-to-one mapping of multiple RDS Projects to a single RDF-Active storage allocation**. You might find that it would be easier to combine all your projects into one storage allocation due to identical users between projects.
 * **Merging some RDS projects but not others**. A combination of the previous two options carried out on a case-by-case basis as you fill in one form for each requested storage allocation.
 
-Please [get in contact with us](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) should you have any questions about this or possible alternatives.
+Please [get in contact with us](../support/index.md) should you have any questions about this or possible alternatives.
 
 ### What do I do now?
 

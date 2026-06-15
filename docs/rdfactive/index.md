@@ -35,7 +35,7 @@ To gain access to an allocation, you must be a part of the research group associ
 
 /// details | How do I manage a storage allocation?
     type: faq
-Most storage allocations don't need much managing after initialisation outside of [access control](../recap/allocations.md#user-management). However, if you want to change the storage quote or file quota of a storage allocation, then [create a ticket](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) with us.
+Most storage allocations don't need much managing after initialisation outside of [access control](../recap/allocations.md#user-management). However, if you want to change the storage quote or file quota of a storage allocation, then [contact us](../support/index.md).
 ///
 
 /// details | What is the process to request migrating my RDS projects to RDF-Active?
