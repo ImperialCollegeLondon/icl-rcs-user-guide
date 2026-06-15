@@ -3,9 +3,8 @@
 
 This web site contains the user guides for services provided by Imperial College London's [Research Computing Support or RCS](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) Platforms team.
 
-Please go to the [Research Computing Service home page](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) for more information about these services and how to register to use them.
 
-The services listed below are provided by the RCS Platforms team. Please click on each link for further information.
+The services listed below are provided by the RCS Platforms team. Please click on the links provided or visit [the Research Computing Service web page](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) for more information on accessing and using our services.
 
 **Storage Services:**
 
