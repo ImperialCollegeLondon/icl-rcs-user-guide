@@ -28,7 +28,7 @@ Please note that CPUs 1,2 on CPU nodes and CPUs 1,2,62,63 on GPU nodes are assig
 
 ### Access Control Settings
 
-What users have access to HeX2 is handled on [ReCAP](../../recap/index.md), where RCS grants users cluster compute allocations to research groups once requested. To request a HeX2 compute allocation, see [here](./XXX) for further details.
+What users have access to HeX2 is handled on [ReCAP](../../recap/index.md), where RCS grants users cluster compute allocations to research groups once requested. To request a HeX2 compute allocation, contact your supervisor or research group manager.
 
 ### Connecting to HX2
 
