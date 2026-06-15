@@ -4,16 +4,9 @@
 
 When you first login to [ReCAP](./access.md) you should see the home page with a *"Welcome to the Imperial Research Computing Access Portal"* message.
 
-To see the allocations you are a member of:
-
-1. Click on **Groups** on the menu bar
-2. Next click on **Allocations** from the drop-down list that appears
-
-You should then be presented with a list of research groups you are a member of.
-
 ## Viewing details of a Research Group
 
-To see the allocations you are a member of:
+To see the research groups you are a member of:
 
 1. Click on **Groups** on the menu bar
 2. Next click on **Groups** from the drop-down list that appears
