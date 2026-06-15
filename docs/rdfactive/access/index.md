@@ -1,5 +1,4 @@
 # Accessing your Storage Allocation on the RDF-Active
-TODO rename file to `rdfactive-access-index.md`
 
 !!! warning
 

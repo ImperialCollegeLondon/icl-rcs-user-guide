@@ -1,5 +1,4 @@
 # Accessing ReCAP
-TODO rename file to `recap-access.md`
 
 !!! warning
 

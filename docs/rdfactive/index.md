@@ -1,5 +1,4 @@
 # RDF-Active
-TODO rename file to `rdfactive-index.md`
 
 The "Research Data Facility - Active" (or the RDF-Active) is a large-scale storage service for research data in active use. The RDF-Active is one of several storage facilities that replaces the previous [Research Data Store](../rds/index.md) service. You can access the RDF-Active as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access is also available via Globus.
 

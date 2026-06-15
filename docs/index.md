@@ -1,6 +1,5 @@
 
 # Welcome to Imperial College London's RCS User Guide
-TODO revamp to be a good landing page for ALL RCS services, make easy to extend
 
 This web site contains the user guides for services provided by Imperial College London's [Research Computing Support or RCS](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/) Platforms team.
 
