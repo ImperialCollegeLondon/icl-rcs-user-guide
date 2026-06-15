@@ -14,7 +14,7 @@ The services listed below are provided by the RCS Platforms team. Please click o
 **High Performance Computing and Cluster Services:**
 
 * An introduction to [High Performance Computing](hpc/index.md)
-* The general use [CX3](./hpc/pilot/cx3-phase2.md) platform
+* The general use [CX3](./hpc/cluster-specification.md#cx3) platform
 * The authorised-access only [HX1](./hpc/hx1.md) platform
 * The general use [HX2](./hpc/pilot/hx2.md) platform
 * The AI-focused HX3 platform (documentation TBA)
