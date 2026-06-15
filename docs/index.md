@@ -12,4 +12,3 @@ The following services are currently provided by the RCS Platforms team, please 
 * Various RDF Storage facilities, such as:
   * The [RDF-Active](rdfactive/index.md)
   * The [RDS](rds/index.md) (soon to be discontinued)
-  * Others soon to be released.
