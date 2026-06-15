@@ -26,9 +26,9 @@ Please note that CPUs 1,2 on CPU nodes and CPUs 1,2,62,63 on GPU nodes are assig
     As the cluster is still in pilot access is invite only.
 
 
-### Groups
+### Access Control Settings
 
-Groups will be managed via ReCAP once that goes into production.
+What users have access to HeX2 is handled on [ReCAP](../../recap/index.md), where RCS grants users cluster compute allocations to research groups once requested. To request a HeX2 compute allocation, see [here](./XXX) for further details.
 
 ### Connecting to HX2
 
