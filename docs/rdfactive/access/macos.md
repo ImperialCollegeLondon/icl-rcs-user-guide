@@ -2,12 +2,12 @@
 
 The following instructions will show you how to access the RDF-Active by mapping it as a network drive on your Mac computer. To do this, you must be connected to the college network either directly or via [a private and secured remote connection](../../remoteaccess.md).
 
-## Connecting your Mac to the RDS
+## Connecting your Mac to the RDF-Active
 
 1. Select **Go** from the **Finder menu**.
 2. Select **Connect to Server...**
 3. Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
-   * To access the RDF-Active's "root" directory, the Mac path is `smb://rdf-active.ic.ac.uk/research/`
+    * To access the RDF-Active's "root" directory, the Mac path is `smb://rdf-active.ic.ac.uk/research/`
     * To access a specific storage allocation's directory, review the [Where are my files](./index.md#where-are-my-files) section to identify the allocation's path.
 4. Click **Connect**
 5. When you asked to enter your name and password for the server "rdf-active.ic.ac.uk":
