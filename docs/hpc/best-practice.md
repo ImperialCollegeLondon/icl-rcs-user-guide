@@ -29,7 +29,7 @@ When carrying out large transfers within the RDS (more than a few GB’s or expe
 
 ### External transfers:
 
-When transferring from/to outside of the RDS, the recommendation is to mount the [RDS as a network drive](../rds/access/index.md) or to use [Globus](../rds/transferringdata/globus.md) to carry out these transfers.
+When transferring from/to outside of the RDS, the recommendation is to mount the [RDS as a network drive](../rds/access/rds-access-index.md) or to use [Globus](../rds/transferringdata/globus.md) to carry out these transfers.
 
 ## Array jobs
 

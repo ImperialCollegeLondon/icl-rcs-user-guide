@@ -5,7 +5,7 @@ This page provides RDS project owners with the information they need to migrate 
 !!! warning
     The current [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) contains several inaccuracies regarding terminology, namely where you see references to "RDF Group Space", this should instead refer to and "RDF-Active Storage Allocation". Note also that you are **NOT** limited to G and P codes as the form infers, you may also use other codes including departmental F codes.
 
-    We are working to correct the form as soon as possible but please [contact us](../support/index.md) if you have any questions in relation to this.
+    We are working to correct the form as soon as possible but please [contact us](../support/support-index.mdd) if you have any questions in relation to this.
 
 !!! note
     * The RDS project currently has 1700+ projects using approximately 9PB of storage, therefore **we are expecting it to take many months to migrate all RDS Projects to the RDF-Active**.
@@ -27,7 +27,7 @@ In moving to the RDF-Active, you will now find the following:
 
 * The RDF-Active is managed via a new self-service portal called [ReCAP](../recap/recap-index.md) that will support multiple RCS services.
 * We have introduced the concept of research groups. A research group is an administrative unit, typically led by a single PI, which is used to manage access to RCS resources such as storage allocations on the RDF-Active. Research groups are managed  via the ReCAP portal. An individual may be a member of one or more research groups in ReCAP.
-* One storage allocation is a single location (directory or folder) on the RDF-Active file system with its own quota and access group. As such, the file system structure now follows a hierarchy mirroring that of Imperial's department structure: `/Faculty/Department/Research Group/Storage Allocation/`. View the documentation on [Where are my files?](./access/index.md#where-are-my-files) for more information.
+* One storage allocation is a single location (directory or folder) on the RDF-Active file system with its own quota and access group. As such, the file system structure now follows a hierarchy mirroring that of Imperial's department structure: `/Faculty/Department/Research Group/Storage Allocation/`. View the documentation on [Where are my files?](./access/rdfactive-access-index.md#where-are-my-files) for more information.
 * A research group can have one or more storage allocations. An individual must be a member of the research group before they can be added to the access group of a storage allocation, and permissions can be set so being a member of the research group doesn't mean access to all associated storage allocations. 
 * A storage allocation does not have to be tied to a specific research project. It is simply an allocated storage space for the research group to do with as they professionally please.
 * All data on the RDF-Active is replicated to a second location by default (i.e. dual-copy). There is no additional charge for this service.
@@ -38,7 +38,7 @@ Moreover, before a PI would often have had multiple RDS projects; each with thei
 
 ## Reviewing your RDS Projects
 
-We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of their RDS projects for them to review. If you have not yet received a spreadsheet from us and would like to ASAP, please [raise a ticket with us](../support/support-index.md) so we can send you a copy. For each of your RDS Projects, you have two options:
+We have begun contacting [RDS Project](../rds/rds-index.md) owners to provide them a list of their RDS projects for them to review. If you have not yet received a spreadsheet from us and would like to ASAP, please [raise a ticket with us](../support/support-index.md) so we can send you a copy. For each of your RDS Projects, you have two options:
 
 * **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raising a ticket with us](../support/support-index.md). Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.
 * **Migration:** You can fill in our migration form to request one or more RDS projects to be migrated to the RDF-Active. Please check [What to consider before submitting the migration form](#what-to-consider-before-submitting-the-migration-form) for more information.

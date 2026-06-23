@@ -89,7 +89,7 @@ Please make sure any software you run on HX1 has been optimised for the hardware
 
 ### Loading Applications
 
-Loading modules/applications on HX1 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](./applications/index.md) page for advice on how to load modules on HX1.
+Loading modules/applications on HX1 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](./applications/hpc-applications-index.md) page for advice on how to load modules on HX1.
 
 ### EasyBuild
 
@@ -191,7 +191,7 @@ The following queues of jobs are supported:
 
 #### single core to single node jobs
 
-Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 Phase 2](./getting-started/index.md) facility.
+Small jobs (single core to single node) should not be routinely run on HX1 other than as part of a wider workflow as these jobs take away from the limited resource pool set aside for multi-node jobs. These jobs are better suited to the [CX3 Phase 2](./getting-started/hpc-getting-started-index.md) facility.
 
 #### capability24
 

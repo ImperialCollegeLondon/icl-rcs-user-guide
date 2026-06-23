@@ -32,32 +32,32 @@ nav:
   - Home: index.md
   - Remote Access: remoteaccess.md
   - Support and Training:
-    - Getting Help: support/index.md
+    - Getting Help: support/support-index.mdd
     - Attending a Clinic: support/attend-a-clinic.md
     - Citing the RCS: support/citing-rcs.md
     - Courses: support/courses.md
     - Using Linux:
-      - Overview: support/using-linux/index.md
+      - Overview: support/using-linux/support-linux-index.md
       - Linux Command Line: support/using-linux/command-line.md
       - Shell Scripting: support/using-linux/shell-scripting.md
   - Services and Facilities:
       - ReCAP:
-        - REsearch Computing Access Portal: recap/index.md
+        - REsearch Computing Access Portal: recap/recap-index.md
         - ReCAP Help:
             - Accessing ReCAP: recap/access.md
             - Managing Research Groups: recap/research-groups.md
             - Managing Allocations: recap/allocations.md
       - HPC:
-        - HPC at Imperial: hpc/index.md
+        - HPC at Imperial: hpc/hpc-index.md
         - Cluster Specification: hpc/cluster-specification.md
         - Getting Started:
-          - Where to Start: hpc/getting-started/index.md
+          - Where to Start: hpc/getting-started/hpc-getting-started-index.md
           - Using SSH: hpc/getting-started/using-ssh.md
           - Data Management: hpc/getting-started/data-management-on-hpc.md
           - Accessing Software: hpc/getting-started/accessing-software.md
           - Running your first job: hpc/getting-started/running-your-first-job.md
         - Queues:
-          - Queueing: hpc/queues/index.md
+          - Queueing: hpc/queues/hpc-queues-index.md
           - Purpose of the Queuing System: hpc/queues/purpose-of-the-queue.md
           - How it works: hpc/queues/how-it-works.md
           - Priority Access: hpc/queues/priority-access.md
@@ -68,10 +68,10 @@ nav:
           - GPU Jobs: hpc/queues/gpu-jobs.md
           - Checkpointing: hpc/queues/checkpointing.md
         - Applications:
-          - Loading Applications: hpc/applications/index.md
+          - Loading Applications: hpc/applications/hpc-applications-index.md
           - EasyBuild: hpc/applications/easybuild.md
           - Guides: 
-            - Overview: hpc/applications/guides/index.md
+            - Overview: hpc/applications/guides/hpc-applications-guides-index.md
             - Abaqus: hpc/applications/guides/abaqus.md
             - Conda: hpc/applications/guides/conda.md
             - FreeSurfer: hpc/applications/guides/freesurfer.md
@@ -89,7 +89,7 @@ nav:
             - TensorFlow: hpc/applications/guides/tensorflow.md
         - Best Practices: hpc/best-practice.md
         - FAQ and Common Issues:
-          - Overview: hpc/faq/index.md
+          - Overview: hpc/faq/hpc-faq-index.md
           - Leaving Imperial: hpc/faq/leaving-imperial.md
           - Controlling Job Logs: hpc/faq/controlling-job-log-files.md
           - Long Queue Times: hpc/faq/long-queue-times.md
@@ -104,10 +104,10 @@ nav:
           - Issues in running multinode Mpi4py jobs: hpc/faq/multinode-mpi4py.md
           - Blas code not running on multi cores: hpc/faq/blas_multicore_issue.md
         - Debugging and Profiling:
-          - Overview: hpc/advanced/index.md
+          - Overview: hpc/advanced/hpc-advanced-index.md
           - Thread Pinning: hpc/advanced/thread-pinning.md
           - Application Profiling on CPU:
-            - Overview: hpc/advanced/profiling/index.md
+            - Overview: hpc/advanced/profiling/hpc-profiling-index.md
             - Intel Advisor: hpc/advanced/profiling/intel-advisor.md
             - Intel APS: hpc/advanced/profiling/intel-aps.md
             - Intel Vtune: hpc/advanced/profiling/intel-vtune-profiler.md
@@ -124,25 +124,25 @@ nav:
         - Legacy Systems:
           - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
       - RDF-Active:
-        - RDF-Active: rdfactive/index.md
+        - RDF-Active: rdfactive/rdfactive-index.md
         - Accessing the RDF-Active:
-          - Overview: rdfactive/access/index.md
+          - Overview: rdfactive/access/rdfactive-access-index.md
           - Windows: rdfactive/access/windows.md
           - macOS: rdfactive/access/macos.md
           - Linux: rdfactive/access/linux.md
-        - Managing the RDF-Active: rdfactive/managing/index.md
+        - Managing the RDF-Active: rdfactive/managing/rdfactive-managing-index.md
         - RDS to RDF-Active Migration: rdfactive/rds-rdfactive-migration.md
         - FAQ: rdfactive/rdfactive-faq.md
       - RDS:
-        - RDS: rds/index.md
+        - RDS: rds/rds-index.md
         - RDS Paths: rds/paths.md
         - Accessing the RDS:
-          - Overview: rds/access/index.md
+          - Overview: rds/access/rds-access-index.md
           - Windows: rds/access/windows.md
           - macOS: rds/access/macos.md
           - Linux: rds/access/linux.md
         - Transferring Data:
-          - Overview: rds/transferringdata/index.md
+          - Overview: rds/transferringdata/rds-transferringdata-index.md
           - Globus: rds/transferringdata/globus.md
           - Rclone: rds/transferringdata/rclone.md
           - rsync and scp: rds/transferringdata/rsync-and-scp.md

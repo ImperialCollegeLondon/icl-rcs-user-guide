@@ -8,16 +8,16 @@ This is not guaranteed to be a comprehensive list of everywhere that needs updat
 
 ### General
 
-1. The general [landing page](index.md)'s list of available RCS services, to be extended.
+1. The general [landing page](./docs/root-index.md)'s list of available RCS services, to be extended.
 
 ### ReCAP
 
-1. [ReCAP landing page](recap/index.md)'s list of supported services. Maybe remove "newly introduced" when describing the portal especially if the RDS portal is gone. Review text to be sure it reads correctly still.
-2. [ReCAP allocations page](recap/allocations.md) needs a full review for every new ReCAP service added.
-3. [ReCAP research groups](recap/research-groups.md) needs a quick review, with special attention paid to its [allocations management](recap/research-groups.md#managing-the-allocations-of-a-research-group) header.
+1. [ReCAP landing page](./docs/recap/recap-index.md)'s list of supported services. Maybe remove "newly introduced" when describing the portal especially if the RDS portal is gone. Review text to be sure it reads correctly still.
+2. [ReCAP allocations page](./docs/recap/allocations.md) needs a full review for every new ReCAP service added.
+3. [ReCAP research groups](./docs/recap/research-groups.md) needs a quick review, with special attention paid to its [allocations management](./docs/recap/research-groups.md#managing-the-allocations-of-a-research-group) header.
 
 ### RDF-Active
 
-1. The [RDF-Active's landing page](./rdfactive/index.md) should be more descriptive for what its storage service specialty is, e.g. versus the RDF-Secure. Perhaps offload/duplicate some of the explanation on this homepage onto a comparison page within the ReCAP section.
-2. The [RDS to RDS-Active migration page](./rdfactive/rds-rdfactive-migration.md) should have an added section explaining how users can know if they want to migrate their stuff to the RDF-Active or an alternative service, e.g. the RDF-Secure. The newly added service should have a complimentary/identical section too.
-3. For the [managing page](./rdfactive/managing/index.md), consider expanding it to explain how storage allocations can be migrated between various RCS storage systems.
+1. The [RDF-Active's landing page](./docs/rdfactive/rdfactive-index.md) should be more descriptive for what its storage service specialty is, e.g. versus the RDF-Secure. Perhaps offload/duplicate some of the explanation on this homepage onto a comparison page within the ReCAP section.
+2. The [RDS to RDS-Active migration page](./docs/rdfactive/rds-rdfactive-migration.md) should have an added section explaining how users can know if they want to migrate their stuff to the RDF-Active or an alternative service, e.g. the RDF-Secure. The newly added service should have a complimentary/identical section too.
+3. For the [managing page](./docs/rdfactive/managing/rdfactive-managing-index.md), consider expanding it to explain how storage allocations can be migrated between various RCS storage systems.

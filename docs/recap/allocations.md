@@ -11,14 +11,14 @@ There are various types of allocations, and can be understood under two main cat
 ### Functional-level Differences
 From a functional standpoint, allocations can serve one of two purposes:
 1. Storage allocations, which are linked to storage hardware.
-2. Cluster allocations, which are linked to computing hardware and our services for [HPC workflows](../hpc/index.md).
+2. Cluster allocations, which are linked to computing hardware and our services for [HPC workflows](../hpc/hpc-index.md).
 
 Because the purpose of these allocations differs, so do the attributes visible to the users at the front end. However, both types have their GID visible and the users with access to that allocation visible.
 
 ### Service-level Differences
 Currently, there is only one active service using allocations, the RDF-Active, so further details differentiating these allocations cannot be provided. 
 
-However, there is documentation explaining how to manage your [RDF-Active storage allocations](../rdfactive/managing/index.md).
+However, there is documentation explaining how to manage your [RDF-Active storage allocations](../rdfactive/managing/rdfactive-managing-index.md).
 
 ## Viewing your allocations
 

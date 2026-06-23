@@ -25,7 +25,7 @@ Faculty/Department/Research Group/Storage Allocation/
 * **Storage Allocation** - this will be the shortname created for the storage allocation.
 
 !!! tip
-    The path to your storage allocation is visible on the [RECAP](../../recap/rcap-index.md) portal under the *Allocation Attributes*. In that section, you will find an *Attribute* called *Filesystem location* which will have a path of the form:
+    The path to your storage allocation is visible on the [ReCAP](../../recap/recap-index.md) portal under the *Allocation Attributes*. In that section, you will find an *Attribute* called *Filesystem location* which will have a path of the form:
 
     `/rdfactive/icl/faculty/department/research_group/storage_allocation/`
 

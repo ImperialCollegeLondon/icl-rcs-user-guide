@@ -81,7 +81,7 @@ Please make sure any software you run on HX2 has been optimised for the hardware
 
 ### Loading Applications
 
-Loading modules/applications on HX2 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](../applications/index.md) page for advice on how to load modules on HX1.
+Loading modules/applications on HX2 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](../applications/hpc-applications-index.md) page for advice on how to load modules on HX1.
 
 ### EasyBuild
 

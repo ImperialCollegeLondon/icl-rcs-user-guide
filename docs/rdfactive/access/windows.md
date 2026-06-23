@@ -22,7 +22,7 @@ The following instructions will show you how to access the RDF-Active by mapping
 4. Select a **drive letter** in the box marked **Drive**. It can be any letter that does not have a path next to it already.
 5. Enter the **RDF-Active** path you wish to connect to in the box marked **Folder**.
     * To access the RDF-Active's "root" directory, the Windows 11 path is `\\rdf-active.ic.ac.uk\research\`
-    * To access a specific storage allocation's directory, review the [Where are my files](./index.md#where-are-my-files) section to identify the allocation's path.
+    * To access a specific storage allocation's directory, review the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to identify the allocation's path.
 6. Un-tick the **Reconnect at sign-in** tick box.
 7. Select **Connect using different credentials**.
 8. Click the **Finish** button.
