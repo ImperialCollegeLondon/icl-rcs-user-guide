@@ -9,7 +9,7 @@ The RDF-Active is accessible at the following file path:
 *  `\\rdf-active.ic.ac.uk\research\` ([Windows](./windows.md)) or
 * `smb://rdf-active.ic.ac.uk/research/` ([macOS](./macos.md) and [Linux](./linux.md))
 
-Once connected to the university network, you can simply use Chrome browser to access the RDF-Active. Simply paste either the above "root" file path or a specific storage allocation's file path into the search bar like a web url. You should be able to navigate through the folders you have access to much like a file browser. Alternatively, you can click on the above links to access the RDF-Active through your OS's built-in file browser.
+Once connected to the university network, you can either paste the path above into a file browser or follow the advice for [Windows](./windows.md), [macOS](./macos.md), or [Linux](./linux.md) to mount the RDF-Active permanently. If you just want to download a file or two you can also access the [RDF-Active via a web browser like Chrome](file://rdf-active/research/)
 
 Read through the *"Where are my files?"* section below for advice on how to browse the file system and connect to a specific storage allocation's directory.
 
