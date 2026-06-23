@@ -6,7 +6,7 @@ HX1 (or Hex) is the High Performance Computing Cluster at Imperial with a low la
 * GPU accelerated scientific applications that require double precision.
 * GPU accelerated AI workloads requiring more than 48GB of GPU RAM.
 
-For all other workloads, we would please ask you to continue using the CX3 service; note that the L40s GPUs on CX3 have a newer GPU architecture (Ada Lovelace) and are generally faster than the A100s on HX1 for AI/ML workloads. If you are in any doubt whether your job is suited to HX1, please contact the [RCS](../support/index.md).
+For all other workloads, we would please ask you to continue using the CX3 service; note that the L40s GPUs on CX3 have a newer GPU architecture (Ada Lovelace) and are generally faster than the A100s on HX1 for AI/ML workloads. If you are in any doubt whether your job is suited to HX1, please contact the [RCS](../support/support-index.md).
 
 ## Cluster Specification
 

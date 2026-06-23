@@ -25,7 +25,7 @@ As an RDS Project owner or user, you will likely be aware of the following:
 
 In moving to the RDF-Active, you will now find the following:
 
-* The RDF-Active is managed via a new self-service portal called [ReCAP](../recap/index.md) that will support multiple RCS services.
+* The RDF-Active is managed via a new self-service portal called [ReCAP](../recap/recap-index.md) that will support multiple RCS services.
 * We have introduced the concept of research groups. A research group is an administrative unit, typically led by a single PI, which is used to manage access to RCS resources such as storage allocations on the RDF-Active. Research groups are managed  via the ReCAP portal. An individual may be a member of one or more research groups in ReCAP.
 * One storage allocation is a single location (directory or folder) on the RDF-Active file system with its own quota and access group. As such, the file system structure now follows a hierarchy mirroring that of Imperial's department structure: `/Faculty/Department/Research Group/Storage Allocation/`. View the documentation on [Where are my files?](./access/index.md#where-are-my-files) for more information.
 * A research group can have one or more storage allocations. An individual must be a member of the research group before they can be added to the access group of a storage allocation, and permissions can be set so being a member of the research group doesn't mean access to all associated storage allocations. 
@@ -38,9 +38,9 @@ Moreover, before a PI would often have had multiple RDS projects; each with thei
 
 ## Reviewing your RDS Projects
 
-We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of their RDS projects for them to review. If you have not yet received a spreadsheet from us and would like to ASAP, please [raise a ticket with us](../support/index.md) so we can send you a copy. For each of your RDS Projects, you have two options:
+We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of their RDS projects for them to review. If you have not yet received a spreadsheet from us and would like to ASAP, please [raise a ticket with us](../support/support-index.md) so we can send you a copy. For each of your RDS Projects, you have two options:
 
-* **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raising a ticket with us](../support/index.md). Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.
+* **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raising a ticket with us](../support/support-index.md). Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.
 * **Migration:** You can fill in our migration form to request one or more RDS projects to be migrated to the RDF-Active. Please check [What to consider before submitting the migration form](#what-to-consider-before-submitting-the-migration-form) for more information.
 
 ## What to consider before submitting the migration form
@@ -49,7 +49,7 @@ We have begun contacting [RDS Project](../rds/index.md) owners to provide them a
 
 The first question on the migration form is whether the migration is "on behalf of myself or someone else". The option you provide here will be used to set up the research group in the self-service portal and the research group path on the file system will be based on the username of the research group's lead.
 
-If your research group is led by multiple individuals and/or you would a more "file system friendly" path, please get in [contact with us](../support/index.md) before you submit the migration form.
+If your research group is led by multiple individuals and/or you would a more "file system friendly" path, please get in [contact with us](../support/support-index.md) before you submit the migration form.
 
 ### Are there ever cases where you need to submit multiple migration forms?
 
@@ -67,11 +67,11 @@ When you have multiple RDS Projects to migrate to the RDF-Active, there are thre
 * **A many-to-one mapping of multiple RDS Projects to a single RDF-Active storage allocation**. You might find that it would be easier to combine all your projects into one storage allocation due to identical users between projects.
 * **Merging some RDS projects but not others**. A combination of the previous two options carried out on a case-by-case basis as you fill in one form for each requested storage allocation.
 
-Please [get in contact with us](../support/index.md) should you have any questions about this or possible alternatives.
+Please [get in contact with us](../support/support-index.md) should you have any questions about this or possible alternatives.
 
 ### What do I do now?
 
-If you believe you have sufficient information to fill in the [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2), please go ahead and do so. Please [contact us](../support/index.md) if you have any further questions.
+If you believe you have sufficient information to fill in the [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2), please go ahead and do so. Please [contact us](../support/support-index.md) if you have any further questions.
 
 ## What happens when I submit the migration form?
 

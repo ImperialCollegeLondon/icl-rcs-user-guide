@@ -10,4 +10,4 @@ To access the portal, open a web browser and go to:
 
 Select the large **Log In** button. You will be authenticated using Imperial Single Sign-On (SSO).
 
-If you are having issues accessing ReCAP, please [contact us](../support/index.md) via our ticket system.
+If you are having issues accessing ReCAP, please [contact us](../support/support-index.md) via our ticket system.
