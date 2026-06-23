@@ -1,6 +1,6 @@
-# Access the RDF-Active on Windows
+# Accessing the RDF-Active on Windows 11
 
-The following instructions will show you how to map the RDS as a network drive on your own computer running Windows 11.
+The following instructions will show you how to access the RDF-Active by mapping it as a network drive on your Windows 11 computer. To do this, you must be connected to the college network either directly or via [a private and secured remote connection](../../remoteaccess.md).
 
 !!! warning
 
@@ -16,18 +16,14 @@ The following instructions will show you how to map the RDS as a network drive o
 
 ## Mapping the RDF-Active as a Network Drive
 
-In order to map the RDF-Active as a network drive on your computer, you must be connected to either the college network or otherwise following the advice on [accessing services remotely](../../remoteaccess.md). Once you are appropriately connected, please follow these steps:
-
-### Windows 11
-
-* Click **Start** and type **File Explorer** and click on the icon
-* On the side-pane that shows your favourite drives and folders, scroll down until you see **This PC** and right-click the icon
-* In the menu that appears, click **Map Network drive**. If this is not visible, click the **Show more options**
-* Select a **drive letter** in the box marked **Drive**. It can be any letter that does not have a path next to it already
-* Enter the **RDF-Active** path you wish to connect to in the box marked **Folder**,
-    * For the "base" path of the RDF-Active  `\\rdf-active.ic.ac.uk\research\`
-    * Or read the [Where are my files](./index.md#where-are-my-files) section to map a specific storage allocation. 
-* Un-tick the **Reconnect at sign-in** tick box.
-* Select **Connect using different credentials**
-* Click the **Finish** button
-* When prompted, enter your College **username** in the format **username@ic.ac.uk** and your College **password**.
+1. Click **Start** and type **File Explorer** and click on the icon.
+2. On the side-pane that shows your favourite drives and folders, scroll down until you see **This PC** and right-click the icon.
+3. In the menu that appears, click **Map Network drive**. If this is not visible, click the **Show more options**.
+4. Select a **drive letter** in the box marked **Drive**. It can be any letter that does not have a path next to it already.
+5. Enter the **RDF-Active** path you wish to connect to in the box marked **Folder**.
+    * To access the RDF-Active's "root" directory, the Windows 11 path is `\\rdf-active.ic.ac.uk\research\`
+    * To access a specific storage allocation's directory, review the [Where are my files](./index.md#where-are-my-files) section to identify the allocation's path.
+6. Un-tick the **Reconnect at sign-in** tick box.
+7. Select **Connect using different credentials**.
+8. Click the **Finish** button.
+9. When prompted, enter your College **username** in the format **username@ic.ac.uk** and your College **password**.

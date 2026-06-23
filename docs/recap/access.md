@@ -1,4 +1,4 @@
-# Accessing RECAP
+# Accessing ReCAP
 
 !!! warning
 
@@ -9,3 +9,5 @@ To access the portal, open a web browser and go to:
 [https://recap.rcs.ic.ac.uk/](https://recap.rcs.ic.ac.uk/)
 
 Select the large **Log In** button. You will be authenticated using Imperial Single Sign-On (SSO).
+
+If you are having issues accessing ReCAP, please [contact us](../support/index.md) via our ticket system.

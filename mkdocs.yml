@@ -40,114 +40,115 @@ nav:
       - Overview: support/using-linux/index.md
       - Linux Command Line: support/using-linux/command-line.md
       - Shell Scripting: support/using-linux/shell-scripting.md
-  - RECAP:
-    - REsearch Computing Access Portal: recap/index.md
-    - RECAP Help:
-        - Accessing RECAP: recap/access.md
-        - Managing Research Groups: recap/research-groups.md
-        - Managing Allocations: recap/allocations.md
-  - HPC:
-    - HPC at Imperial: hpc/index.md
-    - Cluster Specification: hpc/cluster-specification.md
-    - Getting Started:
-      - Where to Start: hpc/getting-started/index.md
-      - Using SSH: hpc/getting-started/using-ssh.md
-      - Data Management: hpc/getting-started/data-management-on-hpc.md
-      - Accessing Software: hpc/getting-started/accessing-software.md
-      - Running your first job: hpc/getting-started/running-your-first-job.md
-    - Queues:
-      - Queueing: hpc/queues/index.md
-      - Purpose of the Queuing System: hpc/queues/purpose-of-the-queue.md
-      - How it works: hpc/queues/how-it-works.md
-      - Priority Access: hpc/queues/priority-access.md
-      - Array Jobs: hpc/queues/array-jobs.md
-      - Job Dependencies: hpc/queues/job-dependencies.md
-      - Job Sizing Guidance: hpc/queues/job-sizing-guidance.md
-      - MPI Jobs: hpc/queues/mpi-jobs.md
-      - GPU Jobs: hpc/queues/gpu-jobs.md
-      - Checkpointing: hpc/queues/checkpointing.md
-    - Applications:
-      - Loading Applications: hpc/applications/index.md
-      - EasyBuild: hpc/applications/easybuild.md
-      - Guides: 
-        - Overview: hpc/applications/guides/index.md
-        - Abaqus: hpc/applications/guides/abaqus.md
-        - Conda: hpc/applications/guides/conda.md
-        - FreeSurfer: hpc/applications/guides/freesurfer.md
-        - GCC: hpc/applications/guides/GCC.md
-        - Jupyter: hpc/applications/guides/jupyter.md
-        - MATLAB: hpc/applications/guides/matlab.md
-        - OpenFOAM: hpc/applications/guides/openfoam.md
-        - Open OnDemand: hpc/applications/guides/openondemand.md
-        - ORCA: hpc/applications/guides/orca.md
-        - Paraview: hpc/applications/guides/paraview.md
-        - Python: hpc/applications/guides/python.md
-        - PyTorch: hpc/applications/guides/pytorch.md
-        - R: hpc/applications/guides/R.md
-        - StarCCM: hpc/applications/guides/starccm.md
-        - TensorFlow: hpc/applications/guides/tensorflow.md
-    - Best Practices: hpc/best-practice.md
-    - FAQ and Common Issues:
-      - Overview: hpc/faq/index.md
-      - Leaving Imperial: hpc/faq/leaving-imperial.md
-      - Controlling Job Logs: hpc/faq/controlling-job-log-files.md
-      - Long Queue Times: hpc/faq/long-queue-times.md
-      - Accidentally Deleted Files: hpc/faq/deleted-files.md
-      - Cannot Create Conda Environment: hpc/faq/cannot-create-conda-env.md
-      - How much resource should I ask for: hpc/faq/how-much-resource.md
-      - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
-      - Bad interpreter, No such file or directory: hpc/faq/bad-interpreter.md
-      - Same or Previous Code not working: hpc/faq/code-not-working.md
-      - Not enough slots to run MPI program: hpc/faq/not-enough-slots.md
-      - SSH to a compute node: hpc/faq/ssh-compute-node.md
-      - Issues in running multinode Mpi4py jobs: hpc/faq/multinode-mpi4py.md
-      - Blas code not running on multi cores: hpc/faq/blas_multicore_issue.md
-    - Debugging and Profiling:
-      - Overview: hpc/advanced/index.md
-      - Thread Pinning: hpc/advanced/thread-pinning.md
-      - Application Profiling on CPU:
-        - Overview: hpc/advanced/profiling/index.md
-        - Intel Advisor: hpc/advanced/profiling/intel-advisor.md
-        - Intel APS: hpc/advanced/profiling/intel-aps.md
-        - Intel Vtune: hpc/advanced/profiling/intel-vtune-profiler.md
-      - Application Profiling on GPU:
-        - Memory Usage: hpc/advanced/profiling/nvitop.md
-        - Profiling with Nsight Systems: hpc/advanced/profiling/nsight_systems.md
-        - Profiling with Nsight Compute: hpc/advanced/profiling/nsight_compute.md
-        - Profiling AI workload using PyTorch: hpc/advanced/profiling/pytorch_profile.md
-      - Debugging Mpi programs:
-        - Overview: hpc/advanced/debugging_mpi_programs/debugging_overview.md
-        - Use of GDB to debug MPI program: hpc/advanced/debugging_mpi_programs/gdb_mpi_debug.md
-    - HX1: hpc/hx1.md
-    - HX2: hpc/pilot/hx2.md
-    - Legacy Systems:
-      - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
-  - RDF-Active:
-    - RDF-Active: rdfactive/index.md
-    - Accessing the RDF-Active:
-      - Overview: rdfactive/access/index.md
-      - Windows: rdfactive/access/windows.md
-      - macOS: rdfactive/access/macos.md
-      - Linux: rdfactive/access/linux.md
-    - Managing the RDF-Active: rdfactive/managing/index.md
-    - RDS to RDF-Active Migration: rdfactive/rds-rdfactive-migration.md
-    - FAQ: rdfactive/rdfactive-faq.md
-  - RDS:
-    - RDS: rds/index.md
-    - RDS Paths: rds/paths.md
-    - Accessing the RDS:
-      - Overview: rds/access/index.md
-      - Windows: rds/access/windows.md
-      - macOS: rds/access/macos.md
-      - Linux: rds/access/linux.md
-    - Transferring Data:
-      - Overview: rds/transferringdata/index.md
-      - Globus: rds/transferringdata/globus.md
-      - Rclone: rds/transferringdata/rclone.md
-      - rsync and scp: rds/transferringdata/rsync-and-scp.md
-    - Managing the RDS:
-      - Disk Space: rds/managing/disk-space.md
-      - Recovering Deleted Files: rds/managing/recovering-deleted-files.md
+  - Services and Facilities:
+      - ReCAP:
+        - REsearch Computing Access Portal: recap/index.md
+        - ReCAP Help:
+            - Accessing ReCAP: recap/access.md
+            - Managing Research Groups: recap/research-groups.md
+            - Managing Allocations: recap/allocations.md
+      - HPC:
+        - HPC at Imperial: hpc/index.md
+        - Cluster Specification: hpc/cluster-specification.md
+        - Getting Started:
+          - Where to Start: hpc/getting-started/index.md
+          - Using SSH: hpc/getting-started/using-ssh.md
+          - Data Management: hpc/getting-started/data-management-on-hpc.md
+          - Accessing Software: hpc/getting-started/accessing-software.md
+          - Running your first job: hpc/getting-started/running-your-first-job.md
+        - Queues:
+          - Queueing: hpc/queues/index.md
+          - Purpose of the Queuing System: hpc/queues/purpose-of-the-queue.md
+          - How it works: hpc/queues/how-it-works.md
+          - Priority Access: hpc/queues/priority-access.md
+          - Array Jobs: hpc/queues/array-jobs.md
+          - Job Dependencies: hpc/queues/job-dependencies.md
+          - Job Sizing Guidance: hpc/queues/job-sizing-guidance.md
+          - MPI Jobs: hpc/queues/mpi-jobs.md
+          - GPU Jobs: hpc/queues/gpu-jobs.md
+          - Checkpointing: hpc/queues/checkpointing.md
+        - Applications:
+          - Loading Applications: hpc/applications/index.md
+          - EasyBuild: hpc/applications/easybuild.md
+          - Guides: 
+            - Overview: hpc/applications/guides/index.md
+            - Abaqus: hpc/applications/guides/abaqus.md
+            - Conda: hpc/applications/guides/conda.md
+            - FreeSurfer: hpc/applications/guides/freesurfer.md
+            - GCC: hpc/applications/guides/GCC.md
+            - Jupyter: hpc/applications/guides/jupyter.md
+            - MATLAB: hpc/applications/guides/matlab.md
+            - OpenFOAM: hpc/applications/guides/openfoam.md
+            - Open OnDemand: hpc/applications/guides/openondemand.md
+            - ORCA: hpc/applications/guides/orca.md
+            - Paraview: hpc/applications/guides/paraview.md
+            - Python: hpc/applications/guides/python.md
+            - PyTorch: hpc/applications/guides/pytorch.md
+            - R: hpc/applications/guides/R.md
+            - StarCCM: hpc/applications/guides/starccm.md
+            - TensorFlow: hpc/applications/guides/tensorflow.md
+        - Best Practices: hpc/best-practice.md
+        - FAQ and Common Issues:
+          - Overview: hpc/faq/index.md
+          - Leaving Imperial: hpc/faq/leaving-imperial.md
+          - Controlling Job Logs: hpc/faq/controlling-job-log-files.md
+          - Long Queue Times: hpc/faq/long-queue-times.md
+          - Accidentally Deleted Files: hpc/faq/deleted-files.md
+          - Cannot Create Conda Environment: hpc/faq/cannot-create-conda-env.md
+          - How much resource should I ask for: hpc/faq/how-much-resource.md
+          - Jobs causing issues with the RDS: hpc/faq/job-issues-rds.md
+          - Bad interpreter, No such file or directory: hpc/faq/bad-interpreter.md
+          - Same or Previous Code not working: hpc/faq/code-not-working.md
+          - Not enough slots to run MPI program: hpc/faq/not-enough-slots.md
+          - SSH to a compute node: hpc/faq/ssh-compute-node.md
+          - Issues in running multinode Mpi4py jobs: hpc/faq/multinode-mpi4py.md
+          - Blas code not running on multi cores: hpc/faq/blas_multicore_issue.md
+        - Debugging and Profiling:
+          - Overview: hpc/advanced/index.md
+          - Thread Pinning: hpc/advanced/thread-pinning.md
+          - Application Profiling on CPU:
+            - Overview: hpc/advanced/profiling/index.md
+            - Intel Advisor: hpc/advanced/profiling/intel-advisor.md
+            - Intel APS: hpc/advanced/profiling/intel-aps.md
+            - Intel Vtune: hpc/advanced/profiling/intel-vtune-profiler.md
+          - Application Profiling on GPU:
+            - Memory Usage: hpc/advanced/profiling/nvitop.md
+            - Profiling with Nsight Systems: hpc/advanced/profiling/nsight_systems.md
+            - Profiling with Nsight Compute: hpc/advanced/profiling/nsight_compute.md
+            - Profiling AI workload using PyTorch: hpc/advanced/profiling/pytorch_profile.md
+          - Debugging Mpi programs:
+            - Overview: hpc/advanced/debugging_mpi_programs/debugging_overview.md
+            - Use of GDB to debug MPI program: hpc/advanced/debugging_mpi_programs/gdb_mpi_debug.md
+        - HX1: hpc/hx1.md
+        - HX2: hpc/pilot/hx2.md
+        - Legacy Systems:
+          - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
+      - RDF-Active:
+        - RDF-Active: rdfactive/index.md
+        - Accessing the RDF-Active:
+          - Overview: rdfactive/access/index.md
+          - Windows: rdfactive/access/windows.md
+          - macOS: rdfactive/access/macos.md
+          - Linux: rdfactive/access/linux.md
+        - Managing the RDF-Active: rdfactive/managing/index.md
+        - RDS to RDF-Active Migration: rdfactive/rds-rdfactive-migration.md
+        - FAQ: rdfactive/rdfactive-faq.md
+      - RDS:
+        - RDS: rds/index.md
+        - RDS Paths: rds/paths.md
+        - Accessing the RDS:
+          - Overview: rds/access/index.md
+          - Windows: rds/access/windows.md
+          - macOS: rds/access/macos.md
+          - Linux: rds/access/linux.md
+        - Transferring Data:
+          - Overview: rds/transferringdata/index.md
+          - Globus: rds/transferringdata/globus.md
+          - Rclone: rds/transferringdata/rclone.md
+          - rsync and scp: rds/transferringdata/rsync-and-scp.md
+        - Managing the RDS:
+          - Disk Space: rds/managing/disk-space.md
+          - Recovering Deleted Files: rds/managing/recovering-deleted-files.md
   - Workshops and Courses:
     - Overview: Workshops/overview.md
     - Intel One Api Workshops:

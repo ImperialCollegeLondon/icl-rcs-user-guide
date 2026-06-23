@@ -1,66 +1,73 @@
 # Migrating from the RDS to the RDF-Active
 
-This page provides RDS project owners with the information they need to migrate data from RDS to RDF-Active.
+This page provides RDS project owners with the information they need to migrate data from the RDS system to the RDF-Active.
+
+!!! warning
+    The current [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) contains several inaccuracies regarding terminology, namely where you see references to "RDF Group Space", this should instead refer to and "RDF-Active Storage Allocation". Note also that you are **NOT** limited to G and P codes as the form infers, you may also use other codes including departmental F codes.
+
+    We are working to correct the form as soon as possible but please [contact us](../support/index.md) if you have any questions in relation to this.
+
+!!! note
+    * The RDS project currently has 1700+ projects using approximately 9PB of storage, therefore **we are expecting it to take many months to migrate all RDS Projects to the RDF-Active**.
+    * We are running the RDS as a fully maintained and production facility until **all** necessary data is transferred to the RDF-Active.
 
 ## Key differences between the RDS and the RDF-Active
 
 As an RDS Project owner or user, you will likely be aware of the following:
 
-* An RDS Project is created and managed via the existing self-service portal ([https://selfservice.rcs.imperial.ac.uk/](https://selfservice.rcs.imperial.ac.uk/)).
+* An RDS Project is created and managed via its own [self-service portal](https://selfservice.rcs.imperial.ac.uk/).
 * An RDS Project has a quota and an access list, both of which are managed via the above self-service portal. 
 * All RDS Projects are essentially in the same folder/directory on the RDS.
 * RDS Projects are only dual-copy if requested when the project is created.
 * RDS Projects are charged on a month basis based on usage.
-* The RDS is accessible via the CX3 HPC service.
+* The RDS is accessible via the [CX3 HPC service](../hpc/cluster-specification.md#cx3).
 
 
 In moving to the RDF-Active, you will now find the following:
 
-* The RDF-Active is managed via a new self-service portal called [RECAP](../recap/index.md).
-* We have introduced the concept of *Research Groups*. A *Research Group* is an administrative unit, typically led by a single PI, which is used to manage access to RCS resources such as *Storage Allocations* and future HPC systems. The *Research Groups* are managed (such as adding and removing members) via the RECAP portal. An individual may be a member of one or more *Research Groups* in RECAP.
-* A *Storage Allocation* is a single location (directory or folder) on the RDF-Active file system with its own quota and access group. A *Research Group* can have one or more *Storage Allocations*. An individual must be a member of the *Research Group* before they can be added to the access group of a *Storage Allocation*. A *Storage Allocation* does not have to be tied to a specific research project!
-* The file system structure now matches Imperial's structure: `/Faculty/Department/Research Group/Storage Allocation/` (see [Where are my files](./access/index.md#where-are-my-files) for more details).
+* The RDF-Active is managed via a new self-service portal called [ReCAP](../recap/index.md) that will support multiple RCS services.
+* We have introduced the concept of research groups. A research group is an administrative unit, typically led by a single PI, which is used to manage access to RCS resources such as storage allocations on the RDF-Active. Research groups are managed  via the ReCAP portal. An individual may be a member of one or more research groups in ReCAP.
+* One storage allocation is a single location (directory or folder) on the RDF-Active file system with its own quota and access group. As such, the file system structure now follows a hierarchy mirroring that of Imperial's department structure: `/Faculty/Department/Research Group/Storage Allocation/`. View the documentation on [Where are my files?](./access/index.md#where-are-my-files) for more information.
+* A research group can have one or more storage allocations. An individual must be a member of the research group before they can be added to the access group of a storage allocation, and permissions can be set so being a member of the research group doesn't mean access to all associated storage allocations. 
+* A storage allocation does not have to be tied to a specific research project. It is simply an allocated storage space for the research group to do with as they professionally please.
 * All data on the RDF-Active is replicated to a second location by default (i.e. dual-copy). There is no additional charge for this service.
-* RDF-Active storage allocations are pre-paid for a minimum of 12 months, based on a requested level of quota.
+* RDF-Active storage allocations are pre-paid for a minimum of 12 months, based on a requested level of quota. Usage is not a factor.
 * The RDF-Active is not directly accessible via the HPC services - please see our [FAQ](./rdfactive-faq.md#why-isnt-the-rdf-active-accessible-from-hpc-systems) for more information.
+
+Moreover, before a PI would often have had multiple RDS projects; each with their own access groups, billing, quotas, etcetera. But now with the RDF-Active, a PI has a research group that can have one or multiple allocations within.
 
 ## Reviewing your RDS Projects
 
-We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of the RDS projects they own for them to review; if you have not yet received this spreadsheet and would prefer not to wait, please [raise a ticket with us](../support/index.md) so we can send you a copy. In reviewing the list of RDS Projects, you have two options for each one:
+We have begun contacting [RDS Project](../rds/index.md) owners to provide them a list of their RDS projects for them to review. If you have not yet received a spreadsheet from us and would like to ASAP, please [raise a ticket with us](../support/index.md) so we can send you a copy. For each of your RDS Projects, you have two options:
 
-* **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raising a ticket with us](../support/index.md). *Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.*
-* **Migration:** You can fill in our migration form to request one or more RDS projects to be migrated to the RDF-Active. Please see the [following section for more information](#what-to-consider-before-submitting-the-migration-form).
+* **Deletion:** If you no longer need the RDS Project space and have taken any necessary steps to preserve what data you require from it then you can request for the project to be deleted by [raising a ticket with us](../support/index.md). Please note that we can only take requests to close an RDS Project from the Project owner or designated administrator.
+* **Migration:** You can fill in our migration form to request one or more RDS projects to be migrated to the RDF-Active. Please check [What to consider before submitting the migration form](#what-to-consider-before-submitting-the-migration-form) for more information.
 
 ## What to consider before submitting the migration form
 
-!!! warning
-    The current [RDS to RDF-Active migration form](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) contains several inaccuracies regarding terminology, namely where you see references to RDF Group Space, this should instead refer to and **RDF-Active Storage Allocation**. Note also that you are **NOT** limited to G and P codes as the form infers, you may also use other codes including departmental F codes.
-    
-    We are working to correct the form as soon as possible but please [contact us](../support/index.md) if you have any questions in relation to this.
-
 ### What should I name the research group?
 
+The first question on the migration form is whether the migration is "on behalf of myself or someone else". The option you provide here will be used to set up the research group in the self-service portal and the research group path on the file system will be based on the username of the research group's lead.
 
-The first question on the migration form is whether the migration is On behalf of myself or someone else. The option you provide here will be used to set up the *Research Group* in the self-service portal and *Research Group* path on the file system will be based on the username of the Research Group lead.
+If your research group is led by multiple individuals and/or you would a more "file system friendly" path, please get in [contact with us](../support/index.md) before you submit the migration form.
 
-If your *Research Group* is led by multiple individuals and/or you would like a different "file system friendly" path, please get in [contact with us](../support/index.md) before you submit the migration form. 
+### Are there ever cases where you need to submit multiple migration forms?
 
-### How many storage allocations do I need?
+Yes. The form for migrating from the RDS to the RDF-Active must be filled in once for every storage allocation required on the RDF-Active. So the answer will depend on how you want to to manage who can and cannot access the allocation resources on the RDF-Active.
 
+#### What do I do if I only have one RDS Project to migrate?
 
-The RDS to RDF-Active migration form must be filled in once per Storage Allocation required on the RDF-Active (remember that a Storage Allocation has its own quota and access group).
+If you only have one RDS Project to migrate to the RDF-Active, then you likely only need to fill the form in once. When you submit a migration form, be sure to attach a file containing the name of the RDS Project to be migrated. This can either be the spreadsheet provided or simply a plain text file with the name of the RDS Project. When filling in the form, please make sure to request sufficient quota to cover the volume of data currently being stored on the RDS as well as any additional usage for the next 12 months after migrating to the RDF-Active.
 
-#### I only have one RDS Project to migrate
+#### What do I do if I only have one RDS Project to migrate?
 
-If you only have one RDS Project to migrate to the RDF-Active, then you only need to fill the form in once, attaching a file containing the name of the RDS Project to migrate (this can either be the spreadsheet that we've provided you or simply a text file with the name of the RDS Project). When filling in the form, please make sure to request suffient quota to cover the volume of data currently stored on the RDS as well as any additional usage for the next 12 months after moving to the RDF-Active.
+When you have multiple RDS Projects to migrate to the RDF-Active, there are three core options:
 
-#### I have multiple RDS Projects to migrate
+* **A one-to-one mapping of RDS Projects to RDF-Active storage allocations**. This will be cut and dry migration with no change in who has access to the data and storage resources.
+* **A many-to-one mapping of multiple RDS Projects to a single RDF-Active storage allocation**. You might find that it would be easier to combine all your projects into one storage allocation due to identical users between projects.
+* **Merging some RDS projects but not others**. A combination of the previous two options carried out on a case-by-case basis as you fill in one form for each requested storage allocation.
 
-When you have multiple RDS Projects to migrate to the RDF-Active, you have essentially three options:
-
-* **A one-to-one mapping of RDS Projects to RDF-Active storage allocations**. You may want every RDS Project to map to an equivalent Storage Allocation on the RDF-Active if, for example, you need to very clearly separate out who can access which project. You will need to fill in the migration form for every RDS Project you wish to migrate to the RDF-Active, attaching either the spreadsheet we've provided with just the row containing the corresponding project, or a text file containing the name of the project.
-* **A many-to-one mapping of multiple RDS Projects to a single RDF-Active storage alloction**. You may want to do this if you find it easier to have all of your RDS Projects copied into a single "shared" space for your research group. You will only need to fill the form in once but you will need to attach a file containing a list of the projects you wish to merge to the single storage allocation; please make sure to request a quota level that covers the data volume from all the RDS Projects you wish to migrate to the RDF-Active as well as any expected new usage for the next 12 months. When it comes to migrating your data, we will copy each RDS Project into a similarly named directory/folder within your "shared" storage allocation.
-* **Merging some RDS projects but not others** As a combination of the previous two options, you may wish to merge some RDS Projects into a single storage alllocation on the RDF-Active but not others. To achieve this, follow the guidance in the previous two options, filling in the form once per storage allocation you'd like on the RDF-Active.
+Please [get in contact with us](../support/index.md) should you have any questions about this or possible alternatives.
 
 ### What do I do now?
 
@@ -68,18 +75,14 @@ If you believe you have sufficient information to fill in the [RDS to RDF-Active
 
 ## What happens when I submit the migration form?
 
-
 1. **Initial Processing**: When your form is initially submitted, it will go direct to the ICT Demand and Recharge Team who will review your request and arrange for the transfer of funds from the account you specified.
-1. **Allocation to a migration stage**: Once your ticket is passed to us we will allocate you to a "migration stage" which will be dependent upon when we receive the request and the type of data you have. We will/have begun transferring projects in "Stage 1" and given the large number of projects and the volume of data to migrate, it will likely take months for us to transfer all projects in this stage. Once we have finished transferring users in "Stage 1", we will start migrating users in "Stage 2". 
-1. **Data Migration**: When we get to the stage of migrating your data, our team will:
-    * Notify you that data migration is starting.
-    * Create a "[Research Group](#what-should-i-name-the-research-group)" in the RECAP portal if one does not exist already.
-    * Set up a storage allocation with the specified quota and access group.
-1. **Data Transfer**: Once your storage allocation has been created, we will use our dedicated data transfer tool to begin copying your data from the RDS to the RDF-Active.
-1. **Finalise Transfer**: After most of the data has been transferred, our team will:
-    * Contact you to arrange a time for removing access from the RDS and completing the final transfer. Please make sure you contact the current users of your RDS Project so that they know to stop using the RDS at the agreed time.
-1. **Start using the RDF-Active**: Once the transfer has completed you will be able to start using the RDF-Active. You will need to add anyone who needs to access a storage allocation, first to your research group (if they are not already a member) and then to the corresponding storage allocation. Any migrated RDS Project/s will be disabled in the old self-service portal and will no longer be accessible.
+2. **Data Migration**: Once your ticket is processed by ICT, we will verify the specified research group exists or create one for you. Next, we will begin setting up your requested storage allocation and notify you that your migration has begun. If the specified name of your access group is not available, we will contact you to discuss alternatives.
+3. **Data Transfer**: With the storage allocation created and ready to be populated, we'll securely transfer the data over from the specified RDS project/s.
+4. **Coordinate Switching Services**: When the data transfer is nearly complete, our team will contact you to arrange a time to officially remove your access from the RDS and finalise the transfer. Please make sure you coordinate with all the users on the relevant RDS Project/s so that they know to switch off from using the RDS at the agreed upon time.
+5. **Set Up User Access Control**: Once the transfer has completed, any migrated RDS Project/s will be disabled on the old self-service portal and will no longer be accessible. Consequently, you will need to manage which users have access to the storage allocation. Only users in the associated research group can have access to the allocation, and you can add users to the research group as needed. Be sure to review our documentation on [access control](..\recap\research-groups.md#user-management) for research group managers. Much like with RDS, any user can be added to your research group as long as they have a full ICL. (See the ["Providing acces to RCS facilities (HPC, RDS) for visiting academics"](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/) header for further information.)
 
-!!! note
-    * The RDS project currently has 1700+ projects using approximately 9PB of storage, we are therefore expecting it to take many months to migrate RDS Projects to the RDF-Active.
-    * We are running the RDS as a fully maintained and production facility until **all** necessary data is transferred to the RDF-Active.
+## How will using the RDF-Active differ from using the RDS?
+
+For most users who only used the RDS as a storage facility, very little will change. There shouldn't be any change in your typical workflow and it will be business as usual.
+
+For HPC users, however, there is a change as the RDF facilities are purely storage services that exist separately from our HPC services. As such, you will now need to actively move the data from your RDF storage allocations to any compute allocations via Globus.
