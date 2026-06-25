@@ -4,7 +4,7 @@ As an HPC user you will have access several different storage spaces
 
 ## Storage Spaces on the RDS
 
-Your Home and Ephemeral spaces, as well as any Research Data Store project allocations you have access to, are stored on the Research Data Store; please see the [Research Data Store user guide](../../rds/index.md) for more information on how to manage access, check how much data you are using, and how to access the data from your own computer.
+Your Home and Ephemeral spaces, as well as any Research Data Store project allocations you have access to, are stored on the Research Data Store; please see the [Research Data Store user guide](../../rds/rds-index.md) for more information on how to manage access, check how much data you are using, and how to access the data from your own computer.
 
 ### Home Directory
 
@@ -19,7 +19,7 @@ This is additional individual working space where you can temporarily store a la
 
 !!! info
 
-    From Tuesday 30th July 2024, per user quotas on the two ephemeral storage areas (ephemeral user and ephemeral project) will be set to 10TB. Users who have a genuine (time-limited) need for more than 10TB as part of an HPC workflow should [raise a ticket](../../support/index.md) to discuss a their requirements.
+    From Tuesday 30th July 2024, per user quotas on the two ephemeral storage areas (ephemeral user and ephemeral project) will be set to 10TB. Users who have a genuine (time-limited) need for more than 10TB as part of an HPC workflow should [raise a ticket](../../support/support-index.md) to discuss a their requirements.
  
 !!! info
 

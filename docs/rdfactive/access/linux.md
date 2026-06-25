@@ -42,7 +42,7 @@ yum install gvfs-smb
 2. Click **+ Other Locations** on the side pane.
 3. Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
     * To access the RDF-Active's "root" directory, the Linux path is `smb://rdf-active.ic.ac.uk/research/`
-    * To access a specific storage allocation's directory, review the [Where are my files](./index.md#where-are-my-files) section to identify the allocation's path.
+    * To access a specific storage allocation's directory, review the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to identify the allocation's path.
 4. Select **Registered User**.
 5. Enter your Imperial **username**.
 6. Enter **ic.ac.uk** in **Domain**.
@@ -57,7 +57,7 @@ yum install gvfs-smb
 4. Enter the following connection details:
     * **Server:** `rdf-active.ic.ac.uk`
     * **Share:** `research`
-    * **Folder:** Either leave as "`/`" for the RDF-Active's "root" directory, or enter a specific storage allocation's path, which can be found with the [Where are my files](./index.md#where-are-my-files) section.
+    * **Folder:** Either leave as "`/`" for the RDF-Active's "root" directory, or enter a specific storage allocation's path, which can be found with the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section.
     * **Domain Name:** Enter `ic.ac.uk`
     * **User name** and **Password:** Enter your Imperial username and password.
 5. Click **Connect**.

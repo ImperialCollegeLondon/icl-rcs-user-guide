@@ -35,7 +35,7 @@ Next comes the `module load` command, which loads the software you need for your
 module load Python/3.12.3-GCCcore-13.3.0
 ```
 
-For more information on loading modules, please see the [Loading Applications](../applications/index.md) page.
+For more information on loading modules, please see the [Loading Applications](../applications/hpc-applications-index.md) page.
 
 The initial working directory when your job starts will be your `$HOME` directory; it is important to be aware of this when you are writing submission scripts as you may need to change the working directory while running commands. Within your job environment, you will also have access to two environment variables which you may find useful:
 
@@ -153,8 +153,8 @@ If you need to delete a job, ether while it is still queuing, or running, use th
 
 Now that you know how to write and submit a job script, there are a number of sections of in the documentation which you may find useful:
 
-* [Queueing System](../queues/index.md) - from here you will find out more information on how the queuing system works and the different classifications of jobs. 
+* [Queueing System](../queues/hpc-queues-index.md) - from here you will find out more information on how the queuing system works and the different classifications of jobs. 
 * [Job sizing guidance](../queues/job-sizing-guidance.md) - this page will provide you advice on the resource requests you make to the job scheduler.
 * [Best practice](../best-practice.md) - this page will provide you general best practice for running jobs on the HPC service
-* [Applications](../applications/index.md) - from this section you will find links to advice on how to run certain applications on the HPC facility.
-* [Research Data Store](../../rds/index.md) - this section gives you details on using the Research Data Store.
+* [Applications](../applications/hpc-applications-index.md) - from this section you will find links to advice on how to run certain applications on the HPC facility.
+* [Research Data Store](../../rds/rds-index.md) - this section gives you details on using the Research Data Store.

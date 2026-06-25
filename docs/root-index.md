@@ -8,12 +8,12 @@ The services listed below are provided by the RCS Platforms team. Please click o
 
 **Storage Services:**
 
-* The [RDF-Active](rdfactive/index.md)
-* The [Research Data Store](rds/index.md) (to be discontinued in October)
+* The [RDF-Active](rdfactive/rdfactive-index.md)
+* The [Research Data Store](rds/rds-index.md) (to be discontinued in October)
 
 **High Performance Computing and Cluster Services:**
 
-* An introduction to [High Performance Computing](hpc/index.md)
+* An introduction to [High Performance Computing](hpc/hpc-index.md)
 * The general use [CX3](./hpc/cluster-specification.md#cx3) platform
 * The authorised-access only [HX1](./hpc/hx1.md) platform
 * The general use [HX2](./hpc/pilot/hx2.md) platform

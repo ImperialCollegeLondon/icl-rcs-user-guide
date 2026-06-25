@@ -28,7 +28,7 @@ Please note that CPUs 1,2 on CPU nodes and CPUs 1,2,62,63 on GPU nodes are assig
 
 ### Access Control Settings
 
-Access to HeX2 is handled on [ReCAP](../../recap/index.md), where RCS grants users cluster compute allocations to research groups once requested. To request a HeX2 compute allocation, contact your supervisor or research group manager.
+Access to HeX2 is handled on [ReCAP](../../recap/recap-index.md), where RCS grants users cluster compute allocations to research groups once requested. To request a HeX2 compute allocation, contact your supervisor or research group manager.
 
 ### Connecting to HX2
 
@@ -81,7 +81,7 @@ Please make sure any software you run on HX2 has been optimised for the hardware
 
 ### Loading Applications
 
-Loading modules/applications on HX2 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](../applications/index.md) page for advice on how to load modules on HX1.
+Loading modules/applications on HX2 is similar to that on CX3 except it is not necessary to load the "production" modules (`tools/prod`). Please refer to our main [Loading Applications](../applications/hpc-applications-index.md) page for advice on how to load modules on HX1.
 
 ### EasyBuild
 

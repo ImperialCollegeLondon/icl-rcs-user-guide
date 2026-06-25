@@ -6,9 +6,9 @@ We will be adding information about our upcoming workshops here. We kindly ask t
 
 Click below for the relevant workshops:
 
-* [Intel One Api Workshops](./Intel/overview.md)
+* [Intel One Api Workshops](./Intel/intl_workshops_overview.md)
 
-* [NVIDIA Workshops](./Nvidia/overview.md)
+* [NVIDIA Workshops](./Nvidia/nvidia_workshops_overview.md)
 
 * [Bring your own code - Hacktoberfest 2024!](hacktoberfest.md)
 

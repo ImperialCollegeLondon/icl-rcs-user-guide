@@ -2,7 +2,7 @@
 
 !!! warning
 
-    Documentation support CX3 Phase 2 has now been merged into the main site. Please go to the [Getting Started](../getting-started/index.md) page for more information.
+    Documentation support CX3 Phase 2 has now been merged into the main site. Please go to the [Getting Started](../getting-started/hpc-getting-started-index.md) page for more information.
 
 CX3 Phase 2 is a project to migrate the CX3 HPC system to a new server management platform, enabling better management of the operating system and more timely security updates. This upgrade will also enable a significant upgrade to the job scheduler, ensuring better resource management and isolation of jobs when they are running. We are currently migrating hardware with the eventual goal of moving the entirety of the CX3 facility to this new platform.
 
@@ -42,7 +42,7 @@ Please see our [Remote Access guide](../../remoteaccess.md) for advice if you ha
 The RDS is directly connected to the CX3 Phase 2 in the same way as it is for the original CX3, therefore file paths for home and projects remain the same. Your home area on CX3 phase 2 is the same as the original CX3. Please see the following two links for further information:
 
 * [Data Management on HPC](../getting-started/data-management-on-hpc.md)
-* [Research Data Store](../../rds/index.md)
+* [Research Data Store](../../rds/rds-index.md)
 
 ## Software
 

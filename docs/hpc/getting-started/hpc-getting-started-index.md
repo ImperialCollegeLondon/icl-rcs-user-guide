@@ -12,4 +12,4 @@ These following pages will help you get started on this HPC facility. From these
 * Where you can store your data ([Data Management on HPC](./data-management-on-hpc.md))
 * How to access software/applications installed on the HPC service ([Accessing Software](./accessing-software.md))
 * Understand how to write a job script and submit it to the queue ([Running your first job](./running-your-first-job.md))
-* Please see the [Support and Training](../../support/index.md) page for how to get help in using the HPC facility including details on an Introduction to HPC at Imperial College provided by the Graduate School.
+* Please see the [Support and Training](../../support/support-index.md) page for how to get help in using the HPC facility including details on an Introduction to HPC at Imperial College provided by the Graduate School.

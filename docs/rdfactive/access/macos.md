@@ -8,7 +8,7 @@ The following instructions will show you how to access the RDF-Active by mapping
 2. Select **Connect to Server...**
 3. Enter the **RDF-Active** path you wish to connect in the **Server Address** box:
     * To access the RDF-Active's "root" directory, the Mac path is `smb://rdf-active.ic.ac.uk/research/`
-    * To access a specific storage allocation's directory, review the [Where are my files](./index.md#where-are-my-files) section to identify the allocation's path.
+    * To access a specific storage allocation's directory, review the [Where are my files](./rdfactive-access-index.md#where-are-my-files) section to identify the allocation's path.
 4. Click **Connect**
 5. When you asked to enter your name and password for the server "rdf-active.ic.ac.uk":
     * For the "Connect As:" field, enter "**Registered User**".
