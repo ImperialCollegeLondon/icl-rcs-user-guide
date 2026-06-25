@@ -32,6 +32,10 @@ Access to HeX2 is handled on [ReCAP](../../recap/index.md), where RCS grants use
 
 ### Connecting to HX2
 
+!!! info
+
+    Login nodes reboot once a month on a Wednesday morning. Alerts will be displayed on all connected clients at 10 am and 3pm the Tuesday before to inform you to save and edit before you finish for the day.
+
 There are three login nodes for HX2 which are accessible over ssh. These can be accessed using the `login.hx2.hpc.ic.ac.uk` hostname. If you see a message asking you to confirm the host key, the fingerprint given in the message should match one of those given below:
 
 * SHA256:TrZpzQanCpxfLfnnLMJJw5TATsYK3kZq//NUrNXEg6w (ED25519)
