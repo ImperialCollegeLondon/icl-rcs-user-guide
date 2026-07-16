@@ -4,7 +4,7 @@
 
     RCS will be undertaking an update to the HX1 service in August to align it with other HEX platforms and as such this will require it to physically move from Slough to the new Woking data centre. The move is being managed by our partner Lenovo to ensure a safe transition and to ensure the cluster is brought back to full service as soon a possible.
 
-    The move is scheduled for 17 - 28 August inclusive dates and during this period there will be no access to HX1. To enable the service to be shutdown, jobs will drain over the weekend and no job will commence if it would breach 08.00 on the 17 August.
+    The move is scheduled for 17 - 28 August inclusive dates and during this period there will be no access to HX1. To enable the service to be shutdown, jobs will drain over the weekend and no job will commence if it would breach 08:00 on the 17 August.
 
     Whilst the risk to the service is minimal, any data that is currently only on the local HX1 filesystem should be copied to the RDS or RDF-Active. We do not provide any automatic backup of data on HX1 and can only provide assurance for data if it is copied to RDS or RDF-Active. If you are unsure or require any assistance, please contact us via the support page
 
