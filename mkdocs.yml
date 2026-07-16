@@ -45,8 +45,10 @@ nav:
         - REsearch Computing Access Portal: recap/index.md
         - ReCAP Help:
             - Accessing ReCAP: recap/access.md
+            - Creating a Research Group: recap/creating-a-research-group.md
             - Managing Research Groups: recap/research-groups.md
             - Managing Allocations: recap/allocations.md
+            - Managing RCS Credits: recap/rcs-credits.md
       - HPC:
         - HPC at Imperial: hpc/index.md
         - Cluster Specification: hpc/cluster-specification.md

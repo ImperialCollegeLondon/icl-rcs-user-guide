@@ -25,5 +25,8 @@ An individual may be a member of multiple Research Groups. Each Research Group h
 For guidance on using the ReCAP portal, please refer to the ReCAP Help documentation.
 
 * [Accessing ReCAP](./access.md)
+* [Creating a Research Group](./creating-a-research-group.md)
 * [Managing Research Groups](./research-groups.md)
 * [Managing Allocations](./research-groups.md)
+* [Managing RCS Credits](./rcs-credits.md)
+
