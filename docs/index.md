@@ -9,7 +9,7 @@ The services listed below are provided by the RCS Platforms team. Please click o
 **Storage Services:**
 
 * The [RDF-Active](rdfactive/index.md)
-* The [Research Data Store](rds/index.md) (to be discontinued in October)
+* The [Research Data Store](rds/index.md) (Legacy platform, to be retired in early 2027)
 
 **High Performance Computing and Cluster Services:**
 
