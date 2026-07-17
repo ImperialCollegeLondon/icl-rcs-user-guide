@@ -60,7 +60,7 @@ If a user IS already a member of the research group but is not yet a member of t
 * Use the tick box to select all the users you would like to add to the allocation.
 * Click the **Add Selected Users to Allocation** button.
 
-*Please note: as already mentioned, it can take several hours for changes to be propagated on the corresponding resource.*
+*Please note that, as mentioned previously, it may take several hours for changes to be reflected on the associated resource.*
 
 ### Removing a user from an allocation
 
@@ -72,4 +72,4 @@ If you only want to remove a user from a single allocation:
 * Use the tick box to select all the users you would like to remove from the allocation.
 * Click the **Remove Selected Users to Allocation** button.
 
-If you would like to remove a user from all the allocations associated with a research group, then consider [removing the user from the research group itself](./research-groups.md#removing-users-from-your-research-group) as this removes users automatically from any associated allocation.
+If you want to remove a user from all allocations associated with a research group, consider [removing the user from the research group itself](./research-groups.md#removing-users-from-your-research-group). Doing so will automatically revoke their access to all allocations linked to that research group.
