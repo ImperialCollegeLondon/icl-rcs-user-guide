@@ -132,6 +132,7 @@ nav:
           - Windows: rdfactive/access/windows.md
           - macOS: rdfactive/access/macos.md
           - Linux: rdfactive/access/linux.md
+        - Requesting a New RDF-Active Allocation: rdfactive/requesting-a-new-allocation.md
         - Managing the RDF-Active: rdfactive/managing/index.md
         - RDS to RDF-Active Migration: rdfactive/rds-rdfactive-migration.md
         - FAQ: rdfactive/rdfactive-faq.md

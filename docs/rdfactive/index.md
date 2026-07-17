@@ -1,31 +1,34 @@
 # RDF-Active
 
-The "Research Data Facility - Active" (or the RDF-Active) is a large-scale storage service for research data in active use. The RDF-Active is one of several storage facilities that replaces the previous [Research Data Store](../rds/index.md) service. You can access the RDF-Active as a Windows Network Share (SMB) from Windows, Linux, or macOS -- either on campus or remotely via the University's [Remote Access](../remoteaccess.md) service. Access is also available via Globus.
+The Research Data Facility - Active (RDF-Active) is a large-scale storage service designed for research data that is actively being used. It is one of several storage services introduced to replace the former [Research Data Store (RDS)](../rds/index.md).
 
-The RDF-Active runs on IBM's high-performance, scalable Storage Scale file system with Lenovo hardware and stores all data at two separate sites more than 30 km apart for resilience.
+RDF-Active can be accessed as a Windows network share (SMB) from Windows, Linux, and macOS devices, both on campus and remotely through the University's [Remote Access](../remoteaccess.md) service. Access is also available via Globus.
+
+To provide resilience and protect against data loss, all data stored in RDF-Active is replicated across two separate sites located more than 30 km apart.
 
 /// details | Can my data be stored on the RDF-Active? (data security)
     type: faq
-As with the RDS, the RDF-Active is only suitable for storing data which is either public data or unrestricted data as per the [glossary definitions](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/#glossary) of data classification at Imperial. You will find recommendations on where to store other data classifications on the wider [Saving My Files](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/) page.
+As with the RDS, RDF-Active is only intended for data classified as **Public** or **Unrestricted** under Imperial's data classification scheme. For definitions of these classifications, please refer to the [Data Classification Glossary](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/#glossary). Guidance on appropriate storage locations for other data classifications can be found on the [Saving My Files](https://www.imperial.ac.uk/admin-services/ict/self-service/connect-communicate/saving-my-files/) page.
 
-We strongly recommend you contact the [data protection coordinator](https://www.imperial.ac.uk/admin-services/governance/policies-and-guidance/contact-us/) for your department or faculty if you have any concerns or questions relating to the classification of your data.
+We strongly recommend you contact the [data protection coordinator](https://www.imperial.ac.uk/admin-services/governance/policies-and-guidance/contact-us/) for your department or faculty if you have any concerns or questions regarding the classification of your data.
 ///
 
 ## Storage Allocations
 
-On the RDF-Active, storage is provisioned through storage allocations. Each allocation comes with a maximum storage quota, a maximum file quota, a shortname, a file path, and a research group assigned as the owner of that allocation. Research groups can have multiple storage allocations assigned to them at any given time.
+On RDF-Active, storage is provided through **storage allocations**. Each allocation has a defined storage quota, file quota, short name, file path, and an associated **research group** that owns and manages it. A research group can have multiple storage allocations at any one time.
 
-You can organise your storage allocations to fit your workflow. Some groups prefer a single large allocation that hosts multiple projects, while others create separate allocations for each research project.
+**Research groups and storage allocations are managed through the [ReCAP self-service portal](../recap/index.md)**, where authorised users can create and administer research groups, and manage access permissions.
 
-Whichever method you decide to use to organise your data, we strongly recommend you follow the [best practices for managing your research data](https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/) available online.
+Storage allocations can be organised in a way that best supports your research activities. Some research groups choose to use a single large allocation for multiple projects, while others prefer to create separate allocations for individual research projects.
+
+Regardless of how you choose to organise your allocations, we strongly recommend following Imperial's best practices for research data management, which are available on the [Research Data Management](https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/) website.
 
 ## How to Apply for Access
 
-/// details | How can I request a new RDF-Active storage allocation?
+/// details | How can I request a new storage allocation.
     type: faq
-Due to overhead issues outside of the RCS department's control, requesting a new storage allocation is currently done indirectly by using the [RDS to RDF-Active migration ticket request](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=35ee36f83b3e66101feaf49a04e45a55&sysparm_category=52a4a8f21be62110557837b5464bcbd2) system. In order to submit a migration form in general, a file must be attached where normally the RDS projects to be migrated are specified. To make it clear the migration form is actually a request for a new storage allocation, attach a text file that instead asks for a new and *empty* storage allocation whilst skipping any other parts on the form discussing the RDS.
 
-We apologise for any confusion and inconvenience.
+To request a new storage allocation on RDF-Active, please see the [Requesting a New Storage Allocation page](./requesting-a-new-allocation.md) for step-by-step guidance.
 ///
 
 /// details | How do I request access to an existing storage allocation?
@@ -46,10 +49,6 @@ We have a [dedicated page](./rds-rdfactive-migration.md) to provide information 
 ## How to Access the RDF-Active
 
 Please view our dedicated section on [Accessing the RDF-Active](./access/index.md).
-
-## Cost
-
-The RDF-Active is charged on a *per TB of quota* basis that's prepaid for at least a 12 month term. All data is stored at two physically separate locations for redundacy (i.e. there are two separate but identical copies of your data at all times). Current cost rates may be found on the [RCS Charging Structure](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/charging-structure/) page.
 
 ## How Does the RDF-Active Differ from the RDS?
 
