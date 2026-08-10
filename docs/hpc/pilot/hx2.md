@@ -65,6 +65,46 @@ Quota increases are possible on request if justified. We ask that users make eff
 
 Users who request a quota increase but are storing many unused files in their home directory will be asked to move or remove these files first before a quota increase is granted. Any quota increases above the default values will be re-assessed every 6 months and users may be asked to provide an updated justification for their quota level.
 
+### Local Node Storage
+
+Both CPU and GPU nodes are equipped with physical NVMe disks that can be used for the processing of data locally. **This storage space is often referred to as "scratch" space.** CPU nodes have 1TB of scratch and GPU nodes have 1.5TB each. Unlike our other systems, scratch space is a requestable and enforced resource in SLURM. You should request scratch if you have any data that needs to be copied to the local nodes storage. If you choose not to request any scratch space, you will be capped at 1GB of local storage. If you request any amount of scratch space, you will only be able to use that amount and going over will result in a `disk quota exceeded` error message.
+
+Scratch space exists in `/tmp`, which can also be accessed by using `$TMPDIR`. Because of the way this is setup, `/tmp` is private and isolated to your job; writing to it does not interfere with any other users jobs. All data here is deleted after your job is finished.
+
+
+#### Requesting Local Storage
+
+To request scratch space, set the following flag:
+`--gres=scratch:100g`
+
+**CPU Node Example:**
+```
+#!/bin/bash
+#SBATCH --job-name=example-job
+#SBATCH --time=03:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=scratch:100g
+#SBATCH --mem=32GB
+#SBATCH --partition=small
+```
+
+The above is an example of how to request scratch space on a CPU node, requesting 4 cores and 100GB of scratch space.
+
+**GPU Node Example:**
+```
+#!/bin/bash
+#SBATCH --job-name=example-job
+#SBATCH --time=03:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:1,scratch:100g
+#SBATCH --mem=32GB
+#SBATCH --partition=gpu
+```
+
+The above is an example of how to request scratch space on a GPU node, requesting 1 GPU and 100GB of scratch space.
+
 ### Retention of Data
 
 The HX2 file system is meant for live data only and any important files should be copied elsewhere (including to the RDS) after being generated. Minimising the amount of data stored on the HX2 filesystem ensures that it maintains the high performance we need it for. For these reasons, RCS staff will be undertaking the following steps to ensure that the file system is only used for live data:
