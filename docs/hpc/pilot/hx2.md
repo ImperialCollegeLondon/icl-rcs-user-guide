@@ -67,7 +67,7 @@ Users who request a quota increase but are storing many unused files in their ho
 
 ### Local Node Storage
 
-Both CPU and GPU nodes are equipped with physical NVMe disks that can be used for the processing of data locally. **This storage space is often referred to as "scratch" space.** CPU nodes have 1TB of scratch and GPU nodes have 1.5TB each. Unlike our other systems, scratch space is a requestable and enforced resource in SLURM. You should request scratch if you have any data that needs to be copied to the local nodes storage. If you choose not to request any scratch space, you will be capped at 1GB of local storage. If you request any amount of scratch space, you will only be able to use that amount and going over will result in a `disk quota exceeded` error message.
+Both CPU and GPU nodes are equipped with physical NVMe disks that can be used for the processing of data locally. **This storage space is sometimes referred to as "scratch" space.** CPU nodes have 1TB of scratch and GPU nodes have 1.5TB each. Unlike our other systems, scratch space is a requestable and enforced resource in SLURM. You should request scratch if you have any data that needs to be copied to the local nodes storage. If you choose not to request any scratch space, you will be capped at 1GB of local storage. If you request any amount of scratch space, you will only be able to use that amount and going over will result in a `disk quota exceeded` error message.
 
 Scratch space exists in `/tmp`, which can also be accessed by using `$TMPDIR`. Because of the way this is setup, `/tmp` is private and isolated to your job; writing to it does not interfere with any other users jobs. All data here is deleted after your job is finished.
 
