@@ -4,6 +4,15 @@ This file is not to be visible on the userdocs page i.e. not linked to or refere
 
 This is not guaranteed to be a comprehensive list of everywhere that needs updating, and is a continual work in progress.
 
+## Contribution Workflow
+
+1. Fork the main branch of the user guide repo.
+2. In your forked repo, create a new feature branch from the main branch.
+3. Make changes on that feature branch.
+4. Create a PR in your forked repo from the feature branch into the main branch. Be sure it's the main branch of the user guide repo, rather than of your forked repo.
+
+Be sure to re-fork the user guide repo every time you want to submit a new contribution, that way you're not working on an outdated version of the main branch.
+
 ## With every new facility/service release
 
 ### General
