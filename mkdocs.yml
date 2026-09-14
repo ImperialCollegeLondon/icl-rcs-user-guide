@@ -128,7 +128,6 @@ nav:
           - Slurm: hpc/hx2/slurm.md
           - Software: hpc/hx2/software.md
           - Storage: hpc/hx2/storage.md
-        - HX2: hpc/pilot/hx2.md
         - Legacy Systems:
           - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
       - RDF-Active:
