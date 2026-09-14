@@ -157,7 +157,7 @@ export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 #SBATCH --partition=gpu
 ```
 
-There is an additional limit of 12 GPU's total per user on the a100 queue to allow for fair usage of the GPUs.
+There is an additional limit of 12 GPU's total per user on the H200 queue to allow for fair usage of the GPUs.
 
 #### Requesting Local Storage
 
