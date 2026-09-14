@@ -59,7 +59,7 @@ The above is an example of how to request scratch space on a GPU node, requestin
 
 ### Retention of Data
 
-The HX2 file system is meant for live data only and any important files should be copied elsewhere (including to the RDS) after being generated. Minimising the amount of data stored on the HX2 filesystem ensures that it maintains the high performance we need it for. For these reasons, RCS staff will be undertaking the following steps to ensure that the file system is only used for live data:
+The HX2 file system is meant for live data only and any important files should be copied elsewhere (including to the RDF-Active or RDS) after being generated. Minimising the amount of data stored on the HX2 filesystem ensures that it maintains the high performance we need it for. For these reasons, RCS staff will be undertaking the following steps to ensure that the file system is only used for live data:
 
 * If RCS staff believe that a user is storing unused data in their home directory, then they may be contacted and asked to move the data to another storage space if justification cannot be provided.
 * If RCS staff believe an account on HX2 has been unused for 6+ months, then we will contact the user and ask them to clean up their home directory. If we have not received a response from the user or registered supervisor within 6 weeks, then the RCS staff reserve the right to remove the data from the home directory.
