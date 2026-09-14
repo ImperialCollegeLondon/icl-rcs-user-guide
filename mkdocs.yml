@@ -122,7 +122,13 @@ nav:
             - Overview: hpc/advanced/debugging_mpi_programs/debugging_overview.md
             - Use of GDB to debug MPI program: hpc/advanced/debugging_mpi_programs/gdb_mpi_debug.md
         - HX1: hpc/hx1.md
-        - HX2: hpc/pilot/hx2.md
+        - HeX2: 
+          - Overview: hpc/hx2/index.md
+          - Access: hpc/hx2/access.md
+          - Slurm: hpc/hx2/slurm.md
+          - Software: hpc/hx2/software.md
+          - Storage: hpc/hx2/storage.md
+          - Common Issues and FAQ: hpc/hx2/faq.md
         - Legacy Systems:
           - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
       - RDF-Active:
