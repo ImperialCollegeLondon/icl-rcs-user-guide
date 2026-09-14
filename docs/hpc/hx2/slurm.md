@@ -1,6 +1,3 @@
-
-
-
 ## Job Submission
 
 Job submission on HX2 differs slightly, as it uses the [SLURM Workload Manager](https://slurm.schedmd.com/) as its batch scheduler instead of PBS Pro. Slurm is already widely used at many central HPC facilities across UK universities.
