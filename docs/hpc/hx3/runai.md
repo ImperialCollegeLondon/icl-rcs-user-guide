@@ -44,6 +44,7 @@ To create a new Juputerhub workspace:
 * Click CONTINUE
 
 If you need to create the template you can do it now:
+
 * Under Environment, click the load icon. 
 * A side pane appears, displaying a list of available environments. Select the ‘jupyter-lab’ environment for your workspace (Image URL: jupyter/scipy-notebook)
 * Under Compute resources, click the load icon. A side pane appears, displaying a list of available compute resources. Select the ‘one-gpu’ compute resource for your workload.
