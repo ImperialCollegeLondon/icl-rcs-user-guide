@@ -16,9 +16,9 @@ To create a PVC;
 * Click +NEW DATA SOURCE and select PVC from the dropdown menu.
 * Within the new form, set the scope. This should be your department or lower. 
 
-::: warning
-The scope of this sets the access level and should be set to most specific as possible. 
-:::
+!!! warning
+    The scope of this sets the access level and should be set to most specific as possible. 
+
 
 * Enter a name for the data source. The name must be unique.
 * For the data options, select New PVC and the storage class that suits your needs:
