@@ -132,7 +132,7 @@ nav:
         - HeX3: 
           - Overview: hpc/hx3/index.md
           - Access: hpc/hx3/access.md
-          - Run:AI: hpc/hx3/runai.md
+          - RunAI: hpc/hx3/runai.md
         - Legacy Systems:
           - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
       - RDF-Active:
