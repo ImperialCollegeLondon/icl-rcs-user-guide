@@ -1,7 +1,6 @@
 # Priority Access
 
-We are currently developing a new priority access service for CX3 (Phase 2). While this new service is in development, if you have an urgent/imminent deadline to meet (such as a conference submission or PhD submission) and you are unable to make this deadline with standard queuing times, please [get in contact](../../support/index.md) with us for assistance.
+The paid service on RCS clusters has moved to a reservation model but still charges as the rates given in https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/service-offering/charging-structure/
+A reservation model means we create a reservation queue for some amount of compute for a fixed period. We don't charge for the usage of that compute and the normal limits aren't enforced (like walltime) but when the reservation period ends all running jobs will also end. We recommend ensuring jobs are ready before the period begins so it can be utilised correctly.
 
-## Express access
-
-Express access is only available on the [CX3 Legacy](../legacy-systems/cx3-legacy.md) facility; please see the [Express Access](../legacy-systems/cx3-legacy.md#express-access) section for more information. We are in the process of developing a replacement service for CX3 Phase 2 that will be more flexible, more reliable and easier to maintain.
+The amount of resource that can be reservered depends on how busy the normal queues are during the requested period. This is to ensure we are being fair to all of our researchers. Very large requests may have to be reviewed by [Academic leadership team](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/operational-structure/)
