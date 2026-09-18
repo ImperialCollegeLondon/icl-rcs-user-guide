@@ -38,8 +38,8 @@ To create a new Juputerhub workspace:
 * Go to the Workload manager → Workloads
 * Click +NEW WORKLOAD and select Workspace
 * The hx3 cluster should be auto-selected
-* Select the project in which your workspace will run. This should have been provided by your RCS Accosiate or your project lead. Only create a new project is told to do so
-* If you have not already created a template select "Start from scratch", otherwise select your template
+* Select the project in which your workspace will run. This should have been provided by your RCS Accosiate or your project lead. Only create a new project if told to do so
+* If you have not already created a template select "Start from scratch", otherwise select your template.
 * Give the workspace a useful name, if the name already exists in the project, you will be requested to submit a different name.
 * Click CONTINUE
 
@@ -57,7 +57,7 @@ If you need to create the template you can do it now:
     * Under "Group ID (GID)" enter 1000
 * You can now click CREATE WORKSPACE
 
-Should should be returned to the Workloads overview page and your workload should be in the "starting" or "initializing" state. 
+You should be returned to the Workloads overview page and your workload should be in the "starting" or "initializing" state. 
 Once this changes to "Running":
 * Click on the URL under "Connections(s)"
 * In the pop up window scroll to the right and click the connect icon.
