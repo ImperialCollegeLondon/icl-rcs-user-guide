@@ -16,5 +16,5 @@ The services listed below are provided by the RCS Platforms team. Please click o
 * An introduction to [High Performance Computing](hpc/index.md)
 * The general use [CX3](./hpc/cluster-specification.md#cx3) platform
 * The authorised-access only [HX1](./hpc/hx1.md) platform
-* The general use [HX2](./hpc/pilot/hx2.md) platform
-* The AI-focused HX3 platform (documentation TBA)
+* The general use [HeX2](./hpc/hx2/index.md) platform
+* The AI-focused [HeX3](./hpc/hx3/index.md) platform
