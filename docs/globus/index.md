@@ -1,5 +1,7 @@
 # Globus
 
+## What is Globus
+
 [Globus](https://www.globus.org/) is a high performance data transfer platform.
 
 To support secure and efficient data movement, RCS provides Globus data transfer endpoints across all core services. These enable users to transfer data seamlessly between Imperial systems and external Globus-enabled storage locations.
@@ -79,3 +81,39 @@ If you are making several collections, you may find it convenient to create [Gro
 ## Transfer data to your Personal Computer using Globus
 
 For transferring data to your own computer, or another resource that doesn't have its own Globus endpoint, you will need to install [Globus Connect Personal](https://www.globus.org/globus-connect-personal). This creates a Globus endpoint on your personal computer, allowing you to move data using the Globus web app.
+
+## Using Globus from the Command Line
+
+Globus offers a standalone command-line tool, the **Globus CLI**, which can be used to initiate and manage data transfers directly from the command line.
+
+Further information about the Globus CLI, including installation instructions and usage guidance, is available in the Globus documentation: [https://docs.globus.org/cli/](https://docs.globus.org/cli/).
+
+## Find the UUID of a Collection
+
+Every collection in Globus has a UUID or Universally Unique Identifier; this UUID can be useful in a number of ways including initiating transfers from the command line using the [Globus CLI](#using-globus-from-the-command-line). The UUID is typically of the form:
+
+```
+xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
+
+There are a couple of easy ways of finding the UUID of a collection.
+
+### From the Collection page URL
+
+1. Open the Globus File Manager or the specific Collection page.
+1. Click into the collection you want.
+1. Look at the browser URL.
+
+The url will look something like:
+
+```
+https://app.globus.org/file-manager?origin_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&origin_path=%2F&two_pane=false
+```
+
+The text after the *origin_id=* is the UUID of the collection.
+
+### From the Collection details panel
+
+1. Open the collection from the Globus web interface.
+1. In the list of collections, you should see three vertical dots next to each collection; click the three vertical dots to view the collection overview.
+1. In the overview page that appears, scroll down to the UUID list.
