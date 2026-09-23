@@ -135,6 +135,7 @@ nav:
           - RunAI: hpc/hx3/runai.md
         - Legacy Systems:
           - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
+      - Globus: globus/index.md
       - RDF-Active:
         - RDF-Active: rdfactive/index.md
         - Accessing the RDF-Active:
@@ -142,6 +143,8 @@ nav:
           - Windows: rdfactive/access/windows.md
           - macOS: rdfactive/access/macos.md
           - Linux: rdfactive/access/linux.md
+        - Transferring Data:
+          - Globus: rdfactive/transferringdata/globus.md
         - Requesting a New RDF-Active Allocation: rdfactive/requesting-a-new-allocation.md
         - Managing the RDF-Active: rdfactive/managing/index.md
         - RDS to RDF-Active Migration: rdfactive/rds-rdfactive-migration.md
