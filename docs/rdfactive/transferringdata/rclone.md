@@ -97,13 +97,13 @@ The following steps assist with using the SMB connector with the RDF-Active.
 
 1. Load the rclone module.
 
-```
+```console
 $ module load rclone
 ```
 
 2. Start the configuration wizard (noting the comments in the [section above](#securing-your-rclone-configuration) about securing your configuration):
 
-```
+```console
 $ rclone config
 ```
 
@@ -146,7 +146,7 @@ $ rclone ls rdfactive:research/faculty/department/ --exclude "**.snapshots/**"
 
 Files can be copied from the rdfactive to your local directory using the copy command. For example:
 
-```
+```console
 $ rclone copy rdfactive:research/faculty/department/researchgroup/allocation/myfile.txt ./
 ```
 
