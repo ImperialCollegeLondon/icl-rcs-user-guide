@@ -2,25 +2,32 @@
 
 The Research Data Store (RDS) is provided by the RCS for storing large volume of research data. You **don't** have to be registered in the HPC to use this service. Please visit the [Research Computing Service Getting Access](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-access/) for information on how to register for the RDS.
 
-!!! warning "Decommissioning Notice & Migration Requirement"
-    The Research Data Store (RDS) is undergoing decommissioning as part of our transition to modern storage platforms. All active research data must be migrated to [RDF-Active](../rdfactive/index.md) or alternative Imperial storage services prior to service retirement.
+## RDS to RDF-Active: Your action needed
 
-## Decommissioning Timeline & What to Expect
+The move from RDS to [RDF-Active](../rdfactive/index.md) is a **top priority** for the RCS Platforms team, and we are asking all project space administrators to engage with us to make this move as soon as possible to complete this transition. 
 
-### Phase 1: Transition & Active Migration
-* **New Allocations:** New RDS project allocations and extension requests are restricted.
-* **Active Migration:** Project leads are strongly advised to audit existing storage and begin transferring active project data to [RDF-Active](../rdfactive/rds-rdfactive-migration.md).
+The migration process itself is now quick and straightforward from the platforms team side. What we need from you is simple: help us identify what data should be moved, where it should go, and what can be deleted or archived.
 
-### Phase 2: Post-Deadline Restrictions
-Past the decommissioning deadline, unmigrated project allocations will transition through the following states:
-* **Read-Only Access Mode:** Unmigrated RDS project allocations will transition to **read-only access**. Users will remain able to view and download existing files, but no new data can be written or modified.
-* **HPC Job Write Restrictions:** Compute jobs on HPC clusters will no longer have write permissions to RDS project directories. Ensure your batch scripts and workflows are updated to output to RDF-Active or temporary scratch space.
-* **Account Archival & Final Retirement:** Allocations remaining unmigrated after the read-only grace period will be archived and scheduled for final removal in alignment with full service retirement in early 2027.
+### Why this matters
 
-### Next Steps for Project Leads
-1. **Audit Project Files:** Categorize data into active files (move to RDF-Active), historical data (move to RDF-Archive), and redundant/obsolete files (delete).
-2. **Configure Access Groups:** Re-establish access groups using the [REsearch Computing Access Portal (ReCAP)](../recap/index.md).
-3. **Migrate Data:** Follow the step-by-step instructions in the [RDS to RDF-Active Migration Guide](../rdfactive/rds-rdfactive-migration.md).
+The RDS will reach end of life in July 2027.
+
+To ensure any remaining data can be transferred safely, **write access will be turned off at Easter 2027**.
+
+Although the support contract runs until July 2027, the underlying hardware is ageing and timely replacement of components becomes increasingly difficult. Reducing the load on RDS as early as possible is therefore critical to maintaining stability and reducing risk during the final phase of service.
+
+### What you need to do
+
+* Raise a [general RCS ticket](https://servicemgt.imperial.ac.uk/esc?id=sc_cat_item&sys_id=470ee82a1b9df9101533a8a4bd4bcbd7&sysparm_category=52a4a8f21be62110557837b5464bcbd2&catalog_id=-1) requesting a "**review of my RDS projects**".
+* A member of the RCS platforms team will contact you 
+* We will review and outline your projects with you.
+* A schedule will be agreed for moving your data and switching to RDF-Active
+
+The good news is that the platforms team will handle the hard work. We simply need your guidance first so we can move the right data to the right place.
+
+### Please engage now
+
+This transition will help keep the service reliable for the long term, and everyone’s support really matters. The sooner you connect with us, the smoother and safer we can make the move together.
 
 ## Managing your Research Data
 

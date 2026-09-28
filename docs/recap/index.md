@@ -2,7 +2,7 @@
 
 **[ReCAP](./access.md)** (REsearch Computing Access Portal) is the self-service portal that allows users to request and manage access to research computing facilities provided by the [Imperial Research Computing Service (RCS)](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/).
 
-ReCAP replaces the old self-service portal (for managing access to the RDS, CX3 and HX1), and is used to manage access to all new systems such as the [RDF-Active](../rdfactive/index.md) and [HX2](../hpc/pilot/hx2.md).
+ReCAP replaces the old self-service portal (for managing access to the RDS, CX3 and HX1), and is used to manage access to all new systems such as the [RDF-Active](../rdfactive/index.md) and [HX2](../hpc/hx2/index.md).
 
 ## Research Groups
 

@@ -5,6 +5,10 @@ For information about submitting a job to our systems, please see our [how it wo
 
 There is no need to specify a queue, simply define the job in terms of the resources it requires and the system will run it as soon as suitable resources become available. We use routing queues, so PBS will place the job in the first queue that it fits into.
 
+!!! important
+
+    Please do not specify a queue when submitting a job! Your jobs will be automatically routed to the correct execution queue (listed below) when it is submitted.
+
 The following queues of jobs are supported:
 
 | Queue | Use Cases | Nodes per job | No. of cores per node<br>(ncpus) | Mem per node<br>(GB) | Walltime<br>(hrs) |
