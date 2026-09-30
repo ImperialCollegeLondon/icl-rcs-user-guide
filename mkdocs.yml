@@ -133,6 +133,7 @@ nav:
           - Overview: hpc/hx3/index.md
           - Access: hpc/hx3/access.md
           - RunAI: hpc/hx3/runai.md
+          - Containers: hpc/hx3/containers.md
         - Legacy Systems:
           - CX3 Legacy: hpc/legacy-systems/cx3-legacy.md
       - Globus: globus/index.md

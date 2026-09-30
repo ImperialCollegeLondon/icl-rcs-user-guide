@@ -1,8 +1,7 @@
 ## Access
 
-!!! info
-
-    As the cluster is still in pilot access is invite only.
+!!! warning
+    Please be aware that HeX2 is currently a pre-production service. You should expect occasional service interruptions, which may occur with limited or no prior notice.
 
 
 ### Access Control Settings
