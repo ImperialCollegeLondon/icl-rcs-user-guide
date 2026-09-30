@@ -1,8 +1,15 @@
 # Access to HeX3 
 
-Access to the HeX3 platform is arranged through your department’s RCS Associate. A list of RCS Associates can be found here: https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/operational-structure/
+Access to the HeX3 platform is coordinated through your department’s RCS Associate. You can find details of your department’s RCS Associate in the **Research Computing Services - Associates** section of the following page:
 
-If your department does not currently have an RCS Associate, please contact the [RCS Research Engagement Lead](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/) for assistance.
+[https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/operational-structure/](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/operational-structure/)
+
+If your department does not currently have an RCS Associate, please contact the **RCS Research Engagement Lead** for assistance:
+
+[https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/about/)
+
+!!! warning
+    Please be aware that HeX3 is currently a pre-production service. Your RCS Associate may therefore choose to delay granting access until the platform is fully in production. You should also expect occasional service interruptions, which may occur with limited or no prior notice.
 
 # Login
 
