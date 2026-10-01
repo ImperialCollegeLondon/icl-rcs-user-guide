@@ -8,7 +8,7 @@ The amount of resource that can be reserved depends on how busy the normal queue
 If you would like to request a reservation please raise a [General Research Computing Services (RCS) questions or requests](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/) including the amount of compute needed (ncpus, ngpus, total walltime) and the ICL budget code. We only access ICL budget codes and you must either be the owner of the code or we will request permission from them before we create the reservation
 
 ## Using a reservation on PBSPro clusters
-CX3 and HeX1 using PBSPro as the job scheduler so when a reservation is created it will look like a new queue with a name begining with "R" followed by a series of numbers. This queue name will be given to you when your reservation is created and in the example below we will assume the it to be "R1234".
+CX3 and HeX1 using PBSPro as the job scheduler so when a reservation is created it will look like a new queue with a name begining with "R" followed by a series of numbers. This queue name will be given to you when your reservation is created and in the example below we will assume it to be "R1234".
 
 ### Checking jobs in a reservation
 Similar to before you can list all jobs in the reservation with:
