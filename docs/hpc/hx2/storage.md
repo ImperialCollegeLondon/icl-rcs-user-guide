@@ -5,10 +5,10 @@ HX2 has its own dedicated high performance file system utilising the Weka runnin
 
 ### Home Directory
 
-When you login to HX2, you will have a home directory automatically created for you on the file system local to HX2. User home directories on HX2 are intended to provide working space for current jobs only and it is the expectation that users will move their data to other systems once the data is no longer needed on the cluster. Accordingly, there are **NO BACKUP, DISASTER RECOVERY OR SNAPSHOTS** for HX2, and in the event of major hardware failure, accidental data deletion, file system corruption, etc. the data will be lost. It is therefore imperitive that you copy any important files to another storage system such as RDF Active once they have been generated.
+When you login to HX2, you will have a home directory automatically created for you on the file system local to HX2. User home directories on HX2 are intended to provide working space for current jobs only and it is the expectation that users will move their data to other systems once the data is no longer needed on the cluster. HX2 does have daily rolling snapshots, dating back 2 weeks, but there are **NO BACKUPS OR DISASTER RECOVERY**, meaning in the event of major hardware failure, file system corruption, etc. the data will be lost. It is therefore imperitive that you copy any important files to another storage system such as RDF Active once they have been generated.
 
 ### Quota
-Your home directory on HX2 is subject to a default quota of 1 TB and 2 million files/directories (inodes).
+Your home directory on HX2 is subject to a default quota of 1 TB.
 
 Quota increases are possible on request if justified. We ask that users make efforts to:
 
@@ -67,5 +67,5 @@ The HX2 file system is meant for live data only and any important files should b
 
 ### Shared Project Areas
 
-We are still working on a solution for shared project areas, however we welcome requests for these from either HPC or RDS Project Admins. There will be no charge for these shared spaces but they are for live data sharing only and any quota must be justified (with a review every 6 months). As with home directories, data within these shared areas that have not been accessed for some time are at risk of being deleted.
+We do have the ability to create shared project areas. If your group requires one, please ask your project admin to [contact us.](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/get-support/contact-us/)  There will be no charge for these shared spaces but they are for live data sharing only and any quota must be justified (with a review every 6 months). As with home directories, data within these shared areas that have not been accessed for some time are at risk of being deleted.
 
