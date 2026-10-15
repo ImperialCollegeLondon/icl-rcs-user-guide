@@ -124,7 +124,7 @@ The following table provides an explanation of what each directive means in the 
 | `partition`       | The partition you want to submit your job to. A list of available options can be viewed in the [job sizing guidance](#job-sizing-guidance) section.  | small|
 
 
-The general advice it to set the resources to what is needed for a job but to not over specify. For example, don't set CPU type if your job can run fine or Rome or Icelake. This ensures your job starts as early as possible.
+The general advice it to set the resources to what is needed for a job but to not over specify. This ensures your job starts as early as possible.
 
 ### Example Slurm Jobs
 
