@@ -117,8 +117,8 @@ The following table provides an explanation of what each directive means in the 
 | Directive | Description |Default|
 | --------- | ----------- |---------|
 | `nodes` | This is the number of compute nodes you wish to use in your job. Most users on HX2 will probably just be wanting to use 1 compute node.| 1|
-| `ntasks-per-node` | This is the number of tasks or processes created per node. These usually relate to MPI ranks per node. | 1|
-| `cpus-per-task` | This is the number of CPU cores allocated per above task. Effectively, this is the number of threads per task/MPI rank.  | 1|
+| `ntasks‑per‑node` | This is the number of tasks or processes created per node. These usually relate to MPI ranks per node. | 1|
+| `cpus‑per‑task` | This is the number of CPU cores allocated per above task. Effectively, this is the number of threads per task/MPI rank.  | 1|
 | `mem` | This is the amount of memory to allocate to the job, per compute node. |1GB per core|
 | `gres`       | This flag can be used to request [GPU's](#gpu) and [scratch](./storage.md#local-node-storage) space. | None|
 | `partition`       | The partition you want to submit your job to. A list of available options can be viewed in the [job sizing guidance](#job-sizing-guidance) section.  | small|
