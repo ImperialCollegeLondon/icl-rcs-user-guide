@@ -227,39 +227,3 @@ or
 ```
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 ```
-
-#### Requesting Local Storage
-
-Each node has some amount of local storage. This can be used as a scratch space for staging which is used only within a given job. By default this can be accessed with $TMPDIR and is limited to 1GB. This space is deleted when the job finishes and can not be recovered so make sure to copy any important files back to home when the job finishes. 
-
-To request more scratch space, set the following flag:
-`--gres=scratch:100g`
-
-**CPU Node Example:**
-```
-#!/bin/bash
-#SBATCH --job-name=example-job
-#SBATCH --time=03:00:00
-#SBATCH --cpus-per-task=4
-#SBATCH --ntasks-per-node=1
-#SBATCH --gres=scratch:100g
-#SBATCH --mem=32GB
-#SBATCH --partition=small
-```
-
-The above is an example of how to request scratch space on a CPU node, requesting 4 cores and 100GB of scratch space.
-
-**GPU Node Example:**
-```
-#!/bin/bash
-#SBATCH --job-name=example-job
-#SBATCH --time=03:00:00
-#SBATCH --cpus-per-task=4
-#SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:1,scratch:100g
-#SBATCH --mem=32GB
-#SBATCH --partition=gpu
-```
-
-The above is an example of how to request scratch space on a GPU node, requesting 1 GPU and 100GB of scratch space.
-
