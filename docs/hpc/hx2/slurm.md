@@ -263,15 +263,3 @@ The above is an example of how to request scratch space on a CPU node, requestin
 
 The above is an example of how to request scratch space on a GPU node, requesting 1 GPU and 100GB of scratch space.
 
-
-### Example Slurm Jobs
-#### MPI Jobs
-
-#### Hybrid OpenMP/MPI Jobs
-
-### MPI Distribution Specific Information
-
-#### Intel MPI
-
-#### OpenMPI
-
