@@ -126,7 +126,9 @@ The following table provides an explanation of what each directive means in the 
 
 The general advice it to set the resources to what is needed for a job but to not over specify. For example, don't set CPU type if your job can run fine or Rome or Icelake. This ensures your job starts as early as possible.
 
-#### single core jobs
+### Example Slurm Jobs
+
+#### Single Core Jobs
 
  A single core submission script would look like the following:
 
