@@ -48,7 +48,7 @@ The following partitions are supported:
 | ----- | --------- | :-------------: | ---------------------------- | -------- | -------------- |
 | [small](#small) | Low core jobs | 1 | 1 - 16 | 1 - 128 | 0 - 72 |
 | [medium](#medium) | Single-node jobs | 1 | 17 - 72 | 1 - 1000 | 0 - 72 |
-| [large](#large) | Whole node jobs | 1 | 73 - 142 | 1 - 2000 | 0 - 72 |
+| [large](#large) | Whole node jobs | 1 | 73 - 142 | 1 - 2200 | 0 - 72 |
 | [capability](#capability) | Multi-node jobs | 2 - 8 | 1 - 142 | 1 - 2200 | 0 - 72 |
 | [interactive](#interactive) | Interactive CPU jobs | 1 | 1 - 16 | 1 - 64 | 0 - 8 |
 | [interactive-gpu](#interactive-gpu) | Interactive GPU jobs | 1 | 1 - 16 | 1 - 64 | 0 - 8 |
