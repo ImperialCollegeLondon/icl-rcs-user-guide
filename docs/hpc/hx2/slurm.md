@@ -127,8 +127,10 @@ The following table provides an explanation of what each directive means in the 
 | `ntasks‑per‑node` | This is the number of tasks or processes created per node. These usually relate to MPI ranks per node. | 1|
 | `cpus‑per‑task` | This is the number of CPU cores allocated per above task. Effectively, this is the number of threads per task/MPI rank.  | 1|
 | `mem` | This is the amount of memory to allocate to the job, per compute node. |1GB per core|
-| `gres`       | This flag can be used to request [GPU's](#gpu) and [scratch](./storage.md#local-node-storage) space. | None|
-| `partition`       | The partition you want to submit your job to. A list of available options can be viewed in the [job sizing guidance](#job-sizing-guidance) section.  | small|
+| `gres`  | This flag can be used to request [GPU's](#gpu) and [scratch](./storage.md#local-node-storage) space. | None|
+| ↳ `gpu` | Requests GPU resources through `gres`, for example `#SBATCH --gres=gpu:1`. | None |
+| ↳ `scratch` | Requests [local scratch space](./storage.md#local-node-storage) through `gres`, for example `#SBATCH --gres=scratch:100G`. | 1GB |
+| `partition` | The partition you want to submit your job to. A list of available options can be viewed in the [job sizing guidance](#job-sizing-guidance) section.  | small|
 
 
 The general advice it to set the resources to what is needed for a job but to not over specify. This ensures your job starts as early as possible.
