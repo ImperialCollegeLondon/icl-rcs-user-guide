@@ -23,7 +23,7 @@ details.faq summary {
     max-width: 60%; 
 } */
 
-/* Fill more of the usable screen width */
+/* Fill more of the usable screen width  */
 @media screen and (min-width: 1400px) {
     .wy-nav-content {
         max-width: 80%;
